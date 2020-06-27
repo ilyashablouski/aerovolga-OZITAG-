@@ -1,0 +1,83 @@
+{{!Ui toolkit}}
+
+{{> layout/head }}
+
+<section class="ui">
+  <header class="ui__title">
+    <h1>UI Toolkit</h1>
+  </header>
+
+  <main class="ui__container">
+    <aside class="ui__aside">
+      <nav class="aside__inner">
+        <ul class="aside__nav">
+          <li>
+            <button class="_link" data-id="ui-colors">Colors</button>
+          </li>
+          <li>
+            <button class="_link" data-id="ui-buttons">Buttons</button>
+          </li>
+          <li>
+            <button class="_link" data-id="ui-form">Forms</button>
+          </li>
+          <li>
+            <button class="_link" data-id="ui-checkbox-radio">Checkbox / Radio</button>
+          </li>
+          <li>
+            <button class="_link" data-id="ui-popups">Popups</button>
+          </li>
+          <li>
+            <button class="_link" data-id="ui-loader">Loader</button>
+          </li>
+          <li>
+            <button class="_link" data-id="ui-loader-empty">Loader Empty</button>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <section class="ui__main">
+      {{> ui-kit/core/section-start title='Colors' id='ui-colors' }}
+      {{> ui-kit/colors }}
+      {{> ui-kit/core/section-end}}
+
+      {{> ui-kit/core/section-start title='Buttons' id='ui-buttons'}}
+      {{> ui-kit/buttons }}
+      {{> ui-kit/core/section-end}}
+
+      {{> ui-kit/core/section-start title='Inputs' id='ui-forms'}}
+      {{> ui-kit/inputs }}
+      {{> ui-kit/core/section-end}}
+
+      {{> ui-kit/core/section-start title='Checkbox / Radio' id='ui-checkbox-radio'}}
+      {{> ui-kit/checkbox-radio }}
+      {{> ui-kit/core/section-end}}
+
+      {{> ui-kit/core/section-start title='Popups' id='ui-popups'}}
+      {{> ui-kit/popups }}
+      {{> ui-kit/core/section-end}}
+
+      {{> ui-kit/core/section-start title='Loader' id='ui-popups'}}
+      {{> ui-kit/loaders }}
+      {{> ui-kit/core/section-end}}
+    </section>
+  </main>
+</section>
+
+{{> popups/example}}
+
+<script>
+  /*
+  window.onload = () => {
+    const $btn = $('.aside__nav').find('._link');
+
+    $btn.on('click', function() {
+      const id = $(this).data('id');
+
+      $('html, body').animate({
+        scrollTop: $(`#${id}`).offset().top,
+      }, 600);
+    });
+  };*/
+</script>
+
+{{> layout/bottom }}
