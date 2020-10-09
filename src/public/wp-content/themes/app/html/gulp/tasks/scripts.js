@@ -1,8 +1,7 @@
 module.exports = () => {
-  const sourcePath = `${$.config.sourcePath}/${$.config.staticPath}/js`;
-  const destPath = `${$.config.outputPath}/${$.config.staticPath}/js`;
-  const outputFileName = $.config.dynamicEntry && $.config.buildMode === 'prod' ?
-    '[name]' : '[name].js';
+  const sourcePath = `${$.config.sourcePath}/${$.config.scriptsPath}`;
+  const destPath = `${$.config.outputPath}/${$.config.scriptsPath}`;
+  const outputFileName = $.config.dynamicEntry && $.config.buildMode === 'prod' ? '[name]' : '[name].js';
 
   const sourceMapConfig = {
     filename: `${outputFileName}.map`,
@@ -62,36 +61,28 @@ module.exports = () => {
     case 'prod':
       config.mode = 'production';
 
-      if ($.config.dynamicEntry) {
-        config.entry = getDynamicEntry();
-      } else {
+      $.config.dynamicEntry ?
+        config.entry = getDynamicEntry() :
         config.entry = getStaticEntry();
-      }
 
-      if ($.config.babel) {
-        config.module.rules.push(
-          babelConfig,
-        );
-      }
+      if ($.config.babel) config.module.rules.push(babelConfig,);
 
-      if ($.config.jsMin) {
-        minifyConfig.test = /\.js$/;
-      } else {
+      $.config.jsMin ?
+        minifyConfig.test = /\.js$/ :
         minifyConfig.test = /vendors\.js/;
-      }
+
       config.optimization.minimize = true;
-      config.optimization.minimizer.push(
-        new $.wpTerserPlugin(minifyConfig),
-      );
+      config.optimization.minimizer.push(new $.wpTerserPlugin(minifyConfig),);
   }
 
   $.gulp.task('scripts', done => {
-    return $.gulp.src(`${sourcePath}/**`).pipe($.webpackStream(
-      config, $.webpack,
-    )).pipe($.gulp.dest(`${destPath}/`)).pipe($.bs.reload({ stream: true })).on('end', done);
+    return $.gulp.src(`${sourcePath}/**`)
+      .pipe($.webpackStream(config, $.webpack,))
+      .pipe($.gulp.dest(`${destPath}/`))
+      .pipe($.bs.reload({ stream: true })).on('end', done);
   });
 
-  function getDynamicEntry () {
+  function getDynamicEntry() {
     return $.glob.sync(
       `${sourcePath}/**/*`, {
         ignore: [`${sourcePath}/main.js`, `${sourcePath}/polyfills.js`],
@@ -104,7 +95,7 @@ module.exports = () => {
     }, {});
   }
 
-  function getStaticEntry () {
+  function getStaticEntry() {
     return {
       vendors: $.path.resolve(`${sourcePath}/vendors.js`),
       main: $.path.resolve(`${sourcePath}/main.js`),

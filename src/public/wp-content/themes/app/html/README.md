@@ -2,39 +2,44 @@
 
 ## Важно!!!
 Если в проекте будет задача сделать critical css то для начала нужно установать модуль. Я не стал вносить его в devDependencies.
-Ибо он качает Chromium который весит 80mb и если его ставить как зависимость в каждый проект то это будет беда. 
+Ибо он качает Chromium который весит 80mb и если его ставить как зависимость в каждый проект то это будет беда.
 
 ```
-npm install critical
+yarn add critical
 ```
 
 ## Разработка проекта
 ```
-npm run start || gulp dev
+yarn dev || gulp dev
 ```
 
 ## Сборка проекта
 
 ```
-npm run build || gulp build
+yarn build || gulp build
+```
+
+## Сборка проекта для Production
+
+```
+yarn prod || gulp build-prod
 ```
 
 ## Из чего состоит HTML Starter?
 
-В основном работа проходит в 2-х местах
+В основном работа проходит в 2-х местах:
 
 1. Файлик config/config.json
 1. Папка app
 
 ### config/config.json
 
-Файлик служит для настройки проекта.
+Файлик служит для настройки проекта:
 
 1. Пути до файлов
 1. Сжатие css
 1. Сжатие js
-1. Сжатие кртанок
-1. Вспомогательные либы js
+1. Сжатие картинок
 
 ```
 {
@@ -43,6 +48,7 @@ npm run build || gulp build
   "tmpPath": ".tmp",
   "sourcePath": "app",
   "destPath": "dist",
+  "dbPath": "db",
   "hbsPath": "templates",
   "staticPath": "static",
   "stylesPath": "static/css",
@@ -54,35 +60,18 @@ npm run build || gulp build
   "svgInlinePath": "static/svg/inline",
   "contentPath": "content",
   "metaPath": ".meta",
-  "concatScripts": false,
-  "cssMin": false,
-  "tinyPng": true,
+  "dynamicEntry": true,
+  "jsMin": false,
+  "cssMin": true,
+  "imageMin": true,
   "criticalCss": false,
-  "supportJsLibs": [
-    "./node_modules/html5shiv/dist/html5shiv.min.js",
-    "./node_modules/jquery/dist/jquery.min.js",
-    "./node_modules/svg4everybody/dist/svg4everybody.min.js"
-  ],
-  "ftp": {
-    "enabled": true,
-    "host": "FTP.ozis.by",
-    "login": "ozisby",
-    "password": "Kee6ohmo",
-    "remotePath": "/projects/diold.ozis.by"
-  },
-  "sftp": {
-    "enabled": true,
-    "host": "46.101.113.218",
-    "login": "root",
-    "password": "7196706932f21ff9bb2f89064e4",
-    "remotePath": "/var/www/html/testProject"
-  }
+  "babel": false
 }
 ```
 
 ### app
 
-Собственно большая часть разработки проходит тут. Папка состоит из 4 основных разделов.
+Собственно большая часть разработки проходит тут. Папка состоит из 4 основных разделов:
 
 1. meta - папка для загрузки скриншотов, которые вдальнейшем будут отображаться в index.html.
 index.html генерируется сам, исходя из скриншотов в папке.
@@ -91,6 +80,7 @@ index.html генерируется сам, исходя из скриншото
 1. templates - папка для работы с html. Мы используем препроцессор handlebars (hbs). Собственно далее тоже распишу что к чему.
 ```
 ├── .meta
+└── db
 ├── content
 ├── static
 └── templates
@@ -99,10 +89,10 @@ index.html генерируется сам, исходя из скриншото
 ### .meta
 
 В папке лежет скрины каждой страницы в формате 00_ui-toolkit.
-Скрин обезятельно должен начинаться с номера, далее после номере идет нижнее подчеркивание _ и только потом название скрина, 
+Скрин обезятельно должен начинаться с номера, далее после номере идет нижнее подчеркивание _ и только потом название скрина,
 которое в свою очеред должно соответсвовать названию странцы из папки templates.
 
-Например
+Например:
 ```
 ├── .meta
     ├── 00_ui-toolkit.png
@@ -114,15 +104,12 @@ index.html генерируется сам, исходя из скриншото
 
 ### content
 
-В папке лежит контентные файлы сайта, те которые в дальнейшем будут заливаться из админки. Изначально в content лежит 2 папки
+В папке лежит контентные файлы сайта, те которые в дальнейшем будут заливаться из админки. Изначально в content лежит 2 папки:
 
-1. icons
-1. images
+1. icons - хранит иконки сайта.
+1. images - хранит картинки сайта.
 
-icons - хранит иконки сайта
-images - хранит картинки сайта.
-
-папки разделены потому что, при build и соответсвующих флагов в config.json будет сжатие кратинок.
+Папки разделены потому что, при build и соответсвующих флагов в config.json будет сжатие кратинок.
 
 ### static
 
@@ -147,48 +134,48 @@ images - хранит картинки сайта.
 
 ```
 ├── static
-    ├── css
-        ├── _common.scss
-        ├── _imports.scss
-        ├── _typography.scss
-        ├── blocks
-        │   └── btn-list.scss
-        ├── components
-        │   ├── checkbox.scss
-        │   ├── dropdown.scss
-        │   ├── loader.scss
-        │   └── radio.scss
-        ├── config
-        │   ├── fonts.scss
-        │   ├── options.scss
-        │   └── variables.scss
-        ├── layout
-        │   ├── breadcrumbs.scss
-        │   ├── footer.scss
-        │   ├── header.scss
-        │   ├── popup.scss
-        │   └── wrapper.scss
-        ├── libs
-        │   ├── grid.scss
-        │   ├── nomolize.scss
-        │   └── slick.scss
-        ├── main.scss
-        ├── mixins
-        │   └── mixins.scss
-        ├── pages
-        │   ├── home.scss
-        │   └── ui-toolkit.scss
-        ├── png
-        │   ├── _mixins.scss
-        │   └── png-sprite.scss
-        ├── svg
-        │   ├── _mixins.scss
-        │   ├── _sprite.scss
-        │   ├── _spriteInline.scss
-        │   └── svg.scss
-        └── ui
-            ├── buttons.scss
-            └── form.scss
+    ├── css
+        ├── _common.scss
+        ├── _imports.scss
+        ├── _typography.scss
+        ├── blocks
+        │   └── btn-list.scss
+        ├── components
+        │   ├── checkbox.scss
+        │   ├── dropdown.scss
+        │   ├── loader.scss
+        │   └── radio.scss
+        ├── config
+        │   ├── fonts.scss
+        │   ├── options.scss
+        │   └── variables.scss
+        ├── layout
+        │   ├── breadcrumbs.scss
+        │   ├── footer.scss
+        │   ├── header.scss
+        │   ├── popup.scss
+        │   └── wrapper.scss
+        ├── libs
+        │   ├── grid.scss
+        │   ├── nomolize.scss
+        │   └── slick.scss
+        ├── main.scss
+        ├── mixins
+        │   └── mixins.scss
+        ├── pages
+        │   ├── home.scss
+        │   └── ui-toolkit.scss
+        ├── png
+        │   ├── _mixins.scss
+        │   └── png-sprite.scss
+        ├── svg
+        │   ├── _mixins.scss
+        │   ├── _sprite.scss
+        │   ├── _spriteInline.scss
+        │   └── svg.scss
+        └── ui
+            ├── buttons.scss
+            └── form.scss
 ```
 
 Пойдем по порядку. Постараюсь описать что происходит в каждом файле. Тут есть даже файлы которые никтогда не трогают)
@@ -201,7 +188,6 @@ images - хранит картинки сайта.
 1. components - сюда складываем компоненты.
 1. config - css настроки (переменные, опции, шрифты).
 1. layout - layout страниц.
-1. libs - стороние css либы.
 1. mixins - понятно из названия. Каждый миксин описывать нет смысла. Можно открыть и поглядеть что там есть.
 1. png & svg - в этим папки мы не лезем, так как они все делают автоматом. Можно только посмотреть что делают их mixins.
 1. pages - сюда складываем стили для определенных странци типа (404, static, и т.п.)
@@ -215,25 +201,22 @@ images - хранит картинки сайта.
 
 ```
 ├── fonts
-    └── Roboto
-        ├── Bold.woff
-        ├── Bold.woff2
-        ├── Light.woff
-        ├── Light.woff2
-        ├── Medium.woff
-        ├── Medium.woff2
-        ├── Regular.woff
-        └── Regular.woff2
+    └── Roboto
+        ├── Bold.woff
+        ├── Bold.woff2
+        ├── Light.woff
+        ├── Light.woff2
+        ├── Medium.woff
+        ├── Medium.woff2
+        ├── Regular.woff
+        └── Regular.woff2
 ```
 
 Тепер нужно их подключить. Для этого есть готовый миксин.
 Подключение происходит в css/config/fonts.scss
 
 ```scss
-@include font("Roboto/Light", "Roboto-Light");
-@mixin light() {
-  @include font-mixin("Roboto-Light");
-}
+@include font("Roboto", "Regular", 400);
 ```
 
 Далее для того чтобы использовать этот шрифт достаточно написать в нужном месте @include light;
@@ -242,23 +225,19 @@ images - хранит картинки сайта.
 
 ```
 ├── js
-    ├── helpers
-    │   ├── dropdown.js
-    │   ├── layout.js
-    │   ├── load-more.js
-    │   ├── popups.js
-    │   ├── share.js
-    │   └── tabs.js
-    ├── libs
-    │   ├── html5shiv.js
-    │   ├── jquery-ui.min.js
-    │   ├── jquery.min.js
-    │   ├── slick.js
-    │   └── svg4body.js
-    └── ui.js
+    ├── modules
+    │   ├── helpers
+    │   ├── widgets
+    │   ├── layout.js
+    │   ├── preloader.js
+    │   ├── scroll-control.js
+    │   └── ui.js
+    ├── libs.js
+    ├── main.js
+    └── poly.js
 ```
 
-Из структуры видно что к чему.
+Из структуры видно что к чему:
 
 1. ui.js - тут пишем js для всего сайта.
 1. helpers - наши компоненты. Каждый файлик описывать лень) Можно будет спросить непосредсвтвенно перед началом работы.
@@ -274,9 +253,9 @@ images - хранит картинки сайта.
     └── sprite
 ```
 
-1. inline - svg которые будут подключаться непосредственно в html. В templates/partials/ui/svg.hbs уже лежит готовый 
+1. inline - svg, которые будут подключаться непосредственно в html. В templates/partials/ui/svg.hbs уже лежит готовый
 способ для их подключения.
-1. sprite - svg которые будут подключаться из css. Для этого есть mixin sprite('icon-btn').
+1. sprite - svg, которые будут подключаться из css. Для этого есть mixin sprite('icon-btn').
 
 ### templates
 
@@ -296,30 +275,83 @@ images - хранит картинки сайта.
 
 1. ajax - в основном служит для того чтобы подтягивать какой либо контент html.
 1. layouts - папка для плагина. Ее не трогаеем и не удаляем.
-1. partials - папка где творятся чудеса) 
+1. partials - папка где творятся чудеса)
 
 ### templates/partials
 
 ```
 ├── partials
-    ├── blocks
-    │   ├── ui-section-end.hbs
-    │   └── ui-section-start.hbs
-    ├── layout
-    │   ├── bottom.hbs
-    │   ├── footer.hbs
-    │   ├── head.hbs
-    │   └── header.hbs
-    ├── popups
-    │   └── example.hbs
-    └── ui
-        ├── checkbox.hbs
-        ├── input.hbs
-        ├── radio.hbs
-        └── svg.hbs
+    ├── blocks
+    │   ├── ui-section-end.hbs
+    │   └── ui-section-start.hbs
+    ├── layout
+    │   ├── bottom.hbs
+    │   ├── footer.hbs
+    │   ├── head.hbs
+    │   └── header.hbs
+    ├── popups
+    │   └── example.hbs
+    ├── svg
+    └── ui
+        ├── checkbox.hbs
+        ├── input.hbs
+        ├── radio.hbs
+        └── svg.hbs
 ```
 
 1. blocks - складываем блоки сайта, если они много раз переиспользуются.
-1. layout - layout сайта (header, footer и т.п.)
-1. popups - сюда складываем попапы
-1. ui - тут лежат ui элементы сайта
+1. layout - layout сайта (header, footer и т.п.).
+1. popups - сюда складываем попапы.
+1. ui - тут лежат ui элементы сайта.
+
+
+## Работа с ссылками и SEO-информацией
+
+В директории `app/db/` есть файл “links.json”, в него записываются объекты, которые соответствуют ссылке и SEO-информации по каждой странице.
+
+- Если ссылка на внутренние страницы, и необходимо добавить переменную в верстку, это будет выглядеть так: `{{links.services.url}}`
+
+- Если значение передаётся в переменную из шаблона, фигурные скобки не нужны. Выглядит это так: `href=links.services.url`
+
+- Если ссылка внешняя, создаёте объект и указываете нужному ключу необходимое значение.
+
+## Особенности версия для Production
+
+Основная идея заключалась в более гибком подходе к красивой перелиновке сайта.
+
+1. Home - или главная страница, теперь переносится в корень проекта и именуется index.html
+2. Все файлы страниц с расширением `.hbs` будут преобразованы в одноименные директотрии с html файлом. Пример: `services.hbs` будет преобразовано в директорию `services/index.html`
+3. Если в имени файла сожержится **двойной дефис** `--`, будет создана директория, состоящая из имени, которое было указано до дефиса и подпапки с именем после. Пример: `services--services-1.hbs` будет преобразовано в директорию `services/services-1/index.html`.
+4. В разработке: вложенность может быть абсолютно любой.
+
+Вот наглядный пример директорий из реального проекта:
+
+```
+├── index.html
+    ├── services
+            └──index.html
+    │   ├── services-1
+                └──index.html
+    │   └── services-2
+                └──index.html
+    ├── showcases
+            └──index.html
+    │   ├── showcases-1
+                └──index.html
+    │   ├── showcases-2
+                └──index.html
+    │   ├── showcases-3
+                └──index.html
+    │   └── showcases-4
+                └──index.html
+    ├── insights
+            └──index.html
+        ├── insights-1
+                └──index.html
+    │   └── insights-2
+                └──index.html
+    ├── about
+            └──index.html
+    └── 404
+            └──index.html
+```

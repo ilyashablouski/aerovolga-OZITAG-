@@ -1,21 +1,37 @@
 {{#ifCond fallback-ext 'svg'}}
-  <img src="../{{#if static}}static{{else}}content{{/if}}/images/{{img}}.{{fallback-ext}}"/>
+  <img src="../assets/images/{{img}}.{{fallback-ext}}"/>
 {{else}}
   <picture>
-    {{#if mobile-img}}
-      {{> core/picture-source media="max-width: 767px" img=mobile-img}}
+    {{#if img-tablet}}
+      {{#if ext-tablet}}
+        {{> core/picture-source media="max-width: 1279px" img=img-tablet ext=ext-tablet}}
+      {{else}}
+        {{> core/picture-source media="max-width: 1279px" img=img-tablet ext=ext}}
+      {{/if}}
     {{/if}}
 
-    {{#if tablet-img}}
-      {{> core/picture-source media="max-width: 1279px" img=tablet-img}}
+    {{#if img-tabletSmall}}
+      {{#if ext-tablet}}
+        {{> core/picture-source media="max-width: 979px" img=img-tabletSmall ext=ext-tablet}}
+      {{else}}
+        {{> core/picture-source media="max-width: 979px" img=img-tabletSmall ext=ext}}
+      {{/if}}
+    {{/if}}
+
+    {{#if img-mobile}}
+      {{#if ext-mobile}}
+        {{> core/picture-source media="max-width: 767px" img=img-mobile ext=ext-mobile}}
+      {{else}}
+        {{> core/picture-source media="max-width: 767px" img=img-mobile ext=ext}}
+      {{/if}}
     {{/if}}
 
     {{> core/picture-source}}
 
     <img class="lazy"
          data-sizes="auto"
-         data-original="../{{#if static}}static{{else}}content{{/if}}/images/{{img}}.{{fallback-ext}}"
+         data-original="../assets/images/{{img}}.{{fallback-ext}}"
          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-         alt="">
+         alt="{{alt}}">
   </picture>
 {{/ifCond}}
