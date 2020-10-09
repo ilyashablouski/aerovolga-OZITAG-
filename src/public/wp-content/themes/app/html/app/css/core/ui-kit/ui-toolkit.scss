@@ -123,7 +123,6 @@
 
   &-section {
     &__title {
-      @include ui-font-title(30px);
     }
 
     &__content {
@@ -252,7 +251,6 @@
     caption {
       padding: 10px 0;
       color: $color-gray-100;
-      @include ui-font-title;
       text-align: left;
     }
   }

@@ -16,7 +16,6 @@
   &__circle {
     @include align;
     z-index: 1;
-    @include bold;
 
     &:before {
       content: '';

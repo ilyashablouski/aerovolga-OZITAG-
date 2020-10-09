@@ -26,11 +26,11 @@
       {{/if}}
     {{/if}}
 
-    {{> core/picture-source}}
+    {{> core/picture-source ext=ext}}
 
     <img class="lazy"
          data-sizes="auto"
-         data-original="../assets/images/{{img}}.{{fallback-ext}}"
+         data-original="../assets/images/{{img}}.{{ext}}"
          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
          alt="{{alt}}">
   </picture>

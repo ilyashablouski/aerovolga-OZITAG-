@@ -49,6 +49,12 @@
   bottom: $digit;
   left: $digit;
   right: $digit;
+  width: 100%;
+  height: 100%;
+
+  img{
+    width: 100%;
+  }
 }
 
 @mixin filter() {
