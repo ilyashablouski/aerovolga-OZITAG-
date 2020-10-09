@@ -1,6 +1,7 @@
 .footer {
   background: $color-primary;
   color: $color-white;
+  margin-left: 240px;
 }
 
 .footer-top {
@@ -62,7 +63,6 @@
     letter-spacing: 1.71429px;
     text-transform: uppercase;
     color: #8E9598;
-
 
     &:not(:first-child) {
       margin-left: 40px;

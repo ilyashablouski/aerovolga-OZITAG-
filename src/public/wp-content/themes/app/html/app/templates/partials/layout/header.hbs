@@ -1,7 +1,42 @@
 <header class="header page__header">
-  <div class="container">
-    <h2>HEADER</h2>
+  <div class="header-main">
+    <div class="header-main__top">
+      <button class="header-main__burger">
+        <i></i>
+      </button>
+    </div>
+    <div class="header-main__logo">
+      {{> components/image img="logo" ext="png"}}
+    </div>
+    <div class="header-main__bottom">
+      <a href="#" class="header-main__contact">
+        {{> ui/svg name="layout--mail"}}
+      </a>
+    </div>
+  </div>
+  <div class="header-brand">
+    <div class="header-brand__top">
+      {{> components/image img="logo-sign" ext="png"}}
+    </div>
+    <div class="header-brand__bottom">
+      <div class="header-brand__item">
+        <a href="#" class="header-brand__product">
+          {{> ui/svg name="layout--borey"}}
+          <span class="header-brand__product-name">Borey</span>
+        </a>
+      </div>
+      <div class="header-brand__item">
+        <a href="#" class="header-brand__product">
+          {{> ui/svg name="layout--la8"}}
+          <span class="header-brand__product-name">LA-8</span>
+        </a>
+      </div>
+      <div class="header-brand__item">
+        <a href="#" class="header-brand__link">For owners</a>
+      </div>
+    </div>
   </div>
 </header>
 
 <main class="page__content">
+
