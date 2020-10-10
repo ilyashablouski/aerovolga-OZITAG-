@@ -1,0 +1,10 @@
+.footer-main {
+  padding: 60px 60px 66px;
+  position: relative;
+
+  &__bg {
+    @include fill;
+    z-index: -1;
+    top: auto;
+  }
+}
