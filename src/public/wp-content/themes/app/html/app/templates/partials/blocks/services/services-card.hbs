@@ -1,12 +1,17 @@
 <div class="services-card">
   <div class="services-card__inner">
+    <a class="services-card__link" href={{link}}></a>
     <div class="services-card__left">
-      <div class="services-card__description"></div>
-      <div class="services-card__title"></div>
-      <div class="services-card__text"></div>
+      <span class="services-card__description">{{description}}</span>
+      <span class="services-card__title">{{title}}</span>
+      <p class="services-card__text">{{text}}</p>
     </div>
     <div class="services-card__right">
       <div class="services-card__image">
+        {{> components/image
+          img=img
+          ext='png'
+        }}
       </div>
     </div>
   </div>
