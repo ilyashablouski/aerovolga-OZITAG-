@@ -178,6 +178,18 @@
   }
 }
 
+@mixin desktop-up {
+  @media(max-height: 750px) and (min-width: $tabletMedia + 1) {
+    @content;
+  }
+}
+
+@mixin desktopUp() {
+  @media (min-width: $desktopWidth + 1) {
+    @content;
+  }
+}
+
 @mixin desktop() {
   @media (min-width: $tabletMedia + 1) {
     @content;

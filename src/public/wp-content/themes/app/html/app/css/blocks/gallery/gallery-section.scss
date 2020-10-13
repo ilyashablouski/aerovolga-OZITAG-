@@ -1,0 +1,20 @@
+.gallery-section {
+  margin-top: 100px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &__description{
+    margin-top: 45px;
+    max-width: 720px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+    color: $color-gray-80;
+  }
+
+  &__bottom {
+    margin-top: 25px;
+  }
+}
