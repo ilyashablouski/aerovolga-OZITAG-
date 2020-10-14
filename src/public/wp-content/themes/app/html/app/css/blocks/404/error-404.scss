@@ -1,0 +1,58 @@
+.error-404 {
+  &__title {
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 1.71429px;
+    text-transform: uppercase;
+    color: $color-gray-80;
+  }
+
+  &__subtitle {
+    padding-top: 7.6px;
+    font-size: 34px;
+    line-height: 40px;
+    color: $color-blue-dark-80;
+  }
+
+  &__bottom {
+    margin-top: 55.6px;
+    font-size: 18px;
+    line-height: 32px;
+    color: $color-blue-dark-80;
+  }
+
+  &__text {
+    display: block;
+  }
+
+  &__list {
+    margin-top: 5px;
+  }
+
+  &__item {
+    padding: 5px 0;
+  }
+
+  &__link {
+    position: relative;
+    padding-left: 16px;
+    text-decoration: underline;
+    text-decoration-color: $color-blue-dark-80;
+    transition: all 0.3s linear;
+
+    &:before {
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: $color-blue-dark-80;
+      border-radius: 100%;
+    }
+
+    &:hover {
+      text-decoration-color: transparent;
+    }
+  }
+}
