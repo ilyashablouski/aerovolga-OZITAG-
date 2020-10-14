@@ -1,0 +1,22 @@
+<div class="aircrafts-card">
+  <a class="aircrafts-card__link" href={{link}}></a>
+  <div class="aircrafts-card__inner">
+    <span class="aircrafts-card__category">{{category}}</span>
+    <span class="aircrafts-card__name">{{name}}</span>
+
+    <ul class="aircrafts-card__characteristics">
+      <li class="aircrafts-card__characteristics-item">8 seats in the salon</li>
+      <li class="aircrafts-card__characteristics-item">4000 km range of flight</li>
+      <li class="aircrafts-card__characteristics-item">270 km maximum speed</li>
+    </ul>
+
+    <div class="aircrafts-card__image-wrapper">
+      <div class="aircrafts-card__image">
+        {{> components/image
+          img='aircrafts/aircraft'
+          ext='png'
+        }}
+      </div>
+    </div>
+  </div>
+</div>

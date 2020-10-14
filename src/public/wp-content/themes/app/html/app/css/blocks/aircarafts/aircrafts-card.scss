@@ -1,0 +1,87 @@
+.aircrafts {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-card {
+    position: relative;
+    max-width: 425px;
+    flex: 1 1 425px;
+
+    &__link {
+      @include fill()
+    }
+
+    &__inner {
+      padding: 30px 0;
+
+      &:before {
+        @include fill();
+        content: '';
+        left: 56px;
+        right: 36px;
+        width: auto;
+        background: $color-gray-40;
+        z-index: -1;
+      }
+    }
+
+    &__category {
+      display: block;
+      margin-bottom: 7.6px;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 1.71429px;
+      text-transform: uppercase;
+      color: $color-blue-dark-80;
+    }
+
+    &__name {
+      display: block;
+      font-size: 34px;
+      line-height: 40px;
+      color: $color-blue-dark-80;
+    }
+
+    &__characteristics {
+      margin: 30px 0 0 80px;
+
+      &-item {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 30px;
+        color: $color-blue-dark-80;
+        position: relative;
+        padding-left: 10px;
+
+        &:before {
+          position: absolute;
+          content: '-';
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    &__image {
+      @include fill();
+
+      &-wrapper {
+        margin-top: 30px;
+        width: 100%;
+        padding-bottom: 61.5%;
+        position: relative;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+  }
+}
+
