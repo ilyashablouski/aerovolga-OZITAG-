@@ -1,0 +1,12 @@
+.contacts-section {
+  margin-top: 102px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    margin: 0 -30px;
+  }
+}
