@@ -1,0 +1,17 @@
+<div class="news-card">
+  <div class="news-card__inner">
+    <div class="news-card__top">
+      <div class="news-card__background">
+        {{> components/image
+          img=img
+          ext=ext
+        }}
+      </div>
+      <span class="news-card__date">{{date}}</span>
+    </div>
+    <div class="news-card__description">
+      <span class="news-card__title">{{title}}</span>
+      <p class="news-card__text">{{text}}</p>
+    </div>
+  </div>
+</div>

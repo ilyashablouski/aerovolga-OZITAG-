@@ -4,11 +4,16 @@
 
 {{> layout/header }}
 
-{{>blocks/hero/hero title="Media center" img="/news/hero-bg" ext="png"}}
+{{>blocks/hero/hero title="Media center" img="/news/hero/hero-bg" ext="png"}}
 
 <div class="content__wrapper">
   <div class="container">
-
+    <div class="news-cards">
+      {{>blocks/news/news-card date="November 2017" title="New feature of our EDM for turbo-propeller engine PBS TP100" text="Long-term cooperation between our company and PBS, the Czech manufacturer of turbo-propeller" img="news/news_1" ext="png"}}
+      {{>blocks/news/news-card date="September 2017" title="Delivery LA-8C" text="In February 2017, delivered buyer amphibian LA-8C, serial number 0112" img="news/news_2" ext="png"}}
+      {{>blocks/news/news-card date="May 2017" title="New LA-8C" text="May 12, 2017 regular LA-8C, serial number 009 delivered to the customer to work in the Indian Ocean." img="news/news_3" ext="png"}}
+      {{>blocks/news/news-card date="February 2017" title="Crew showed courage and aircraft rescued crew" text="Scientific-production association (NPO) «AeroVolga» (Krasniy Yar village, Samara region)  is a manufacturer" img="news/news_4" ext="png"}}
+    </div>
   </div>
 </div>
 
