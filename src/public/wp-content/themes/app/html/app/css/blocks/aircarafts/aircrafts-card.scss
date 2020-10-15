@@ -28,6 +28,7 @@
     }
 
     &__model {
+      @include fontGraphikRegular;
       display: block;
       margin-bottom: 7.6px;
       font-size: 12px;
@@ -38,6 +39,7 @@
     }
 
     &__name {
+      @include fontDrukWideMedium;
       display: block;
       font-size: 34px;
       line-height: 40px;

@@ -1,5 +1,6 @@
 .error-404 {
   &__title {
+    @include fontGraphikRegular;
     font-size: 12px;
     line-height: 14px;
     letter-spacing: 1.71429px;
@@ -8,6 +9,7 @@
   }
 
   &__subtitle {
+    @include fontDrukWideMedium;
     padding-top: 7.6px;
     font-size: 34px;
     line-height: 40px;

@@ -30,6 +30,22 @@
   font-weight: 600;
 }
 
+@mixin fontDrukWideMedium() {
+  font-family: 'Druk Wide', -apple-system,
+  'BlickMacSystemFont',
+  'Segoe UI',
+  'Roboto',
+  'Oxygen',
+  'Ubuntu',
+  'Cantarell',
+  'Fira Sans',
+  'Droid Sans',
+  'Helvetica Neue',
+  sans-serif;
+
+  font-weight: 400;
+}
+
 @mixin fontDrukBold() {
   font-family: Druk, -apple-system,
   'BlickMacSystemFont',
@@ -60,4 +76,20 @@
   sans-serif;
 
   font-weight: 900;
+}
+
+@mixin fontGraphikRegular() {
+  font-family: Graphik, -apple-system,
+  'BlickMacSystemFont',
+  'Segoe UI',
+  'Roboto',
+  'Oxygen',
+  'Ubuntu',
+  'Cantarell',
+  'Fira Sans',
+  'Droid Sans',
+  'Helvetica Neue',
+  sans-serif;
+
+  font-weight: 400;
 }

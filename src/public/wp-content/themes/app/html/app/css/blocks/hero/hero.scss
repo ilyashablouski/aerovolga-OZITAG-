@@ -25,6 +25,7 @@
   }
 
   &__title {
+    @include fontDrukWideMedium;
     margin: 0;
     font-size: 70px;
     line-height: 70px;

@@ -58,6 +58,7 @@
   }
 
   &__description {
+    @include fontGraphikRegular;
     display: block;
     font-size: 12px;
     line-height: 14px;
@@ -67,6 +68,7 @@
   }
 
   &__title {
+    @include fontDrukWideMedium;
     display: block;
     margin-top: 8px;
     font-size: 34px;
