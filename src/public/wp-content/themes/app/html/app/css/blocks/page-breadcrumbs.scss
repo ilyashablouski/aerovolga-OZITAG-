@@ -1,0 +1,45 @@
+.page-breadcrumbs {
+  margin-bottom: 19px;
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+    margin-right: 10px;
+    @include fontGraphikRegular;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 1.71429px;
+    text-transform: uppercase;
+    color: $color-gray-90;
+
+    &:after {
+      position: absolute;
+      content: '/';
+      right: 0;
+      top: 0;
+    }
+
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+
+    &:first-child {
+      &:after {
+        display: block;
+      }
+    }
+
+  }
+
+  &__link {
+    padding-right: 16px;
+    transition: all 0.3s linear;
+    &:hover {
+      color: $color-white;
+    }
+  }
+}
