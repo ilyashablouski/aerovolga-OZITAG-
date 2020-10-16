@@ -1,6 +1,17 @@
 .news-single {
   &__content {
     position: relative;
+    padding-bottom: 45px;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 720px;
+      height: 2px;
+      background: $color-blue-dark-100;
+    }
   }
 
   &__date {
