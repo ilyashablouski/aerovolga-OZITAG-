@@ -1,0 +1,14 @@
+.news-block {
+  margin-bottom: 45px;
+  &__title {
+    display: block;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: $color-blue-dark-80;
+  }
+
+  &__content {
+    margin-top: 26.4px;
+  }
+}
