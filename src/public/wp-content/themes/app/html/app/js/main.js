@@ -7,6 +7,7 @@ import './src/utils/scroll-observer';
 import './src/utils/resize-observer';
 import './src/utils/scroll-control';
 import './src/utils/preloader';
+import './src/widgets/accord';
 import './src/utils/vh-hack';
 import './src/utils/mobile-debug';
 

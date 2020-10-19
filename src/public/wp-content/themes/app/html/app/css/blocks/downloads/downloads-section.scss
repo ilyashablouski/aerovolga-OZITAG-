@@ -1,0 +1,11 @@
+.download-section {
+  margin-top: 130px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &__content {
+    margin-top: 60px;
+  }
+}
