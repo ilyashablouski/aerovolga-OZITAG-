@@ -1,0 +1,17 @@
+<div class="gallery-card">
+  <a class="gallery-card__link" href="{{link}}"></a>
+  <div class="gallery-card__inner">
+    <div class="gallery-card__description">
+      <div class="gallery-card__description-inner">
+        <span class="gallery-card__category">{{category}}</span>
+        <span class="gallery-card__title">{{title}}</span>
+      </div>
+    </div>
+    <div class="gallery-card__substrate">
+      {{>components/image ext='png' img=substrate}}
+    </div>
+    <div class="gallery-card__top-layer">
+      {{>blocks/image-fit ext='png' img=top}}
+    </div>
+  </div>
+</div>
