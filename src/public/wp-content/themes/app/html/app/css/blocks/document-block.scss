@@ -1,0 +1,31 @@
+.document-block {
+  position: relative;
+  background: $color-white;
+  border-bottom: 1px solid rgba(159,166,169, 0.3);
+  transition: all 0.3s linear;
+
+  &:hover {
+    background: $color-gray-20;
+  }
+
+  &__link {
+    @include fill();
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    color: $color-blue-dark-80;
+    svg {
+      width: 40px;
+      height: 36px;
+      margin-right: 20px;
+    }
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 44px;
+  }
+}
