@@ -310,5 +310,21 @@
         "content": "loaders"
       }
     ]
-  }
+  },
+  "factory-navbar": [
+    {
+      "label": "About",
+      "url": "./factory.html"
+    },
+    {
+      "label": "History",
+      "url": "./factory-history.html"
+    },        {
+      "label": "Mission",
+      "url": "#"
+    },        {
+      "label": "Vacancy",
+      "url": "./factory-careers.html"
+    }
+  ]
 }

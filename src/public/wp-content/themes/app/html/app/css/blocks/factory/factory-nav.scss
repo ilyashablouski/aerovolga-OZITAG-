@@ -1,0 +1,47 @@
+.factory-nav {
+  margin-bottom: 65px;
+  padding: 6px 0 4px;
+  position: sticky;
+  background: $color-white;
+  top: 0;
+  z-index: 5;
+
+  &__menu {
+    display: flex;
+
+    &-item {
+      position: relative;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 44px;
+      color: $color-gray-90;
+      margin-right: 25px;
+      padding-right: 15px;
+      transition: all 0.3s linear;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        color: $color-blue-dark-100;
+      }
+
+
+      &.active {
+        color: $color-blue-dark-100;
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -4px;
+          height: 2px;
+          width: 100%;
+          background: $color-blue-dark-100;
+          z-index: 4;
+        }
+      }
+    }
+  }
+}
