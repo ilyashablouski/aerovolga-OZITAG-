@@ -1,6 +1,30 @@
 .accordion {
   width: 100%;
 
+  &--vacancy {
+    .accordion__item {
+      margin-bottom: 0;
+      position: relative;
+    }
+    .accordion__top {
+      position: sticky;
+      top: 54px;
+      padding: 21px 20px;
+      border: 1px solid $color-white;
+      border-bottom: 1px solid $color-gray-60;
+      background: $color-white
+    }
+    .accordion__description {
+      &-wrapper {
+        min-height: 110px;
+      }
+      &-container {
+        padding: 60px 0 50px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
   &__item {
     margin-bottom: 15px;
 
@@ -14,15 +38,17 @@
       .accordion__top {
         background: $color-blue-dark-100;
       }
-
       .accordion__title {
         color: $color-white;
       }
-
       .accordion__pointer {
         &:before {
           @include sprite('accordion-close');
         }
+      }
+
+      .vacancy__col {
+        color: $color-white;
       }
     }
   }
