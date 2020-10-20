@@ -244,14 +244,14 @@
   }
 }
 
-@mixin mobile414 {
-  @media(min-width: 414px) and (max-width: $mobileMedia) {
+@mixin mobile480 {
+  @media(max-width: 480px) {
     @content;
   }
 }
 
 @mixin mobile375 {
-  @media(min-width: 375px) and (max-width: 413px) {
+  @media(min-width: 375px) and (max-width: 480px) {
     @content;
   }
 }

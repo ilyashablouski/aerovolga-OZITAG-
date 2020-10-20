@@ -2,6 +2,9 @@
   background: $color-primary;
   color: $color-white;
   margin-left: 240px;
+  @include smallTablet-and-mobile {
+    margin-left: 0px;
+  }
 }
 
 

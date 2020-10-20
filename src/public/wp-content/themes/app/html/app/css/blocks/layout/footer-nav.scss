@@ -1,16 +1,44 @@
 .footer-nav {
   display: flex;
+  @include mobile480 {
+    display: block;
+  }
 
   &__cell {
     flex: 1 1 1px;
     display: flex;
+    @include tablet-and-mobile {
+      flex: 1 1 50%;
+      justify-content: space-between;
+      &:first-child {
+        margin-right: 100px;
+      }
+    }
+    @include mobile {
+      display: block;
+      &:first-child {
+        margin-right: 0;
+      }
+    }
+    @include mobile480 {
+      &:nth-child(2) {
+        margin-top: 57px;
+      }
+    }
   }
 
   &__menu {
     margin-left: 100px;
+    @include mobile {
+      margin: 57px 0 0;
+    }
+
 
     &:first-child {
       margin-left: 0;
+      @include mobile {
+        margin: 0;
+      }
     }
 
     &-title {
@@ -25,7 +53,7 @@
       color: $color-gray-80;
       font-weight: 600;
 
-      .footer-nav__menu-title &{
+      .footer-nav__menu-title & {
         color: $color-white;
       }
     }

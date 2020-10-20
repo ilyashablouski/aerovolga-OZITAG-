@@ -1,14 +1,23 @@
 .footer-bottom {
   margin-top: 140px;
+  @include mobile {
+    margin-top: 65px;
+  }
 
   &__inner {
     display: flex;
+    @include mobile {
+      display: block;
+    }
   }
 
   &__left {
     flex: 1 1 1px;
     display: flex;
     color: #8E9598;
+    @include mobile480 {
+      display: block;
+    }
   }
 
   &__copyright {
@@ -17,11 +26,22 @@
     letter-spacing: 1.71429px;
     text-transform: uppercase;
     color: #8E9598;
+    @include mobile480 {
+      display: block;
+    }
 
     &:not(:first-child) {
       margin-left: 40px;
       padding-left: 40px;
       position: relative;
+      @include tablet-and-mobile {
+        margin-left: 20px;
+        padding-left: 20px;
+      }
+      @include mobile480 {
+        margin: 5px 0 0;
+        padding-left: 0;
+      }
 
       &:before {
         content: '';
@@ -31,6 +51,9 @@
         top: 3px;
         bottom: 0;
         background: #8E9598;
+        @include mobile480 {
+          display: none;
+        }
       }
     }
   }
@@ -42,6 +65,14 @@
     letter-spacing: 1.71429px;
     text-transform: uppercase;
     color: #8E9598;
+    @include tablet-and-mobile {
+      display: flex;
+      justify-content: flex-end;
+    }
+    @include mobile {
+      display: block;
+      margin-top: 47px;
+    }
 
     a {
       color: $color-white;
@@ -50,5 +81,6 @@
         color: #8E9598;
       }
     }
+
   }
 }
