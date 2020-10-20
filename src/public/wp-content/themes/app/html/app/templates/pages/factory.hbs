@@ -8,35 +8,12 @@
 
 <div class="content__wrapper">
   <div class="container">
-    {{>blocks/factory/factory-nav active-page="About"}}
-    <div class="container container--small">
-      {{>blocks/section-title title="The full cycle of aircraft construction - from design to takeoff"}}
+    {{>blocks/factory/components/factory-nav active-page="About"}}
 
-      <h3 class="news-single__subtitle"></h3>
+    {{>blocks/factory/about/01_construction}}
+    {{>blocks/factory/about/02_licenses}}
+    {{>blocks/factory/about/03_other-pages}}
 
-      <div class="news-single__text-wrapper">
-        <p class="news-single__text">Scientific and Production Association "Aerovolga" was founded in 2002. Location:
-          Russia, Samara Region, Krasnoyarsk Territory. Its research and production base includes all the components
-          necessary for modern aviation production, that is, a complete cycle of aircraft construction - from project
-          development, product manufacturing, small aircraft testing and product sales.
-        </p>
-      </div>
-
-      {{>blocks/image-fit ext='png' img="news/news-single/news-1"}}
-      {{>blocks/quote text="The dreams of flying became more accessible. We have created for you a plane, which is for you an indispensable assistant."}}
-
-      <div class="news-single__text-wrapper">
-        <p class="news-single__text">The scientific and production association "Aerovolga" is located: Russia, Samara
-          region, Krasnoyarsk region. Its research and production base includes all the components necessary for modern
-          aviation production, that is, a full cycle of aircraft construction - from the development of a project, the
-          manufacture of a product, the testing of small aircraft and the sale of products.
-        </p>
-      </div>
-    </div>
-    <div class="factory-card__wrapper">
-      {{>blocks/factory/factory-card link="#" title="History of the company" ext="png" img="factory/card/preview_1"}}
-      {{>blocks/factory/factory-card link="#" title="Our mission" ext="png" img="factory/card/preview_1"}}
-    </div>
   </div>
 </div>
 

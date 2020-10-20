@@ -7,126 +7,14 @@
 
 <div class="content__wrapper">
   <div class="container">
-    {{>blocks/factory/factory-nav active-page="History"}}
-    <div class="history-section">
-      {{>blocks/date-title title="2004" center=true}}
-      <div class="history-section__inner">
-        <div class="history-section__left">
-          {{>blocks/factory/history/history-card
-            date="15 November 2004"
-            title="First prototype"
-            text="In 2004, the test pilot M.M. Emanov flew with the first prototype."
-            ext="png"
-            img="history/history_1"
-            description="LA-8 first prototype"
-          }}
-        </div>
-        <div class="history-section__right">
-          {{>blocks/factory/history/history-card
-            reverse=true
-            date="25 November 2004"
-            title="New prototype"
-            text="In 2004, the test pilot M.M. Emanov flew with the new prototype."
-            ext="png"
-            img="history/history_2"
-            description="LA-8 new prototype"
-          }}
-        </div>
-      </div>
-    </div>
+    {{>blocks/factory/components/factory-nav active-page="History"}}
 
-    <div class="history-section">
-      {{>blocks/date-title title="2005" center=true}}
-      <div class="history-section__inner">
-        <div class="history-section__left">
-          {{>blocks/factory/history/history-card
-            date="15 september 2005"
-            title="New modification"
-            text="In 2006, the most promising modification of the 37-series engine: the M-337C with power increased by 25%, with an increased life-time by 20% and with a 15% reduction in specific fuel consumption was installed on the LA-8."
-            ext="png"
-            img="history/history_3"
-            description="Modification of the 37-series"
-          }}
-        </div>
-        <div class="history-section__right">
-          {{>blocks/factory/history/history-card
-            date="20 November 2005"
-            title="New design"
-            text="The design of the aircraft was changed accordingly."
-            ext="png"
-            img="history/history_4"
-            description="New design LA-8"
-            reverse=true
-          }}
-        </div>
-      </div>
-    </div>
+    {{>blocks/factory/history/01_history-04}}
+    {{>blocks/factory/history/02_history-05}}
+    {{>blocks/factory/history/03_history-07}}
+    {{>blocks/factory/history/04_history-08}}
 
-    <div class="history-section">
-      {{>blocks/date-title title="2007" center=true}}
-      <div class="history-section__inner">
-        <div class="history-section__left">
-          {{>blocks/factory/history/history-card
-            date="11 octobet 2007"
-            title="First stage"
-            text="At the end of 2007, at the first stage of the airfield and production complex near the village of Krasny Yar, Samara region, 30 km. from Samara."
-            ext="png"
-            img="history/history_5"
-            description="First stage of the airfield"
-          }}
-          {{>blocks/factory/history/history-card
-            date="11 octobet 2007"
-            title="The capacity"
-            text="The capacity of the first stage is up to 15 aircraft per year, the total capacity (the second and third stages) - up to 100 aircraft per year. The presence of own airfield facilitates flight tests."
-            ext="png"
-            img="history/history_7"
-            description="Flight tests"
-          }}
-        </div>
-        <div class="history-section__right">
-          {{>blocks/factory/history/history-card
-            reverse=true
-            date="17 November 2007"
-            title="A complete course"
-            text="A complete course in the production of aviation technology - from design and research to testing, including flight testing and maintenance."
-            ext="png"
-            img="history/history_6"
-            description="A complete course in the production"
-          }}
-          {{>blocks/factory/history/history-card
-            reverse=true
-            date="17 November 2007"
-            title="New design 2007"
-            text="The design of the aircraft was changed accordingly."
-            ext="png"
-            img="history/history_4"
-            description="New design LA-8"
-          }}
-        </div>
-      </div>
-    </div>
-
-    <div class="history-section">
-      {{>blocks/date-title title="2008" center=true}}
-      <div class="history-section__inner">
-        <div class="history-section__left">
-          {{>blocks/factory/history/history-card
-            date="15 November 2008"
-            title="New engine integration"
-            text="In 2008, the engine Lycoming 540 (235 bp) was integrated. Currently, special versions of the LA-8 are being developed: sanitary, transport, air, administrative. An anti-axial system is constructed."
-            ext="png"
-            img="history/history_8"
-            description="Lycoming 540 (235 bp)"
-          }}
-        </div>
-        <div class="history-section__right"></div>
-      </div>
-    </div>
-
-    <div class="factory-card__wrapper">
-      {{>blocks/factory/factory-card link="#" title="History of the company" ext="png" img="factory/card/preview_1"}}
-      {{>blocks/factory/factory-card link="#" title="Our mission" ext="png" img="factory/card/preview_1"}}
-    </div>
+    {{>blocks/factory/history/05_other-pages}}
   </div>
 </div>
 {{> layout/footer }}

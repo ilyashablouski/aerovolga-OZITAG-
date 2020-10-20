@@ -1,6 +1,10 @@
 .image-with-content {
   margin-bottom: 55px;
 
+  &__wrapper  {
+    margin-top: 50px;
+  }
+
   &__row {
     display: flex;
 
@@ -12,7 +16,6 @@
       }
     }
   }
-
 
   &__image {
     flex: 1 1 600px;
