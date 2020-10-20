@@ -7,8 +7,12 @@
 
 
   &:hover {
-    img {
-      transform: scale(1.08) translate3d(0,0,0);
+    //img {
+    //  transform: scale(1.08) translate3d(0, 0, 0);
+    //}
+
+    .btn__link:before {
+      transform: translate(10px, -50%);
     }
   }
 
@@ -23,6 +27,7 @@
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 1;
   }
 
   &__background {
@@ -39,10 +44,17 @@
   }
 
   &__content {
+    position: relative;
     height: 100%;
     padding: 40px 30px;
     display: flex;
     align-items: flex-end;
+  }
+
+  .btn__link {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
   }
 
   &__title {

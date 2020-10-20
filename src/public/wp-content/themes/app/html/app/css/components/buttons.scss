@@ -1,23 +1,21 @@
 .btn {
-  $color-primary-hover: $color-blue-80;
-  $color-primary-focus: $color-blue-100;
-  $color-primary-active: $color-blue-100;
+  $color-primary-hover: $color-white;
+  $color-primary-focus: $color-blue-dark-80;
+  $color-primary-active: $color-blue-dark-80;
 
-  display: inline-block;
-  padding: #{px-to-em(12)} #{px-to-em(25)};
-  color: $color-primary;
-  font-size: 1rem;
-  line-height: 1.25;
+  padding: 15px;
+  color: $color-white;
+  font-size: 15px;
+  line-height: 19px;
   vertical-align: middle;
   text-align: center;
   border-radius: 3px;
-  border: 1px solid $color-primary;
   cursor: pointer;
-  transition: 0.15s ease-in-out;
+  transition: 0.3s ease-in-out;
 
   &:hover,
   &--hover {
-    color: $color-white;
+    color: $color-blue-dark-80;
     background-color: $color-primary-hover;
     border-color: $color-primary-hover;
   }
@@ -118,17 +116,79 @@
     }
   }
 
-  // Outline
-  &--outline {
+  //Primary
+  &--primary {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
+    padding: 15px 30px 16px;
     color: $color-white;
-    background-color: transparent;
-    border: 1px solid $color-white;
+    background-color: $color-blue-dark-100;
+    border: 1px solid $color-blue-dark-100;
+    border-radius: 2px;
+
 
     &:hover,
     &:focus {
-      color: $color-gray-100;
+      color: $color-blue-dark-80;
       background-color: $color-white;
-      border: 1px solid $color-white;
+      border-color: $color-gray-100;
+    }
+
+    &:active {
+      background: $color-blue-dark-120;
+      background-color: $color-blue-dark-120;
+    }
+  }
+
+  // Outline
+  &--outline {
+    padding: 10px 30px 11px;
+    color: $color-blue-dark-80;
+    background-color: $color-white;
+    border: 1px solid $color-gray-100;
+    border-right: 2px;
+
+    &:hover,
+    &:focus {
+      color: $color-white;
+      background-color: $color-blue-dark-100;
+      border-color: $color-blue-dark-100;
+    }
+  }
+
+  &__link {
+    padding: 0;
+    position: relative;
+    transition: all 0.3s linear;
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: 50%;
+      right: 30px;
+      width: 60px;
+      height: 23px;
+      transform: translateY(-50%);
+      @include sprite('back-white');
+      transition: all 0.25s linear;
+    }
+
+    &--primary {
+      width: 60px;
+      height: 60px;
+      background: $color-gray-40;
+      color: $color-blue-dark-100;
+      &:before {
+        @include sprite('back-white');
+      }
+    }
+
+    &--secondary {
+      width: 60px;
+      height: 60px;
+      background: $color-blue-dark-100;
+      color: $color-white;
     }
   }
 }

@@ -1,11 +1,16 @@
 <div class="image-with-content ">
   <div class="image-with-content__row {{#if reverse}}image-with-content__row--reverse{{/if}}">
     <div class="image-with-content__image">
-      {{>components/image ext="png" img="news/news-single/image-with-content"}}
+      {{>components/image ext=ext img=img}}
     </div>
     <div class="image-with-content__content {{#if large}}image-with-content__content--large{{/if}}">
       <span class="image-with-content__title">{{title}}</span>
       <p class="image-with-content__text">{{text}}</p>
+      {{#if large}}
+        <div class="image-with-content__button">
+          {{>ui/btn color="primary" button=true label="Send your resume"}}
+        </div>
+      {{/if}}
     </div>
   </div>
 </div>
