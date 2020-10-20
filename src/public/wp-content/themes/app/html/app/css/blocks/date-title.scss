@@ -1,0 +1,26 @@
+.date-title {
+  position: relative;
+  @include fontDrukWideMedium;
+  font-size: 34px;
+  line-height: 40px;
+  color: $color-blue-dark-80;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    background: $color-gray-40;
+    z-index: -1;
+  }
+
+  &__wrapper {
+    display: flex;
+
+    &--center {
+      justify-content: center;
+    }
+  }
+}

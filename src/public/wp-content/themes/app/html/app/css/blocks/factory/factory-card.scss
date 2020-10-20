@@ -5,6 +5,7 @@
   position: relative;
   overflow: hidden;
 
+
   &:hover {
     img {
       transform: scale(1.08) translate3d(0,0,0);
@@ -13,6 +14,7 @@
 
   &__wrapper {
     display: flex;
+    margin-top: 100px;
   }
 
   &__link {

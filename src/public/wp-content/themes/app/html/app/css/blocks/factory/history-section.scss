@@ -1,0 +1,31 @@
+.history-section {
+  margin: 0 auto 100px;
+  max-width: 960px;
+  
+  &__inner {
+    display: flex;
+    position: relative;
+    margin-top: 48px;
+    padding: 100px 0;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 100%;
+      background: $color-gray-100;
+    }
+  }
+
+  &__right, &__left {
+    flex: 1 1 50%;
+    max-width: 50%;
+  }
+
+  &__right {
+    margin-top: 211px;
+  }
+}
