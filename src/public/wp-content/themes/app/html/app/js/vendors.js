@@ -9,11 +9,14 @@ import 'lazysizes/plugins/native-loading/ls.native-loading';
 import 'lazysizes/plugins/object-fit/ls.object-fit';
 import svgPolyfill from 'svg4everybody';
 import jquery from 'jquery';
-import swiper from 'swiper';
+import Swiper, { Navigation, Pagination } from "swiper";
 
 window.$ = window.jQuery = jquery;
 window.svg4everybody = svgPolyfill;
-window.Swiper = swiper;
+
+window.Swiper = Swiper;
+Swiper.use([Navigation, Pagination]);
+
 
 lazySizes.cfg.lazyClass = 'lazy';
 lazySizes.cfg.srcAttr = 'data-original';
