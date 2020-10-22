@@ -50,4 +50,23 @@
       }
     }
   }
+
+  &--tick {
+    .list__item {
+      margin-bottom: 16px;
+      padding-left: 50px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 30px;
+      position: relative;
+
+      &:before {
+        position: absolute;
+        content: '';
+        top: 3px;
+        left: -1px;
+        @include sprite('tick');
+      }
+    }
+  }
 }

@@ -1,0 +1,25 @@
+.online-service {
+  margin-top: 45px;
+
+  &__title {
+    @include fontGraphikRegular;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 1.71429px;
+    text-transform: uppercase;
+    color: $color-gray-80;
+  }
+
+  &__middle {
+    margin-top: 54px;
+    max-width: 320px;
+  }
+
+  &__bottom {
+    margin-top: 46px;
+    button {
+      padding: 8px 30px 10px;
+      font-weight: 600;
+    }
+  }
+}

@@ -147,10 +147,9 @@
     color: $color-blue-dark-80;
     background-color: $color-white;
     border: 1px solid $color-gray-100;
-    border-right: 2px;
+    border-radius: 2px;
 
-    &:hover,
-    &:focus {
+    &:hover {
       color: $color-white;
       background-color: $color-blue-dark-100;
       border-color: $color-blue-dark-100;
