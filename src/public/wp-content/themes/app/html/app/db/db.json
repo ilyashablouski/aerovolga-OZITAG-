@@ -336,5 +336,15 @@
       "label": "Press about us",
       "url": "#"
     }
+  ],
+  "downloads-navbar": [
+    {
+      "label": "LA-8",
+      "url": "#la-8"
+    },
+    {
+      "label": "Borey",
+      "url": "#borey"
+    }
   ]
 }
