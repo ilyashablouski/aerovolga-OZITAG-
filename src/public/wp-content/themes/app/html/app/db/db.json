@@ -326,5 +326,15 @@
       "label": "Vacancy",
       "url": "./factory-careers.html"
     }
+  ],
+  "news-navbar": [
+    {
+      "label": "News",
+      "url": "./news.html"
+    },
+    {
+      "label": "Press about us",
+      "url": "#"
+    }
   ]
 }
