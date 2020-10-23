@@ -2,6 +2,13 @@
   position: relative;
   min-height: 840px;
 
+  &--small {
+    min-height: auto;
+    .home-section__inner {
+      padding: 77px 0 61px;
+    }
+  }
+
   &__background {
     @include fill();
     z-index: -1;
@@ -14,7 +21,7 @@
   }
 
   &__inner {
-    padding-top: 69px;
+    padding-top: 77px;
   }
 
   &__container {

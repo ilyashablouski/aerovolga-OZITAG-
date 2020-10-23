@@ -1,6 +1,10 @@
 .production {
   margin-top: 70px;
 
+  @include desktopUp {
+    max-width: 80%;
+  }
+
   &__description {
     display: flex;
     justify-content: flex-end;
