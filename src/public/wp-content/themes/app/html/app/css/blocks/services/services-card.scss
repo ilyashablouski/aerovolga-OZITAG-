@@ -2,6 +2,12 @@
   border-bottom: 1px solid $color-gray-60;
   padding: 60px 0;
 
+  &:hover {
+    .btn__link:before {
+      transform: translate(10px, -50%);
+    }
+  }
+
   &:first-child {
     padding-top: 0;
   }
@@ -70,6 +76,7 @@
   &__title {
     @include fontDrukWideMedium;
     display: block;
+    max-width: 300px;
     margin-top: 8px;
     font-size: 34px;
     line-height: 40px;
@@ -77,9 +84,14 @@
   }
 
   &__text {
-    margin-top: 45px;
+    margin-top: 42px;
     font-size: 18px;
     line-height: 32px;
     color: $color-blue-dark-80;
+  }
+
+  &__btn {
+    margin-top: 40px;
+    padding-left: 30px;
   }
 }

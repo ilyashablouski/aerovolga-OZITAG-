@@ -179,7 +179,7 @@
       background: $color-gray-40;
       color: $color-blue-dark-100;
       &:before {
-        @include sprite('back-white');
+        @include sprite('back-primary');
       }
     }
 

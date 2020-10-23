@@ -9,14 +9,21 @@
     max-width: 455px;
     flex: 1 1 455px;
 
-  &__btn {
-    position: absolute;
-    bottom: 20px;
-    right: 56px;
-  }
+    &:hover {
+      .btn__link:before {
+        transform: translate(10px, -50%);
+      }
+    }
+
+    &__btn {
+      position: absolute;
+      bottom: 20px;
+      right: 56px;
+    }
 
     &__link {
-      @include fill()
+      @include fill();
+      z-index: 2;
     }
 
     &__inner {
