@@ -9,6 +9,7 @@ import './src/utils/scroll-control';
 import './src/utils/preloader';
 import './src/widgets/accord';
 import './src/widgets/certificate-slider';
+import './src/widgets/features-slider';
 import './src/utils/vh-hack';
 import './src/utils/mobile-debug';
 
