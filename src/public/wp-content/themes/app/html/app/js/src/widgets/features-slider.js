@@ -1,4 +1,5 @@
 const configs = {
+  default: {
     speed: 800,
     observer: true,
     observeParents: true,
@@ -11,7 +12,17 @@ const configs = {
     navigation: {
       nextEl: '.features__slider-next',
     },
+    thumbs: {
+      swiper: '.js-features-thumbnail',
+      slideThumbActiveClass: 'active',
+    },
+  },
+  thumbs: {
+    speed: 500,
+    touchRatio: 0.2,
+  },
 };
+
 
 class FeaturesSlider {
   queryElement(componentName) {
@@ -37,7 +48,10 @@ class FeaturesSlider {
     this.nodeElement = nodeElement;
 
     this.rowElement = this.queryElement('row');
+    this.thumbs = this.queryElement('thumbs');
+    console.log(this.thumbs, 'this.thumbs');
     this.textElementRows = this.queryElements('texts');
+
 
     this.initCertificateSlider();
   }
@@ -49,11 +63,29 @@ class FeaturesSlider {
   }
 
   initSlider() {
-    this.swiper = new Swiper(this.rowElement, configs);
+    const galleryThumbs = new Swiper(this.thumbs, {
+      virtualTranslate: true,
+    });
+
+    this.slider = new Swiper(this.rowElement, {
+      speed: 800,
+      spaceBetween: 380,
+      slidesPerView: 1,
+      autoplay: {
+        delay: 3000,
+      },
+      navigation: {
+        nextEl: '.features__slider-next',
+      },
+      thumbs: {
+        swiper: galleryThumbs,
+        slideThumbActiveClass: 'active',
+      },
+    });
   }
 
   getActiveSlideNumber() {
-    return this.swiper.activeIndex + 1;
+    return this.slider.activeIndex + 1;
   }
 
   setVisibleTextElement(visibleIndex) {
@@ -80,7 +112,7 @@ class FeaturesSlider {
   }
 
   bindEvents() {
-    this.swiper.on('slideChange', this.onSwiperSlideChange.bind(this));
+    this.slider.on('slideChange', this.onSwiperSlideChange.bind(this));
   }
 
   static init(elem) {

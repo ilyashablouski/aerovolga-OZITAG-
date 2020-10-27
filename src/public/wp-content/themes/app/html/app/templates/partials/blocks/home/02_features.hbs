@@ -11,10 +11,11 @@
       <div class="home-section__content">
         <div class="features js-features-slider">
           <div class="features__top">
+
             <div class="features__slider">
               <div class="swiper-container js-features-slider__row">
                 <div class="swiper-wrapper">
-                  {{#times 5}}
+                  {{#times 4}}
                     <div class="swiper-slide features__slider-item">
                       {{>components/image img='home/features' ext="png"}}
                     </div>
@@ -22,11 +23,11 @@
                 </div>
                 <button class="features__slider-next"></button>
               </div>
-
             </div>
-            <div class="features__thumbnail">
-              <div class="swiper-container js-features-thumbnail">
-                <div class="swiper-wrapper">
+
+            <div class="features__thumbnail ">
+              <div class="features__thumbnail-wrapper swiper-container js-features-slider__thumbs">
+                <div class="swiper-wrapper features__thumbnail-list">
                   <div class="swiper-slide features__thumbnail-item">
                     <span class="features__thumbnail-text">Сost of ownership</span>
                   </div>
