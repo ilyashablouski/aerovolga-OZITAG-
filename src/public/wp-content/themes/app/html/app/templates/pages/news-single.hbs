@@ -8,8 +8,43 @@
 
 <div class="content__wrapper">
   <div class="container">
-      {{>blocks/news/news-single-content}}
+    {{>blocks/news/news-single-content}}
   </div>
+
+  <div class="news-single__bottom">
+    <div class="news-single__bottom-btn">
+      <a href="./home.html" class="btn__link btn__link--primary"></a>
+    </div>
+
+    <div class="container container--small">
+      <div class="news-single__bottom-share share">
+        <div class="share__description">
+          <div class="share__text"><span>Share this news</span> on your favorite social network</div>
+        </div>
+        <div class="share__social">
+          <div class="share__social-cell">
+            <div class="share__social-item">
+              <a href="#" class="share__social-link"></a>
+              {{>ui/svg name="facebook-share"}}
+            </div>
+          </div>
+          <div class="share__social-cell">
+            <div class="share__social-item">
+              <a href="#" class="share__social-link"></a>
+              {{>ui/svg name="twitter-share"}}
+            </div>
+          </div>
+          <div class="share__social-cell">
+            <div class="share__social-item">
+              <a href="#" class="share__social-link"></a>
+              {{>ui/svg name="google"}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 {{> layout/footer }}

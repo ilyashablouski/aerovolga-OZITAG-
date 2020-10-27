@@ -61,4 +61,24 @@
       }
     }
   }
+
+  &__bottom {
+    margin-top: 100px;
+    position: relative;
+    &-btn {
+      position: absolute;
+      top: 0;
+      left: 60px;
+      .btn__link {
+        transform: rotate(-180deg);
+        display: block;
+      }
+
+      &:hover {
+        .btn__link:before {
+          transform: translate(10px, -50%);
+        }
+      }
+    }
+  }
 }

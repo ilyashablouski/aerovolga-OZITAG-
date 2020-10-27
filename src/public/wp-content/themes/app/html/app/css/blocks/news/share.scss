@@ -1,0 +1,74 @@
+.share {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__description {
+    max-width: 180px;
+    position: relative;
+    padding-top: 24px;
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+
+      width: 60px;
+      height: 2px;
+      background: $color-blue-dark-100;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 22px;
+    color: $color-gray-90;
+
+    span {
+      font-weight: 600;
+      color: $color-blue-dark-70;
+    }
+  }
+
+  &__social {
+    display: flex;
+    margin: 0 -15px;
+
+    &-cell {
+      padding: 0 15px;
+    }
+
+    &-item {
+      position: relative;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 60px;
+      height: 60px;
+      border: 1px solid $color-gray-100;
+      border-radius: 100%;
+      transition: all 0.3s linear;
+
+      &:hover {
+        border-color: $color-blue-dark-120;
+      }
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &-link {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+    }
+  }
+}
