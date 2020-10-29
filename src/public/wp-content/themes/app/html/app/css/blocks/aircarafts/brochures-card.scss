@@ -1,0 +1,120 @@
+.brochures {
+  margin-top: 56px;
+
+  &__list {
+    display: flex;
+    margin: 0 -7px;
+  }
+
+  &__card {
+    position: relative;
+    flex: 1 1 25%;
+    max-width: 25%;
+    padding: 0 7px;
+
+    &:last-child {
+      .brochures__card-top {
+        border: 2px solid $color-blue-dark-100;
+        background: $color-white;
+        padding: 20px;
+      }
+
+      &:hover {
+        .brochures__card-top {
+          &:before, &:after {
+            opacity: 0;
+          }
+
+          .btn__link:before {
+            transform: translate(10px, -50%);
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .brochures__card-top {
+        &:before {
+          opacity: 0.9;
+        }
+
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+
+    &:hover:last-child {
+      .brochures__card-top {
+      }
+    }
+
+    &-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    &-top {
+      position: relative;
+      width: 100%;
+      max-height: 384px;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      &:before {
+        @include fill();
+        content: '';
+        background: $color-blue-dark-100;
+        opacity: 0;
+        transition: all 0.3s linear;
+      }
+
+      &:after {
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 60px;
+        height: 60px;
+        @include sprite('download');
+
+        opacity: 0;
+        transition: all 0.3s linear;
+      }
+    }
+
+    &-bottom {
+      margin-top: 21px;
+    }
+
+    &-title {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 44px;
+      color: $color-blue-dark-100;
+    }
+
+    &-more {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 32px;
+      color: $color-blue-dark-80;
+    }
+
+    &-btn {
+      position: absolute;
+      bottom: 20px;
+      left: 50px;
+    }
+  }
+}

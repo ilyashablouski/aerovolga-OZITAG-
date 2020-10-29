@@ -1,29 +1,3 @@
-const configs = {
-  default: {
-    speed: 800,
-    observer: true,
-    observeParents: true,
-    spaceBetween: 380,
-    slidesPerView: 1,
-    loop: true,
-    autoplay: {
-      delay: 2000,
-    },
-    navigation: {
-      nextEl: '.features__slider-next',
-    },
-    thumbs: {
-      swiper: '.js-features-thumbnail',
-      slideThumbActiveClass: 'active',
-    },
-  },
-  thumbs: {
-    speed: 500,
-    touchRatio: 0.2,
-  },
-};
-
-
 class FeaturesSlider {
   queryElement(componentName) {
     const element = this.nodeElement.querySelector('.js-features-slider__' + componentName);
