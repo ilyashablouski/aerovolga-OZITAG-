@@ -2,5 +2,25 @@
   <div class="container">
     {{#>blocks/title-with-description title="Media"}}
     {{/blocks/title-with-description}}
+
+    <div class="media__content">
+      <div class="media__inner">
+        <div class="swiper-container media__slider js-media-slider">
+          <div class="swiper-wrapper">
+            {{#times 5}}
+              <div class="swiper-slide media__slide">
+                {{>components/image ext="png" img="aircrafts/single/media"}}
+              </div>
+            {{/times}}
+          </div>
+          <button class="media__slider-next"></button>
+          <button class="media__slider-prev"></button>
+        </div>
+        <div class="media__bottom">
+          <span class="media__text">Lightweight composite fuselage</span>
+        </div>
+      </div>
+    </div>
   </div>
+
 </div>
