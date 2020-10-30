@@ -1,4 +1,4 @@
-<div class="section">
+<div class="section section--block">
   <div class="container">
     {{#>blocks/title-with-description title="Color solution for aircraft"}}
       <p class="section__text">The glider is painted in high-quality American colors in white, with the possibility of
@@ -6,5 +6,37 @@
         it from the negative effects of solar radiation
       </p>
     {{/blocks/title-with-description}}
+
+    <div class="color__content js-double-slider">
+      <div class="color__slider">
+        <div class="swiper-container js-double-slider__row">
+          <div class="swiper-wrapper">
+            {{#times 5}}
+              <div class="swiper-slide color__slide">
+                <div class="color__slide-image">
+                  {{>components/image ext='png' img="aircrafts/single/helecopter"}}
+                </div>
+              </div>
+            {{/times}}
+          </div>
+        </div>
+      </div>
+
+      <div class="color__thumbs">
+        <div class="swiper-container js-double-slider__thumbs">
+          <div class="swiper-wrapper">
+            {{#times 5}}
+              <div class="swiper-slide color__thumbs-slide">
+                <div class="color__thumbs-image">
+                  {{>components/image ext='png' img="aircrafts/single/color_1"}}
+                </div>
+              </div>
+            {{/times}}
+          </div>
+          <button class="color__thumbs-next"></button>
+          <button class="color__thumbs-prev"></button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
