@@ -1,0 +1,44 @@
+<div class="section">
+  <div class="container">
+    <div class="reviews">
+      <div class="reviews__inner">
+        <div class="reviews__slider js-double-slider">
+          <div class="swiper-container js-double-slider__row">
+            <div class="swiper-wrapper">
+              {{#times 5}}
+                <div class="swiper-slide reviews__slide">
+                  <div class="reviews__slide-inner">
+                    <div class="reviews__slide-top"></div>
+                    <p class="reviews__slide-text"></p>
+                  </div>
+                </div>
+              {{/times}}
+            </div>
+          </div>
+          <div class="reviews__thumbs">
+            <div class="swiper-container js-double-slider__thumbs">
+              <div class="swiper-wrapper">
+                {{#times 5}}
+                  <div class="swiper-slide reviews__thumbs-slide">
+                    <div class="reviews__thumbs-inner">
+                      <div class="reviews__thumbs-top">
+                        <div class="reviews__thumbs-image">
+                          {{>components/image}}
+                        </div>
+                      </div>
+                      <div class="reviews__thumbs-bottom">
+                        <div class="reviews__thumbs-name"></div>
+                      </div>
+                    </div>
+                  </div>
+                {{/times}}
+              </div>
+              <button class="color__thumbs-next"></button>
+              <button class="color__thumbs-prev"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
