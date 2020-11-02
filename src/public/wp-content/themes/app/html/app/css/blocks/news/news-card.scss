@@ -2,24 +2,54 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 -30px -50px;
+
+  @include tablet-and-mobile {
+    margin: 0 -15px -50px;
+  }
 }
 
 .news-card {
   flex: 1 1 50%;
   max-width: 50%;
   padding: 0 30px 25px;
+  cursor: pointer;
+
+  @include tablet-and-mobile {
+    padding: 0 15px 25px;
+    cursor: default;
+  }
+  @include mobile {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  @include no-smallTablet {
+    &:hover {
+      img {
+        transform: scale(1.1) translate3d(0, 0, 0);
+      }
+      .news-card__description {
+        &:before {
+          animation: description 0.25s linear forwards;
+        }
+      }
+    }
+  }
 
   &--container {
     padding: 0;
     max-width: 100%;
+
     .news-card__date {
       top: 26px;
       left: 32px;
     }
-    .news-card__description{
+
+    .news-card__description {
       transform: translateY(-44px);
       padding: 18px 32px;
     }
+
     .news-card__text {
       margin-top: 7.6px;
     }
@@ -38,11 +68,15 @@
 
   &__background {
     @include fill;
+    overflow: hidden;
+
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: all 0.25s linear;
+      will-change: transform;
     }
   }
 
@@ -55,14 +89,39 @@
     line-height: 14px;
     letter-spacing: 1.71429px;
     text-transform: uppercase;
-    color: $color-white
+    color: $color-white;
+
+    @include mobile {
+      top: 20px;
+      left: 20px;
+    }
   }
 
   &__description {
+    position: relative;
     transform: translateY(-25px);
     margin: 0 30px;
     padding: 26px 30px;
     background: $color-white;
+
+    @include tablet-and-mobile {
+      margin: 0 20px;
+      padding: 20px;
+    }
+    @include mobile {
+      margin: 0 15px;
+    }
+
+    &:before {
+      position: absolute;
+      content: '';
+      height: 10px;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: $color-white;
+      animation: description-down 0.25s linear forwards;
+    }
   }
 
   &__title {
@@ -79,4 +138,13 @@
     line-height: 30px;
     color: $color-gray-80;
   }
+}
+
+@keyframes description {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+@keyframes description-down {
+  from { transform: translateY(-10px); }
+  to { transform: translateY(0); }
 }
