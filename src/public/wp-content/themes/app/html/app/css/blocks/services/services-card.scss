@@ -2,6 +2,10 @@
   border-bottom: 1px solid $color-gray-60;
   padding: 60px 0;
 
+  @include mobile480 {
+    padding: 30px 0;
+  }
+
   &:hover {
     .btn__link:before {
       transform: translate(10px, -50%);
@@ -19,8 +23,10 @@
 
   &__inner {
     display: flex;
-    justify-content: space-between;
     position: relative;
+    @include mobile {
+      flex-direction: column-reverse;
+    }
   }
 
   &__link {
@@ -30,13 +36,24 @@
 
   &__right {
     position: relative;
-    flex: 1 0 600px;
+    flex: 1 1 600px;
     max-width: 600px;
     height: 400px;
+    @include mobile {
+      flex: 1 1 auto;
+      max-width: 100%;
+      height: auto;
+      &:before {
+        display: block;
+        content: '';
+        padding-bottom: 66.67%;
+      }
+    }
   }
 
   &__image {
-   @include fill;
+    @include fill;
+
     img {
       width: 100%;
       height: 100%;
@@ -47,9 +64,19 @@
 
   &__left {
     position: relative;
-    flex: 1 0 410px;
+    flex: 1 1 410px;
     max-width: 410px;
     padding: 21px 0 0 50px;
+    margin-right: 25px;
+
+    @include mobile {
+      padding: 21px 0 0 30px;
+      margin: 20px 25px 0 0;
+      flex: 1 1 auto;
+    }
+    @include mobile320 {
+      padding: 21px 0 0 20px;
+    }
 
     &:before {
       position: absolute;
@@ -60,6 +87,11 @@
       height: 100px;
       background: $color-gray-40;
       z-index: -1;
+
+      @include mobile {
+        width: 60px;
+        height: 60px;
+      }
     }
   }
 
@@ -71,6 +103,11 @@
     letter-spacing: 1.71429px;
     text-transform: uppercase;
     color: $color-gray-80;
+
+    @include mobile480 {
+      font-size: 10px;
+      line-height: 12px;
+    }
   }
 
   &__title {
@@ -81,6 +118,11 @@
     font-size: 34px;
     line-height: 40px;
     color: $color-blue-dark-80;
+
+    @include mobile480 {
+      font-size: 30px;
+      line-height: 36px;
+    }
   }
 
   &__text {
@@ -88,10 +130,24 @@
     font-size: 18px;
     line-height: 32px;
     color: $color-blue-dark-80;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    @include mobile {
+      margin-top: 20px;
+      font-size: 16px;
+      line-height: 30px;
+    }
   }
 
   &__btn {
     margin-top: 40px;
     padding-left: 30px;
+
+    @include mobile {
+      display: none;
+    }
   }
 }
