@@ -6,11 +6,20 @@
   &__cell {
     flex: 0 0 204px;
     margin: 0 2.5px 5px;
+    @include mobile480 {
+      flex: 0 0 50%;
+      margin: 0 0 5px;
+      padding: 0 2.5px;
+    }
   }
 
   &__item {
     width: 204px;
     height: 136px;
+
+    @include mobile480 {
+      width: 100%;
+    }
 
     img {
       width: 100%;

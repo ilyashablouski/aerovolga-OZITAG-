@@ -43,5 +43,9 @@
       font-size: 34px;
       line-height: 50px;
     }
+
+    @include mobile320 {
+      font-size: 30px;
+    }
   }
 }

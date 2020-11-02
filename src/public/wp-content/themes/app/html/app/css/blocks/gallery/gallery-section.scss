@@ -1,8 +1,21 @@
 .gallery-section {
   margin-top: 100px;
 
+  @include tablet-and-mobile {
+    margin-top: 50px;
+  }
+
   &:first-child {
     margin-top: 0;
+  }
+
+  &__top {
+    @include mobile320 {
+      h2 {
+        font-size: 30px;
+        line-height: 36px;
+      }
+    }
   }
 
   &__description{
@@ -12,6 +25,10 @@
     font-size: 18px;
     line-height: 30px;
     color: $color-gray-80;
+
+    @include tablet-and-mobile {
+      margin-top: 20px;
+    }
   }
 
   &__bottom {
