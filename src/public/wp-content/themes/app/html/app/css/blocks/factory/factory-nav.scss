@@ -6,6 +6,10 @@
   top: 0;
   z-index: 10;
 
+  @include mobile {
+    margin-bottom: 32px;
+  }
+
   &__menu {
     display: flex;
 

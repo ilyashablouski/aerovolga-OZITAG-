@@ -4,12 +4,18 @@
   &__list {
     display: flex;
     margin: 0 -7px;
+    flex-wrap: wrap;
+    @include mobile {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
   }
 
   &__card {
     position: relative;
-    flex: 1 1 25%;
-    max-width: 25%;
+    flex: 1 1 274px;
+    max-width: 274px;
+    width: 100%;
     padding: 0 7px;
 
     &:last-child {

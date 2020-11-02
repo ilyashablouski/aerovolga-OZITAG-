@@ -74,6 +74,10 @@
     background: $color-gray-40;
     transition: all 0.3s linear;
 
+    @include mobile {
+      padding: 10px 15px;
+    }
+
     &:hover {
       border: 1px solid $color-blue-dark-100;
     }
@@ -114,12 +118,21 @@
 
     &-wrapper {
       min-height: 140px;
+
+      @include mobile {
+        min-height: 40px;
+      }
     }
 
     &-container {
       padding: 50px 0;
       border-bottom: 2px solid $color-blue-dark-100;
       margin-bottom: 35px;
+
+      @include mobile {
+        padding: 20px 0;
+        margin-bottom: 10px;
+      }
     }
   }
 }
