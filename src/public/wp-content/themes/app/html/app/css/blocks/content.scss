@@ -4,6 +4,10 @@
   margin: 0 auto;
   position: relative;
 
+  @include tablet-and-mobile {
+    padding: 50px 0 100px;
+  }
+
   &--small {
     padding: 40px 0;
   }

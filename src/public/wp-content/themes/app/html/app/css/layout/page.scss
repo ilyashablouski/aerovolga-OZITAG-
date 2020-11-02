@@ -11,6 +11,10 @@
 
   &__header {
     position: relative;
+
+    @include smallTablet-and-mobile {
+      display: none;
+    }
   }
 
   &__content {

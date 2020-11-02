@@ -3,6 +3,14 @@
   padding: 0 60px;
   margin: 0 auto;
 
+   @include tablet-and-mobile {
+     padding: 0 30px;
+   }
+
+  @include mobile {
+    padding: 0 20px;
+  }
+
   &--small {
     max-width: 720px;
     padding: 0;

@@ -1,6 +1,10 @@
 .contacts-section {
   margin-top: 102px;
 
+  @include tablet-and-mobile {
+    margin-top: 50px;
+  }
+
   &:first-child {
     margin-top: 0;
   }
@@ -8,5 +12,12 @@
   &__wrapper {
     display: flex;
     margin: 0 -30px;
+
+    @include tablet-and-mobile {
+      flex-wrap: wrap;
+    }
+    @include mobile {
+      margin: 0;
+    }
   }
 }

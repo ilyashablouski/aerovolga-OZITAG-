@@ -1,5 +1,10 @@
 .page-breadcrumbs {
   margin-bottom: 19px;
+
+  @include mobile {
+    margin-bottom: 0;
+  }
+
   &__list {
     display: flex;
   }
@@ -13,6 +18,13 @@
     letter-spacing: 1.71429px;
     text-transform: uppercase;
     color: $color-gray-90;
+
+
+    @include mobile {
+      margin-right: 8px;
+      font-size: 10px;
+      line-height: 12px;
+    }
 
     &:after {
       position: absolute;
@@ -40,6 +52,10 @@
     transition: all 0.3s linear;
     &:hover {
       color: $color-white;
+    }
+
+    @include mobile {
+      padding-right: 10px;
     }
   }
 }
