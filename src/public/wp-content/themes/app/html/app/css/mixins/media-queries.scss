@@ -202,6 +202,12 @@
   }
 }
 
+@mixin big-tablet() {
+  @media (min-width: 1024px) and (max-width: $tabletMedia) {
+    @content;
+  }
+}
+
 @mixin tablet() {
   @media (min-width: $mobileMedia + 1) and (max-width: $tabletMedia) {
     @content;
