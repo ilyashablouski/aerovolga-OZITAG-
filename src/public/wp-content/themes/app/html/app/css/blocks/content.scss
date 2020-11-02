@@ -13,5 +13,9 @@
   }
   &--big {
     padding: 100px 0 140px;
+
+    @include tablet-and-mobile {
+      padding: 70px 0 110px;
+    }
   }
 }
