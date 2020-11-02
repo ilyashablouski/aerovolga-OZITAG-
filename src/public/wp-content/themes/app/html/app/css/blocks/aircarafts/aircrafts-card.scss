@@ -2,23 +2,52 @@
   &__wrapper {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include mobile {
+      justify-content: center;
+    }
   }
 
   &-card {
     position: relative;
     max-width: 455px;
-    flex: 1 1 455px;
+    flex: 1 1 50%;
 
+    &:nth-child(n+3) {
+      margin-top: 20px;
+    }
+
+    @include mobile {
+      flex: 1 1 55%;
+      &:nth-child(n+2) {
+        margin-top: 30px;
+      }
+    }
+
+  @include no-smallTablet {
     &:hover {
       .btn__link:before {
         transform: translate(10px, -50%);
       }
     }
+  }
+
 
     &__btn {
       position: absolute;
       bottom: 20px;
       right: 56px;
+
+      @include mobile480 {
+        .btn__link {
+          width: 40px;
+          height: 40px;
+          &:before {
+            right: 15px;
+          }
+        }
+      }
     }
 
     &__link {
@@ -37,6 +66,11 @@
         width: auto;
         background: $color-gray-40;
         z-index: -1;
+
+        @include mobile480 {
+          left: 36px;
+          right: 16px;
+        }
       }
     }
 
@@ -57,10 +91,19 @@
       font-size: 34px;
       line-height: 40px;
       color: $color-blue-dark-80;
+
+      @include mobile320 {
+        font-size: 28px;
+        line-height: 34px;
+      }
     }
 
     &__characteristics {
       margin: 26px 0 0 82px;
+
+      @include mobile320 {
+        margin: 26px 0 0 55px;
+      }
 
       &-item {
         font-weight: 600;
