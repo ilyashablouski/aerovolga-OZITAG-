@@ -2,7 +2,7 @@ const configs = {
   speed: 800,
   observer: true,
   observeParents: true,
-  spaceBetween: 10,
+  spaceBetween: 0,
   autoplay: {
     delay: 2000,
   },
@@ -22,6 +22,11 @@ const configs = {
     shadow: false,
   },
 
+  breakpoint: {
+    768:{
+      spaceBetween: 10,
+    }
+  },
 };
 
 class CertificateSlider {

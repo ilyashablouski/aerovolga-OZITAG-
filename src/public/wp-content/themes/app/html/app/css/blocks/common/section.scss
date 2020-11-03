@@ -44,6 +44,10 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 14px;
+    @include mobile {
+      display: block;
+      margin-bottom: 20px;
+    }
 
     &-right {
       max-width: 480px;
@@ -71,6 +75,9 @@
 
     &-wrapper {
       margin-bottom: 50px;
+      @include mobile {
+        margin-bottom: 35px;
+      }
     }
 
     &--small {
@@ -78,6 +85,9 @@
 
       &.section__text-wrapper {
         margin-bottom: 45.6px;
+        @include mobile {
+          margin-bottom: 30px;
+        }
       }
     }
   }

@@ -1,10 +1,20 @@
 .slider {
   position: relative;
   margin-right: -50px;
+  @include tablet-and-mobile {
+    margin-right: -20px;
+  }
+  @include mobile {
+    margin-right: 0;
+  }
 
   &__inner {
     display: flex;
     justify-content: space-between;
+    @include mobile {
+      flex-direction: column-reverse;
+      margin-top: 30px;
+    }
   }
 
   &__left {
@@ -12,12 +22,21 @@
     max-width: 360px;
     width: 100%;
     padding-top: 77px;
+    @include mobile {
+      padding-top: 45px;
+    }
   }
 
   &__right {
     flex: 1 1 300px;
     overflow: hidden;
     padding-right: 59px;
+
+    @include mobile {
+     flex: 1 1 auto;
+      width: 100%;
+      padding-right: 0;
+    }
 
     &:after {
       position: absolute;
@@ -28,6 +47,12 @@
       height: 440px;
       background: $color-gray-40;
       z-index: -1;
+      @include smallTablet-and-mobile {
+        right: 20px;
+      }
+      @include mobile {
+       display: none;
+      }
     }
   }
 
@@ -40,9 +65,7 @@
 
   &__text {
     margin-top: 28px;
-    font-size: 18px;
-    line-height: 32px;
-    color: $color-blue-dark-80;
+    @include section_text_18;
   }
 
   &__item {
@@ -55,6 +78,12 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+    @include mobile {
+      margin: 0;
+      img {
+        object-fit: none;
+      }
     }
   }
 
@@ -85,11 +114,17 @@
     width: 300px;
     position: static;
     overflow: visible;
+    @include mobile {
+      width: auto;
+    }
   }
 
   .swiper-slide {
     transition: transform 0.7s linear;
     opacity: 0;
+    @include mobile {
+      opacity: 1;
+    }
 
     &-active {
       transform: translate3d(0, 0, 0);
@@ -99,6 +134,12 @@
     &-prev {
       transform: translate3d(370px, -56px, 0) !important;
       opacity: 1;
+      @include tablet-and-mobile {
+        transform: translate3d(355px, -56px, 0) !important;
+      }
+      @include mobile {
+        transform: translate3d(0, 0, 0) !important;
+      }
     }
   }
 
@@ -112,6 +153,9 @@
     display: flex;
     align-items: center;
     margin: 0 -5px;
+    @include mobile {
+      bottom: 20px;
+    }
 
     .swiper-pagination-bullet {
       position: relative;
@@ -121,6 +165,10 @@
       background: $color-gray-100;
       transition: all 0.3s linear;
       cursor: pointer;
+
+      @include tablet-and-mobile {
+        cursor: default;
+      }
 
       &:before {
         position: absolute;
@@ -152,6 +200,12 @@
     justify-content: center;
     &:hover {
       background: rgba(159,166,169, 0.3);
+    }
+
+    @include mobile {
+      right: 0px;
+      top: 33%;
+      cursor: default;
     }
 
     svg {

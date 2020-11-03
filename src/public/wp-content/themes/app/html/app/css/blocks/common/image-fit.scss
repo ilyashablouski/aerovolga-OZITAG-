@@ -1,6 +1,9 @@
 .image-fit {
   position: relative;
   margin-bottom: 54.4px;
+  @include mobile {
+    margin-bottom: 35px;
+  }
 
   &:before {
     content: '';
