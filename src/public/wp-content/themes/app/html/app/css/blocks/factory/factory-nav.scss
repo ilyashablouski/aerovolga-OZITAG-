@@ -1,14 +1,19 @@
 .factory-nav {
   margin-bottom: 62px;
-  padding: 7px 0 3px;
+  padding: 7px 60px 3px;
   position: sticky;
   background: $color-white;
   top: 0;
   z-index: 10;
 
+  @include tablet-and-mobile {
+    padding: 0 30px;
+  }
   @include mobile {
+    padding: 0 20px;
     margin-bottom: 32px;
   }
+
 
   &__menu {
     display: flex;

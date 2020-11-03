@@ -7,8 +7,8 @@
 {{>blocks/hero/hero title="Media center" img="/news/news-list/hero/hero-bg" ext="png"}}
 
 <div class="content__wrapper">
+  {{>blocks/factory/components/factory-nav navbar=news-navbar active-page="News"}}
   <div class="container">
-    {{>blocks/factory/components/factory-nav navbar=news-navbar active-page="News"}}
     <div class="news-cards">
       {{>blocks/news/news-card
         date="November 2017"
