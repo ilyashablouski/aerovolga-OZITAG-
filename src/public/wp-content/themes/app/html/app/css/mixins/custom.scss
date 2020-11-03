@@ -36,6 +36,10 @@
   font-weight: 600;
   font-size: 24px;
   line-height: 40px;
+  @include mobile480 {
+    line-height: 34px;
+
+  }
 }
 
 @mixin section_text_18 {

@@ -1,6 +1,15 @@
 .section {
   margin-bottom: 100px;
 
+  @include tablet-and-mobile {
+    margin-bottom: 50px;
+  }
+  @include mobile {
+    .container--small {
+      padding: 0;
+    }
+  }
+
   &--block {
     padding-top: 100px;
     position: relative;
@@ -23,6 +32,12 @@
 
   h2 {
     margin-bottom: 56px;
+    @include tablet-and-mobile {
+      margin-bottom: 36px;
+    }
+    @include mobile480 {
+      margin-bottom: 20px;
+    }
   }
 
   &__row {
@@ -36,29 +51,30 @@
   }
 
   &__subtitle {
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 40px;
+    @include section_subtitle;
     color: $color-blue-dark-80;
 
     &-wrapper {
       margin-bottom: 40px;
+      @include tablet-and-mobile {
+        margin-bottom: 20px;
+      }
+      @include mobile480 {
+        margin-bottom: 15px;
+      }
     }
   }
 
 
   &__text {
-    font-size: 18px;
-    line-height: 32px;
-    color: $color-blue-dark-80;
+    @include section_text_18;
 
     &-wrapper {
       margin-bottom: 50px;
     }
 
     &--small {
-      font-size: 16px;
-      line-height: 28px;
+      @include section_text_16;
 
       &.section__text-wrapper {
         margin-bottom: 45.6px;

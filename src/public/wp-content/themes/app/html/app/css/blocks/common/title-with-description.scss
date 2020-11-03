@@ -1,0 +1,38 @@
+.title-with-description {
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &__title {
+    flex: 1 1 420px;
+    max-width: 420px;
+    margin-right: 30px;
+
+    @include tablet-and-mobile {
+      margin-right: 0;
+    }
+
+    @include mobile {
+      h2 {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__content {
+    flex: 1 1 540px;
+    max-width: 540px;
+    @include tablet-and-mobile {
+      padding-left: 30px;
+    }
+
+    @include mobile {
+      padding-left: 0;
+      margin-bottom: 30px;
+    }
+  }
+}
