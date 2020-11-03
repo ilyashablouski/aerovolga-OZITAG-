@@ -13,6 +13,10 @@
   &__menu {
     display: flex;
 
+    @include mobile {
+      overflow-x: auto;
+    }
+
     &-item {
       position: relative;
       font-weight: 600;
@@ -23,14 +27,18 @@
       padding-right: 15px;
       transition: all 0.3s linear;
 
+      @include desktop {
+        &:hover {
+          color: $color-blue-dark-100;
+        }
+      }
+      @include mobile {
+        margin-right: 10px;
+      }
+
       &:last-child {
         margin-right: 0;
       }
-
-      &:hover {
-        color: $color-blue-dark-100;
-      }
-
 
       &.active {
         color: $color-blue-dark-100;
@@ -44,7 +52,17 @@
           width: 100%;
           background: $color-blue-dark-100;
           z-index: 4;
+
+          @include mobile {
+            bottom: 0;
+          }
         }
+      }
+    }
+
+    &-link {
+      @include tablet-and-mobile {
+          cursor: default;
       }
     }
   }

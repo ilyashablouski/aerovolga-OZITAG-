@@ -7,6 +7,9 @@
   @include tablet-and-mobile {
     padding: 50px 0 100px;
   }
+  @include mobile {
+    padding: 30px 0 70px;
+  }
 
   &--small {
     padding: 40px 0;
