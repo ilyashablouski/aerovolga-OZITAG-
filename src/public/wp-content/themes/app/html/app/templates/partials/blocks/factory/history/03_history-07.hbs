@@ -1,7 +1,7 @@
 <div class="history-section">
   {{>blocks/date-title title="2007" center=true}}
   <div class="history-section__inner">
-    <div class="history-section__left">
+    <div class="history-section__row">
       {{>blocks/factory/history/components/history-card
         date="11 octobet 2007"
         title="First stage"
@@ -11,16 +11,6 @@
         description="First stage of the airfield"
       }}
       {{>blocks/factory/history/components/history-card
-        date="11 octobet 2007"
-        title="The capacity"
-        text="The capacity of the first stage is up to 15 aircraft per year, the total capacity (the second and third stages) - up to 100 aircraft per year. The presence of own airfield facilitates flight tests."
-        ext="png"
-        img="history/history_7"
-        description="Flight tests"
-      }}
-    </div>
-    <div class="history-section__right">
-      {{>blocks/factory/history/components/history-card
         reverse=true
         date="17 November 2007"
         title="A complete course"
@@ -28,6 +18,14 @@
         ext="png"
         img="history/history_6"
         description="A complete course in the production"
+      }}
+      {{>blocks/factory/history/components/history-card
+        date="11 octobet 2007"
+        title="The capacity"
+        text="The capacity of the first stage is up to 15 aircraft per year, the total capacity (the second and third stages) - up to 100 aircraft per year. The presence of own airfield facilitates flight tests."
+        ext="png"
+        img="history/history_7"
+        description="Flight tests"
       }}
       {{>blocks/factory/history/components/history-card
         reverse=true

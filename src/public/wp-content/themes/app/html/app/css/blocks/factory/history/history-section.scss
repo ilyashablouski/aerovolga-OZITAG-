@@ -1,12 +1,18 @@
 .history-section {
   margin: 0 auto 100px;
   max-width: 960px;
-  
+  @include mobile {
+    margin: 0 auto 50px;
+  }
+
   &__inner {
-    display: flex;
     position: relative;
     margin-top: 48px;
     padding: 100px 0;
+
+    @include mobile {
+      padding: 20px 0;
+    }
 
     &:before {
       content: '';
@@ -17,15 +23,40 @@
       width: 1px;
       height: 100%;
       background: $color-gray-100;
+      @include mobile {
+        display: none;
+      }
     }
   }
 
-  &__right, &__left {
-    flex: 1 1 50%;
-    max-width: 50%;
-  }
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
 
-  &__right {
-    margin-top: 211px;
+    .history-card {
+      flex: 1 1 50%;
+      max-width: 50%;
+      &:nth-child(2) {
+        margin-top: 211px;
+      }
+      &:nth-child(2n+3) {
+        margin-top: -122px;
+      }
+    }
+
+    @include mobile {
+      display: block;
+      .history-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-top: 60px;
+        &:nth-child(2) {
+          margin-top: 60px;
+        }
+        &:nth-child(2n+3) {
+          margin-top: 60px;
+        }
+      }
+    }
   }
 }
