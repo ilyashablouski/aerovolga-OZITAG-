@@ -1,17 +1,15 @@
 .gallery-card {
   position: relative;
   margin-top: 70px;
+  @include mobile {
+    margin-top: 40px;
+  }
 
   &:hover {
     .btn__link:before {
       transform: translate(10px, -50%);
     }
   }
-
-  @include mobile {
-    margin-top: 40px;
-  }
-
 
   &:first-child {
     margin-top: 0;
@@ -54,7 +52,6 @@
     @include smallTablet-and-mobile {
       height: 340px;
     }
-
     @include mobile {
       width: 100%;
       height: auto;
@@ -82,11 +79,10 @@
         padding: 34px 37px 50px;
         width: 340px;
       }
-
       @include mobile {
         position: static;
         transform: translateY(0) rotate(0);
-        padding: 20px 37px;
+        padding: 20px;
         height: auto;
       }
     }
@@ -94,24 +90,13 @@
 
   &__category {
     display: block;
-    @include fontGraphikRegular;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 1.71429px;
-    text-transform: uppercase;
-    color: $color-gray-80;
+    @include section_caption;
   }
 
   &__title {
     display: block;
     margin-top: 5px;
-    @include fontDrukWideMedium;
-    font-size: 34px;
-    line-height: 40px;
-    @include mobile {
-      font-size: 28px;
-      line-height: 34px;
-    }
+    @include section_title;
   }
 
   &__substrate {
@@ -153,12 +138,12 @@
     transform: translate(-50%, -50%);
     max-width: 720px;
     width: 50vw;
+
     @include big-tablet {
       left: 67%;
       top: 230px;
       transform: translate(-50%, 0);
     }
-
     @include smallTablet-and-mobile {
       position: static;
       max-width: 100%;

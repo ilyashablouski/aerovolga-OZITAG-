@@ -70,9 +70,9 @@
     align-items: center;
     padding: 13px 19px;
     border: 1px solid $color-gray-40;
-    cursor: pointer;
     background: $color-gray-40;
     transition: all 0.3s linear;
+    cursor: pointer;
 
     @include mobile {
       padding: 10px 15px;
@@ -85,10 +85,7 @@
   }
 
   &__title {
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 32px;
-    color: $color-blue-dark-80;
+    @include section_text_18;
     transition: all 0.3s linear;
   }
 

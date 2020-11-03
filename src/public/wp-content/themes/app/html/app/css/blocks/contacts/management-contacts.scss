@@ -44,9 +44,7 @@
   }
 
   &__person {
-    font-size: 18px;
-    line-height: 32px;
-    color: $color-blue-dark-80;
+    @include section_text_18;
   }
 
   &__name {

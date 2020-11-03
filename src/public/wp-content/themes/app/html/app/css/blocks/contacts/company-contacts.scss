@@ -72,9 +72,7 @@
 
 .address {
   font-style: normal;
-  font-size: 18px;
-  line-height: 32px;
-  color: $color-blue-dark-80;
+  @include section_text_18;
 
   @include mobile {
     line-height: 22px;

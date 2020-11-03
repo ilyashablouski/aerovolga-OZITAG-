@@ -9,22 +9,10 @@
     margin-top: 0;
   }
 
-  &__top {
-    @include mobile320 {
-      h2 {
-        font-size: 30px;
-        line-height: 36px;
-      }
-    }
-  }
-
   &__description{
     margin-top: 45px;
     max-width: 720px;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 30px;
-    color: $color-gray-80;
+    @include section_caption_text;
 
     @include tablet-and-mobile {
       margin-top: 20px;

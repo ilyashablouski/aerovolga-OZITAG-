@@ -91,16 +91,12 @@
     position: absolute;
     top: 30px;
     left: 30px;
-    @include fontGraphikRegular;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 1.71429px;
-    text-transform: uppercase;
+    @include section_caption;
     color: $color-white;
 
     @include mobile {
-      top: 20px;
-      left: 20px;
+      top: 18px;
+      left: 18px;
     }
   }
 
@@ -112,10 +108,12 @@
     background: $color-white;
     @include tablet-and-mobile {
       margin: 0 20px;
-      padding: 20px;
+      padding: 20px 30px;
     }
     @include mobile {
-      margin: 0 15px;
+      margin: 0 18px;
+      padding: 12px 20px;
+
     }
 
     &:before {
@@ -130,17 +128,20 @@
     }
   }
   &__title {
-    font-weight: 600;
-    font-size: 24px;
+    @include section_subtitle;
     line-height: 32px;
     color: $color-blue-dark-80;
   }
   &__text {
     margin-top: 16.6px;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 30px;
-    color: $color-gray-80;
+    @include section_caption_text;
+
+    @include tablet-and-mobile {
+      margin-top: 10px;
+    }
+    @include mobile320 {
+      margin-top: 6px;
+    }
   }
 }
 
