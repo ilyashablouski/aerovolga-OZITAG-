@@ -20,5 +20,8 @@
     @include tablet-and-mobile {
       padding: 70px 0 110px;
     }
+    @include mobile {
+      padding: 60px 0 100px;
+    }
   }
 }

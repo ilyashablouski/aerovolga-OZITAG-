@@ -20,6 +20,16 @@
   @include fontDrukWideMedium;
   font-size: 34px;
   line-height: 40px;
+  color: $color-blue-dark-80;
+  //error
+  @include mobile480 {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  @include mobile320 {
+    font-size: 24px;
+    line-height: 28px;
+  }
 }
 
 @mixin section_subtitle {
@@ -31,6 +41,7 @@
 @mixin section_text_18 {
   font-size: 18px;
   line-height: 32px;
+  color: $color-blue-dark-80;
 }
 
 @mixin section_text_16 {
