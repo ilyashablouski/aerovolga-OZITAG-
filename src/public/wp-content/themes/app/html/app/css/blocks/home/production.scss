@@ -8,6 +8,9 @@
   &__description {
     display: flex;
     justify-content: flex-end;
+    @include mobile {
+      justify-content: flex-start;
+    }
 
     &-quote {
       max-width: 450px;
@@ -24,6 +27,17 @@
         height: 100px;
         background: $color-gray-40;
         z-index: -1;
+      }
+
+      @include tablet-and-mobile {
+        max-width: 340px;
+      }
+      @include mobile {
+        padding: 0;
+        &:before {
+          top: -35px;
+          left: -50px;
+        }
       }
     }
 
@@ -50,9 +64,30 @@
     display: flex;
     justify-content: space-between;
 
+    @include mobile {
+      margin-top: 450px;
+      display: flex;
+      justify-content: flex-start;
+      overflow-x: auto;
+      @include hide-scrollbar;
+    }
+
     &-item {
       flex: 1 1 160px;
       max-width: 160px;
+      @include tablet-and-mobile {
+        flex: 0 0 110px;
+        max-width: 110px;
+      }
+      @include mobile {
+        margin-right: 30px;
+        &:last-child {
+          flex: 0 0 123px;
+          max-width: 123px;
+          margin-right: 0;
+          padding-right: 13px;
+        }
+      }
     }
 
     &-value {
