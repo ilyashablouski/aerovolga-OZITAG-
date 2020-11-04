@@ -45,6 +45,12 @@
     .news-card__description {
       transform: translateY(-44px);
       padding: 18px 32px;
+      @include tablet-and-mobile {
+        padding: 20px 30px;
+      }
+      @include mobile {
+        padding: 12px 20px;
+      }
     }
 
     .news-card__text {
@@ -113,7 +119,6 @@
     @include mobile {
       margin: 0 18px;
       padding: 12px 20px;
-
     }
 
     &:before {

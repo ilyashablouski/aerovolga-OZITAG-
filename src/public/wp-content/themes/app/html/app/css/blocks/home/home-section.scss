@@ -4,8 +4,15 @@
 
   &--small {
     min-height: auto;
+
     .home-section__inner {
       padding: 77px 0 61px;
+      @include tablet-and-mobile {
+        padding: 100px 0;
+      }
+      @include mobile {
+        padding: 60px 0;
+      }
     }
   }
 
@@ -26,6 +33,13 @@
 
   &__container {
     margin: 0 60px;
+    @include tablet-and-mobile {
+      margin: 0 20px;
+    }
+    @include mobile {
+      margin: 0 13px;
+    }
+
     &--small {
       margin: 0 80px 0 120px;
     }

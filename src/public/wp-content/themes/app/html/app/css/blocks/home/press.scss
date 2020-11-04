@@ -4,12 +4,21 @@
     overflow-x: auto;
     overflow-y: hidden;
     padding-bottom: 20px;
+    @include tablet-and-mobile {
+      margin-right: -20px;
+    }
+    @include mobile {
+      margin-right: -13px;
+    }
   }
 
   &__list {
     display: flex;
     flex-wrap: nowrap;
     margin: 0 0 -50px -30px;
+    @include mobile {
+      margin: 0 0 -50px -13.5px;
+    }
 
     &-cell {
       flex: 0 0 420px;
@@ -21,6 +30,24 @@
         max-width: 480px;
         margin-right: 0;
         padding-right: 60px;
+
+      }
+      @include tablet-and-mobile{
+        &:last-child {
+          flex: 0 0 440px;
+          max-width: 440px;
+          padding-right: 20px;
+        }
+      }
+      @include mobile {
+        flex: 0 0 86vw;
+        max-width: 86vw;
+        margin: 0 13.5px;
+        &:last-child {
+          flex: 0 0 calc(86vw + 13px);
+          max-width: calc(86vw + 13px);
+          padding-right: 13px;
+        }
       }
     }
   }
