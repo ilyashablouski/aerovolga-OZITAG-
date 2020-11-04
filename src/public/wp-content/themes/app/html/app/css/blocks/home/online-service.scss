@@ -1,5 +1,11 @@
 .online-service {
   margin-top: 45px;
+  @include tablet-and-mobile {
+    margin-top: 47px;
+  }
+  @include mobile {
+    margin-top: 34px;
+  }
 
   &__title {
     @include fontGraphikRegular;
@@ -13,10 +19,22 @@
   &__middle {
     margin-top: 54px;
     max-width: 320px;
+    @include tablet-and-mobile {
+      margin-top: 56px;
+    }
+    @include mobile {
+      margin-top: 40px;
+    }
   }
 
   &__bottom {
     margin-top: 46px;
+    @include tablet-and-mobile {
+      margin-top: 43px;
+    }
+    @include mobile {
+      margin-top: 49px;
+    }
     button {
       padding: 8px 30px 10px;
       font-weight: 600;

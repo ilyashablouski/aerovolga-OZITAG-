@@ -60,12 +60,24 @@
       line-height: 30px;
       position: relative;
 
+      @include mobile {
+        padding-left: 33px;
+      }
+
       &:before {
         position: absolute;
         content: '';
         top: 3px;
         left: -1px;
         @include sprite('tick');
+
+        @include tablet-and-mobile {
+          top: 0;
+        }
+        @include mobile {
+          top: 6px;
+          @include sprite('tick-small');
+        }
       }
     }
   }
