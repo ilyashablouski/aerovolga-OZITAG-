@@ -38,12 +38,19 @@ class FeaturesSlider {
 
   initSlider() {
     const galleryThumbs = new Swiper(this.thumbs, {
-      virtualTranslate: true,
+      slidesPerView: 'auto',
+      breakpoints: {
+        767: {
+          slidesPerView: 1,
+        },
+        1024: {
+          virtualTranslate: true,
+        }
+      }
     });
 
     this.slider = new Swiper(this.rowElement, {
       speed: 800,
-      spaceBetween: 380,
       slidesPerView: 1,
       autoplay: {
         delay: 3000,
@@ -55,6 +62,14 @@ class FeaturesSlider {
         swiper: galleryThumbs,
         slideThumbActiveClass: 'active',
       },
+      breakpoints: {
+        767: {
+          spaceBetween: 5,
+        },
+        1024: {
+          spaceBetween: 380,
+        }
+      }
     });
   }
 

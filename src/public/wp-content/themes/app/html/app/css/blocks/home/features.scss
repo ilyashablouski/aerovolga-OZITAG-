@@ -1,9 +1,24 @@
 .features {
   margin-top: 71px;
+  @include tablet-and-mobile {
+    margin-top: 41px;
+  }
+  @include mobile {
+    margin-top: 27px;
+  }
 
   &__top {
     margin-right: -60px;
     position: relative;
+
+    @include tablet-and-mobile {
+      margin-right: -20px;
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    @include mobile {
+      margin-right: -13px;
+    }
   }
 
   &__slider {
@@ -16,6 +31,9 @@
       overflow: visible;
       margin: 0;
       position: static;
+      @include mobile {
+        max-width: 83.75vw;
+      }
     }
 
     .swiper-wrapper {
@@ -42,6 +60,10 @@
       max-height: 400px;
       transition: all 0.3s linear;
 
+      @include mobile {
+        width: 83.75vw !important;
+      }
+
       &:before {
         content: '';
         display: block;
@@ -58,6 +80,10 @@
 
   &__bottom {
     margin-top: 40px;
+
+    @include mobile {
+      margin-top: 30px;
+    }
   }
 
   &__description {
@@ -67,6 +93,13 @@
     width: 100%;
     position: relative;
     overflow: hidden;
+    @include tablet-and-mobile {
+      margin: 0 52px;
+    }
+    @include mobile {
+      margin: 0 17px;
+      max-width: 83.75vw;
+    }
 
     &-inner {
       width: 100%;
@@ -101,6 +134,14 @@
     width: 360px;
     background: $color-white;
     z-index: 5;
+    @include tablet-and-mobile {
+      padding: 0 0 38px 50px;
+      position: static;
+      width: auto;
+    }
+    @include mobile {
+      padding: 0 0 38px 17px;
+    }
 
     &.swiper-container {
       position: absolute;
@@ -108,11 +149,21 @@
       height: auto;
       overflow: hidden;
       margin: 0;
+      @include tablet-and-mobile {
+        max-width: 100%;
+        overflow: visible;
+      }
+      @include mobile {
+        overflow-x: auto;
+      }
     }
 
     &-list {
       display: flex;
       flex-direction: column;
+      @include tablet-and-mobile {
+        flex-direction: row;
+      }
     }
 
     &-item {
@@ -121,9 +172,21 @@
       margin-bottom: 11px;
       padding-bottom: 5px;
       height: auto !important;
+      @include tablet-and-mobile {
+        margin: 0 32px 0 0;
+        width: auto !important;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      @include mobile {
+        &:last-child {
+          padding-right: 13px;
+        }
+      }
 
       &.active {
-        .features__thumbnail-text{
+        .features__thumbnail-text {
           color: $color-blue-dark-100;
         }
 
@@ -149,6 +212,9 @@
 
     &-btn {
       margin-top: 45px;
+      @include tablet-and-mobile {
+        display: none;
+      }
     }
   }
 }
