@@ -73,6 +73,10 @@
       width: 100%;
       height: 384px;
 
+      @include mobile {
+        height: 146px;
+      }
+
       img {
         width: 100%;
         height: 100%;

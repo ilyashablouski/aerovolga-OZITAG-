@@ -14,6 +14,7 @@ import './src/widgets/certificate-slider';
 import './src/widgets/features-slider';
 import './src/widgets/media-slider';
 import './src/widgets/double-slider';
+import './src/widgets/toggle-menu';
 import './src/widgets/preview';
 import './src/utils/vh-hack';
 import './src/utils/mobile-debug';

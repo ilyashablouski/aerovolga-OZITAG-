@@ -1,7 +1,7 @@
 <header class="header page__header">
   <div class="header-main">
     <div class="header-main__top">
-      <button class="header-main__burger">
+      <button class="header-main__burger js-toggle-menu">
         <i></i>
       </button>
     </div>
@@ -12,6 +12,51 @@
       <a href="#" class="header-main__contact">
         {{> ui/svg name="layout--mail"}}
       </a>
+    </div>
+  </div>
+  <div class="header-nav js-menu">
+    <div class="header-nav-inner">
+      <div class="header-nav__top">
+        <nav class="header-menu">
+          <div class="header-menu__item active">
+            <a href="#" class="header-menu__link">Home</a>
+          </div>
+          <div class="header-menu__item">
+            <a href="#" class="header-menu__link">Aircrafts</a>
+          </div>
+          <div class="header-menu__item">
+            <a href="#" class="header-menu__link">Services</a>
+          </div>
+          <div class="header-menu__item">
+            <a href="#" class="header-menu__link">Factory</a>
+          </div>
+          <div class="header-menu__item">
+            <a href="#" class="header-menu__link">Contact us</a>
+          </div>
+        </nav>
+      </div>
+      <div class="header-nav__bottom">
+        <nav class="header-submenu">
+          <div class="header-submenu__item">
+            <a href="#" class="header-submenu__link">Media center</a>
+          </div>
+          <div class="header-submenu__item">
+            <a href="#" class="header-submenu__link">Gallery</a>
+          </div>
+          <div class="header-submenu__item">
+            <a href="#" class="header-submenu__link">Downloads</a>
+          </div>
+          <div class="header-submenu__item">
+            <a href="#" class="header-submenu__link">For owners</a>
+          </div>
+        </nav>
+      </div>
+      <div class="header-nav__search">
+        <div class="header-submenu__item">
+          <a href="#" class="header-submenu__link">Search</a>
+        </div>
+
+      </div>
     </div>
   </div>
   <div class="header-brand">
