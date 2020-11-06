@@ -2,18 +2,21 @@
   position: fixed;
   top: 0;
   bottom: 0;
-  width: 520px;
+  width: calc(100vw - 80px);
   left: 80px;
-  background: $color-white;
   z-index: 20;
   transform: translatex(-100%);
-  transition: all 0.3s linear;
+  transition: all 0.3s linear, background-color 0s linear;
 
   &.active {
     transform: translatex(0);
+    background: rgba(18, 43, 54, 0.5);
+    transition: transform 0.3s linear, background-color 0.2s linear 0.3s;
   }
 
   &-inner {
+    width: 520px;
+    background: $color-white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

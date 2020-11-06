@@ -8,12 +8,17 @@ class ToggleMenu {
 
   addEvents() {
     this.toggleMenu.addEventListener('click', () => {
+
       if (this.toggleMenu.classList.contains('active')) {
         this.removeActive(this.toggleMenu);
         this.removeActive(this.menu);
+
+        document.body.style.overflow = 'auto';
       } else {
         this.setActive(this.toggleMenu);
         this.setActive(this.menu);
+
+        document.body.style.overflow = 'hidden';
       }
     });
   }

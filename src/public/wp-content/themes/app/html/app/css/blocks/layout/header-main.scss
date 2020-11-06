@@ -24,10 +24,52 @@
     width: 40px;
     height: 16px;
 
+    &.active {
+      i {
+        width: 70%;
+        background: $color-white;
+
+        &:after {
+          width: 54px;
+          transform: rotate(-45deg);
+          bottom: 0;
+        }
+
+        &:before {
+          width: 54px;
+          transform: rotate(45deg);
+          top: 0;
+        }
+      }
+      &:hover {
+        i {
+          &:before {
+            top: 0;
+          }
+
+          &:after {
+            bottom: 0;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      i {
+        &:before {
+          top: -10px;
+        }
+
+        &:after {
+          bottom: -10px;
+        }
+      }
+    }
+
     i {
       height: 2px;
       background: $color-primary;
-      transition: all .25s ease-in-out;
+      transition: all .25s ease-in-out, color .2s ease-in-out;
       width: 40px;
       display: block;
       position: relative;
@@ -38,17 +80,17 @@
         height: 2px;
         background: $color-primary;
         position: absolute;
-        transition: all .25s ease-in-out;
+        transition: all .15s ease-in-out;
         left: 0;
         right: 0;
       }
 
       &:before {
-        top: -5px;
+        top: -7px;
       }
 
       &:after {
-        bottom: -5px;
+        bottom: -7px;
       }
     }
   }
