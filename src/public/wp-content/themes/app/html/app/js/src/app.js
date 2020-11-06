@@ -8,6 +8,7 @@ class App {
       this.initLibs();
       this.initModules();
     });
+
     document.documentElement.addEventListener('touchstart', e => {
       if (e.touches.length > 1) e.preventDefault();
     });
@@ -20,6 +21,7 @@ class App {
   initModules () {
     disablingPreloader();
   }
+
 }
 
 const app = new App();
