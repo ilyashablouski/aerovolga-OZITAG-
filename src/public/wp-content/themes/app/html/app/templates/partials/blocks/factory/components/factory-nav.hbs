@@ -1,4 +1,4 @@
-<nav class="factory-nav">
+<nav class="factory-nav {{#if anchor}}factory-nav--anchor{{/if}}">
   <ul class="factory-nav__menu">
     {{#each navbar}}
       <li class="factory-nav__menu-item {{#ifCond label ../active-page}}active{{/ifCond}}">

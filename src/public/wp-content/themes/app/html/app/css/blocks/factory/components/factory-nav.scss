@@ -14,6 +14,19 @@
     margin-bottom: 32px;
   }
 
+  &--anchor {
+    margin-bottom: 48px;
+    .factory-nav__menu-item {
+      font-size: 20px;
+      color: $color-blue-dark-100;
+      @include desktop {
+        &:hover {
+          color: $color-gray-90;
+        }
+      }
+    }
+  }
+
 
   &__menu {
     display: flex;
