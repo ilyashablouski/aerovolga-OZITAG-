@@ -19,6 +19,10 @@
         background: $color-gray-20;
         border: 1px solid $color-gray-20;
         border-bottom: 1px solid $color-gray-60;
+
+        .accordion__pointer {
+          opacity: 0.55;
+        }
       }
     }
 
@@ -83,6 +87,9 @@
 
     &:hover {
       border: 1px solid $color-blue-dark-100;
+      .accordion__pointer {
+        opacity: 0.55;
+      }
     }
 
   }
@@ -99,6 +106,7 @@
     align-items: center;
     width: 20px;
     height: 20px;
+    transition: all 0.3s ease-in-out;
 
     &:before {
       content: '';
