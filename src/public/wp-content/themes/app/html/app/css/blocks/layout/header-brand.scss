@@ -10,12 +10,19 @@
 
   @include smallTablet-and-mobile {
     position: static;
+    flex: 0 0 130px;
+  }
+  @include mobile {
+    flex: 0 0 90px;
   }
 
   &__top {
     margin-top: 60px;
     display: flex;
     justify-content: center;
+    @include smallTablet-and-mobile {
+      display: none;
+    }
   }
 
   &__bottom {
@@ -23,10 +30,41 @@
     text-align: center;
     color: $color-white;
     padding: 0 9px;
+    @include smallTablet-and-mobile {
+      margin: 0;
+      display: flex;
+      height: 100%;
+    }
   }
 
   &__item {
     box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.1);
+
+    @include smallTablet-and-mobile {
+      flex: 1 1 50%;
+      max-width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:first-child {
+        position: relative;
+        &:before {
+          position: absolute;
+          top: 0;
+          right: -0.5px;
+          content: '';
+          width: 1px;
+          height: 100%;
+          background-color: #5E5E5E;
+        }
+      }
+
+      &:nth-child(n + 3) {
+        display: none;
+      }
+    }
   }
 
   &__product {

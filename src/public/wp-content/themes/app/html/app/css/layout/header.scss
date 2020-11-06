@@ -9,5 +9,9 @@
   background: $color-primary;
   @include smallTablet-and-mobile {
     position: static;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
   }
 }

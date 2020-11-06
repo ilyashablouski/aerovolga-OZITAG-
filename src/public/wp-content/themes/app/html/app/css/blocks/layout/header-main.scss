@@ -11,13 +11,21 @@
   flex-direction: column;
 
   @include smallTablet-and-mobile {
+    width: 100vw;
     position: static;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 17px 20px 18px;
   }
 
   &__top {
     padding-top: 32px;
     display: flex;
     justify-content: center;
+    @include smallTablet-and-mobile {
+      padding-top: 0;
+    }
   }
 
   &__burger {
@@ -101,6 +109,10 @@
     display: flex;
     justify-content: center;
     margin-top: auto;
+
+    @include smallTablet-and-mobile{
+      display: none;
+    }
   }
 
   &__logo {
@@ -108,6 +120,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @include smallTablet-and-mobile {
+     display: none;
+    }
   }
 
   &__contact {
