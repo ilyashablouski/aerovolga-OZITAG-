@@ -13,12 +13,23 @@
   max-width: 50%;
   padding: 0 30px 25px;
 
+  &:nth-child(n+3) {
+    margin-top: -30px;
+  }
+
   @include tablet-and-mobile {
     padding: 0 15px 25px;
+    &:nth-child(n+3) {
+      margin-top: -20px;
+    }
+
   }
   @include mobile {
     flex: 1 1 100%;
     max-width: 100%;
+    &:nth-child(n+3) {
+      margin-top: 0;
+    }
   }
 
   &--container {
@@ -112,17 +123,19 @@
 
   &__description {
     position: relative;
-    transform: translateY(-25px);
+    transform: translateY(-56px);
     margin: 0 30px;
     padding: 26px 30px;
     background: $color-white;
     @include tablet-and-mobile {
       margin: 0 20px;
       padding: 20px 30px;
+      transform: translateY(-44px);
     }
     @include mobile {
       margin: 0 18px;
       padding: 12px 20px;
+      transform: translateY(-25px);
     }
 
     &:before {
