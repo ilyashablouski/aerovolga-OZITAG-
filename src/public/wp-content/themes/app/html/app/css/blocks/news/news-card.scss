@@ -56,6 +56,7 @@
         img {
           transform: scale(1.1) translate3d(0, 0, 0);
         }
+
         .news-card__description {
           &:before {
             animation: description 0.25s linear forwards;
@@ -67,6 +68,7 @@
       cursor: default;
     }
   }
+
   &__link {
     position: absolute;
     top: 0;
@@ -81,6 +83,7 @@
     width: 100%;
     padding-bottom: 66.7%;
   }
+
   &__background {
     @include fill;
     overflow: hidden;
@@ -93,6 +96,7 @@
       will-change: transform;
     }
   }
+
   &__date {
     position: absolute;
     top: 30px;
@@ -132,11 +136,16 @@
       animation: description-down 0.25s linear forwards;
     }
   }
+
   &__title {
     @include section_subtitle;
     line-height: 32px;
     color: $color-blue-dark-80;
+    @include mobile480 {
+      line-height: 32px;
+    }
   }
+
   &__text {
     margin-top: 16.6px;
     display: -webkit-box;
@@ -156,11 +165,19 @@
 }
 
 @keyframes description {
-  from { transform: translateY(0); }
-  to { transform: translateY(-10px); }
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes description-down {
-  from { transform: translateY(-10px); }
-  to { transform: translateY(0); }
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
