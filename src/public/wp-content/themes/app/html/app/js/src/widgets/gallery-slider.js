@@ -1,12 +1,16 @@
 const configs = {
   speed: 600,
-  loop: true,
   autoplay: {
     delay: 2000,
   },
   navigation: {
-    nextEl: '.media__slider-next',
-    prevEl: '.media__slider-prev'
+    nextEl: '.gallery-slider__next',
+    prevEl: '.gallery-slider__prev'
+  },
+  pagination: {
+    el: '.gallery-slider__pagination',
+    type: 'bullets',
+    clickable: true,
   },
   effect: 'coverflow',
   coverflowEffect: {
@@ -19,7 +23,7 @@ const configs = {
 
 };
 
-class MediaSlider {
+class GallerySlider {
   constructor(nodeElement) {
     this.nodeElement = nodeElement;
 
@@ -35,13 +39,13 @@ class MediaSlider {
   }
 
   static init(elem) {
-    new MediaSlider(elem);
+    new GallerySlider(elem);
   }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const slider = document.querySelectorAll('.js-media-slider');
+  const slider = document.querySelectorAll('.js-gallery-slider');
   slider.forEach(item => {
-    MediaSlider.init(item);
+    GallerySlider.init(item);
   });
 });

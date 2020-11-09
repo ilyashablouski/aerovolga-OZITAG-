@@ -1,10 +1,10 @@
 class Accord {
-  constructor (item) {
+  constructor(item) {
     this.accord = item;
     this.addEvents();
   }
 
-  addEvents () {
+  addEvents() {
     this.accord.querySelector('.accordion__top').addEventListener('click', () => {
       if (this.accord.classList.contains('active')) {
         this.removeActive(this.accord);
@@ -20,17 +20,23 @@ class Accord {
     });
   }
 
-  setActive (elem) {
+  setActive(elem) {
     elem.classList.add('active');
-    elem.querySelector('.accordion__description').style.maxHeight = elem.querySelector('.accordion__description-wrapper').scrollHeight + "px";
+    elem.querySelector('.accordion__description').style.maxHeight = elem.querySelector('.accordion__description-wrapper').scrollHeight + 'px';
+
+    setTimeout(() => {
+      elem.querySelector('.accordion__description').style.overflow = 'visible';
+    }, 350);
   }
 
-  removeActive (elem) {
+  removeActive(elem) {
     elem.classList.remove('active');
-    elem.querySelector('.accordion__description').style.maxHeight = "0px";
+    elem.querySelector('.accordion__description').style.maxHeight = '0px';
+
+    elem.querySelector('.accordion__description').style.overflow = 'hidden';
   }
 
-  static init (elem) {
+  static init(elem) {
     new Accord(elem);
   }
 }

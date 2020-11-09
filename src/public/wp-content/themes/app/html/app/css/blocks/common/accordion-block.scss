@@ -41,6 +41,17 @@
     }
   }
 
+  &--characteristics {
+    margin-top: 27px;
+    .accordion__description-container {
+      padding: 0 0 10px;
+      margin-bottom: 0;
+    }
+    .accordion__description-wrapper {
+      min-height: 80px;
+    }
+  }
+
   &__item {
     margin-bottom: 15px;
 

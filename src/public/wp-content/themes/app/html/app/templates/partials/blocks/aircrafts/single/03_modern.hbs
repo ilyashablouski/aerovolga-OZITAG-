@@ -15,7 +15,21 @@
   </div>
 
   <div class="container">
-    {{>blocks/image-fit ext='png' img="/aircrafts/single/modern_1"}}
+
+    <div class="gallery-slider__wrapper">
+      <div class="swiper-container gallery-slider js-gallery-slider">
+        <div class="swiper-wrapper">
+          {{#times 5}}
+            <div class="swiper-slide gallery-slide">
+              {{>components/image ext="png" img="aircrafts/single/media"}}
+            </div>
+          {{/times}}
+        </div>
+        <button class="gallery-slider__next"></button>
+        <button class="gallery-slider__prev"></button>
+        <div class="gallery-slider__pagination"></div>
+      </div>
+    </div>
 
     <div class="stats">
       <div class="stats__inner">
