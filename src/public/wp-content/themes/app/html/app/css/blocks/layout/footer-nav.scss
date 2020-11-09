@@ -43,6 +43,7 @@
 
     &-title {
       margin-bottom: 20px;
+      transition: all 0.2s linear;
     }
 
     &-item {
@@ -52,9 +53,23 @@
     &-link {
       color: $color-gray-80;
       font-weight: 600;
+      transition: all 0.2s linear;
+
+      @include desktop {
+        &:hover {
+          color: $grayish-blue;
+        }
+      }
 
       .footer-nav__menu-title & {
         color: $color-white;
+        transition: all 0.2s linear;
+        
+        @include desktop {
+          &:hover {
+            color: $grayish-blue;
+          }
+        }
       }
     }
   }

@@ -13,6 +13,7 @@
   @include smallTablet-and-mobile {
     width: 100vw;
     position: static;
+    bottom: auto;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;

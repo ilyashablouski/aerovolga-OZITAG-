@@ -4,13 +4,15 @@
   right: 0;
   top: 0;
   bottom: 0;
-
   display: flex;
   flex-direction: column;
 
   @include smallTablet-and-mobile {
     position: static;
     flex: 0 0 130px;
+    background: $color-primary;
+    transform: translateX(-100%);
+    transition: all 0.3s linear;
   }
   @include mobile {
     flex: 0 0 90px;
