@@ -1,0 +1,38 @@
+.modifications__table {
+  &-row {
+    margin-bottom: 4px;
+    display: flex;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-col {
+    flex: 0 0 144px;
+    max-width: 144px;
+    color: $color-blue-dark-80;
+
+    &:nth-child(2) {
+      flex: 1 1 auto;
+      max-width: 100%;
+
+      display: flex;
+      align-items: center;
+      padding-left: 36px;
+    }
+  }
+
+  &-label {
+    display: block;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 44px;
+  }
+
+  &-value {
+    display: block;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
