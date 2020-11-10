@@ -1,0 +1,34 @@
+.person {
+  font-size: 18px;
+  line-height: 24px;
+  color: $color-blue-dark-80;
+
+  &__name {
+    display: block;
+    font-weight: 600;
+  }
+
+  &__description {
+    display: block;
+  }
+
+  &__phone {
+    &-block {
+      margin-top: 30px;
+    }
+
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 32px;
+  }
+
+  &__mail {
+    &-block {
+      margin-top: 16px;
+    }
+
+    font-size: 18px;
+    line-height: 30px;
+    text-decoration-line: underline;
+  }
+}
