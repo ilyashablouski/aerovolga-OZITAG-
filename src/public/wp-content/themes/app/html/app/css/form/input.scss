@@ -1,0 +1,119 @@
+.form-input {
+  position: relative;
+  width: 100%;
+
+  &:hover {
+    .form-input__label {
+      background: $color-gray-20;
+      border-bottom-color: $color-blue-dark-100;
+    }
+  }
+
+  &__label {
+    display: block;
+    vertical-align: top;
+    padding: 29px 0 14px;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 1px solid $color-gray;
+  }
+
+  &__input {
+    display: block;
+    padding: 0 10px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    color: $color-blue-dark-80;
+    border-radius: 0;
+    border: 0;
+    width: 100%;
+    background: transparent;
+    transition: all 0.3s ease-in-out;
+
+    &::placeholder {
+      color: transparent;
+      @include transition;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 23px;
+
+      .form-input__label--empty &, .form-input--placeholder & {
+        color: $color-blue-dark-80;
+      }
+    }
+
+    &:placeholder-shown ~ .form-input__placeholder {
+      top: 28px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 23px;
+      color: $color-gray-90;
+      padding: 0 14px;
+    }
+
+    &:focus {
+      ~ .form-input__placeholder {
+        padding: 0 8px;
+        top: 4px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        color: $color-gray-90;
+      }
+    }
+
+    .form-input--error & {
+      border-bottom-color: $color-error;
+    }
+
+    .form-input--success & {
+      border-bottom-color: $color-error;
+    }
+
+    &:focus & {
+      border-bottom-color: $color-blue-100;
+    }
+  }
+
+  &__placeholder {
+    position: absolute;
+    z-index: 1;
+    padding: 0 8px;
+    top: 4px;
+    display: block;
+    width: 100%;
+    color: $color-gray-90;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
+    text-overflow: ellipsis;
+    pointer-events: none;
+
+    @include mobile {
+      font-size: 11px;
+      text-overflow: inherit;
+    }
+  }
+
+  &__error {
+    font-size: 12px;
+    line-height: 100%;
+    display: block;
+    margin-top: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    white-space: nowrap;
+  }
+
+  &__error {
+    color: $color-error;
+  }
+
+}
+
+textarea.form-input__input {
+  height: 34px;
+}

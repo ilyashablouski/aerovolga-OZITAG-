@@ -16,12 +16,14 @@
     padding: 100px 0 140px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     min-height: 100vh;
   }
 
   &__top {
-    margin-bottom: 50px;
+    margin-bottom: 118px;
+    @include mobile {
+      margin-bottom: 50px;
+    }
   }
 
   &__title {
@@ -35,11 +37,23 @@
     }
   }
 
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile {
+      display: block;
+    }
+  }
+
   &__left {
-    padding: 10px 0 0 30px;
+    padding: 18px 0 0 30px;
 
     &-top {
       margin-bottom: 94px;
+      @include mobile {
+        margin-bottom: 30px;
+      }
     }
 
     &-title {
@@ -60,4 +74,15 @@
       }
     }
   }
+
+  &__right {
+    flex: 0 0 480px;
+    max-width: 480px;
+    display: flex;
+    justify-content: center;
+    @include mobile {
+      margin-top: 30px;
+    }
+  }
+
 }

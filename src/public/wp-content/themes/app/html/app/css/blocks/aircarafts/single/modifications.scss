@@ -7,6 +7,9 @@
 
   &__nav {
     display: flex;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+    @include hide-scrollbar;
 
     &-item {
       display: block;
@@ -19,6 +22,7 @@
       font-weight: 600;
       font-size: 18px;
       line-height: 44px;
+      white-space: nowrap;
 
       &:before {
         position: absolute;
@@ -67,6 +71,9 @@
     &-left {
       flex: 0 0 408px;
       max-width: 400px;
+      @include mobile480 {
+        max-width: 100%;
+      }
     }
 
     &-right {

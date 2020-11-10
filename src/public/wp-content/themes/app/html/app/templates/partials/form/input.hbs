@@ -1,0 +1,19 @@
+<div class="form-input{{#if border}} form-input--border{{/if}}{{#if small}} form-input--small{{/if}}{{#if error}} form-input--error{{/if}}{{#if
+  success}} form-input--success{{/if}}">
+  {{#if no-label}}{{else}}
+  <label class="form-input__label{{#if label}}{{else}} form-input__label--empty{{/if}}">
+  {{/if}}
+  <input autocomplete="off" type="{{#if type}}{{type}}{{else}}text{{/if}}" {{#if value}}value="{{value}}"{{/if}}
+         class="form-input__input"
+    {{#if field-id}} id="{{field-id}}"{{/if}}
+    {{#if placeholder}} placeholder="{{placeholder}}"{{/if}}
+    {{#if disabled}} disabled aria-disabled="true"{{/if}}/>
+
+  {{#if label}}<span class="form-input__placeholder">{{label}}</span>{{/if}}
+
+  {{#if error}}<span class="form-input__error">Error message</span>{{/if}}
+
+  {{#if no-label}}{{else}}
+  </label>
+  {{/if}}
+</div>

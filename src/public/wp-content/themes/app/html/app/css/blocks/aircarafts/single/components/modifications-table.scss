@@ -20,6 +20,9 @@
       display: flex;
       align-items: center;
       padding-left: 36px;
+      @include mobile480 {
+        flex: 0 0 calc(100vw - 184px);
+      }
     }
   }
 
