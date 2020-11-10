@@ -1,5 +1,30 @@
 <div class="section">
   <div class="container">
     {{>blocks/section-title title="Press"}}
+
+    <div class="press__content">
+      <div class="press__left">
+        {{>blocks/news/news-card
+          date="November 2017"
+          title="Delivery LA-8C"
+          text="In February 2017, delivered buyer amphibian LA-8C, serial number 0112"
+          link="#"
+          img="news/news-list/news_1"
+          ext="png"
+        }}
+      </div>
+      <div class="press__right">
+        {{>blocks/aircrafts/single/components/press-card
+          title="New LA-8C "
+          text="May 12, 2017 regular LA-8C, serial number 009 delivered to the customer to work in the Indian Ocean."
+          date="September 2017"
+        }}
+        {{>blocks/aircrafts/single/components/press-card
+          title="Crew showed courage and aircraft rescued crew"
+          text="Scientific-production association (NPO) «AeroVolga» (Krasniy Yar village, Samara region)  is a manufacturer…"
+          date="September 2017"
+        }}
+      </div>
+    </div>
   </div>
 </div>
