@@ -3,7 +3,21 @@
 
   &-card {
     flex: 1 1 25%;
-    max-width: 25%;
+    max-width: 242px;
+
+    @include tablet-and-mobile {
+      flex: 1 1 50%;
+      &:nth-child(n+3) {
+        margin-top: 30px;
+      }
+    }
+    @include mobile {
+      flex: 1 1 100%;
+      &:nth-child(n+2) {
+        margin-top: 30px;
+      }
+    }
+
 
     &__inner {
       display: flex;
@@ -30,6 +44,7 @@
       font-weight: 600;
 
     }
+
     &__text {
       font-size: 18px;
       margin-top: 10px;
@@ -39,6 +54,14 @@
   &__inner {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include tablet-and-mobile {
+      justify-content: space-around;
+    }
+    @include mobile {
+      justify-content: flex-start;
+    }
   }
 
 

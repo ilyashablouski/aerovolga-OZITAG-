@@ -29,6 +29,10 @@
     &-inner {
       height: 300px;
       padding: 44px 60px 36px;
+      @include mobile {
+        padding: 44px 15px 36px;
+        height: 250px;
+      }
     }
 
     &-description {
@@ -57,6 +61,9 @@
       position: absolute;
       bottom: 21px;
       right: 90px;
+      @include mobile {
+        right: 30px;
+      }
     }
   }
 
