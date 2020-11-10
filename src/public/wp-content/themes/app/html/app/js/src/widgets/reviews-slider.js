@@ -1,6 +1,6 @@
-class DoubleSlider {
+class ReviewsSlider {
   queryElement(componentName) {
-    const element = this.nodeElement.querySelector('.js-double-slider__' + componentName);
+    const element = this.nodeElement.querySelector('.js-reviews-slider__' + componentName);
 
     if (!element) {
       console.warn(`JS Double Slider - ${componentName} not found`);
@@ -24,7 +24,12 @@ class DoubleSlider {
 
   initSlider() {
     const galleryThumbs = new Swiper(this.thumbs, {
-      slidesPerView: 5,
+      slidesPerView: 1,
+      spaceBetween: 40,
+      navigation: {
+        nextEl: '.thumbs-slide__next',
+        prevEl: '.thumbs-slide__prev',
+      },
     });
 
     this.slider = new Swiper(this.rowElement, {
@@ -43,13 +48,13 @@ class DoubleSlider {
   }
 
   static init(elem) {
-    new DoubleSlider(elem);
+    new ReviewsSlider(elem);
   }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const slider = document.querySelectorAll('.js-double-slider');
+  const slider = document.querySelectorAll('.js-reviews-slider');
   slider.forEach(item => {
-    DoubleSlider.init(item);
+    ReviewsSlider.init(item);
   });
 });

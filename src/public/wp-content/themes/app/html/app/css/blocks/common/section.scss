@@ -26,6 +26,11 @@
     }
   }
 
+  &--background {
+    padding: 100px 0;
+    background: $color-gray-25;
+  }
+
   &:last-child {
     margin-bottom: 0;
   }

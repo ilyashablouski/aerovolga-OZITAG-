@@ -1,12 +1,25 @@
 .reviews {
+  @include mobile {
+    margin: 0 -20px;
+  }
+
   &__inner {
     padding: 120px 0 64px;
     background: $color-gray-40;
+    @include tablet-and-mobile {
+      padding: 80px 0 64px;
+    }
   }
 
   &__slider {
     width: 100%;
     padding: 0 180px;
+    @include tablet-and-mobile {
+      padding: 0 60px;
+    }
+    @include mobile {
+      padding: 0 20px;
+    }
   }
 
   &__slide {
@@ -36,34 +49,78 @@
   }
 
   &__thumbs {
-    margin-top: 118px;
+    position: relative;
+    margin: 118px auto 0;
+    max-width: 490px;
+    @include mobile {
+      margin: 80px -20px 0;
+    }
+
+    &-inner {
+      max-width: 490px;
+      overflow: hidden;
+    }
+
+    .swiper-container {
+      max-width: 130px;
+      overflow: visible;
+    }
 
     &-slide {
       max-width: 128px;
       width: 128px;
+      opacity: 0.2;
 
-      &-top {
-        width: 60px;
-        height: 60px;
-        border-radius: 100%;
-        overflow: hidden;
-        pointer-events: none;
-
-        img {
-          width: 100%;
-          height: 100%;
+      &.active {
+        opacity: 1;
+        .reviews__thumbs-image:before {
+          opacity: 1;
         }
       }
+    }
 
-      &-bottom {
-        margin-top: 11px;
+    &-top {
+      display: flex;
+      justify-content: center;
+    }
+
+    &-image {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
       }
-      &-name {
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 22px;
-        color: $color-blue-dark-80;
+
+      &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 100%;
+        border: 2px solid $color-blue-dark-100;
+        opacity: 0;
+        transition: all 0.3s linear;
       }
+    }
+
+    &-bottom {
+      margin-top: 11px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      color: $color-blue-dark-80;
+    }
+
+
+    &-name, &-position {
+      text-align: center;
     }
   }
 

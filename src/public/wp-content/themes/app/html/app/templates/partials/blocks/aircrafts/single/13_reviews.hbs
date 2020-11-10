@@ -2,10 +2,10 @@
   <div class="container">
     <div class="reviews">
       <div class="reviews__inner">
-        <div class="reviews__slider js-double-slider">
-          <div class="swiper-container js-double-slider__row">
+        <div class="reviews__slider js-reviews-slider">
+          <div class="swiper-container js-reviews-slider__row">
             <div class="swiper-wrapper">
-              {{#times 3}}
+              {{#times 10}}
                 <div class="swiper-slide reviews__slide">
                   <div class="reviews__slide-inner">
                     <div class="reviews__slide-top"></div>
@@ -16,27 +16,31 @@
               {{/times}}
             </div>
           </div>
+
           <div class="reviews__thumbs">
-            <div class="swiper-container js-double-slider__thumbs">
-              <div class="swiper-wrapper">
-                {{#times 3}}
-                  <div class="swiper-slide reviews__thumbs-slide">
-                    <div class="reviews__thumbs-inner">
-                      <div class="reviews__thumbs-top">
-                        <div class="reviews__thumbs-image">
-                          {{>components/image}}
+            <div class="reviews__thumbs-inner">
+              <div class="swiper-container js-reviews-slider__thumbs">
+                <div class="swiper-wrapper">
+                  {{#times 10}}
+                    <div class="swiper-slide reviews__thumbs-slide">
+                      <div class="reviews__thumbs-inner">
+                        <div class="reviews__thumbs-top">
+                          <div class="reviews__thumbs-image">
+                            {{>components/image ext="png" img="aircrafts/single/person"}}
+                          </div>
+                        </div>
+                        <div class="reviews__thumbs-bottom">
+                          <div class="reviews__thumbs-name">Simon Lackovsky,</div>
+                          <div class="reviews__thumbs-position">pilot</div>
                         </div>
                       </div>
-                      <div class="reviews__thumbs-bottom">
-                        <div class="reviews__thumbs-name">Simon Lackovsky, pilot</div>
-                      </div>
                     </div>
-                  </div>
-                {{/times}}
+                  {{/times}}
+                </div>
               </div>
-              <button class="color__thumbs-next"></button>
-              <button class="color__thumbs-prev"></button>
             </div>
+            <button class="thumbs-slide__next"></button>
+            <button class="thumbs-slide__prev"></button>
           </div>
         </div>
       </div>
