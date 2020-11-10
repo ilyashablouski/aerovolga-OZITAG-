@@ -1,0 +1,72 @@
+.aircrafts-hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+
+  &__background {
+    @include fill();
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__container {
+    max-width: 1020px;
+    width: 100%;
+    margin: 0 60px;
+    @include desktopUp {
+      margin: 0 auto;
+    }
+    @include tablet-and-mobile {
+      margin: 0;
+      padding: 0 40px;
+    }
+    @include mobile {
+      padding: 0 20px;
+    }
+  }
+
+  &__inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 50px 0 80px;
+  }
+
+  &__bottom {
+    .stats {
+      margin: 100px 0 0;
+      @include tablet-and-mobile {
+        margin: 60px 0 0;
+        &__inner {
+          justify-content: flex-start;
+        }
+        &-card {
+          &__title, &__text {
+            color: $color-white;
+          }
+        }
+      }
+    }
+  }
+
+  &__title {
+    @include fontDrukWideMedium;
+    font-size: 70px;
+    line-height: 70px;
+    color: $color-white;
+
+    @include mobile {
+      font-size: 34px;
+      line-height: 50px;
+    }
+  }
+
+
+}
