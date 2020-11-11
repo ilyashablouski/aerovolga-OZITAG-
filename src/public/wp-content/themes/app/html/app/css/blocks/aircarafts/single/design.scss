@@ -1,11 +1,7 @@
-.color {
-  &__content {
-    margin-top: 112px;
-  }
-
+.design {
   &__slider {
     .swiper-container {
-      max-width: 965px;
+      max-width: 977px;
       width: 100%;
       margin: 0 auto;
     }
@@ -21,18 +17,38 @@
       display: block;
       width: 100%;
       height: 100%;
-      padding-bottom: 41.5%;
+      padding-bottom: 48%;
     }
 
     img {
       @include fill;
+      object-fit: cover;
     }
   }
 
   &__thumbs {
     position: relative;
-    display: flex;
-    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+
+    @include mobile {
+      margin: 0 -20px;
+    }
+
+    &-inner {
+      max-width: 500px;
+      overflow: hidden;
+    }
+
+    .swiper-container {
+      max-width: 76px;
+      overflow: visible;
+
+      @include mobile {
+        max-width: 300px;
+        margin: 0 auto;
+      }
+    }
 
     .swiper-button-disabled {
       opacity: 0.3;
@@ -40,12 +56,12 @@
     }
 
     &-slide {
+      max-width: 76px;
       display: flex;
       justify-content: center;
       align-items: center;
       width: 76px !important;
       height: 76px;
-      margin: 0 10px;
       border: 2px solid transparent;
       border-radius: 100%;
       cursor: pointer;
@@ -55,6 +71,7 @@
       }
 
       @include mobile {
+        max-width: 50px;
         width: 50px !important;
         height: 50px;
         margin: 0 2.5px;

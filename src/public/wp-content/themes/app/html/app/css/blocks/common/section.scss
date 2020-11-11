@@ -29,6 +29,9 @@
   &--background {
     padding: 100px 0;
     background: $color-gray-25;
+    @include mobile {
+      padding: 50px 0;
+    }
   }
 
   &--contacts {
