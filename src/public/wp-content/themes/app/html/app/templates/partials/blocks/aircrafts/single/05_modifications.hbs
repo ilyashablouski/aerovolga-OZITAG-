@@ -77,7 +77,32 @@
                 </div>
               </div>
             </div>
-            <div class="modification__item-right"></div>
+            <div class="modifications__item-right">
+              <div class="modifications-slider__wrapper js-modifications-slider">
+                <div class="modifications-slider">
+                  <div class="swiper-container js-modifications-slider__row">
+                    <div class="swiper-wrapper">
+                      {{#times 3}}
+                        <div class="swiper-slide modifications-slider__slide">
+                          {{>components/image ext="png" img="aircrafts/single/modifications"}}
+                        </div>
+                      {{/times}}
+                    </div>
+                  </div>
+                </div>
+                <div class="modifications-thumbs">
+                  <div class="swiper-container js-modifications-slider__thumbs">
+                    <div class="swiper-wrapper">
+                      {{#times 3}}
+                        <div class="swiper-slide modifications-thumbs__slide">
+                            {{>components/image ext='png' img="aircrafts/single/modifications-small"}}
+                        </div>
+                      {{/times}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

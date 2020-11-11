@@ -15,6 +15,7 @@ import './src/widgets/features-slider';
 import './src/widgets/reviews-slider';
 import './src/widgets/design-slider';
 import './src/widgets/gallery-slider';
+import './src/widgets/modifications-slider';
 import './src/widgets/double-slider';
 import './src/widgets/toggle-menu';
 import './src/widgets/preview';

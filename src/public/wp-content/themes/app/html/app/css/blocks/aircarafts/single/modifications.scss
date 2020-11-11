@@ -52,9 +52,11 @@
           opacity: 0.8;
         }
       }
+
       &:first-child {
         min-width: 60px;
       }
+
       &:last-child {
         margin-right: 0;
       }
@@ -67,10 +69,16 @@
 
   &__item {
     display: flex;
+    @include tablet-and-mobile {
+      flex-direction: column-reverse;
+    }
 
     &-left {
       flex: 0 0 408px;
       max-width: 400px;
+      @include tablet-and-mobile {
+        margin-top: 40px;
+      }
       @include mobile480 {
         max-width: 100%;
       }
@@ -80,6 +88,9 @@
       flex: 1 1 auto;
       display: flex;
       justify-content: flex-end;
+      @include tablet-and-mobile {
+        justify-content: flex-start;
+      }
     }
 
     &-title {
@@ -93,5 +104,112 @@
     }
   }
 
+  &-slider {
+    border: 1px solid $color-gray-60;
+    border-radius: 5px;
+    max-height: 440px;
+    @include mobile {
+      max-height: 300px;
+    }
 
+    &__wrapper {
+      display: flex;
+      flex-direction: row-reverse;
+      @include tablet-and-mobile {
+        flex-direction: row;
+      }
+      @include mobile {
+        flex-direction: column;
+      }
+    }
+
+    &__slide {
+      width: 440px;
+      height: 440px;
+      @include mobile {
+        width: 300px;
+        height: 300px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .swiper-container {
+      max-width: 440px;
+      width: 100%;
+      @include mobile {
+        max-width: 300px;
+      }
+    }
+  }
+
+  &-thumbs {
+    margin-right: 10px;
+    @include tablet-and-mobile {
+      margin: 0 0 0 10px;
+    }
+    @include mobile {
+      margin: 10px 0 0;
+    }
+
+    .swiper-container {
+      overflow: visible;
+    }
+
+    .swiper-wrapper {
+      flex-direction: column;
+      @include mobile {
+        flex-direction: row;
+        overflow-x: auto;
+        @include hide-scrollbar;
+      }
+    }
+
+    &__slide {
+      width: 65px;
+      height: 65px;
+      border: 1px solid $color-gray-60;
+      box-sizing: border-box;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: all 0.3s linear;
+      position: relative;
+
+      @include mobile {
+        margin: 0 10px 0 0;
+      }
+
+      &.active {
+        &:before {
+          position: absolute;
+          content: '';
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border: 2px solid $color-blue-dark-100;
+          border-radius: 5px;
+          width: 65px;
+          height: 65px;
+        }
+      }
+
+      @include tablet-and-mobile {
+        cursor: default;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
 }
