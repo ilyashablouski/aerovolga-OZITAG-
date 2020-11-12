@@ -8,6 +8,8 @@ import './src/utils/resize-observer';
 import './src/utils/scroll-control';
 import './src/utils/scroll-to';
 import './src/utils/preloader';
+import './src/utils/api-manager';
+
 import './src/widgets/accord';
 import './src/widgets/anchor';
 import './src/widgets/certificate-slider';
@@ -22,6 +24,8 @@ import './src/widgets/preview';
 
 import './src/widgets/aircrafts-header/aircrafts-header-menu';
 import './src/widgets/aircrafts-header/aircrafts-header';
+
+import './src/widgets/map-widget';
 
 import './src/utils/vh-hack';
 import './src/utils/mobile-debug';

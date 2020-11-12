@@ -1,19 +1,13 @@
 .map {
   margin-top: 54px;
+  display: flex;
+  height: 500px;
 
-  &__image {
-    position: relative;
+  &__container {
+    width: 100%;
+    height: 100%;
 
-    &:before {
-      display: block;
-      content: '';
-      padding-bottom: 46%;
-    }
-
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
+    iframe {
       width: 100%;
       height: 100%;
     }
