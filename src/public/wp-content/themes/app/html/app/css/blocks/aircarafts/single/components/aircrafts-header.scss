@@ -1,0 +1,226 @@
+.aircrafts-header {
+  position: relative;
+
+  &__content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  &__left {
+    flex: 1 1 650px;
+    max-width: 650px;
+    position: relative;
+
+    @include tablet-and-mobile {
+      flex: 1 1 550px;
+      max-width: 550px;
+    }
+    @media (max-width: 1120px) {
+      flex: 1 1 450px;
+      max-width: 450px;
+    }
+    @include smallTablet-and-mobile {
+      flex: 1 1 calc(100% - 220px);
+      max-width: calc(100% - 220px);
+      overflow-y: auto;
+      @include hide-scrollbar
+    }
+
+    @include no-smallTablet {
+      overflow: hidden;
+    }
+
+    .with-more & {
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    margin-left: -40px;
+  }
+
+  &__item {
+    margin-left: 40px;
+
+    &.item-on-more {
+      display: none;
+
+      .aircrafts-header__more-dropdown & {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 44px;
+    color: $color-white;
+    white-space: nowrap;
+    transition: all 0.3s linear;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__more {
+    position: absolute;
+    right: 319px;
+    @include align(false, true);
+
+    @media (max-width: 1400px) {
+      right: 300px;
+    }
+
+    @media (max-width: 1350px) {
+      right: 250px;
+    }
+    @media (max-width: 1300px) {
+      right: 220px;
+    }
+    @media (max-width: 1279px) {
+      right: 350px;
+    }
+    @media (max-width: 1240px) {
+      right: 280px;
+    }
+
+    @media (max-width: 1160px) {
+      right: 240px;
+    }
+
+    @media (max-width: 1120px) {
+      right: 280px;
+    }
+
+    @media (max-width: 1100px) {
+      right: 240px;
+    }
+    @media (max-width: 1040px) {
+      right: 200px;
+    }
+
+    &-action {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      padding: 15px;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 44px;
+      color: $color-white;
+
+      &:before, &:after, span:before {
+        content: '';
+        width: 3px;
+        height: 3px;
+        border-radius: 100%;
+        position: absolute;
+        right: 18px;
+        @include align(false, true);
+        background: $color-white;
+        display: block;
+      }
+
+      &:after {
+        right: 26px;
+      }
+
+      &:before {
+        right: 34px;
+      }
+
+      .aircrafts-header__more:hover & {
+        opacity: 0.8;
+
+        &:before, &:after, span:before {
+          opacity: 0.8;
+        }
+      }
+    }
+
+    &-dropdown {
+      width: 212px;
+      position: absolute;
+      left: 50%;
+      top: 44px;
+      transform: translateX(-50%);
+      background: #DADADA;
+      border-radius: 2px;
+      padding: 23px 20px 17px;
+      display: none;
+
+      &:before {
+        position: absolute;
+        content: '';
+        top: 4px;
+        left: 42%;
+        background: #DADADA;
+        width: 25px;
+        height: 25px;
+        transform: rotate(45deg) translateX(-50%);
+      }
+
+      &:after {
+        position: absolute;
+        content: '';
+        top: -26px;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        z-index: -1;
+      }
+
+      .aircrafts-header__more:hover & {
+        display: block;
+      }
+
+      .aircrafts-header {
+        &__item {
+          margin: 0 0 8px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        &__link {
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 30px;
+          color: $color-blue-dark-80;
+          display: inline-block;
+          transition: all 0.3s linear;
+
+          &:hover {
+            color: #3D5E6C;
+          }
+        }
+      }
+    }
+  }
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: z(header);
+    backdrop-filter: blur(100px);
+    transform: translateY(-100%);
+    background: $color-white;
+    border-bottom: 1px solid $color-gray-40;
+    transition: transform .5s;
+
+    &.visible {
+      transform: translateY(0);
+    }
+  }
+}

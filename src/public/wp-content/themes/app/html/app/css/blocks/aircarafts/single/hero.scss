@@ -37,6 +37,10 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 50px 0 80px;
+
+    @include smallTablet-and-mobile {
+      padding: 80px 0;
+    }
   }
 
   &__top {

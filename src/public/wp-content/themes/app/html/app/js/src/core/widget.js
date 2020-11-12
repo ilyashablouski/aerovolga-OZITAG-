@@ -1,6 +1,9 @@
 class Widget {
   constructor(node, selector, breakpoint = null) {
     this.$node = node;
+    if (!this.$node) {
+      return;
+    }
 
     this.selector = selector ? (selector.substr(0, 1) === '.' ? selector.substr(1) : selector) : null;
 
@@ -12,7 +15,7 @@ class Widget {
     if (this.breakpoint) {
       onResize(this.updateBreakpointCache.bind(this));
       this.updateBreakpointCache();
-    } else{
+    } else {
       this.build();
     }
   }
@@ -23,8 +26,12 @@ class Widget {
         return true;
       case 'mobile':
         return isMobileLayout();
+      case 'mobile up':
+        return !isMobileLayout();
       case 'tablet':
         return isTabletLayout();
+      case 'tablet up':
+        return !isTabletLayout();
       case 'tablet-mobile':
         return isMobileLayout() || isTabletLayout();
       case 'laptop':
@@ -69,6 +76,8 @@ class Widget {
    * @returns Node
    */
   queryElement(selector) {
+    if (!this.$node) return null;
+
     let $node = null;
 
     if (selector) {
@@ -94,6 +103,8 @@ class Widget {
    * @returns Node[]
    */
   queryElements(selector) {
+    if (!this.$node) return null;
+
     let $nodes = null;
 
     if (selector) {
