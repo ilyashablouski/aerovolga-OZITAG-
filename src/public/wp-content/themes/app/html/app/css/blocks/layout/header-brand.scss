@@ -27,6 +27,21 @@
     }
   }
 
+  &__middle {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 94px;
+  }
+
+  &__title {
+    @include section_title;
+    color: $color-white;
+    text-align: center;
+    max-width: 220px;
+  }
+
   &__bottom {
     margin-top: auto;
     text-align: center;
@@ -52,6 +67,7 @@
 
       &:first-child {
         position: relative;
+
         &:before {
           position: absolute;
           top: 0;
@@ -71,21 +87,48 @@
 
   &__product {
     display: block;
-    padding: 18px 0 12px;
+    padding: 16px 0 14px;
     text-transform: uppercase;
 
     svg {
-      margin-bottom: 10px;
+      margin-bottom: 6px;
       width: 100%;
       height: 33px;
+    }
+
+    &-name {
+      @include section_caption;
+      color: $color-white;
     }
   }
 
   &__link {
-    margin: 39px 0 33px;
+    margin: 39px 0 36px;
     font-weight: 600;
     font-size: 14px;
     line-height: 18px;
     display: inline-block;
+  }
+
+  //Modifiers
+  &--home {
+    .header-brand__top {
+      img {
+        width: 188px;
+        height: 72px;
+        object-fit: cover;
+      }
+    }
+    .header-brand__middle {
+      display: flex;
+    }
+    .header-brand__bottom {
+      padding: 0 20px;
+    }
+    .header-brand__product {
+      &-name {
+        line-height: 13px;
+      }
+    }
   }
 }

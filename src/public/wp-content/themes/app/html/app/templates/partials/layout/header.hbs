@@ -1,4 +1,4 @@
-<header class="header page__header">
+<header class="header page__header {{#if home}}header--home{{/if}}">
   <div class="header-main">
     <div class="header-main__top">
       <button class="header-main__burger js-toggle-menu">
@@ -59,9 +59,14 @@
       </div>
     </div>
   </div>
-  <div class="header-brand">
+  <div class="header-brand {{#if home}}header-brand--home{{/if}}">
     <div class="header-brand__top">
       {{> components/image img="logo-sign" ext="png"}}
+    </div>
+    <div class="header-brand__middle">
+      <span class="header-brand__title">
+              Sail the sky
+      </span>
     </div>
     <div class="header-brand__bottom">
       <div class="header-brand__item">
@@ -83,5 +88,5 @@
   </div>
 </header>
 
-<main class="page__content">
+<main class="page__content {{#if home}}page__content--home{{/if}}">
 

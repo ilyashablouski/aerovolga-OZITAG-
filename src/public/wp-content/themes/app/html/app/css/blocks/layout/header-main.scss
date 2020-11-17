@@ -51,6 +51,7 @@
           top: 0;
         }
       }
+
       &:hover {
         i {
           &:before {
@@ -111,7 +112,7 @@
     justify-content: center;
     margin-top: auto;
 
-    @include smallTablet-and-mobile{
+    @include smallTablet-and-mobile {
       display: none;
     }
   }
@@ -122,7 +123,7 @@
     justify-content: center;
     align-items: center;
     @include smallTablet-and-mobile {
-     display: none;
+      display: none;
     }
   }
 
@@ -139,4 +140,5 @@
       width: 25px;
     }
   }
+
 }

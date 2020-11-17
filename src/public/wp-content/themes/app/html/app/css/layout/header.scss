@@ -25,6 +25,11 @@
       }
     }
   }
+
+  //Modifiers
+  &--home {
+    width: 360px;
+  }
 }
 
 @keyframes mobile-hidden {

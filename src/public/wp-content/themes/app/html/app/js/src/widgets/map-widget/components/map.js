@@ -39,6 +39,7 @@ class Map {
 
     this.createMapInstance();
     this.configureMap();
+    this.createCircle(options)
 
     dispatchEvent('onMapInit');
   }
@@ -53,6 +54,39 @@ class Map {
 
   configureMap() {
     this.map.behaviors.disable('scrollZoom');
+  }
+
+  createCircle(options) {
+    let wrapperCircle = new ymaps.Circle([
+      [46.8131873, 8.2242101],
+      900000
+    ], {
+    }, {
+      draggable: false,
+      fillColor: "#980000",
+      fillOpacity: 0,
+
+      strokeColor: "#980000",
+      strokeOpacity: 1,
+      strokeWidth: 1
+    });
+
+    let innerCircle = new ymaps.Circle([
+      [46.8131873, 8.2242101],
+      850000
+    ], {
+    }, {
+      draggable: false,
+      fillColor: "#0035AD",
+      fillOpacity: 0,
+
+      strokeColor: "#0035AD",
+      strokeOpacity: 1,
+      strokeWidth: 1
+    });
+
+    this.map.geoObjects.add(wrapperCircle);
+    this.map.geoObjects.add(innerCircle);
   }
 
   renderMarkers(markers) {
@@ -90,8 +124,8 @@ class Map {
 
   getOptions() {
     const {
-      center = '55.76, 37.64',
-      zoom = '12',
+      center = '46.8131873, 8.2242101',
+      zoom = '1',
     } = this.node.dataset;
     return { center: center.split(','), zoom };
   }

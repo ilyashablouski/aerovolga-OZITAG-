@@ -5,6 +5,14 @@
   @include smallTablet-and-mobile {
     margin-left: 0px;
   }
+
+  //Modifiers
+  &--home {
+    margin-left: 360px;
+    @include smallTablet-and-mobile {
+      margin-left: 0px;
+    }
+  }
 }
 
 
