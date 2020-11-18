@@ -14,6 +14,11 @@
     height: 840px;
     transition: all 0.5s linear;
 
+
+    @media (max-height: 900px) {
+      height: 100vh;
+    }
+
     &.active {
       flex: 1 1 58vw;
       max-width: 58vw;

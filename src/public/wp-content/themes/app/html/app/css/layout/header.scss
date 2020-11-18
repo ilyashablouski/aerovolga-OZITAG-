@@ -29,6 +29,9 @@
   //Modifiers
   &--home {
     width: 360px;
+    @include smallTablet-and-mobile {
+      width: 100vw;
+    }
   }
 }
 

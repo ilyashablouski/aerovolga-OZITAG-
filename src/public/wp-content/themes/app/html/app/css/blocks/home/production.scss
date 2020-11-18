@@ -1,5 +1,8 @@
 .production {
   margin-top: 72px;
+  @include tablet-and-mobile {
+    margin-top: 74px;
+  }
 
   @include desktopUp {
     max-width: 80%;
@@ -63,6 +66,10 @@
     margin: 176px 0 0;
     display: flex;
     justify-content: space-between;
+
+    @include tablet-and-mobile {
+      margin: 158px 0 28px;
+    }
 
     @include mobile {
       margin-top: 450px;

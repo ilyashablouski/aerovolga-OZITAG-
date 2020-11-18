@@ -1,7 +1,7 @@
 .online-service {
   margin-top: 45px;
   @include tablet-and-mobile {
-    margin-top: 47px;
+    margin: 47px 0 20px;
   }
   @include mobile {
     margin-top: 34px;

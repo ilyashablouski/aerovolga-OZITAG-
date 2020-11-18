@@ -2,6 +2,7 @@
   margin-top: 71px;
   @include tablet-and-mobile {
     margin-top: 41px;
+    padding-bottom: 68px;
   }
   @include mobile {
     margin-top: 27px;
