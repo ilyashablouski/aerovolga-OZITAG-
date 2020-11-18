@@ -19,6 +19,10 @@
       height: 100vh;
     }
 
+    @include mobile {
+      max-height: 460px;
+    }
+
     &.active {
       flex: 1 1 58vw;
       max-width: 58vw;

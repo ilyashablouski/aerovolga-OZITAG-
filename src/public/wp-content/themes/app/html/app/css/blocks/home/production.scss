@@ -4,6 +4,10 @@
     margin-top: 74px;
   }
 
+  @include mobile {
+    margin-top: 70px;
+  }
+
   @include desktopUp {
     max-width: 80%;
   }
@@ -72,7 +76,7 @@
     }
 
     @include mobile {
-      margin-top: 450px;
+      margin: 415px 0 46px;
       display: flex;
       justify-content: flex-start;
       overflow-x: auto;

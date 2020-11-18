@@ -21,10 +21,22 @@
     }
   }
 
+  &--hero {
+    @include mobile {
+      min-height: 460px;
+      max-height: 460px;
+    }
+  }
+
   &--features {
     @include tablet-and-mobile {
       .home-section__inner {
         padding-top: 50px;
+      }
+    }
+    @include mobile {
+      .home-section__inner {
+        padding-top: 32px;
       }
     }
   }
@@ -39,6 +51,15 @@
         margin: 0 70px;
       }
     }
+    @include mobile {
+      .home-section__inner {
+        padding-top: 52px;
+      }
+
+      .home-section__container--small {
+        margin: 0 30px;
+      }
+    }
   }
 
   &--production {
@@ -49,6 +70,15 @@
 
       .home-section__container--small {
         margin: 0 65px 0 67px;
+      }
+    }
+
+    @include mobile {
+      .home-section__inner {
+        padding-top: 44px;
+      }
+      .home-section__container--small {
+        margin: 0 30px;
       }
     }
   }
