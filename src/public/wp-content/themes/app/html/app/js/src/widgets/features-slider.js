@@ -23,7 +23,6 @@ class FeaturesSlider {
 
     this.rowElement = this.queryElement('row');
     this.thumbs = this.queryElement('thumbs');
-    console.log(this.thumbs, 'this.thumbs');
     this.textElementRows = this.queryElements('texts');
 
 
@@ -75,8 +74,6 @@ class FeaturesSlider {
   }
 
   getActiveSlideNumber() {
-    console.log(this.slider.activeIndex);
-
     return this.slider.activeIndex + 1;
   }
 
@@ -84,7 +81,6 @@ class FeaturesSlider {
     if (visibleIndex === 6) {
       visibleIndex = 2;
     }
-    console.log(visibleIndex, 'visibleIndex');
     this.textElementRows.forEach(textElementRow => {
       textElementRow.children.forEach((item, _index) => {
         if (visibleIndex && _index === (visibleIndex - 1)) {

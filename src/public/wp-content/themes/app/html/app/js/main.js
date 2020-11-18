@@ -22,6 +22,7 @@ import './src/widgets/modifications-slider';
 import './src/widgets/double-slider';
 import './src/widgets/toggle-menu';
 import './src/widgets/preview';
+import './src/widgets/scroll-horizontally';
 
 import './src/widgets/aircrafts-header/aircrafts-header-menu';
 import './src/widgets/aircrafts-header/aircrafts-header';
