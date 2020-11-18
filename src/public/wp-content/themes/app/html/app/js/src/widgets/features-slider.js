@@ -45,13 +45,14 @@ class FeaturesSlider {
         },
         1024: {
           virtualTranslate: true,
-        }
-      }
+        },
+      },
     });
 
     this.slider = new Swiper(this.rowElement, {
       speed: 800,
       slidesPerView: 1,
+      loop: true,
       autoplay: {
         delay: 3000,
       },
@@ -67,17 +68,23 @@ class FeaturesSlider {
           spaceBetween: 5,
         },
         1024: {
-          spaceBetween: 380,
-        }
-      }
+          spaceBetween: 300,
+        },
+      },
     });
   }
 
   getActiveSlideNumber() {
+    console.log(this.slider.activeIndex);
+
     return this.slider.activeIndex + 1;
   }
 
   setVisibleTextElement(visibleIndex) {
+    if (visibleIndex === 6) {
+      visibleIndex = 2;
+    }
+    console.log(visibleIndex, 'visibleIndex');
     this.textElementRows.forEach(textElementRow => {
       textElementRow.children.forEach((item, _index) => {
         if (visibleIndex && _index === (visibleIndex - 1)) {
