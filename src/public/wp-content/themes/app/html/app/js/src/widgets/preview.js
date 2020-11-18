@@ -5,20 +5,22 @@ class Preview {
   }
 
   addEvents() {
-    this.preview.addEventListener('mouseover', () => {
-      if (this.preview.classList.contains('active')) {
-        return;
-      } else {
-        const container = this.preview.closest('.js-previews');
-        const currActive = container.querySelector('.active');
+    if(window.innerWidth > 1023) {
+      this.preview.addEventListener('mouseover', () => {
+        if (this.preview.classList.contains('active')) {
+          return;
+        } else {
+          const container = this.preview.closest('.js-previews');
+          const currActive = container.querySelector('.active');
 
-        if (currActive) {
-          currActive.classList.remove('active');
+          if (currActive) {
+            currActive.classList.remove('active');
+          }
+
+          this.setActive(this.preview);
         }
-
-        this.setActive(this.preview);
-      }
-    });
+      });
+    }
   }
 
   setActive(elem) {
