@@ -1,12 +1,13 @@
-<div class="gallery">
+<ul class="gallery1 js-light-gallery">
   {{#times 7}}
-    <div class="gallery__cell">
-      <div class="gallery__item">
-        {{> components/image
-          img='gallery-single/photosession'
-          ext='png'
-        }}
-      </div>
-    </div>
+      <li class="gallery1__cell" data-src="../assets/images/gallery-single/photosession.png" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>" data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
+          <a href="">
+            {{> components/image
+                img='gallery-single/photosession'
+                ext='png'
+                class='img-responsive'
+            }}
+          </a>
+      </li>
   {{/times}}
-</div>
+</ul>

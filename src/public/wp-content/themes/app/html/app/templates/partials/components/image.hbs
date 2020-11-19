@@ -28,7 +28,7 @@
 
     {{> core/picture-source ext=ext}}
 
-    <img class="lazy"
+    <img class="lazy {{#if class}}{{class}}{{/if}}"
          data-sizes="auto"
          data-original="../assets/images/{{img}}.{{ext}}"
          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
