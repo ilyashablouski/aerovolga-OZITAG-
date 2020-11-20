@@ -22,7 +22,7 @@ const defaults = {
     addClass: '',
     startClass: 'lg-start-zoom',
     backdropDuration: 150,
-    hideBarsDelay: 6000,
+    hideBarsDelay: 0,
     useLeft: false,
     closable: true,
     loop: true,

@@ -306,9 +306,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .lg-outer .lg-thumb-outer {
-    overflow: hidden;
-    width: 240px;
-    height: 100%;
+  overflow: hidden;
+  width: 240px;
+  height: 100%;
+  padding: 20px;
+  padding-right: 10px;
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .lg-outer .lg-thumb-outer.lg-grab .lg-thumb-item {
@@ -339,14 +345,32 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .lg-outer .lg-thumb {
-  padding: 20px;
   height: 100%;
-  margin-bottom: -5px;
+  padding-right: 10px;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: 61px;
   gap: 5px;
+  overflow: auto;
+  
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255, 0.5);
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background-color: transparent;
+  }
+
+  @include mobile {
+    grid-auto-rows: max-content;
+  }
 }
 
 .lg-outer .lg-thumb-item {
@@ -369,6 +393,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  @include mobile {
+    max-height: none;
   }
 }
 
@@ -922,6 +950,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   display: flex;
   flex-direction: row;
   background: #0D2028;
+
+  @include mobile {
+    flex-direction: column-reverse;
+  }
 }
 
 .lg-outer .lg-something {
@@ -930,6 +962,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   position: relative;
   overflow: hidden;
   background-color: rgba(13, 32, 40, 0.8);
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .lg-outer .lg-inner {
