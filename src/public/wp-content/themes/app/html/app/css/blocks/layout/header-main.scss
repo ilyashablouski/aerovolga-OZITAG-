@@ -6,6 +6,7 @@
   bottom: 0;
   background: $color-white;
   z-index: 21;
+  transition: all 0.3s linear;
 
   display: flex;
   flex-direction: column;
@@ -17,7 +18,12 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+    align-items: center;
     padding: 17px 20px 18px;
+    background: transparent;
+  }
+  @include mobile {
+    padding: 7px 14px 7px 13px;
   }
 
   &__top {
@@ -29,6 +35,7 @@
     }
   }
 
+
   &__burger {
     width: 40px;
     height: 16px;
@@ -37,42 +44,59 @@
 
       i {
         width: 70%;
-        background: $color-white;
+        background: transparent;
 
         &:after {
           width: 54px;
           transform: rotate(-45deg);
           bottom: 0;
+          @include mobile {
+            width: 40px;
+          }
         }
 
         &:before {
           width: 54px;
           transform: rotate(45deg);
           top: 0;
+          @include mobile {
+            width: 40px;
+          }
+        }
+
+        @include smallTablet-and-mobile {
+
+          &:before, &:after {
+            background: $color-primary;
+          }
         }
       }
 
-      &:hover {
-        i {
-          &:before {
-            top: 0;
-          }
+      @include desktop {
+        &:hover {
+          i {
+            &:before {
+              top: 0;
+            }
 
-          &:after {
-            bottom: 0;
+            &:after {
+              bottom: 0;
+            }
           }
         }
       }
     }
 
-    &:hover {
-      i {
-        &:before {
-          top: -10px;
-        }
+    @include desktop {
+      &:hover {
+        i {
+          &:before {
+            top: -10px;
+          }
 
-        &:after {
-          bottom: -10px;
+          &:after {
+            bottom: -10px;
+          }
         }
       }
     }
@@ -86,6 +110,10 @@
       position: relative;
       margin: 5px 0;
 
+      @include smallTablet-and-mobile {
+        background: $color-white;
+      }
+
       &:before, &:after {
         content: '';
         height: 2px;
@@ -94,14 +122,24 @@
         transition: all .15s ease-in-out;
         left: 0;
         right: 0;
+
+        @include smallTablet-and-mobile {
+          background: $color-white;
+        }
       }
 
       &:before {
         top: -7px;
+        @include smallTablet-and-mobile {
+          top: -5px;
+        }
       }
 
       &:after {
         bottom: -7px;
+        @include smallTablet-and-mobile {
+          bottom: -5px;
+        }
       }
     }
   }
@@ -124,6 +162,23 @@
     align-items: center;
     @include smallTablet-and-mobile {
       display: none;
+    }
+  }
+
+  &__logo-mobile {
+    display: none;
+    @include smallTablet-and-mobile {
+      display: block;
+      img {
+        width: 118px;
+        height: 45px;
+      }
+    }
+    @include mobile {
+      img {
+        width: 94px;
+        height: 36px;
+      }
     }
   }
 

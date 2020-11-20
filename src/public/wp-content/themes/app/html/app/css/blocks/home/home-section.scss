@@ -1,10 +1,9 @@
 .home-section {
   position: relative;
-  min-height: 840px;
+  min-height: 100vh;
 
-  @media (max-height: 900px) {
-    min-height: 100vh;
-  }
+  display: flex;
+  align-items: center;
 
   &--small {
     min-height: auto;
@@ -96,6 +95,7 @@
   }
 
   &__inner {
+    width: 100%;
     padding-top: 77px;
     @include tablet-and-mobile {
       padding-top: 70px;

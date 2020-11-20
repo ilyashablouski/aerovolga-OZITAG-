@@ -1,7 +1,7 @@
 const thumbnailDefaults = {
     thumbnail: true,
 
-    animateThumb: true,
+    animateThumb: false,
     currentPagerPosition: 'middle',
 
     thumbWidth: 100,
@@ -9,21 +9,21 @@ const thumbnailDefaults = {
     thumbMargin: 5,
 
     exThumbImage: false,
-    showThumbByDefault: true,
-    toggleThumb: true,
-    pullCaptionUp: true,
+    showThumbByDefault: false,
+    toggleThumb: false,
+    pullCaptionUp: false,
 
-    enableThumbDrag: true,
-    enableThumbSwipe: true,
+    enableThumbDrag: false,
+    enableThumbSwipe: false,
     swipeThreshold: 50,
 
-    loadYoutubeThumbnail: true,
+    loadYoutubeThumbnail: false,
     youtubeThumbSize: 1,
 
-    loadVimeoThumbnail: true,
+    loadVimeoThumbnail: false,
     vimeoThumbSize: 'thumbnail_small',
 
-    loadDailymotionThumbnail: true
+    loadDailymotionThumbnail: false,
 };
 
 const Thumbnail = function(element) {
@@ -73,8 +73,8 @@ Thumbnail.prototype.init = function() {
             this.thumbClickable = true;
         }
 
-        // this.toggle();
-        // this.thumbkeyPress();
+        this.toggle();
+        this.thumbkeyPress();
     }
 };
 
@@ -107,12 +107,12 @@ Thumbnail.prototype.build = function() {
     _this.thumbOuterWidth = _this.thumbOuter.offsetWidth;
 
     if (_this.core.s.animateThumb) {
-       // _this.core.outer.querySelector('.lg-thumb').style.width = _this.thumbTotalWidth + 'px';
-        // _this.core.outer.querySelector('.lg-thumb').style.position = 'relative';
+        _this.core.outer.querySelector('.lg-thumb').style.width = _this.thumbTotalWidth + 'px';
+        _this.core.outer.querySelector('.lg-thumb').style.position = 'relative';
     }
 
     if (this.core.s.animateThumb) {
-        //_this.thumbOuter.style.height = _this.core.s.thumbContHeight + 'px';
+        _this.thumbOuter.style.height = _this.core.s.thumbContHeight + 'px';
     }
 
     function getThumb(src, thumb, index) {
@@ -146,7 +146,7 @@ Thumbnail.prototype.build = function() {
         }
 
         // thumbList += '<div data-vimeo-id="' + vimeoId + '" class="lg-thumb-item" style="width:' + _this.core.s.thumbWidth + 'px; margin-right: ' + _this.core.s.thumbMargin + 'px"><img src="' + thumbImg + '" /></div>';
-        thumbList += '<div data-vimeo-id="' + vimeoId + '" class="lg-thumb-item" style="height: ' + _this.core.s.thumbWidth + 'px; width:' + _this.core.s.thumbWidth + 'px; margin-right: ' + _this.core.s.thumbMargin + 'px"><img src="' + thumbImg + '" /></div>';
+        thumbList += `<div class="lg-thumb-item"><img src="${thumbImg}"/></div>`;
         vimeoId = '';
     }
 
@@ -169,8 +169,6 @@ Thumbnail.prototype.build = function() {
     $thumb = _this.core.outer.querySelectorAll('.lg-thumb-item');
 
     for (var n = 0; n < $thumb.length; n++) {
-
-        /*jshint loopfunc: true */
         (function(index) {
             var $this = $thumb[index];
             var vimeoVideoId = $this.getAttribute('data-vimeo-id');
@@ -188,7 +186,6 @@ Thumbnail.prototype.build = function() {
         })(n);
     }
 
-    // manage active class for thumbnail
     utils.addClass($thumb[_this.core.index], 'active');
     utils.on(_this.core.el, 'onBeforeSlide.lgtm', function() {
 
@@ -201,16 +198,11 @@ Thumbnail.prototype.build = function() {
     });
 
     for (var k = 0; k < $thumb.length; k++) {
-
-        /*jshint loopfunc: true */
         (function(index) {
 
             utils.on($thumb[index], 'click.lg touchend.lg', function() {
 
                 setTimeout(function() {
-
-                    // In IE9 and bellow touch does not support
-                    // Go to slide if browser does not support css transitions
                     if ((_this.thumbClickable && !_this.core.lgBusy) || !_this.core.doCss()) {
                         _this.core.index = index;
                         _this.core.slide(_this.core.index, false, true);
@@ -280,7 +272,6 @@ Thumbnail.prototype.animateThumb = function(index) {
     }
 };
 
-// Enable thumbnail dragging and swiping
 Thumbnail.prototype.enableThumbDrag = function() {
 
     var _this = this;
@@ -294,16 +285,13 @@ Thumbnail.prototype.enableThumbDrag = function() {
 
     utils.on(_this.core.outer.querySelector('.lg-thumb'), 'mousedown.lgthumb', function(e) {
         if (_this.thumbTotalWidth > _this.thumbOuterWidth) {
-            // execute only on .lg-object
             e.preventDefault();
             startCoords = e.pageX;
             isDraging = true;
 
-            // ** Fix for webkit cursor issue https://code.google.com/p/chromium/issues/detail?id=26723
             _this.core.outer.scrollLeft += 1;
             _this.core.outer.scrollLeft -= 1;
 
-            // *
             _this.thumbClickable = false;
             utils.removeClass(_this.thumbOuter, 'lg-grab');
             utils.addClass(_this.thumbOuter, 'lg-grabbing');
@@ -328,7 +316,6 @@ Thumbnail.prototype.enableThumbDrag = function() {
                 tempLeft = 0;
             }
 
-            // move current slide
             _this.setTranslate(tempLeft);
 
         }
@@ -393,7 +380,6 @@ Thumbnail.prototype.enableThumbSwipe = function() {
                 tempLeft = 0;
             }
 
-            // move current slide
             _this.setTranslate(tempLeft);
 
         }
@@ -465,5 +451,3 @@ Thumbnail.prototype.destroy = function(d) {
 
 export { Thumbnail }
 export default Thumbnail;
-
-// window.lgModules.thumbnail = Thumbnail;

@@ -24,8 +24,6 @@ const defaults = {
     backdropDuration: 150,
     hideBarsDelay: 6000,
     useLeft: false,
-    ariaLabelledby: '',
-    ariaDescribedby: '',
     closable: true,
     loop: true,
     escKey: true,
@@ -248,24 +246,19 @@ Plugin.prototype.structure = function() {
     }
 
     if (this.s.appendSubHtmlTo === '.lg-sub-html') {
-        subHtmlCont = '<div role="status" aria-live="polite" class="lg-sub-html"></div>';
+        subHtmlCont = '<div class="lg-sub-html"></div>';
     }
 
-    const ariaLabelledby = this.s.ariaLabelledby ? `aria-labelledby="${this.s.ariaLabelledby}"` : '';
-    const ariaDescribedby = this.s.ariaDescribedby ? `aria-describedby="${this.s.ariaDescribedby}"` : '';
-
     template = `
-        <div tabindex="-1" aria-modal="true" ${ariaLabelledby} ${ariaDescribedby} role="dialog" class="lg-outer ${this.s.addClass} ${this.s.startClass}">
+        <div class="lg-outer ${this.s.addClass} ${this.s.startClass}">
             <div class="lg" style="width: ${this.s.width}; height: ${this.s.height}">
                 <div class="lg-something">
                     <div class="lg-inner">${list}</div>
-                    <div class="lg-toolbar lg-group">
-                        
-                    </div>
+                    <div class="lg-toolbar lg-group"></div>
                     ${controls}
                     ${subHtmlCont}
                 </div>
-                <button type="button" aria-label="Close gallery" class="lg-close lg-icon"></button>
+                <button type="button" class="lg-close lg-icon"></button>
             </div>
         </div>
     `;
@@ -326,7 +319,7 @@ Plugin.prototype.structure = function() {
     }, this.s.backdropDuration);
 
     if (this.s.download) {
-        this.outer.querySelector('.lg-toolbar').insertAdjacentHTML('beforeend', '<a id="lg-download" aria-label="Download" target="_blank" download class="lg-download lg-icon"></a>');
+        this.outer.querySelector('.lg-something').insertAdjacentHTML('beforeend', '<a id="lg-download" target="_blank" download class="lg-download">Download</a>');
     }
 
     this.prevScrollTop = (document.documentElement.scrollTop || document.body.scrollTop)
@@ -411,8 +404,8 @@ Plugin.prototype.counter = function() {
 };
 
 Plugin.prototype.addHtml = function(index) {
-    var subHtml = null;
-    var currentEle;
+    let subHtml = null;
+    let currentEle;
     if (this.s.dynamic) {
         subHtml = this.s.dynamicEl[index].subHtml;
     } else {
@@ -714,10 +707,7 @@ Plugin.prototype.slide = function(index, fromTouch, fromThumb) {
 
         clearTimeout(_this.hideBartimeout);
 
-        // Add title if this.s.appendSubHtmlTo === lg-sub-html
         if (this.s.appendSubHtmlTo === '.lg-sub-html') {
-
-            // wait for slide animation to complete
             setTimeout(function() {
                 _this.addHtml(index);
             }, _time);
@@ -1320,7 +1310,6 @@ class LightGalleryUI {
         document.querySelectorAll('.js-light-gallery').forEach((nodeElement) => {
             lightGallery(nodeElement, {
                 thumbnail: true,
-                download: false,
                 counter: false,
                 width: '1200px',
                 height: '600px',
