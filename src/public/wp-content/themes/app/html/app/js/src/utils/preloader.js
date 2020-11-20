@@ -1,6 +1,11 @@
 class Preloader {
   static disablingPreloader() {
     const preloader = document.querySelector('.js-preloader');
+  
+    if (!preloader) {
+      return;
+    }
+
     const handler = e => {
       const { target, currentTarget } = e;
       if (target !== currentTarget) return false;
@@ -13,6 +18,7 @@ class Preloader {
         document.dispatchEvent(pageEvent);
       }, 1000);
     };
+
     preloader.addEventListener(endEvents.animation, handler);
 
     preloader.classList.add('hide');

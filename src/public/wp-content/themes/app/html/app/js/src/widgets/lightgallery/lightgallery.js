@@ -55,347 +55,319 @@ const defaults = {
     supportLegacyBrowser: true
 };
 
-function Plugin(element, options) {
-    this.el = element;
-    
-    this.s = Object.assign({}, defaults, options);
+class Plugin {
+    constructor(element, options) {
+        this.el = element;
 
-    if (this.s.dynamic && this.s.dynamicEl !== 'undefined' && this.s.dynamicEl.constructor === Array && !this.s.dynamicEl.length) {
-        throw ('When using dynamic mode, you must also define dynamicEl as an Array.');
-    }
+        this.s = Object.assign({}, defaults, options);
 
-    this.modules = {};
+        if (this.s.dynamic && this.s.dynamicEl !== 'undefined' && this.s.dynamicEl.constructor === Array && !this.s.dynamicEl.length) {
+            throw ('When using dynamic mode, you must also define dynamicEl as an Array.');
+        }
 
-    this.lGalleryOn = false;
+        this.modules = {};
 
-    this.lgBusy = false;
+        this.lGalleryOn = false;
 
-    this.hideBartimeout = false;
+        this.lgBusy = false;
 
-    this.isTouch = ('ontouchstart' in document.documentElement);
+        this.hideBartimeout = false;
 
-    if (this.s.slideEndAnimatoin) {
-        this.s.hideControlOnEnd = false;
-    }
+        this.isTouch = ('ontouchstart' in document.documentElement);
 
-    this.items = [];
+        if (this.s.slideEndAnimatoin) {
+            this.s.hideControlOnEnd = false;
+        }
 
-    if (this.s.dynamic) {
-        this.items = this.s.dynamicEl;
-    } else {
-        if (this.s.selector === 'this') {
-            this.items.push(this.el);
-        } else if (this.s.selector !== '') {
-            if (this.s.selectWithin) {
-                this.items = document.querySelector(this.s.selectWithin).querySelectorAll(this.s.selector);
+        this.items = [];
+
+        if (this.s.dynamic) {
+            this.items = this.s.dynamicEl;
+        } else {
+            if (this.s.selector === 'this') {
+                this.items.push(this.el);
+            } else if (this.s.selector !== '') {
+                if (this.s.selectWithin) {
+                    this.items = document.querySelector(this.s.selectWithin).querySelectorAll(this.s.selector);
+                } else {
+                    this.items = this.el.querySelectorAll(this.s.selector);
+                }
             } else {
-                this.items = this.el.querySelectorAll(this.s.selector);
+                this.items = this.el.children;
+            }
+        }
+
+        this.___slide = '';
+
+        this.outer = '';
+
+        this.init();
+    }
+
+    init() {
+        if (this.s.preload > this.items.length) {
+            this.s.preload = this.items.length;
+        }
+
+        let _hash = window.location.hash;
+        if (_hash.indexOf('lg=' + this.s.galleryId) > 0) {
+
+            this.index = parseInt(_hash.split('&slide=')[1], 10);
+
+            utils.addClass(document.body, 'lg-from-hash');
+            if (!utils.hasClass(document.body, 'lg-on')) {
+                utils.addClass(document.body, 'lg-on');
+                setTimeout(() => {
+                    this.build(this.index);
+                });
+            }
+        }
+
+        if (this.s.dynamic) {
+            utils.trigger(this.el, 'onBeforeOpen');
+
+            this.index = this.s.index || 0;
+
+            if (!utils.hasClass(document.body, 'lg-on')) {
+                utils.addClass(document.body, 'lg-on');
+                setTimeout(() => {
+                    this.build(this.index);
+                });
             }
         } else {
-            this.items = this.el.children;
+
+            for (let i = 0; i < this.items.length; i++) {
+                ((index) => {
+                    utils.on(this.items[index], 'click.lgcustom', (e) => {
+                        e.preventDefault();
+
+                        utils.trigger(this.el, 'onBeforeOpen');
+
+                        this.index = this.s.index || index;
+
+                        if (!utils.hasClass(document.body, 'lg-on')) {
+                            this.build(this.index);
+                            utils.addClass(document.body, 'lg-on');
+                        }
+                    });
+                })(i);
+            }
         }
     }
 
-    this.___slide = '';
+    build(index) {
+        this.structure();
 
-    this.outer = '';
+        for (let key in window.lgModules) {
+            this.modules[key] = new window.lgModules[key](this.el);
+        }
 
-    this.init();
+        this.slide(index, false, false);
 
-    return this;
-}
+        if (this.s.keyPress) {
+            this.keyPress();
+        }
 
-Plugin.prototype.init = function() {
+        if (this.items.length > 1) {
+            this.arrow();
 
-    const _this = this;
+            setTimeout(() => {
+                this.enableDrag();
+                this.enableSwipe();
+            }, 50);
 
-    if (_this.s.preload > _this.items.length) {
-        _this.s.preload = _this.items.length;
-    }
+            if (this.s.mousewheel) {
+                this.mousewheel();
+            }
+        }
 
-    let _hash = window.location.hash;
-    if (_hash.indexOf('lg=' + this.s.galleryId) > 0) {
+        this.counter();
+        this.closeGallery();
+        utils.trigger(this.el, 'onAfterOpen');
 
-        _this.index = parseInt(_hash.split('&slide=')[1], 10);
+        if (this.s.hideBarsDelay > 0) {
+            const initialHideBarTimeout = setTimeout(() => {
+                utils.addClass(this.outer, 'lg-hide-items');
+            }, this.s.hideBarsDelay);
+            utils.on(this.outer, 'mousemove.lg click.lg touchstart.lg', () => {
+                clearTimeout(initialHideBarTimeout);
 
-        utils.addClass(document.body, 'lg-from-hash');
-        if (!utils.hasClass(document.body, 'lg-on')) {
-            utils.addClass(document.body, 'lg-on');
-            setTimeout(function() {
-                _this.build(_this.index);
+                utils.removeClass(this.outer, 'lg-hide-items');
+
+                clearTimeout(this.hideBartimeout);
+
+                this.hideBartimeout = setTimeout(() => {
+                    utils.addClass(this.outer, 'lg-hide-items');
+                }, this.s.hideBarsDelay);
             });
         }
     }
 
-    if (_this.s.dynamic) {
+    structure() {
+        let list = '';
+        let controls = '';
+        let i = 0;
+        let subHtmlCont = '';
+        let template;
+ 
+        document.body.insertAdjacentHTML('beforeend', '<div class="lg-backdrop"></div>');
+        utils.setVendor(document.querySelector('.lg-backdrop'), 'TransitionDuration', this.s.backdropDuration + 'ms');
 
-        utils.trigger(this.el, 'onBeforeOpen');
-
-        _this.index = _this.s.index || 0;
-
-        if (!utils.hasClass(document.body, 'lg-on')) {
-            utils.addClass(document.body, 'lg-on');
-            setTimeout(function() {
-                _this.build(_this.index);
-            });
-        }
-    } else {
-
-        for (var i = 0; i < _this.items.length; i++) {
-            (function(index) {
-                utils.on(_this.items[index], 'click.lgcustom', (e) => {
-
-                    e.preventDefault();
-
-                    utils.trigger(_this.el, 'onBeforeOpen');
-
-                    _this.index = _this.s.index || index;
-
-                    if (!utils.hasClass(document.body, 'lg-on')) {
-                        _this.build(_this.index);
-                        utils.addClass(document.body, 'lg-on');
-                    }
-                });
-
-            })(i);
-
+        for (i = 0; i < this.items.length; i++) {
+            list += '<div class="lg-item"></div>';
         }
 
-    }
-
-};
-
-Plugin.prototype.build = function(index) {
-
-    var _this = this;
-
-    _this.structure();
-
-    for (var key in window.lgModules) {
-        _this.modules[key] = new window.lgModules[key](_this.el);
-    }
-
-    _this.slide(index, false, false);
-
-    if (_this.s.keyPress) {
-        _this.keyPress();
-    }
-
-    if (_this.items.length > 1) {
-
-        _this.arrow();
-
-        setTimeout(function() {
-            _this.enableDrag();
-            _this.enableSwipe();
-        }, 50);
-
-        if (_this.s.mousewheel) {
-            _this.mousewheel();
+        if (this.s.controls && this.items.length > 1) {
+            controls = `
+                <div class="lg-actions">
+                    <button type="button" aria-label="Previous slide" class="lg-prev lg-icon">${this.s.prevHtml}</button>
+                    <button type="button" aria-label="Next slide" class="lg-next lg-icon">${this.s.nextHtml}</button>
+                </div>
+            `;
         }
-    }
 
-    _this.counter();
+        if (this.s.appendSubHtmlTo === '.lg-sub-html') {
+            subHtmlCont = '<div class="lg-sub-html"></div>';
+        }
 
-    _this.closeGallery();
-
-    utils.trigger(_this.el, 'onAfterOpen');
-
-    if(_this.s.hideBarsDelay > 0) {
-        const initialHideBarTimeout = setTimeout(function() {
-            utils.addClass(_this.outer, 'lg-hide-items');
-        }, _this.s.hideBarsDelay);
-        utils.on(_this.outer, 'mousemove.lg click.lg touchstart.lg', function() {
-            clearTimeout(initialHideBarTimeout);
-            
-            utils.removeClass(_this.outer, 'lg-hide-items');
-    
-            clearTimeout(_this.hideBartimeout);
-    
-            _this.hideBartimeout = setTimeout(function() {
-                utils.addClass(_this.outer, 'lg-hide-items');
-            }, _this.s.hideBarsDelay);
-    
-        });
-    }
-
-};
-
-Plugin.prototype.structure = function() {
-    let list = '';
-    let controls = '';
-    let i = 0;
-    let subHtmlCont = '';
-    let template;
-    let _this = this;
-
-    document.body.insertAdjacentHTML('beforeend', '<div class="lg-backdrop"></div>');
-    utils.setVendor(document.querySelector('.lg-backdrop'), 'TransitionDuration', this.s.backdropDuration + 'ms');
-
-    for (i = 0; i < this.items.length; i++) {
-        list += '<div class="lg-item"></div>';
-    }
-
-    if (this.s.controls && this.items.length > 1) {
-        controls = `
-            <div class="lg-actions">
-                <button type="button" aria-label="Previous slide" class="lg-prev lg-icon">${this.s.prevHtml}</button>
-                <button type="button" aria-label="Next slide" class="lg-next lg-icon">${this.s.nextHtml}</button>
+        template = `
+            <div class="lg-outer ${this.s.addClass} ${this.s.startClass}">
+                <div class="lg" style="width: ${this.s.width}; height: ${this.s.height}">
+                    <div class="lg-something">
+                        <div class="lg-inner">${list}</div>
+                        <div class="lg-toolbar lg-group"></div>
+                        ${controls}
+                        ${subHtmlCont}
+                    </div>
+                    <button type="button" class="lg-close lg-icon"></button>
+                </div>
             </div>
         `;
-    }
 
-    if (this.s.appendSubHtmlTo === '.lg-sub-html') {
-        subHtmlCont = '<div class="lg-sub-html"></div>';
-    }
+        document.body.insertAdjacentHTML('beforeend', template);
+        this.outer = document.querySelector('.lg-outer');
+        this.outer.focus();
+        this.___slide = this.outer.querySelectorAll('.lg-item');
 
-    template = `
-        <div class="lg-outer ${this.s.addClass} ${this.s.startClass}">
-            <div class="lg" style="width: ${this.s.width}; height: ${this.s.height}">
-                <div class="lg-something">
-                    <div class="lg-inner">${list}</div>
-                    <div class="lg-toolbar lg-group"></div>
-                    ${controls}
-                    ${subHtmlCont}
-                </div>
-                <button type="button" class="lg-close lg-icon"></button>
-            </div>
-        </div>
-    `;
+        if (this.s.useLeft) {
+            utils.addClass(this.outer, 'lg-use-left');
 
-    document.body.insertAdjacentHTML('beforeend', template);
-    this.outer = document.querySelector('.lg-outer');
-    this.outer.focus();
-    this.___slide = this.outer.querySelectorAll('.lg-item');
-
-    if (this.s.useLeft) {
-        utils.addClass(this.outer, 'lg-use-left');
-
-        this.s.mode = 'lg-slide';
-    } else {
-        utils.addClass(this.outer, 'lg-use-css3');
-    }
-
-    _this.setTop();
-    utils.on(window, 'resize.lg orientationchange.lg', function() {
-        setTimeout(function() {
-            _this.setTop();
-        }, 100);
-    });
-
-    utils.addClass(this.___slide[this.index], 'lg-current');
-
-    if (this.doCss()) {
-        utils.addClass(this.outer, 'lg-css3');
-    } else {
-        utils.addClass(this.outer, 'lg-css');
-
-        this.s.speed = 0;
-    }
-
-    utils.addClass(this.outer, this.s.mode);
-
-    if (this.s.enableDrag && this.items.length > 1) {
-        utils.addClass(this.outer, 'lg-grab');
-    }
-
-    if (this.s.showAfterLoad) {
-        utils.addClass(this.outer, 'lg-show-after-load');
-    }
-
-    if (this.doCss()) {
-        let inner = this.outer.querySelector('.lg-inner');
-        utils.setVendor(inner, 'TransitionTimingFunction', this.s.cssEasing);
-        utils.setVendor(inner, 'TransitionDuration', this.s.speed + 'ms');
-    }
-
-    setTimeout(function() {
-        utils.addClass(document.querySelector('.lg-backdrop'), 'in');
-    });
-
-
-    setTimeout(function() {
-        utils.addClass(_this.outer, 'lg-visible');
-    }, this.s.backdropDuration);
-
-    if (this.s.download) {
-        this.outer.querySelector('.lg-something').insertAdjacentHTML('beforeend', '<a id="lg-download" target="_blank" download class="lg-download">Download</a>');
-    }
-
-    this.prevScrollTop = (document.documentElement.scrollTop || document.body.scrollTop)
-
-};
-
-Plugin.prototype.setTop = function() {
-    if (this.s.height !== '100%') {
-        let wH = window.innerHeight;
-        let top = (wH - parseInt(this.s.height, 10)) / 2;
-        let lGallery = this.outer.querySelector('.lg');
-        if (wH >= parseInt(this.s.height, 10)) {
-            lGallery.style.top = top + 'px';
+            this.s.mode = 'lg-slide';
         } else {
-            lGallery.style.top = '0px';
+            utils.addClass(this.outer, 'lg-use-css3');
         }
-    }
-};
 
-Plugin.prototype.doCss = function() {
-    var support = function() {
-        var transition = ['transition', 'MozTransition', 'WebkitTransition', 'OTransition', 'msTransition', 'KhtmlTransition'];
-        var root = document.documentElement;
-        var i = 0;
-        for (i = 0; i < transition.length; i++) {
-            if (transition[i] in root.style) {
-                return true;
+        this.setTop();
+        utils.on(window, 'resize.lg orientationchange.lg', () => {
+            setTimeout(() => {
+                this.setTop();
+            }, 100);
+        });
+
+        utils.addClass(this.___slide[this.index], 'lg-current');
+
+        if (this.doCss()) {
+            utils.addClass(this.outer, 'lg-css3');
+        } else {
+            utils.addClass(this.outer, 'lg-css');
+
+            this.s.speed = 0;
+        }
+
+        utils.addClass(this.outer, this.s.mode);
+
+        if (this.s.enableDrag && this.items.length > 1) {
+            utils.addClass(this.outer, 'lg-grab');
+        }
+
+        if (this.s.showAfterLoad) {
+            utils.addClass(this.outer, 'lg-show-after-load');
+        }
+
+        if (this.doCss()) {
+            let inner = this.outer.querySelector('.lg-inner');
+            utils.setVendor(inner, 'TransitionTimingFunction', this.s.cssEasing);
+            utils.setVendor(inner, 'TransitionDuration', this.s.speed + 'ms');
+        }
+
+        setTimeout(() => {
+            utils.addClass(document.querySelector('.lg-backdrop'), 'in');
+        });
+
+
+        setTimeout(() => {
+            utils.addClass(this.outer, 'lg-visible');
+        }, this.s.backdropDuration);
+
+        if (this.s.download) {
+            this.outer.querySelector('.lg-something').insertAdjacentHTML('beforeend', '<a id="lg-download" target="_blank" download class="lg-download">Download</a>');
+        }
+
+        this.prevScrollTop = (document.documentElement.scrollTop || document.body.scrollTop)
+    }
+
+    setTop() {
+        if (this.s.height !== '100%') {
+            let wH = window.innerHeight;
+            let top = (wH - parseInt(this.s.height, 10)) / 2;
+            let lGallery = this.outer.querySelector('.lg');
+            if (wH >= parseInt(this.s.height, 10)) {
+                lGallery.style.top = top + 'px';
+            } else {
+                lGallery.style.top = '0px';
             }
         }
-    };
-
-    if (support()) {
-        return true;
     }
 
-    return false;
-};
+    doCss() {
+        const support = function () {
+            const transition = ['transition', 'MozTransition', 'WebkitTransition', 'OTransition', 'msTransition', 'KhtmlTransition'];
+            const root = document.documentElement;
+            for (let i = 0; i < transition.length; i++) {
+                if (transition[i] in root.style) {
+                    return true;
+                }
+            }
+        };
 
-Plugin.prototype.isVideo = function(src, index) {
+        if (support()) {
+            return true;
+        }
 
-    var html;
-    if (this.s.dynamic) {
-        html = this.s.dynamicEl[index].html;
-    } else {
-        html = this.items[index].getAttribute('data-html');
+        return false;
     }
 
-    if (!src && html) {
-        return {
-            html5: true
-        };
-    }
+    isVideo(src, index) {
 
-    var youtube = src.match(/\/\/(?:www\.)?youtu(?:\.be|be\.com|be-nocookie\.com)\/(?:watch\?v=|embed\/)?([a-z0-9\-\_\%]+)/i);
-    var vimeo = src.match(/\/\/(?:www\.)?(?:player\.)?vimeo.com\/(?:video\/)?([0-9a-z\-_]+)/i);
-    var dailymotion = src.match(/\/\/(?:www\.)?dai.ly\/([0-9a-z\-_]+)/i);
-    var vk = src.match(/\/\/(?:www\.)?(?:vk\.com|vkontakte\.ru)\/(?:video_ext\.php\?)(.*)/i);
+        let html;
+        if (this.s.dynamic) {
+            html = this.s.dynamicEl[index].html;
+        } else {
+            html = this.items[index].getAttribute('data-html');
+        }
 
-    if (youtube) {
-        return {
-            youtube: youtube
-        };
-    } else if (vimeo) {
-        return {
-            vimeo: vimeo
-        };
-    } else if (dailymotion) {
-        return {
-            dailymotion: dailymotion
-        };
-    } else if (vk) {
-        return {
-            vk: vk
-        };
+        if (!src && html) {
+            return {
+                html5: true
+            };
+        }
+
+        const youtube = src.match(/\/\/(?:www\.)?youtu(?:\.be|be\.com|be-nocookie\.com)\/(?:watch\?v=|embed\/)?([a-z0-9\-\_\%]+)/i);
+        const vimeo = src.match(/\/\/(?:www\.)?(?:player\.)?vimeo.com\/(?:video\/)?([0-9a-z\-_]+)/i);
+        const dailymotion = src.match(/\/\/(?:www\.)?dai.ly\/([0-9a-z\-_]+)/i);
+        const vk = src.match(/\/\/(?:www\.)?(?:vk\.com|vkontakte\.ru)\/(?:video_ext\.php\?)(.*)/i);
+
+        if (youtube) {
+            return { youtube };
+        } else if (vimeo) {
+            return { vimeo };
+        } else if (dailymotion) {
+            return { dailymotion };
+        } else if (vk) {
+            return { vk };
+        }
     }
-};
+}
 
 Plugin.prototype.counter = function() {
     if (this.s.counter) {
