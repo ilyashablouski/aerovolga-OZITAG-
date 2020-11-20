@@ -45,7 +45,6 @@ const defaults = {
     iframeMaxWidth: '100%',
     download: true,
     counter: true,
-    appendCounterTo: '.lg-toolbar',
     swipeThreshold: 50,
     enableSwipe: true,
     enableDrag: true,
@@ -239,7 +238,11 @@ class LightGallery {
                         ${controls}
                         ${subHtmlCont}
                     </div>
-                    <button type="button" class="lg-close lg-icon"></button>
+                    <button type="button" class="lg-close">
+                        <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3564 10.0703L19.9951 18.7091L18.6389 20.0654L10 11.4266L1.36108 20.0654L0.00488281 18.7091L8.64355 10.0703L0.00463867 1.43134L1.36108 0.0750122L10 8.71393L18.6389 0.0750122L19.9954 1.43134L11.3564 10.0703Z" fill="currentColor"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         `;
@@ -300,7 +303,15 @@ class LightGallery {
         }, this.s.backdropDuration);
 
         if (this.s.download) {
-            this.outer.querySelector('.lg-something').insertAdjacentHTML('beforeend', '<a id="lg-download" target="_blank" download class="lg-download">Download</a>');
+            this.outer.querySelector('.lg-something').insertAdjacentHTML('beforeend', `
+                <a id="lg-download" target="_blank" download class="lg-download">
+                    <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6 11L6 1H7L7 11H6Z" fill="currentColor"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.74878 6.33164L0.95752 7.12294L6.45483 11.6684L6.5 11.6233L6.54492 11.6684L12.0425 7.12294L11.2512 6.33164L6.5 10.185L1.74878 6.33164Z" fill="currentColor"/>
+                    </svg>
+                    Download
+                </a>
+            `);
         }
 
         this.prevScrollTop = (document.documentElement.scrollTop || document.body.scrollTop)
@@ -338,8 +349,8 @@ class LightGallery {
     }
 
     isVideo(src, index) {
-
         let html;
+
         if (this.s.dynamic) {
             html = this.s.dynamicEl[index].html;
         } else {
@@ -370,7 +381,7 @@ class LightGallery {
 
     counter() {
         if (this.s.counter) {
-            this.outer.querySelector(this.s.appendCounterTo).insertAdjacentHTML('beforeend', `
+            this.outer.querySelector('.lg-something').insertAdjacentHTML('beforeend', `
                 <div id="lg-counter">
                     <span id="lg-counter-current">${(parseInt(this.index, 10) + 1)}</span> / <span id="lg-counter-all">${this.items.length}</span>
                 </div>
@@ -641,7 +652,6 @@ class LightGallery {
         let _prev = false;
 
         if (!this.lgBusy) {
-
             if (this.s.download) {
                 let _src;
                 if (this.s.dynamic) {
@@ -1190,7 +1200,6 @@ class LightGalleryUI {
         document.querySelectorAll('.js-light-gallery').forEach((nodeElement) => {
             lightGallery(nodeElement, {
                 thumbnail: true,
-                counter: false,
                 width: '1200px',
                 height: '600px',
             });
