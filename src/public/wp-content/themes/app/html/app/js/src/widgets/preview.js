@@ -5,30 +5,30 @@ class Preview {
   }
 
   addEvents() {
-    if(window.innerWidth > 1023) {
-      this.preview.addEventListener('mouseover', () => {
-        if (this.preview.classList.contains('active')) {
-          return;
-        } else {
-          const container = this.preview.closest('.js-previews');
-          const currActive = container.querySelector('.active');
+    this.preview.addEventListener('mouseenter', () => {
+      if (isTabletLayout()) return;
 
-          if (currActive) {
-            currActive.classList.remove('active');
-          }
+      const container = this.preview.closest('.js-previews');
+      const currActive = container.querySelector('.active');
 
-          this.setActive(this.preview);
-        }
-      });
-    }
+      if (currActive) {
+        Preview.removeActive(currActive);
+      }
+
+      Preview.setActive(this.preview);
+    });
   }
 
-  setActive(elem) {
+  static setActive(elem) {
     elem.classList.add('active');
   }
 
-  removeActive(elem) {
+  static removeActive(elem) {
     elem.classList.remove('active');
+  }
+
+  static isActive(elem) {
+    elem.classList.contains('active');
   }
 
   static init(elem) {
@@ -37,8 +37,7 @@ class Preview {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const preview = document.querySelectorAll('.js-preview');
-  preview.forEach(item => {
-    Preview.init(item);
+  document.querySelectorAll('.js-preview').forEach(node => {
+    Preview.init(node);
   });
 });

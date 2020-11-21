@@ -52,7 +52,7 @@
       margin-right: -300px;
     }
 
-    &:hover {
+    &.active {
       width: 100%;
 
       .home-hero {
@@ -112,7 +112,8 @@
     width: 100%;
     height: 100%;
 
-    img, video {
+    img,
+    video {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -121,44 +122,40 @@
 
   &__content {
     position: relative;
-    width: 50vw;
-    padding: 180px 120px;
+    width: 54vw;
+    padding: 120px;
     z-index: 1;
 
     @include tablet-and-mobile {
-      padding: 140px 60px;
+      padding: 80px 100px;
     }
+  }
+
+  &__title,
+  &__description,
+  &__action {
+    transform: translate3d(0, 500px, 0);
+    transition: all .4s cubic-bezier(0.4, 0.0, 0.2, 1);
+    opacity: 0;
   }
 
   &__title {
     display: block;
-    transform: translate3d(0, 500px, 0);
     margin-bottom: 18px;
     @include fontDrukWideMedium;
     font-size: 34px;
     line-height: 40px;
     color: #FFFFFF;
-    transition: all .4s cubic-bezier(0.4, 0.0, 0.2, 1);
-    opacity: 0;
   }
 
   &__description {
     display: block;
-    transform: translate3d(0, 500px, 0);
     max-width: 300px;
     margin-bottom: 38px;
     font-size: 18px;
     font-weight: 600;
     line-height: 30px;
     color: rgba(255, 255, 255, .8);
-    transition: all .4s cubic-bezier(0.4, 0.0, 0.2, 1);
-    opacity: 0;
-  }
-
-  &__action {
-    transform: translate3d(0, 500px, 0);
-    transition: all .4s cubic-bezier(0.4, 0.0, 0.2, 1);
-    opacity: 0;
   }
 
   &__button {
