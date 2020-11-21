@@ -21,10 +21,7 @@
   }
 
   &--hero {
-    @include mobile {
-      min-height: 460px;
-      max-height: 460px;
-    }
+    min-height: 0;
   }
 
   &--features {

@@ -3,10 +3,10 @@ class Previews {
     this.container = container;
     this.previewList = previewList;
 
-    this.initialized();
+    this.initialize();
   }
 
-  initialized() {
+  initialize() {
     Previews.setActive(this.previewList[0]);
     this.createEventListeners();
   }
@@ -14,12 +14,12 @@ class Previews {
   createEventListeners() {
     this.previewList.forEach((preview) => {
       preview.addEventListener('mouseenter', () => {
-        if (!isTabletLayout()) this.handlePreviewHomer(preview);
+        if (!isLaptopLayout()) this.handlePreviewHover(preview);
       });
     });
   }
 
-  handlePreviewHomer(preview) {
+  handlePreviewHover(preview) {
     const currActive = this.container.querySelector('.active');
     if (currActive) Previews.removeActive(currActive);
 
