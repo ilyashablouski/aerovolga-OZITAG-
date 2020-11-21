@@ -1,39 +1,38 @@
 <div class="home-section home-section--hero">
   <div class="home-hero">
     <div class="home-hero__inner">
-      <div class="home-hero__preview preview">
-        <div class="swiper-container js-previews">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide preview__item js-preview active">
-              <div class="preview__item-background">
-                {{>components/image ext="png" img='home/hero_1'}}
-              </div>
-              <div class="preview__item-inner">
-                <div class="preview__item-description">
-                  <span class="preview__item-title">Amphibia La-8</span>
-                  <p class="preview__item-text">The new standart in amphibia aircraft vehicles all over the world </p>
-                  <div class="preview__item-btn">
-                    {{>ui/btn color="outline" label="Explore"}}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide preview__item js-preview">
-              <div class="preview__item-background">
-                {{>components/image ext="png" img='home/hero_2'}}
-              </div>
-              <div class="preview__item-inner">
-                <div class="preview__item-description">
-                  <div class="preview__item-title">Borey</div>
-                  <div class="preview__item-text">The new standart in amphibia aircraft vehicles all over the world </div>
-                  <div class="preview__item-btn">
-                    {{>ui/btn color="outline" label="Explore"}}
-                  </div>
-                </div>
+      <div class="home-hero__slide">
+        <div class="home-hero__preview">
+          <div class="home-hero__media">
+            {{>components/image ext="png" img='home/hero_1'}}
+          </div>
+          <div class="home-hero__content">
+            <h2 class="home-hero__title">Amphibia La-8</h2>
+            <span
+              class="home-hero__description">The new standart in amphibia aircraft vehicles all over the world</span>
+            <div class="home-hero__action">
+              <div class="home-hero__button">
+                {{>ui/btn color="outline" label="Explore"}}
               </div>
             </div>
           </div>
-          <div class="preview-slider__pagination"></div>
+        </div>
+      </div>
+      <div class="home-hero__slide">
+        <div class="home-hero__preview">
+          <div class="home-hero__media">
+            {{>components/image ext="png" img='home/hero_2'}}
+          </div>
+          <div class="home-hero__content">
+            <h2 class="home-hero__title">Borey</h2>
+            <span
+              class="home-hero__description">The new standart in amphibia aircraft vehicles all over the world </span>
+            <div class="home-hero__action">
+              <div class="home-hero__button">
+                {{>ui/btn color="outline" label="Explore"}}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
