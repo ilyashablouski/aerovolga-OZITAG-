@@ -48,4 +48,19 @@
       font-size: 30px;
     }
   }
+
+  &__content {
+    position: relative;
+  }
+
+  &__btn-wrapper {
+    position: absolute;
+    bottom: 7px;
+    right: 0;
+
+    @include mobile {
+      margin-top: 5px;
+      position: static;
+    }
+  }
 }

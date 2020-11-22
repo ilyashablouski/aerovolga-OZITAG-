@@ -116,43 +116,131 @@
     }
   }
 
-  //Primary
-  &--primary {
+  &--with-border {
+    padding: 10px 20px 11px;
+    background: $color-blue-dark-120;
+    border: 2px solid $color-blue-dark-120;
+    border-radius: 2px;
+
     font-weight: 600;
     font-size: 15px;
     line-height: 19px;
-    padding: 15px 30px 16px;
     color: $color-white;
-    background-color: $color-blue-dark-100;
-    border: 1px solid $color-blue-dark-100;
-    border-radius: 2px;
 
-
-    &:hover,
-    &:focus {
-      color: $color-blue-dark-80;
-      background-color: $color-white;
-      border-color: $color-gray-100;
+    &:hover {
+      background: $color-white;
+      border-color: $color-blue-dark-60;
+      color: $color-blue-dark-60;
     }
 
     &:active {
       background: $color-blue-dark-120;
-      background-color: $color-blue-dark-120;
+      border-color: $color-blue-dark-120;
+      color: $color-white;
     }
   }
 
-  // Outline
-  &--outline {
-    padding: 10px 30px 11px;
-    color: $color-blue-dark-80;
-    background-color: $color-white;
-    border: 1px solid $color-gray-100;
+  &--white {
+    padding: 15px 30px 16px;
+    background: $color-white;
     border-radius: 2px;
 
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
+    text-align: center;
+    color: $color-blue-dark-80;
+
     &:hover {
+      background: $color-blue-dark-100;
       color: $color-white;
-      background-color: $color-blue-dark-100;
-      border-color: $color-blue-dark-100;
+    }
+
+    &:active {
+      background: $color-white;
+      color: $color-blue-dark-80;
+    }
+  }
+
+  &--primary {
+    border-radius: 2px;
+    background: $color-blue-dark-100;
+
+    color: $color-white;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
+    text-align: center;
+    border: 1px solid $color-blue-dark-100;
+    box-sizing: border-box;
+
+    &:hover {
+      background: $color-white;
+      color: $color-blue-dark-100;
+      border-color: $color-gray-100;
+    }
+
+    &:active {
+      background: $color-blue-dark-100;
+      color: $color-white;
+    }
+
+  }
+
+  &--outline {
+    &-transparent {
+      padding: 10px 48px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-sizing: border-box;
+      border-radius: 2px;
+
+      background: transparent;
+
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 18px;
+      text-align: center;
+      color: $color-white;
+
+      &:hover {
+        padding: 15px 48px 17px;
+        background: $color-white;
+        color: $color-blue-dark-100;
+        border-color: $color-white;
+      }
+
+      &:active {
+        padding: 15px 48px 17px;
+        background: transparent;
+        color: $color-white;
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+    }
+
+    &-white {
+      padding: 10px 30px 11px;
+      background: $color-white;
+      border: 1px solid $color-gray-100;
+      border-radius: 2px;
+
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 19px;
+      text-align: center;
+      color: $color-blue-dark-80;
+
+      &:hover {
+        padding: 15px 30px 16px;
+        background: $color-blue-dark-100;
+        color: $color-white;
+      }
+
+      &:active {
+        padding: 15px 30px 16px;
+        background: $color-white;
+        border-color: $color-gray-100;
+        color: $color-blue-dark-80;
+      }
     }
   }
 
@@ -178,6 +266,7 @@
       height: 60px;
       background: $color-gray-40;
       color: $color-blue-dark-100;
+
       &:before {
         @include sprite('back-primary');
       }
@@ -205,5 +294,7 @@
         }
       }
     }
+
+
   }
 }

@@ -10,6 +10,12 @@
       <div class="hero__content">
         {{>blocks/page-breadcrumbs label=label href=href}}
         <h1 class="hero__title">{{title}}</h1>
+
+        {{#if btn}}
+          <div class="hero__btn-wrapper">
+            {{>ui/btn button=true label="Feedback form" color="white"}}
+          </div>
+        {{/if}}
       </div>
     </div>
   </div>
