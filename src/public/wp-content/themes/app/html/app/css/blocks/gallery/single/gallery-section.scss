@@ -9,9 +9,9 @@
     margin-top: 0;
   }
 
-  &__description{
-    margin-top: 45px;
-    max-width: 720px;
+  &__description {
+    margin-top: 42px;
+    max-width: 740px;
     @include section_caption_text;
 
     @include tablet-and-mobile {
@@ -20,6 +20,13 @@
   }
 
   &__bottom {
-    margin-top: 25px;
+    margin-top: 27px;
+  }
+
+  &__btn-wrapper {
+    display: none;
+    margin-top: 58px;
+    //display: flex;
+    justify-content: center;
   }
 }

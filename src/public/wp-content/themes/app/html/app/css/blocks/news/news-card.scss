@@ -125,7 +125,7 @@
     position: relative;
     transform: translateY(-56px);
     margin: 0 30px;
-    padding: 26px 30px;
+    padding: 26px 30px 29px;
     background: $color-white;
     @include tablet-and-mobile {
       margin: 0 20px;
@@ -160,7 +160,7 @@
   }
 
   &__text {
-    margin-top: 16.6px;
+    margin-top: 14px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
