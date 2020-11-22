@@ -51,6 +51,7 @@ class FeaturesSlider {
     this.slider = new Swiper(this.rowElement, {
       speed: 800,
       slidesPerView: 1,
+      loopedSlides: 3,
       loop: true,
       autoplay: {
         delay: 3000,
@@ -74,7 +75,7 @@ class FeaturesSlider {
   }
 
   getActiveSlideNumber() {
-    return this.slider.activeIndex + 1;
+    return this.slider.realIndex + 1;
   }
 
   setVisibleTextElement(visibleIndex) {

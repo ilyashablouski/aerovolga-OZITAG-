@@ -3,9 +3,13 @@
     <div class="home-hero__inner swiper-wrapper">
       <div class="hh-slide swiper-slide js-preview">
         <div class="hh-slide__inner">
-          <div class="hh-slide__media">
-            <video src="../assets/videos/home-hero/1.mp4" loop></video>
-            {{>components/image ext="png" img='home/hero_1'}}
+          <div class="hh-slide__media-container">
+            <div class="hh-slide__media-item">
+              {{>components/image ext="png" img='home/hero_1'}}
+            </div>
+            <div class="hh-slide__media-item">
+              <video src="../assets/videos/home-hero/1.mp4" loop muted></video>
+            </div>
           </div>
           <div class="hh-slide__content">
             <h2 class="hh-slide__title">Amphibia La-8</h2>
@@ -21,9 +25,13 @@
       </div>
       <div class="hh-slide swiper-slide js-preview">
         <div class="hh-slide__inner">
-          <div class="hh-slide__media">
-            <video src="../assets/videos/home-hero/2.mp4" loop></video>
-            {{>components/image ext="png" img='home/hero_2'}}
+          <div class="hh-slide__media-container">
+            <div class="hh-slide__media-item">
+              {{>components/image ext="png" img='home/hero_2'}}
+            </div>
+            <div class="hh-slide__media-item">
+              <video src="../assets/videos/home-hero/2.mp4" loop muted></video>
+            </div>
           </div>
           <div class="hh-slide__content">
             <h2 class="hh-slide__title">Borey</h2>

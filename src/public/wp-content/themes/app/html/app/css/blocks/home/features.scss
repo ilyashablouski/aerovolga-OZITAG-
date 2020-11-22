@@ -33,12 +33,10 @@
     overflow: hidden;
 
     @include tablet-and-mobile {
-      margin-right: 20px;
       margin-left: 20px;
     }
 
     @include mobile {
-      margin-right: 13px;
       margin-left: 13px;
     }
 
