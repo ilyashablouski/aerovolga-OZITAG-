@@ -12,6 +12,9 @@
   @include mobile {
     padding: 0 20px;
     margin-bottom: 32px;
+
+    overflow-x: auto;
+    @include hide-scrollbar;
   }
 
   &--anchor {
@@ -31,10 +34,6 @@
 
   &__menu {
     display: flex;
-
-    @include mobile {
-      overflow-x: auto;
-    }
 
     &-item {
       position: relative;
