@@ -10,29 +10,44 @@
   }
 
   &__top {
-    margin-right: -60px;
     position: relative;
+    margin-right: -60px;
 
     @include tablet-and-mobile {
-      margin-right: -20px;
       display: flex;
       flex-direction: column-reverse;
+      margin-right: -20px;
+      margin-left: -20px;
+      overflow: hidden;
     }
+
     @include mobile {
       margin-right: -13px;
+      margin-left: -13px;
     }
   }
 
   &__slider {
-    width: 100%;
-    overflow: hidden;
     position: relative;
+    max-width: 100%;
+    overflow: hidden;
+
+    @include tablet-and-mobile {
+      margin-right: 20px;
+      margin-left: 20px;
+    }
+
+    @include mobile {
+      margin-right: 13px;
+      margin-left: 13px;
+    }
 
     .swiper-container {
-      max-width: 600px;
-      overflow: visible;
-      margin: 0;
       position: static;
+      max-width: 600px;
+      margin: 0;
+      overflow: visible;
+
       @include mobile {
         max-width: 83.75vw;
       }
@@ -95,9 +110,11 @@
     width: 100%;
     position: relative;
     overflow: hidden;
+
     @include tablet-and-mobile {
       margin: 0 52px;
     }
+
     @include mobile {
       margin: 0 17px;
       max-width: 83.75vw;
@@ -136,33 +153,32 @@
     width: 360px;
     background: $color-white;
     z-index: 5;
+
     @include tablet-and-mobile {
-      padding: 0 0 38px 50px;
       position: static;
+      margin-right: 20px;
+      margin-left: 20px;
+      padding: 0 0 38px 50px;
       width: auto;
     }
+
     @include mobile {
+      margin-right: 13px;
+      margin-left: 13px;
       padding: 0 0 38px 17px;
     }
 
-    &.swiper-container {
-      position: absolute;
-      max-width: 360px;
-      height: auto;
-      overflow: hidden;
-      margin: 0;
+    .swiper-container {
       @include tablet-and-mobile {
         max-width: 100%;
         overflow: visible;
-      }
-      @include mobile {
-        overflow-x: auto;
       }
     }
 
     &-list {
       display: flex;
       flex-direction: column;
+
       @include tablet-and-mobile {
         flex-direction: row;
       }
@@ -174,13 +190,16 @@
       margin-bottom: 12px;
       padding-bottom: 5px;
       height: auto !important;
+
       @include tablet-and-mobile {
         margin: 0 32px 0 0;
         width: auto !important;
+
         &:last-child {
           margin-right: 0;
         }
       }
+
       @include mobile {
         &:last-child {
           padding-right: 13px;
