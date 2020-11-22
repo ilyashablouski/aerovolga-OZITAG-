@@ -1,6 +1,10 @@
 .accordion {
   width: 100%;
 
+  &__wrapper {
+    margin-top: 22px;
+  }
+
   &--vacancy {
     .accordion__item {
       margin-bottom: 0;
@@ -9,11 +13,18 @@
 
     .accordion__top {
       position: sticky;
-      top: 54px;
+      top: 53px;
       padding: 21px 20px;
       border: 1px solid $color-white;
       border-bottom: 1px solid $color-gray-60;
       background: $color-white;
+
+      @include smallTablet-and-mobile {
+        top: 124px;
+      }
+      @include mobile {
+        top: 94px;
+      }
 
       &:hover {
         background: $color-gray-20;
@@ -32,7 +43,7 @@
       }
 
       &-container {
-        padding: 60px 0 50px;
+        padding: 64px 0 50px;
         margin-bottom: 0;
         @include mobile {
           padding: 30px 0;
