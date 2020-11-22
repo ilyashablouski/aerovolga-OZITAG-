@@ -1,12 +1,37 @@
 .image-with-content {
-  margin-bottom: 59px;
+  margin-bottom: 60px;
 
   @include mobile {
     margin-bottom: 50px;
   }
 
+  &--vacancy {
+    margin-top: -40px;
+
+    @include tablet-and-mobile {
+      .image-with-content__row {
+        display: block;
+      }
+      .image-with-content__image {
+        max-width: 100%;
+        margin-right: 0;
+      }
+      .image-with-content__content {
+        margin-top: 64px;
+        max-width: 100%;
+      }
+    }
+
+    @include mobile {
+      margin-top: 0;
+      .image-with-content__content {
+        margin-top: 24px;
+      }
+    }
+  }
+
   &__wrapper {
-    margin-top: 50px;
+    margin-top: 58px;
   }
 
   &__row {
@@ -80,6 +105,7 @@
 
     @include mobile {
       margin-top: 24px;
+      max-width: 100%;
     }
     @include mobile320 {
       padding: 19px 0 0 19px;
@@ -97,7 +123,7 @@
     }
 
     &--large {
-      margin: 12px 0 0 25px;
+      margin: 12px 0 0;
       @include tablet-and-mobile {
         margin: 0;
       }
@@ -121,6 +147,6 @@
   }
 
   &__button {
-    margin-top: 22px;
+    margin-top: 25px;
   }
 }

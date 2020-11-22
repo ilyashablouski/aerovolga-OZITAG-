@@ -10,11 +10,25 @@
     @include mobile {
       padding: 0 10px;
     }
+
+    &-btn {
+      position: absolute;
+      right: 59px;
+      top: 66px;
+      @include tablet-and-mobile {
+        top: 40px;
+      }
+      @include mobile {
+        position: static;
+      }
+    }
   }
 
   &__col {
     background: transparent;
-    flex: 1 1 1px;
+    flex: 1 1 220px;
+    max-width: 220px;
+    padding-right: 20px;
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
@@ -31,11 +45,16 @@
       max-width: 240px;
     }
 
+    &:nth-child(3) {
+      width: 100%;
+    }
+
     &--bold {
       font-size: 18px;
       color: $color-blue-dark-80;
     }
   }
+
   &__row {
     display: flex;
     background: transparent;
@@ -51,7 +70,9 @@
       @include mobile {
         display: none;
       }
+
       .vacancy__col {
+        padding-right: 0;
         font-weight: normal;
         font-size: 18px;
         line-height: 32px;

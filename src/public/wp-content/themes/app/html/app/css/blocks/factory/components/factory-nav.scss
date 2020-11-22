@@ -4,14 +4,21 @@
   position: sticky;
   background: $color-white;
   top: 0;
-  z-index: 10;
+  z-index: 20;
 
   @include tablet-and-mobile {
     padding: 0 30px;
   }
+  @include smallTablet-and-mobile {
+    top: 80px;
+  }
   @include mobile {
+    top: 50px;
     padding: 0 20px;
     margin-bottom: 32px;
+
+    overflow-x: auto;
+    @include hide-scrollbar;
   }
 
   &--anchor {
@@ -31,10 +38,6 @@
 
   &__menu {
     display: flex;
-
-    @include mobile {
-      overflow-x: auto;
-    }
 
     &-item {
       position: relative;

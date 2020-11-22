@@ -1,6 +1,10 @@
 .accordion {
   width: 100%;
 
+  &__wrapper {
+    margin-top: 22px;
+  }
+
   &--vacancy {
     .accordion__item {
       margin-bottom: 0;
@@ -9,11 +13,18 @@
 
     .accordion__top {
       position: sticky;
-      top: 54px;
+      top: 53px;
       padding: 21px 20px;
       border: 1px solid $color-white;
       border-bottom: 1px solid $color-gray-60;
       background: $color-white;
+
+      @include smallTablet-and-mobile {
+        top: 124px;
+      }
+      @include mobile {
+        top: 94px;
+      }
 
       &:hover {
         background: $color-gray-20;
@@ -32,7 +43,8 @@
       }
 
       &-container {
-        padding: 60px 0 50px;
+        position: relative;
+        padding: 64px 0 50px;
         margin-bottom: 0;
         @include mobile {
           padding: 30px 0;
@@ -43,12 +55,13 @@
 
   &--characteristics {
     margin-top: 27px;
+
     .accordion__description-container {
       padding: 0 0 10px;
-      margin-bottom: 0;
     }
+
     .accordion__description-wrapper {
-      min-height: 80px;
+      padding-bottom: 0;
     }
   }
 
@@ -91,6 +104,7 @@
     background: $color-gray-40;
     transition: all 0.3s linear;
     cursor: pointer;
+    z-index: 10;
 
     @include mobile {
       padding: 10px 15px;
@@ -98,6 +112,7 @@
 
     &:hover {
       border: 1px solid $color-blue-dark-100;
+
       .accordion__pointer {
         opacity: 0.55;
       }
@@ -136,17 +151,16 @@
     transition: all 0.35s ease-in-out;
 
     &-wrapper {
-      min-height: 140px;
-
+      padding-bottom: 35px;
       @include mobile {
-        min-height: 40px;
+        padding-bottom: 10px;
       }
     }
 
     &-container {
-      padding: 50px 0;
+      padding: 50px 0 40px;
       border-bottom: 2px solid $color-blue-dark-100;
-      margin-bottom: 35px;
+
 
       @include mobile {
         padding: 20px 0;

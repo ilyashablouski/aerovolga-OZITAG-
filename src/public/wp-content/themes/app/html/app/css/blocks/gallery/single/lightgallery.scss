@@ -64,6 +64,12 @@
   transition: transform 80ms,-webkit-transform 80ms,-o-transform 80ms;
 }
 
+.lg-actions {
+  @include mobile {
+    display: none;
+  }
+}
+
 @-webkit-keyframes lg-right-end {
   0% {
     left: 0;
@@ -197,19 +203,19 @@
   font-size: 16px;
   line-height: 30px;
   color: #fff;
-  transition: transform 80ms;
+  transition: color 80ms;
 
   svg {
     margin-right: 5px;
   }
 
   &:hover {
-    transform: scale(1.1);
+    color: $color-blue-dark-60;
   }
 
   &:active {
-    transform: scale(1);
-    transition: transform 80ms;
+    color: $color-blue-dark-60;
+    transition: color 80ms;
   }
 
   @include mobile {
@@ -353,7 +359,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   grid-auto-rows: 61px;
   gap: 5px;
   overflow: auto;
-  
+
   &::-webkit-scrollbar {
     width: 3px;
   }
@@ -860,6 +866,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   @include mobile {
     width: 100%;
     background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -873,8 +883,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
   @include mobile {
     position: relative;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
+    height: 240px;
   }
 }
 
@@ -897,6 +908,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   position: absolute;
   width: 100%;
   height: 100%;
+
+  @include mobile {
+    width: calc(100% - 10px);
+    margin: 0 10px;
+    transform: translate(-10px, 0);
+  }
 }
 
 .lg-outer .lg-item:before,
@@ -926,7 +943,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .lg-outer .lg-item.lg-current .lg-object {
   @include mobile {
-    transform: scale(1.05) !important;
+    // transform: scale(1.05) !important;
   }
 }
 
@@ -1082,7 +1099,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
   color: #fff;
-  
+
   &:hover {
     opacity: 0.8;
     -webkit-animation: rotate-center 0.6s ease-in-out both;

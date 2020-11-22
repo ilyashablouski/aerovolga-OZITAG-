@@ -21,9 +21,11 @@ import './src/widgets/modifications-slider';
 import './src/widgets/double-slider';
 import './src/widgets/toggle-menu';
 import './src/widgets/page-nav';
-import './src/widgets/scroll-horizontally';
 import './src/widgets/previews';
 import './src/widgets/previews-slider';
+import './src/widgets/free-scroll-slider';
+
+import './src/widgets/spinner';
 
 import './src/widgets/aircrafts-header/aircrafts-header-menu';
 import './src/widgets/aircrafts-header/aircrafts-header';

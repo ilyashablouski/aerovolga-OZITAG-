@@ -29,34 +29,27 @@
             <div class="accordion__description-wrapper">
               <div class="accordion__description-container">
                 <div class="vacancy__description">
-                  {{#>blocks/news/news-block title="Role:"}}
+                  {{#>blocks/news/single/components/news-block title="Role:"}}
                     <p class="section__text section__text--small">We strive to win talented young people for our
                       company! Our extensive training programs will provide you with a deep understanding of the
                       aviation industry. Join our strong team and help us in our mission to shape the future.
                     </p>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Primary Areas of Responsibility:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Primary Areas of Responsibility:"}}
                     <ol class="list list--disc">
-                      <li class="list__item"><span class="list__item-pointer"></span>Ensures that the proposed repair is
-                        structurally and functionally equivalent to the blueprint
-                        design.
+                      <li class="list__item"><span class="list__item-pointer"></span>Devises, reviews and approves
+                        repair dispositions and associated analyses.
                       </li>
-                      <li class="list__item"><span class="list__item-pointer"></span>All dispositions correctly
-                        documented, traceable,
-                        and defendable (including any
-                        supporting analyses).
+                      <li class="list__item"><span class="list__item-pointer"></span>Ensures that the proposed repair is
+                        structurally and functionally equivalent to the blueprint design.
                       </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Provides on site technical support;
-                        including interpreting Engineering drawings, specifications, and
-                        other engineering definition documentation.
+                        including interpreting Engineering drawings, specifications, and other engineering definition
+                        documentation.
                       </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Assists in determining if
                         non-conformances are the result of design definition or workmanship issues
                         and documents findings.
-                      </li>
-                      <li class="list__item"><span class="list__item-pointer"></span>Initiates design and process
-                        changes to correct design errors that resolve complex, chronic
-                        manufacturing problems and ultimately improve produce-ability of the aircraft.
                       </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Initiates design and process
                         changes to correct design errors that resolve complex, chronic
@@ -69,7 +62,6 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Participates in corrective action
                         board reviews to provide input / data to support corrective action
                         identification and implementation.
-                      </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Provide robust coverage &
                         assistance to production operations to ensure that issues related to
                         production and assembly are expeditiously resolved and production rate schedules are met.
@@ -79,8 +71,8 @@
                         hours.
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Success Indicators:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Success Indicators:"}}
                     <ol class="list list--decimal">
                       <li class="list__item"><span class="list__item-pointer"></span>Reduction of recurrence of past
                         problems (indicates MRB actions and associated root cause support
@@ -98,8 +90,8 @@
                         (NCR) backlog
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Required Experience:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Required Experience:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>B.S. or M.S. in Mechanical,
                         Electrical, Aerospace, or Manufacturing Engineering
@@ -121,8 +113,8 @@
                         of complex products
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Ideal Experience:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Ideal Experience:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>5 years MRB experience in
                         aerospace, automotive, boating, heavy equipment, and/or military transports
@@ -134,8 +126,8 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Startup environments
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Ideal Experience:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Ideal Experience:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>5 years MRB experience in
                         aerospace, automotive, boating, heavy equipment, and/or military transports
@@ -147,8 +139,8 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Startup environments
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Other Traits:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Other Traits:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>Clear communicator
                       </li>
@@ -166,7 +158,12 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Energetic/Passionate
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
+                  {{/blocks/news/single/components/news-block}}
+
+                  <div class="vacancy__description-btn">
+                    {{>ui/btn color="primary" button=true label="Apply for job"}}
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -189,34 +186,27 @@
             <div class="accordion__description-wrapper">
               <div class="accordion__description-container">
                 <div class="vacancy__description">
-                  {{#>blocks/news/news-block title="Role:"}}
+                  {{#>blocks/news/single/components/news-block title="Role:"}}
                     <p class="section__text section__text--small">We strive to win talented young people for our
                       company! Our extensive training programs will provide you with a deep understanding of the
                       aviation industry. Join our strong team and help us in our mission to shape the future.
                     </p>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Primary Areas of Responsibility:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Primary Areas of Responsibility:"}}
                     <ol class="list list--disc">
-                      <li class="list__item"><span class="list__item-pointer"></span>Ensures that the proposed repair is
-                        structurally and functionally equivalent to the blueprint
-                        design.
+                      <li class="list__item"><span class="list__item-pointer"></span>Devises, reviews and approves
+                        repair dispositions and associated analyses.
                       </li>
-                      <li class="list__item"><span class="list__item-pointer"></span>All dispositions correctly
-                        documented, traceable,
-                        and defendable (including any
-                        supporting analyses).
+                      <li class="list__item"><span class="list__item-pointer"></span>Ensures that the proposed repair is
+                        structurally and functionally equivalent to the blueprint design.
                       </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Provides on site technical support;
-                        including interpreting Engineering drawings, specifications, and
-                        other engineering definition documentation.
+                        including interpreting Engineering drawings, specifications, and other engineering definition
+                        documentation.
                       </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Assists in determining if
                         non-conformances are the result of design definition or workmanship issues
                         and documents findings.
-                      </li>
-                      <li class="list__item"><span class="list__item-pointer"></span>Initiates design and process
-                        changes to correct design errors that resolve complex, chronic
-                        manufacturing problems and ultimately improve produce-ability of the aircraft.
                       </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Initiates design and process
                         changes to correct design errors that resolve complex, chronic
@@ -229,7 +219,6 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Participates in corrective action
                         board reviews to provide input / data to support corrective action
                         identification and implementation.
-                      </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Provide robust coverage &
                         assistance to production operations to ensure that issues related to
                         production and assembly are expeditiously resolved and production rate schedules are met.
@@ -239,8 +228,8 @@
                         hours.
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Success Indicators:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Success Indicators:"}}
                     <ol class="list list--decimal">
                       <li class="list__item"><span class="list__item-pointer"></span>Reduction of recurrence of past
                         problems (indicates MRB actions and associated root cause support
@@ -258,8 +247,8 @@
                         (NCR) backlog
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Required Experience:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Required Experience:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>B.S. or M.S. in Mechanical,
                         Electrical, Aerospace, or Manufacturing Engineering
@@ -281,8 +270,8 @@
                         of complex products
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Ideal Experience:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Ideal Experience:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>5 years MRB experience in
                         aerospace, automotive, boating, heavy equipment, and/or military transports
@@ -294,8 +283,8 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Startup environments
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Ideal Experience:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Ideal Experience:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>5 years MRB experience in
                         aerospace, automotive, boating, heavy equipment, and/or military transports
@@ -307,8 +296,8 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Startup environments
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Other Traits:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Other Traits:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>Clear communicator
                       </li>
@@ -326,7 +315,11 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Energetic/Passionate
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
+                  {{/blocks/news/single/components/news-block}}
+
+                  <div class="vacancy__description-btn">
+                    {{>ui/btn color="primary" button=true label="Apply for job"}}
+                  </div>
                 </div>
               </div>
             </div>
@@ -349,34 +342,27 @@
             <div class="accordion__description-wrapper">
               <div class="accordion__description-container">
                 <div class="vacancy__description">
-                  {{#>blocks/news/news-block title="Role:"}}
+                  {{#>blocks/news/single/components/news-block title="Role:"}}
                     <p class="section__text section__text--small">We strive to win talented young people for our
                       company! Our extensive training programs will provide you with a deep understanding of the
                       aviation industry. Join our strong team and help us in our mission to shape the future.
                     </p>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Primary Areas of Responsibility:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Primary Areas of Responsibility:"}}
                     <ol class="list list--disc">
-                      <li class="list__item"><span class="list__item-pointer"></span>Ensures that the proposed repair is
-                        structurally and functionally equivalent to the blueprint
-                        design.
+                      <li class="list__item"><span class="list__item-pointer"></span>Devises, reviews and approves
+                        repair dispositions and associated analyses.
                       </li>
-                      <li class="list__item"><span class="list__item-pointer"></span>All dispositions correctly
-                        documented, traceable,
-                        and defendable (including any
-                        supporting analyses).
+                      <li class="list__item"><span class="list__item-pointer"></span>Ensures that the proposed repair is
+                        structurally and functionally equivalent to the blueprint design.
                       </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Provides on site technical support;
-                        including interpreting Engineering drawings, specifications, and
-                        other engineering definition documentation.
+                        including interpreting Engineering drawings, specifications, and other engineering definition
+                        documentation.
                       </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Assists in determining if
                         non-conformances are the result of design definition or workmanship issues
                         and documents findings.
-                      </li>
-                      <li class="list__item"><span class="list__item-pointer"></span>Initiates design and process
-                        changes to correct design errors that resolve complex, chronic
-                        manufacturing problems and ultimately improve produce-ability of the aircraft.
                       </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Initiates design and process
                         changes to correct design errors that resolve complex, chronic
@@ -389,7 +375,6 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Participates in corrective action
                         board reviews to provide input / data to support corrective action
                         identification and implementation.
-                      </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Provide robust coverage &
                         assistance to production operations to ensure that issues related to
                         production and assembly are expeditiously resolved and production rate schedules are met.
@@ -399,8 +384,8 @@
                         hours.
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Success Indicators:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Success Indicators:"}}
                     <ol class="list list--decimal">
                       <li class="list__item"><span class="list__item-pointer"></span>Reduction of recurrence of past
                         problems (indicates MRB actions and associated root cause support
@@ -418,8 +403,8 @@
                         (NCR) backlog
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Required Experience:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Required Experience:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>B.S. or M.S. in Mechanical,
                         Electrical, Aerospace, or Manufacturing Engineering
@@ -441,8 +426,8 @@
                         of complex products
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Ideal Experience:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Ideal Experience:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>5 years MRB experience in
                         aerospace, automotive, boating, heavy equipment, and/or military transports
@@ -454,8 +439,8 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Startup environments
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Ideal Experience:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Ideal Experience:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>5 years MRB experience in
                         aerospace, automotive, boating, heavy equipment, and/or military transports
@@ -467,8 +452,8 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Startup environments
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Other Traits:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Other Traits:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>Clear communicator
                       </li>
@@ -486,7 +471,11 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Energetic/Passionate
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
+                  {{/blocks/news/single/components/news-block}}
+
+                  <div class="vacancy__description-btn">
+                    {{>ui/btn color="primary" button=true label="Apply for job"}}
+                  </div>
                 </div>
               </div>
             </div>
@@ -509,34 +498,27 @@
             <div class="accordion__description-wrapper">
               <div class="accordion__description-container">
                 <div class="vacancy__description">
-                  {{#>blocks/news/news-block title="Role:"}}
+                  {{#>blocks/news/single/components/news-block title="Role:"}}
                     <p class="section__text section__text--small">We strive to win talented young people for our
                       company! Our extensive training programs will provide you with a deep understanding of the
                       aviation industry. Join our strong team and help us in our mission to shape the future.
                     </p>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Primary Areas of Responsibility:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Primary Areas of Responsibility:"}}
                     <ol class="list list--disc">
-                      <li class="list__item"><span class="list__item-pointer"></span>Ensures that the proposed repair is
-                        structurally and functionally equivalent to the blueprint
-                        design.
+                      <li class="list__item"><span class="list__item-pointer"></span>Devises, reviews and approves
+                        repair dispositions and associated analyses.
                       </li>
-                      <li class="list__item"><span class="list__item-pointer"></span>All dispositions correctly
-                        documented, traceable,
-                        and defendable (including any
-                        supporting analyses).
+                      <li class="list__item"><span class="list__item-pointer"></span>Ensures that the proposed repair is
+                        structurally and functionally equivalent to the blueprint design.
                       </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Provides on site technical support;
-                        including interpreting Engineering drawings, specifications, and
-                        other engineering definition documentation.
+                        including interpreting Engineering drawings, specifications, and other engineering definition
+                        documentation.
                       </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Assists in determining if
                         non-conformances are the result of design definition or workmanship issues
                         and documents findings.
-                      </li>
-                      <li class="list__item"><span class="list__item-pointer"></span>Initiates design and process
-                        changes to correct design errors that resolve complex, chronic
-                        manufacturing problems and ultimately improve produce-ability of the aircraft.
                       </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Initiates design and process
                         changes to correct design errors that resolve complex, chronic
@@ -549,7 +531,6 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Participates in corrective action
                         board reviews to provide input / data to support corrective action
                         identification and implementation.
-                      </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Provide robust coverage &
                         assistance to production operations to ensure that issues related to
                         production and assembly are expeditiously resolved and production rate schedules are met.
@@ -559,8 +540,8 @@
                         hours.
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Success Indicators:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Success Indicators:"}}
                     <ol class="list list--decimal">
                       <li class="list__item"><span class="list__item-pointer"></span>Reduction of recurrence of past
                         problems (indicates MRB actions and associated root cause support
@@ -578,8 +559,8 @@
                         (NCR) backlog
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Required Experience:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Required Experience:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>B.S. or M.S. in Mechanical,
                         Electrical, Aerospace, or Manufacturing Engineering
@@ -601,8 +582,8 @@
                         of complex products
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Ideal Experience:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Ideal Experience:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>5 years MRB experience in
                         aerospace, automotive, boating, heavy equipment, and/or military transports
@@ -614,8 +595,8 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Startup environments
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Ideal Experience:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Ideal Experience:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>5 years MRB experience in
                         aerospace, automotive, boating, heavy equipment, and/or military transports
@@ -627,8 +608,8 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Startup environments
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Other Traits:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Other Traits:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>Clear communicator
                       </li>
@@ -646,7 +627,11 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Energetic/Passionate
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
+                  {{/blocks/news/single/components/news-block}}
+
+                  <div class="vacancy__description-btn">
+                    {{>ui/btn color="primary" button=true label="Apply for job"}}
+                  </div>
                 </div>
               </div>
             </div>
@@ -669,34 +654,27 @@
             <div class="accordion__description-wrapper">
               <div class="accordion__description-container">
                 <div class="vacancy__description">
-                  {{#>blocks/news/news-block title="Role:"}}
+                  {{#>blocks/news/single/components/news-block title="Role:"}}
                     <p class="section__text section__text--small">We strive to win talented young people for our
                       company! Our extensive training programs will provide you with a deep understanding of the
                       aviation industry. Join our strong team and help us in our mission to shape the future.
                     </p>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Primary Areas of Responsibility:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Primary Areas of Responsibility:"}}
                     <ol class="list list--disc">
-                      <li class="list__item"><span class="list__item-pointer"></span>Ensures that the proposed repair is
-                        structurally and functionally equivalent to the blueprint
-                        design.
+                      <li class="list__item"><span class="list__item-pointer"></span>Devises, reviews and approves
+                        repair dispositions and associated analyses.
                       </li>
-                      <li class="list__item"><span class="list__item-pointer"></span>All dispositions correctly
-                        documented, traceable,
-                        and defendable (including any
-                        supporting analyses).
+                      <li class="list__item"><span class="list__item-pointer"></span>Ensures that the proposed repair is
+                        structurally and functionally equivalent to the blueprint design.
                       </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Provides on site technical support;
-                        including interpreting Engineering drawings, specifications, and
-                        other engineering definition documentation.
+                        including interpreting Engineering drawings, specifications, and other engineering definition
+                        documentation.
                       </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Assists in determining if
                         non-conformances are the result of design definition or workmanship issues
                         and documents findings.
-                      </li>
-                      <li class="list__item"><span class="list__item-pointer"></span>Initiates design and process
-                        changes to correct design errors that resolve complex, chronic
-                        manufacturing problems and ultimately improve produce-ability of the aircraft.
                       </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Initiates design and process
                         changes to correct design errors that resolve complex, chronic
@@ -709,7 +687,6 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Participates in corrective action
                         board reviews to provide input / data to support corrective action
                         identification and implementation.
-                      </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Provide robust coverage &
                         assistance to production operations to ensure that issues related to
                         production and assembly are expeditiously resolved and production rate schedules are met.
@@ -719,8 +696,8 @@
                         hours.
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Success Indicators:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Success Indicators:"}}
                     <ol class="list list--decimal">
                       <li class="list__item"><span class="list__item-pointer"></span>Reduction of recurrence of past
                         problems (indicates MRB actions and associated root cause support
@@ -738,8 +715,8 @@
                         (NCR) backlog
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Required Experience:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Required Experience:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>B.S. or M.S. in Mechanical,
                         Electrical, Aerospace, or Manufacturing Engineering
@@ -761,8 +738,8 @@
                         of complex products
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Ideal Experience:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Ideal Experience:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>5 years MRB experience in
                         aerospace, automotive, boating, heavy equipment, and/or military transports
@@ -774,8 +751,8 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Startup environments
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Ideal Experience:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Ideal Experience:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>5 years MRB experience in
                         aerospace, automotive, boating, heavy equipment, and/or military transports
@@ -787,8 +764,8 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Startup environments
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Other Traits:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Other Traits:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>Clear communicator
                       </li>
@@ -806,7 +783,11 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Energetic/Passionate
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
+                  {{/blocks/news/single/components/news-block}}
+
+                  <div class="vacancy__description-btn">
+                    {{>ui/btn color="primary" button=true label="Apply for job"}}
+                  </div>
                 </div>
               </div>
             </div>
@@ -829,34 +810,27 @@
             <div class="accordion__description-wrapper">
               <div class="accordion__description-container">
                 <div class="vacancy__description">
-                  {{#>blocks/news/news-block title="Role:"}}
+                  {{#>blocks/news/single/components/news-block title="Role:"}}
                     <p class="section__text section__text--small">We strive to win talented young people for our
                       company! Our extensive training programs will provide you with a deep understanding of the
                       aviation industry. Join our strong team and help us in our mission to shape the future.
                     </p>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Primary Areas of Responsibility:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Primary Areas of Responsibility:"}}
                     <ol class="list list--disc">
-                      <li class="list__item"><span class="list__item-pointer"></span>Ensures that the proposed repair is
-                        structurally and functionally equivalent to the blueprint
-                        design.
+                      <li class="list__item"><span class="list__item-pointer"></span>Devises, reviews and approves
+                        repair dispositions and associated analyses.
                       </li>
-                      <li class="list__item"><span class="list__item-pointer"></span>All dispositions correctly
-                        documented, traceable,
-                        and defendable (including any
-                        supporting analyses).
+                      <li class="list__item"><span class="list__item-pointer"></span>Ensures that the proposed repair is
+                        structurally and functionally equivalent to the blueprint design.
                       </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Provides on site technical support;
-                        including interpreting Engineering drawings, specifications, and
-                        other engineering definition documentation.
+                        including interpreting Engineering drawings, specifications, and other engineering definition
+                        documentation.
                       </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Assists in determining if
                         non-conformances are the result of design definition or workmanship issues
                         and documents findings.
-                      </li>
-                      <li class="list__item"><span class="list__item-pointer"></span>Initiates design and process
-                        changes to correct design errors that resolve complex, chronic
-                        manufacturing problems and ultimately improve produce-ability of the aircraft.
                       </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Initiates design and process
                         changes to correct design errors that resolve complex, chronic
@@ -869,7 +843,6 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Participates in corrective action
                         board reviews to provide input / data to support corrective action
                         identification and implementation.
-                      </li>
                       <li class="list__item"><span class="list__item-pointer"></span>Provide robust coverage &
                         assistance to production operations to ensure that issues related to
                         production and assembly are expeditiously resolved and production rate schedules are met.
@@ -879,8 +852,8 @@
                         hours.
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Success Indicators:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Success Indicators:"}}
                     <ol class="list list--decimal">
                       <li class="list__item"><span class="list__item-pointer"></span>Reduction of recurrence of past
                         problems (indicates MRB actions and associated root cause support
@@ -898,8 +871,8 @@
                         (NCR) backlog
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Required Experience:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Required Experience:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>B.S. or M.S. in Mechanical,
                         Electrical, Aerospace, or Manufacturing Engineering
@@ -921,8 +894,8 @@
                         of complex products
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Ideal Experience:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Ideal Experience:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>5 years MRB experience in
                         aerospace, automotive, boating, heavy equipment, and/or military transports
@@ -934,8 +907,8 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Startup environments
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Ideal Experience:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Ideal Experience:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>5 years MRB experience in
                         aerospace, automotive, boating, heavy equipment, and/or military transports
@@ -947,8 +920,8 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Startup environments
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
-                  {{#>blocks/news/news-block title="Other Traits:"}}
+                  {{/blocks/news/single/components/news-block}}
+                  {{#>blocks/news/single/components/news-block title="Other Traits:"}}
                     <ol class="list list--disc">
                       <li class="list__item"><span class="list__item-pointer"></span>Clear communicator
                       </li>
@@ -966,7 +939,11 @@
                       <li class="list__item"><span class="list__item-pointer"></span>Energetic/Passionate
                       </li>
                     </ol>
-                  {{/blocks/news/news-block}}
+                  {{/blocks/news/single/components/news-block}}
+
+                  <div class="vacancy__description-btn">
+                    {{>ui/btn color="primary" button=true label="Apply for job"}}
+                  </div>
                 </div>
               </div>
             </div>

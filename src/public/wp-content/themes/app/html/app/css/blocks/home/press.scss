@@ -1,55 +1,63 @@
 .press {
-  &__scroll {
-    margin-right: -60px;
-    overflow-x: auto;
+
+  &__inner {
+    margin: 0 -60px;
     overflow-y: hidden;
-    padding-bottom: 20px;
+    overflow-x: auto;
     @include hide-scrollbar;
 
     @include tablet-and-mobile {
-      margin-right: -20px;
+      margin: 0 -20px;
     }
     @include mobile {
-      margin-right: -13px;
+      margin: 0 -13.5px;
     }
   }
 
   &__list {
     display: flex;
-    flex-wrap: nowrap;
     margin: 0 0 -50px -30px;
+    padding: 0 60px;
+
+    @include tablet-and-mobile {
+      margin: 0 0 -50px -20px;
+      padding: 0 20px;
+
+    }
     @include mobile {
-      margin: 0 0 -50px -13.5px;
+      margin: 0 -13.5px -50px;
+      padding: 0 13.5px;
+    }
+  }
+
+  &__item {
+    flex: 0 0 420px;
+    max-width: 420px;
+    margin: 0 30px;
+
+    &:last-child {
+      flex: 0 0 480px;
+      max-width: 480px;
+      margin-right: 0;
+      padding-right: 60px;
+
     }
 
-    &-cell {
-      flex: 0 0 420px;
-      max-width: 420px;
-      margin: 0 30px;
-
+    @include tablet-and-mobile {
       &:last-child {
-        flex: 0 0 480px;
-        max-width: 480px;
-        margin-right: 0;
-        padding-right: 60px;
-
+        flex: 0 0 440px;
+        max-width: 440px;
+        padding-right: 20px;
       }
-      @include tablet-and-mobile{
-        &:last-child {
-          flex: 0 0 440px;
-          max-width: 440px;
-          padding-right: 20px;
-        }
-      }
-      @include mobile {
-        flex: 0 0 86vw;
-        max-width: 86vw;
-        margin: 0 13.5px;
-        &:last-child {
-          flex: 0 0 calc(86vw + 13px);
-          max-width: calc(86vw + 13px);
-          padding-right: 13px;
-        }
+    }
+    @include mobile {
+      flex: 0 0 86vw;
+      max-width: 86vw;
+      margin: 0 13.5px;
+      &:last-child {
+        flex: 0 0 calc(86vw + 13px);
+        max-width: calc(86vw + 13px);
+        padding-right: 13px;
       }
     }
   }

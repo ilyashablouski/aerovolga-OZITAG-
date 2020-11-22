@@ -11,10 +11,14 @@
     display: flex;
     margin: 0 -7px;
     flex-wrap: wrap;
-    @include mobile {
+
+    @include mobile480 {
       flex-wrap: nowrap;
       overflow-x: auto;
+      justify-content: flex-start;
+      @include hide-scrollbar;
     }
+
     &--block {
       flex-wrap: nowrap;
       overflow-y: auto;
@@ -26,6 +30,7 @@
 
       .brochures__card {
         flex: 0 0 274px;
+
         &-top {
           @include mobile {
             height: 384px;
@@ -42,9 +47,31 @@
     width: 100%;
     padding: 0 7px;
 
-    &:nth-child(n+5) {
-      margin-top: 40px;
+    &:nth-child(-n+3) {
+      margin-bottom: 50px;
     }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include tablet-and-mobile {
+      flex: 1 1 33%;
+      max-width: 33%;
+      margin-bottom: 0;
+      &:nth-child(-n+3) {
+        margin-bottom: 50px;
+      }
+    }
+    @include mobile {
+      flex: 0 0 274px;
+      max-width: 274px;
+      margin-bottom: 0;
+      &:nth-child(-n+3) {
+        margin-bottom: 0;
+      }
+    }
+
 
     &:hover {
       .brochures__card-top {
@@ -98,8 +125,12 @@
       width: 100%;
       height: 384px;
 
-      @include mobile {
-        height: 146px;
+      @include tablet-and-mobile {
+        height: auto;
+      }
+
+      @include mobile480 {
+        height: 384px;
       }
 
       img {
@@ -132,7 +163,8 @@
     }
 
     &-bottom {
-      margin-top: 21px;
+      //margin-top: 21px;
+      margin-top: 11px;
     }
 
     &-title {

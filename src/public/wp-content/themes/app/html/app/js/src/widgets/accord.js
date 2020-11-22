@@ -24,16 +24,16 @@ class Accord {
     elem.classList.add('active');
     elem.querySelector('.accordion__description').style.maxHeight = elem.querySelector('.accordion__description-wrapper').scrollHeight + 'px';
 
-    setTimeout(() => {
-      elem.querySelector('.accordion__description').style.overflow = 'visible';
-    }, 350);
+    // setTimeout(() => {
+    //   elem.querySelector('.accordion__description').style.overflow = 'visible';
+    // }, 350);
   }
 
   removeActive(elem) {
     elem.classList.remove('active');
     elem.querySelector('.accordion__description').style.maxHeight = '0px';
 
-    elem.querySelector('.accordion__description').style.overflow = 'hidden';
+    // elem.querySelector('.accordion__description').style.overflow = 'hidden';
   }
 
   static init(elem) {

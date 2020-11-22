@@ -12,6 +12,7 @@ const configs = {
   },
   navigation: {
     nextEl: '.slider__next',
+    prevEl: '.slider__prev',
   },
   effect: 'coverflow',
   coverflowEffect: {
