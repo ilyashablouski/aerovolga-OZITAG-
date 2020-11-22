@@ -25,6 +25,8 @@ import './src/widgets/previews';
 import './src/widgets/previews-slider';
 import './src/widgets/free-scroll-slider';
 
+import './src/widgets/spinner';
+
 import './src/widgets/aircrafts-header/aircrafts-header-menu';
 import './src/widgets/aircrafts-header/aircrafts-header';
 
