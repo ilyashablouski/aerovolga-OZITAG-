@@ -43,12 +43,13 @@
 
   &--characteristics {
     margin-top: 27px;
+
     .accordion__description-container {
       padding: 0 0 10px;
-      margin-bottom: 0;
     }
+
     .accordion__description-wrapper {
-      min-height: 80px;
+      padding-bottom: 0;
     }
   }
 
@@ -98,6 +99,7 @@
 
     &:hover {
       border: 1px solid $color-blue-dark-100;
+
       .accordion__pointer {
         opacity: 0.55;
       }
@@ -136,17 +138,16 @@
     transition: all 0.35s ease-in-out;
 
     &-wrapper {
-      min-height: 140px;
-
+      padding-bottom: 35px;
       @include mobile {
-        min-height: 40px;
+        margin-bottom: 10px;
       }
     }
 
     &-container {
       padding: 50px 0;
       border-bottom: 2px solid $color-blue-dark-100;
-      margin-bottom: 35px;
+
 
       @include mobile {
         padding: 20px 0;
