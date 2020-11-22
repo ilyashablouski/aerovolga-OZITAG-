@@ -15,14 +15,14 @@ import './src/widgets/anchor';
 import './src/widgets/certificate-slider';
 import './src/widgets/features-slider';
 import './src/widgets/reviews-slider';
-import './src/widgets/previews-slide';
 import './src/widgets/design-slider';
 import './src/widgets/gallery-slider';
 import './src/widgets/modifications-slider';
 import './src/widgets/double-slider';
 import './src/widgets/toggle-menu';
 import './src/widgets/page-nav';
-import './src/widgets/preview';
+import './src/widgets/previews';
+import './src/widgets/previews-slider';
 import './src/widgets/free-scroll-slider';
 
 import './src/widgets/aircrafts-header/aircrafts-header-menu';
