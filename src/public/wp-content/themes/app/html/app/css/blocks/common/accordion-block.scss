@@ -104,6 +104,7 @@
     background: $color-gray-40;
     transition: all 0.3s linear;
     cursor: pointer;
+    z-index: 10;
 
     @include mobile {
       padding: 10px 15px;
