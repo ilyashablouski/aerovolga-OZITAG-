@@ -134,7 +134,6 @@ class LightGallery {
                 });
             }
         } else {
-
             for (let i = 0; i < this.items.length; i++) {
                 ((index) => {
                     utils.on(this.items[index], 'click.lgcustom', (e) => {

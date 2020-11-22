@@ -50,8 +50,6 @@ const utils = {
         }
     },
 
-    // ex Transform
-    // ex TransitionTimingFunction
     setVendor: function(el, property, value) {
         if (!el) {
             return;
@@ -69,7 +67,7 @@ const utils = {
             return;
         }
 
-        let customEvent = new CustomEvent(event, {
+        const customEvent = new CustomEvent(event, {
             detail: detail
         });
         el.dispatchEvent(customEvent);
@@ -84,7 +82,7 @@ const utils = {
         }
 
         events.split(' ').forEach(event => {
-            var _id = this.getAttribute(el, 'lg-event-uid') || '';
+            let _id = this.getAttribute(el, 'lg-event-uid') || '';
             utils.Listener.uid++;
             _id += '&' + utils.Listener.uid;
             this.setAttribute(el, 'lg-event-uid', _id);
@@ -98,14 +96,14 @@ const utils = {
             return;
         }
 
-        var _id = this.getAttribute(el, 'lg-event-uid');
+        let _id = this.getAttribute(el, 'lg-event-uid');
         if (_id) {
             _id = _id.split('&');
-            for (var i = 0; i < _id.length; i++) {
+            for (let i = 0; i < _id.length; i++) {
                 if (_id[i]) {
-                    var _event = event + _id[i];
+                    let _event = event + _id[i];
                     if (_event.substring(0, 1) === '.') {
-                        for (var key in utils.Listener) {
+                        for (let key in utils.Listener) {
                             if (utils.Listener.hasOwnProperty(key)) {
                                 if (key.split('.').indexOf(_event.split('.')[1]) > -1) {
                                     el.removeEventListener(key.split('.')[0], utils.Listener[key]);
@@ -125,7 +123,7 @@ const utils = {
     },
 
     param: function(obj) {
-        return Object.keys(obj).map(function(k) {
+        return Object.keys(obj).map((k) => {
             return encodeURIComponent(k) + '=' + encodeURIComponent(obj[k]);
         }).join('&');
     }

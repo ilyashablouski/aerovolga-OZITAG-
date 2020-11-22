@@ -1,28 +1,21 @@
 const thumbnailDefaults = {
     thumbnail: true,
-
     animateThumb: false,
     currentPagerPosition: 'middle',
-
     thumbWidth: 100,
     thumbContHeight: 100,
     thumbMargin: 5,
-
     exThumbImage: false,
     showThumbByDefault: false,
     toggleThumb: false,
     pullCaptionUp: false,
-
     enableThumbDrag: false,
     enableThumbSwipe: false,
     swipeThreshold: 50,
-
     loadYoutubeThumbnail: false,
     youtubeThumbSize: 1,
-
     loadVimeoThumbnail: false,
     vimeoThumbSize: 'thumbnail_small',
-
     loadDailymotionThumbnail: false,
 };
 
@@ -70,7 +63,7 @@ class Thumbnail {
                 this.thumbClickable = true;
             }
 
-            // this.toggle();
+            this.toggle();
             this.thumbkeyPress();
         }
     }

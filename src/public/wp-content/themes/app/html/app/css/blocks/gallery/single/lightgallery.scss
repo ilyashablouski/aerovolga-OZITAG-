@@ -926,7 +926,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .lg-outer .lg-item.lg-current .lg-object {
   @include mobile {
-    transform: scale(1.05) !important;
+    // transform: scale(1.05) !important;
   }
 }
 
