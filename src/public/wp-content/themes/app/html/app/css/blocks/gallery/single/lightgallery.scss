@@ -64,6 +64,12 @@
   transition: transform 80ms,-webkit-transform 80ms,-o-transform 80ms;
 }
 
+.lg-actions {
+  @include mobile {
+    display: none;
+  }
+}
+
 @-webkit-keyframes lg-right-end {
   0% {
     left: 0;
@@ -860,6 +866,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   @include mobile {
     width: 100%;
     background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -875,6 +885,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     position: relative;
     width: 90%;
     margin: 0 auto;
+    height: 240px;
   }
 }
 
