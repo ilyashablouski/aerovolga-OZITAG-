@@ -10,6 +10,18 @@
     @include mobile {
       padding: 0 10px;
     }
+
+    &-btn {
+      position: absolute;
+      right: 59px;
+      top: 66px;
+      @include tablet-and-mobile {
+        top: 40px;
+      }
+      @include mobile {
+        position: static;
+      }
+    }
   }
 
   &__col {

@@ -43,6 +43,7 @@
       }
 
       &-container {
+        position: relative;
         padding: 64px 0 50px;
         margin-bottom: 0;
         @include mobile {
