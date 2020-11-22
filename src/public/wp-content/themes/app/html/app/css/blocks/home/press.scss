@@ -2,6 +2,7 @@
 
   &__inner {
     margin: 0 -60px;
+    overflow-y: hidden;
     overflow-x: auto;
     @include hide-scrollbar;
 
