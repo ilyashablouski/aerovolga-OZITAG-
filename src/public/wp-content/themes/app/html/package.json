@@ -66,6 +66,7 @@
     "normalize-scss": "^7.0.1",
     "picturefill": "^3.0.3",
     "react-app-polyfill": "^1.0.5",
+    "rellax": "^1.12.1",
     "svg4everybody": "^2.1.9",
     "swiper": "^6.1.2"
   },
