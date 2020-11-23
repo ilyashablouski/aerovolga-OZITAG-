@@ -15,6 +15,10 @@
   @include mobile {
     width: 100%;
   }
+
+  &.this-is-home {
+    width: calc(100% - 360px);
+  }
 }
 
 .transition li {

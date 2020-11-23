@@ -112,7 +112,14 @@ class App {
             leaveAnimation();
             await delay(1500);
             done();
-          }
+          },
+
+          async once() {
+            const done = this.async();
+            leaveAnimation();
+            await delay(1500);
+            done();
+          },
         },
       ],
     });

@@ -37,14 +37,7 @@ class PageNavPanel {
   }
 }
 
-/* document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('.js-page-header');
-  if (!header) return null;
-
-  PageNavPanel.init(header);
-}); */
-
-subscribeToEvent('initModules', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.js-page-header');
   if (!header) return null;
 
