@@ -1,95 +1,21 @@
-//Animations
-$timing-fn: cubic-bezier(0.4, 0.0, 0.2, 1);
-$timing-fn-btn: cubic-bezier(.17, .67, .3, 1.33);
-$timing-fn-image1: cubic-bezier(.215,.61,.355,1);
-$timing-fn-image2: cubic-bezier(.215,.61,.355,1);
-$timing-fn-bounce: cubic-bezier(.47, .46, .26, 1.85);
-
-.page-transition {
-  &:after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 999999;
-  }
-
-  &.show {
-    .page-transition {
-      &__part {
-        transform-origin: 0 0;
-        animation: transition-in .8s $timing-fn both;
-
-        &--2 {
-          animation-delay: .15s;
-        }
-
-        &--3 {
-          animation-delay: .25s;
-        }
-      }
-    }
-  }
-
-  &.hide {
-    .page-transition {
-      &__part {
-        animation: transition-out .8s $timing-fn both;
-
-        &--2 {
-          animation-delay: .15s;
-        }
-
-        &--3 {
-          animation-delay: .25s;
-        }
-      }
-    }
-  }
-
-  &__part {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: calc(100vw / 3);
-    transform-origin: 50% 100%;
-    box-shadow: 0 0 0 1px #fff;
-    background: $color-white;
-    will-change: transform;
-    z-index: 100000;
-
-    &--1 {
-      left: 0;
-    }
-
-    &--2 {
-      left: calc(100vw / 3);
-    }
-
-    &--3 {
-      right: 0;
-    }
-  }
+.transition {
+  position: absolute;
+  z-index: 99;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
 }
 
-@keyframes transition-in {
-  from {
-    transform: scaleY(0) translateZ(0);
-  }
-
-  to {
-    transform: scaleY(1) translateZ(0);
-  }
-}
-
-@keyframes transition-out {
-  from {
-    transform: scaleY(1) translateZ(0);
-  }
-
-  to {
-    transform: scaleY(0) translateZ(0);
-  }
+.transition li {
+  width: 20%;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  background: #fffffe;
 }

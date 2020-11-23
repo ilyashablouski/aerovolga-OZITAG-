@@ -1,3 +1,31 @@
+function leaveAnimation() {
+  const tl = gsap.timeline();
+
+  tl.to(".transition li", {
+    duration: 0.5,
+    scaleY: 1,
+    transformOrigin: "bottom left",
+    stagger: 0.2,
+  });
+
+  tl.to(".transition li", {
+    duration: 0.5,
+    scaleY: 0,
+    transformOrigin: "bottom left",
+    stagger: 0.1,
+    delay: 0.1,
+  });
+}
+
+function delay(n) {
+  n = n || 2000;
+  return new Promise((done) => {
+    setTimeout(() => {
+      done();
+    }, n);
+  });
+}
+
 class App {
   constructor () {
     this.addEvents();
@@ -24,29 +52,20 @@ class App {
   }
 
   initCore() {
-    barba.hooks.after(() => {
-      /* App.dispatchEvent('initModules');
-      App.dispatchEvent('pageEnter'); */
-      return pageTransitionIn();
-    });
-
-    /* barba.hooks.afterLeave(({ next }) => {
-      App.dispatchEvent('updatePageTheme', next);
-      App.dispatchEvent('resetModules');
-    });
-
-    barba.hooks.beforeEnter(() => {
-      history.scrollRestoration = 'manual';
-      window.scrollTo(0, 0);
-    }); */
-
-    barba.hooks.before(() => {
-      // App.dispatchEvent('pageLeave');
-      return pageTransitionOut();
-    });
-
     barba.init({
       preventRunning: true,
+      sync: true,
+
+      transitions: [
+        {
+          async leave() {
+            const done = this.async();
+            leaveAnimation();
+            await delay(1500);
+            done();
+          }
+        },
+      ],
     });
   }
 }

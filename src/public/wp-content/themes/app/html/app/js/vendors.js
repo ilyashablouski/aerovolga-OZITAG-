@@ -11,6 +11,7 @@ import svgPolyfill from 'svg4everybody';
 import jquery from 'jquery';
 import Swiper, { Navigation, Pagination, Thumbs, Autoplay } from 'swiper';
 import barba from '@barba/core';
+import gsap from 'gsap';
 
 window.$ = window.jQuery = jquery;
 window.svg4everybody = svgPolyfill;
@@ -19,6 +20,7 @@ window.Swiper = Swiper;
 Swiper.use([Navigation, Pagination, Thumbs, Autoplay]);
 
 window.barba = barba;
+window.gsap = gsap;
 
 lazySizes.cfg.lazyClass = 'lazy';
 lazySizes.cfg.srcAttr = 'data-original';
