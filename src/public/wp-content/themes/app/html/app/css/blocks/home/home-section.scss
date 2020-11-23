@@ -25,6 +25,10 @@
   }
 
   &--features {
+    .home-section__inner {
+      padding-top: 40px;
+    }
+
     @include tablet-and-mobile {
       .home-section__inner {
         padding-top: 50px;
@@ -38,6 +42,16 @@
   }
 
   &--services {
+    align-items: flex-start;
+    @include desktop {
+      .home-section__inner {
+        padding-top: 80px;
+        @media (max-height: 750px) {
+          padding-top: 40px;
+        }
+      }
+    }
+
     @include tablet-and-mobile {
       .home-section__inner {
         padding-top: 78px;
@@ -93,7 +107,11 @@
 
   &__inner {
     width: 100%;
-    padding-top: 77px;
+    @include desktop {
+      @media (max-height: 700px) {
+        padding: 40px 0;
+      }
+    }
     @include tablet-and-mobile {
       padding-top: 70px;
     }
