@@ -56,22 +56,17 @@ class Previews {
   static getVideoPlayer(container) {
     return container.querySelector('video')
   }
+
+  static createInstance(container, previewList) {
+    return new Previews(container, previewList);
+  }
 }
-
-/* document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.js-previews').forEach(node => {
-    const previewList = node.querySelectorAll('.js-preview');
-    if (!previewList.length) return;
-
-    new Previews(node, previewList);
-  });
-}); */
 
 subscribeToEvent('initModules', () => {
   document.querySelectorAll('.js-previews').forEach(node => {
     const previewList = node.querySelectorAll('.js-preview');
     if (!previewList.length) return;
 
-    new Previews(node, previewList);
+    Previews.createInstance(node, previewList);
   });
 });
