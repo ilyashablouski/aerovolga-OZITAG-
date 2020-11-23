@@ -2,7 +2,7 @@ class Parallax {
   constructor(nodeElement) {
     this.nodeElement = nodeElement;
 
-    this.initParallax();
+    // this.initParallax();
     this.bindEvents();
   }
 
@@ -15,7 +15,6 @@ class Parallax {
 
   stopParallax() {
     const sectionScroll = document.querySelectorAll('.js-scroll-section');
-    console.log(sectionScroll);
   }
 
   bindEvents() {
