@@ -1,6 +1,11 @@
 <div class="home-section home-section--production">
   <div class="home-section__background">
-    {{>components/image ext="png" img="home/production-bg"}}
+    {{>components/image
+      ext="png"
+      img-tablet="home/production-bg__tablet"
+      img-mobile="home/production-bg__mobile"
+      img="home/production-bg"
+    }}
   </div>
   <div class="home-section__inner">
     <div class="home-section__container--small">
@@ -11,7 +16,8 @@
         <div class="production">
           <div class="production__description">
             <div class="production__description-quote">
-              <p class="production__description-text">The dreams of flying became more accessible. We have created for you
+              <p class="production__description-text">The dreams of flying became more accessible. We have created for
+                you
                 a plane, which is for you an indispensable assistant.</p>
               <span class="production__description-author">Alafinov Sergey, CEO</span>
             </div>

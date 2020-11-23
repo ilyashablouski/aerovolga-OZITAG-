@@ -1,8 +1,5 @@
 .production {
   margin-top: 72px;
-  @include tablet-and-mobile {
-    margin-top: 74px;
-  }
 
   @include mobile {
     margin-top: 70px;
@@ -71,12 +68,19 @@
     display: flex;
     justify-content: space-between;
 
+    @include desktop {
+      @media (max-height: 700px) {
+        margin-top: 80px;
+      }
+    }
+
     @include tablet-and-mobile {
       margin: 158px 0 28px;
     }
 
     @include mobile {
-      margin: 415px 0 46px;
+      margin: 415px -30px 46px;
+      padding: 0 30px;
       display: flex;
       justify-content: flex-start;
       overflow-x: auto;
