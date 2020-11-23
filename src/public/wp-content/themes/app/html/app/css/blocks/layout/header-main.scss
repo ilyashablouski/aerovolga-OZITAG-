@@ -12,6 +12,7 @@
   flex-direction: column;
 
   @include smallTablet-and-mobile {
+    min-height: 80px;
     width: 100vw;
     position: static;
     bottom: auto;
@@ -23,6 +24,7 @@
     background: transparent;
   }
   @include mobile {
+    min-height: 50px;
     padding: 7px 14px 7px 13px;
   }
 
