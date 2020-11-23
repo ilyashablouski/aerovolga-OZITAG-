@@ -11,7 +11,7 @@ const utils = {
             return;
         }
 
-        var wrapper = document.createElement('div');
+        const wrapper = document.createElement('div');
         wrapper.className = className;
         el.parentNode.insertBefore(wrapper, el);
         el.parentNode.removeChild(el);
