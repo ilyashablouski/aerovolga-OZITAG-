@@ -253,7 +253,6 @@ class LightGallery {
 
         if (this.s.useLeft) {
             utils.addClass(this.outer, 'lg-use-left');
-
             this.s.mode = 'lg-slide';
         } else {
             utils.addClass(this.outer, 'lg-use-css3');
@@ -272,7 +271,6 @@ class LightGallery {
             utils.addClass(this.outer, 'lg-css3');
         } else {
             utils.addClass(this.outer, 'lg-css');
-
             this.s.speed = 0;
         }
 
