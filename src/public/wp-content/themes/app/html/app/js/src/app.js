@@ -1,6 +1,7 @@
 class App {
   constructor () {
     this.addEvents();
+    this.initCore();
   }
 
   addEvents () {
@@ -22,6 +23,32 @@ class App {
     disablingPreloader();
   }
 
+  initCore() {
+    barba.hooks.after(() => {
+      /* App.dispatchEvent('initModules');
+      App.dispatchEvent('pageEnter'); */
+      return pageTransitionIn();
+    });
+
+    /* barba.hooks.afterLeave(({ next }) => {
+      App.dispatchEvent('updatePageTheme', next);
+      App.dispatchEvent('resetModules');
+    });
+
+    barba.hooks.beforeEnter(() => {
+      history.scrollRestoration = 'manual';
+      window.scrollTo(0, 0);
+    }); */
+
+    barba.hooks.before(() => {
+      // App.dispatchEvent('pageLeave');
+      return pageTransitionOut();
+    });
+
+    barba.init({
+      preventRunning: true,
+    });
+  }
 }
 
 const app = new App();
