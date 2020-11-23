@@ -1,3 +1,10 @@
+//Animations
+$timing-fn: cubic-bezier(0.4, 0.0, 0.2, 1);
+$timing-fn-btn: cubic-bezier(.17, .67, .3, 1.33);
+$timing-fn-image1: cubic-bezier(.215,.61,.355,1);
+$timing-fn-image2: cubic-bezier(.215,.61,.355,1);
+$timing-fn-bounce: cubic-bezier(.47, .46, .26, 1.85);
+
 .page-transition {
   &:after {
     content: '';
