@@ -29,6 +29,18 @@ class ToggleMenu {
         }
       }
     });
+
+    this.menu.addEventListener('click', this.onClick.bind(this));
+  }
+
+  onClick(event) {
+    event.preventDefault();
+    const { target } = event;
+    const anchor = target.closest('[href]');
+    if (!anchor) return null;
+    this.removeActive(this.toggleMenu);
+    this.removeActive(this.menu);
+    document.body.style.overflow = 'auto';
   }
 
   setActive(elem) {
