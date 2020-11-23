@@ -6,8 +6,8 @@
   left: 80px;
   z-index: -10;
   visibility: hidden;
-  //transform: translateX(-100%);
   background: rgba(18, 43, 54, 0.5);
+  transition: all 0.4s linear;
 
 
   @include smallTablet-and-mobile {
@@ -28,6 +28,7 @@
   &.active {
     z-index: 20;
     visibility: visible;
+    transition: all 0s linear;
 
     .header-nav-inner {
       transform: translatex(0);
