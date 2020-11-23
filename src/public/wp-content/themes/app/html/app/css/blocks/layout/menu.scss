@@ -4,15 +4,19 @@
   bottom: 0;
   width: calc(100vw - 80px);
   left: 80px;
-  z-index: 20;
-  transform: translateX(-100%);
-  transition: all 0.3s linear, background-color 0s linear;
+  z-index: -10;
+  visibility: hidden;
+  //transform: translateX(-100%);
+  background: rgba(18, 43, 54, 0.5);
+
 
   @include smallTablet-and-mobile {
+    transform: translateX(-100%);
     position: static;
     width: 100vw;
     flex: 1 1 auto;
     background: $color-white;
+    transition: all 0.3s linear, background-color 0s linear;
   }
   @include mobile {
     @media (max-height: 700px) {
@@ -22,10 +26,16 @@
   }
 
   &.active {
-    transform: translatex(0);
-    background: rgba(18, 43, 54, 0.5);
-    transition: transform 0.3s linear, background-color 0s linear 0.3s;
+    z-index: 20;
+    visibility: visible;
+
+    .header-nav-inner {
+      transform: translatex(0);
+      transition: transform 0.3s linear, background-color 0s linear 0.3s;
+    }
+
     @include smallTablet-and-mobile {
+      transform: translatex(0);
       display: block;
       background: $color-white;
     }
@@ -78,6 +88,7 @@
   }
 
   &-inner {
+    transform: translateX(-100%);
     width: 520px;
     background: $color-white;
     display: flex;
@@ -85,6 +96,7 @@
     justify-content: space-between;
     height: 100%;
     padding: 145px 60px 70px 100px;
+    transition: transform 0.3s linear;
 
     @media (max-height: 700px) {
       padding: 60px 60px 60px 100px;
