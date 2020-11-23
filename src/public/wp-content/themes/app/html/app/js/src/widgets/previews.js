@@ -7,8 +7,12 @@ class Previews {
   }
 
   initialize() {
-    Previews.setActive(this.previewList[0]);
     this.createEventListeners();
+
+    raf2x(() => {
+      Previews.playVideo(this.previewList[0]);
+      Previews.setActive(this.previewList[0]);
+    })
   }
 
   createEventListeners() {
@@ -20,9 +24,14 @@ class Previews {
   }
 
   handlePreviewHover(preview) {
-    const currActive = this.container.querySelector('.active');
-    if (currActive) Previews.removeActive(currActive);
+    const currActivePreview = this.container.querySelector('.active');
 
+    if (currActivePreview) {
+      Previews.pauseVideo(currActivePreview);
+      Previews.removeActive(currActivePreview);
+    }
+
+    Previews.playVideo(preview);
     Previews.setActive(preview);
   }
 
@@ -34,8 +43,18 @@ class Previews {
     elem.classList.remove('active');
   }
 
-  static isActive(elem) {
-    elem.classList.contains('active');
+  static playVideo(container) {
+    const videoPlayer = Previews.getVideoPlayer(container);
+    if (videoPlayer) videoPlayer.play();
+  }
+
+  static pauseVideo(container) {
+    const videoPlayer = Previews.getVideoPlayer(container);
+    if (videoPlayer) videoPlayer.pause();
+  }
+
+  static getVideoPlayer(container) {
+    return container.querySelector('video')
   }
 }
 

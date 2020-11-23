@@ -5,8 +5,11 @@ const configs = {
     delay: 2000,
   },
   pagination: {
-    el: '.preview-slider__pagination',
+    el: '.hh-pagination',
     type: 'bullets',
+    bulletElement: 'button',
+    bulletClass: 'hh-pagination__item',
+    bulletActiveClass: 'active',
     clickable: true,
   },
   cubeEffect: {
