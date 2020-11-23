@@ -12,11 +12,6 @@ const configs = {
     bulletActiveClass: 'active',
     clickable: true,
   },
-  cubeEffect: {
-    slideShadows: false,
-    shadow: false,
-  },
-
 };
 
 class PreviewsSlider {
