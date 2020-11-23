@@ -15,7 +15,7 @@ class Parallax {
 
   stopParallax() {
     const sectionScroll = document.querySelectorAll('.js-scroll-section');
-    console.log(sectionScroll);
+    console.log(sectionScroll, 'sectionScroll');
   }
 
   bindEvents() {
