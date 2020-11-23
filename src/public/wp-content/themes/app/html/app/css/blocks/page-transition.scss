@@ -1,6 +1,6 @@
 .transition {
   position: fixed;
-  z-index: 99;
+  z-index: 99999999;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,6 +11,10 @@
   margin: 0;
   padding: 0;
   pointer-events: none;
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .transition li {

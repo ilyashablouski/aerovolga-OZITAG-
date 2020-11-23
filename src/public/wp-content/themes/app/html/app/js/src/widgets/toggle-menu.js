@@ -38,9 +38,17 @@ class ToggleMenu {
     const { target } = event;
     const anchor = target.closest('[href]');
     if (!anchor) return null;
-    this.removeActive(this.toggleMenu);
-    this.removeActive(this.menu);
-    document.body.style.overflow = 'auto';
+    
+    if (this.toggleMenu.classList.contains('active')) {
+      this.removeActive(this.toggleMenu);
+      this.removeActive(this.menu);
+      document.body.style.overflow = 'auto';
+
+      if (window.innerWidth < 1024) {
+        this.removeActive(this.menu.parentNode);
+        this.menu.parentNode.style.animation = 'mobile-hidden 0.5s linear';
+      }
+    }
   }
 
   setActive(elem) {
