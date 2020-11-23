@@ -83,7 +83,7 @@
 
   &--production {
     .home-section__background {
-      top: -80%;
+      top: -18%;
     }
 
     @include tablet-and-mobile {
@@ -168,3 +168,4 @@
     }
   }
 }
+

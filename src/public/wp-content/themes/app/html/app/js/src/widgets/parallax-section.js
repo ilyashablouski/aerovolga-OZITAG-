@@ -2,28 +2,24 @@ class Parallax {
   constructor(nodeElement) {
     this.nodeElement = nodeElement;
 
-    this.rellax = this.nodeElement.querySelector('.rellax');
-    console.log(this.rellax);
-
     this.initParallax();
-  }
-
-  elemInViewport(elem) {
-    const box = elem.getBoundingClientRect();
-    const top = box.top;
-    const bottom = box.bottom;
-    const height = document.documentElement.clientHeight;
-    const maxHeight = 0;
-    return Math.min(height, bottom) - Math.max(0, top) >= maxHeight;
+    this.bindEvents();
   }
 
   initParallax() {
-    this.parallax = new Rellax(this.rellax);
+    this.scroll = new LocomotiveScroll({
+      el: this.nodeElement,
+      smooth: true,
+    });
   }
 
-  destroyParallax() {
-    if (!this.parallax) return;
-    this.parallax.destroy();
+  stopParallax() {
+    const sectionScroll = document.querySelectorAll('.js-scroll-section');
+    console.log(sectionScroll);
+  }
+
+  bindEvents() {
+    window.addEventListener('scroll', this.stopParallax);
   }
 
   static init(elem) {
@@ -32,8 +28,6 @@ class Parallax {
 }
 
 subscribeToEvent('initModules', () => {
-  const parallax = document.querySelectorAll('.js-parallax');
-  parallax.forEach(item => {
-    Parallax.init(item);
-  });
+  const parallax = document.querySelector('[data-scroll-container]');
+  Parallax.init(parallax);
 });
