@@ -12,7 +12,7 @@ import jquery from 'jquery';
 import Swiper, { Navigation, Pagination, Thumbs, Autoplay } from 'swiper';
 import barba from '@barba/core';
 import gsap from 'gsap';
-import Rellax from 'rellax';
+import LocomotiveScroll from 'locomotive-scroll';
 
 window.$ = window.jQuery = jquery;
 window.svg4everybody = svgPolyfill;
@@ -20,7 +20,8 @@ window.svg4everybody = svgPolyfill;
 window.Swiper = Swiper;
 Swiper.use([Navigation, Pagination, Thumbs, Autoplay]);
 
-window.Rellax = Rellax;
+window.LocomotiveScroll=LocomotiveScroll;
+
 window.barba = barba;
 window.gsap = gsap;
 
