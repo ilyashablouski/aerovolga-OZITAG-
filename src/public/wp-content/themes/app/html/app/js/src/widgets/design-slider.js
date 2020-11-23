@@ -58,7 +58,14 @@ class DesignSlider {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelectorAll('.js-design-slider');
+  slider.forEach(item => {
+    DesignSlider.init(item);
+  });
+}); */
+
+subscribeToEvent('initModules', () => {
   const slider = document.querySelectorAll('.js-design-slider');
   slider.forEach(item => {
     DesignSlider.init(item);

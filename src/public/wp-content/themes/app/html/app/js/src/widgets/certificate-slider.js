@@ -105,7 +105,14 @@ class CertificateSlider {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelectorAll('.js-certificate-slider');
+  slider.forEach(item => {
+    CertificateSlider.init(item);
+  });
+}); */
+
+subscribeToEvent('initModules', () => {
   const slider = document.querySelectorAll('.js-certificate-slider');
   slider.forEach(item => {
     CertificateSlider.init(item);

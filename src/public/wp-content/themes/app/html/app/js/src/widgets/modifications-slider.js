@@ -42,7 +42,14 @@ class ModificationsSlider {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelectorAll('.js-modifications-slider');
+  slider.forEach(item => {
+    ModificationsSlider.init(item);
+  });
+}); */
+
+subscribeToEvent('initModules', () => {
   const slider = document.querySelectorAll('.js-modifications-slider');
   slider.forEach(item => {
     ModificationsSlider.init(item);

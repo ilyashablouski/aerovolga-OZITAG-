@@ -28,30 +28,79 @@ function delay(n) {
 
 class App {
   constructor () {
+    App.observeEvents();
+    App.domContentReady()
+      .then(this.initCore.bind(this))
+      .catch((err) => console.error(err))
+      .then(this.initUI.bind(this))
+      .catch((err) => console.error(err));
+
     this.addEvents();
-    this.initCore();
   }
 
-  addEvents () {
-    document.addEventListener('DOMContentLoaded', e => {
+  static observeEvents() {
+    observeEvent('initLibs');
+    observeEvent('initModules');
+    observeEvent('resetModules');
+    observeEvent('updatePageTheme');
+    observeEvent('pageEnter');
+    observeEvent('pageLeave');
+  }
+
+  static domContentReady() {
+    return new Promise((resolve) => {
+      document.addEventListener('DOMContentLoaded', resolve);
+    });
+  }
+
+  addEvents() {
+    /* document.addEventListener('DOMContentLoaded', () => {
+      this.initLibs();
+      this.initModules();
+    }); */
+
+    subscribeToEvent('initModules', () => {
       this.initLibs();
       this.initModules();
     });
 
-    document.documentElement.addEventListener('touchstart', e => {
+    document.documentElement.addEventListener('touchstart', (e) => {
       if (e.touches.length > 1) e.preventDefault();
     });
   }
 
-  initLibs () {
+  initLibs() {
     window.svg4everybody();
   }
 
-  initModules () {
+  initModules() {
     disablingPreloader();
   }
 
+  initUI() {
+    App.dispatchEvent('initLibs');
+    App.dispatchEvent('initModules');
+  }
+
   initCore() {
+    barba.hooks.after(() => {
+      App.dispatchEvent('initModules');
+      App.dispatchEvent('pageEnter');
+    });
+
+    barba.hooks.afterLeave(({ next }) => {
+      App.dispatchEvent('updatePageTheme', next);
+      App.dispatchEvent('resetModules');
+    });
+
+    barba.hooks.beforeEnter(() => {
+      window.scrollTo(0, 0);
+    });
+
+    barba.hooks.before(() => {
+      App.dispatchEvent('pageLeave');
+    });
+
     barba.init({
       preventRunning: true,
       sync: true,
@@ -67,6 +116,11 @@ class App {
         },
       ],
     });
+  }
+
+  static dispatchEvent(eventName, data) {
+    const event = new CustomEvent(eventName, { detail: data });
+    document.dispatchEvent(event);
   }
 }
 

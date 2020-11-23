@@ -9,7 +9,6 @@ class ToggleMenu {
   addEvents() {
     this.toggleMenu.addEventListener('click', () => {
 
-
       if (this.toggleMenu.classList.contains('active')) {
         this.removeActive(this.toggleMenu);
         this.removeActive(this.menu);

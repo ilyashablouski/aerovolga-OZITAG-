@@ -28,6 +28,10 @@ class SpinnerUI {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
+  SpinnerUI.init();
+}); */
+
+subscribeToEvent('initModules', () => {
   SpinnerUI.init();
 });

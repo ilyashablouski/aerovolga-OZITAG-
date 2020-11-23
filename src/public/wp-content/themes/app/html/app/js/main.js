@@ -9,6 +9,7 @@ import './src/utils/scroll-control';
 import './src/utils/scroll-to';
 import './src/utils/preloader';
 import './src/utils/api-manager';
+import './src/utils/events-observer';
 
 import './src/widgets/accord';
 import './src/widgets/anchor';

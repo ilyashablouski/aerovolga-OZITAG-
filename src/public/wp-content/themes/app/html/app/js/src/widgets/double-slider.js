@@ -47,7 +47,14 @@ class DoubleSlider {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelectorAll('.js-double-slider');
+  slider.forEach(item => {
+    DoubleSlider.init(item);
+  });
+}); */
+
+subscribeToEvent('initModules', () => {
   const slider = document.querySelectorAll('.js-double-slider');
   slider.forEach(item => {
     DoubleSlider.init(item);

@@ -152,7 +152,12 @@ class Widget {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
+  const node = document.querySelector('.js-map-widget');
+  if (node) Widget.createInstance(node);
+}); */
+
+subscribeToEvent('initModules', () => {
   const node = document.querySelector('.js-map-widget');
   if (node) Widget.createInstance(node);
 });

@@ -183,5 +183,4 @@ document.addEventListener('DOMContentLoaded', () => {
   AircraftsHeaderFixed.init(document.querySelector('.js-inner-header-fixed'));
 });
 
-
 window.InnerHeaderFixed = AircraftsHeaderFixed;

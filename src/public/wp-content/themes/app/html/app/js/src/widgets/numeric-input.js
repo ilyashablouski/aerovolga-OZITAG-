@@ -16,6 +16,10 @@ class NumericInput {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.js-numeric-input').forEach(item => NumericInput.init(item));
+}); */
+
+subscribeToEvent('initModules', () => {
   document.querySelectorAll('.js-numeric-input').forEach(item => NumericInput.init(item));
 });

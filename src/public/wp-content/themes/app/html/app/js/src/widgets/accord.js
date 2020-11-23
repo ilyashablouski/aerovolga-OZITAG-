@@ -41,7 +41,14 @@ class Accord {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
+  const accords = document.querySelectorAll('.js-accord');
+  accords.forEach(item => {
+    Accord.init(item);
+  });
+}); */
+
+subscribeToEvent('initModules', () => {
   const accords = document.querySelectorAll('.js-accord');
   accords.forEach(item => {
     Accord.init(item);

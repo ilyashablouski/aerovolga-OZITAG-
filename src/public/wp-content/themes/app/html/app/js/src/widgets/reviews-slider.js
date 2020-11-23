@@ -52,7 +52,14 @@ class ReviewsSlider {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelectorAll('.js-reviews-slider');
+  slider.forEach(item => {
+    ReviewsSlider.init(item);
+  });
+}); */
+
+subscribeToEvent('initModules', () => {
   const slider = document.querySelectorAll('.js-reviews-slider');
   slider.forEach(item => {
     ReviewsSlider.init(item);

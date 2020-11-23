@@ -29,6 +29,10 @@ class ExampleWidget extends Widget {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.js-example').forEach(item => ExampleWidget.init(item));
+}); */
+
+subscribeToEvent('initModules', () => {
   document.querySelectorAll('.js-example').forEach(item => ExampleWidget.init(item));
 });

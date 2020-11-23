@@ -1204,7 +1204,10 @@ class LightGalleryUI {
     }
 
     static initOnLoad() {
-        document.addEventListener('DOMContentLoaded', this.init);
+        // document.addEventListener('DOMContentLoaded', this.init);
+        subscribeToEvent('initModules', () => {
+            this.init();
+        });
     }
 }
 

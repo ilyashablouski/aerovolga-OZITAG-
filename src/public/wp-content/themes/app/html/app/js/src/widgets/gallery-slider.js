@@ -43,7 +43,14 @@ class GallerySlider {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelectorAll('.js-gallery-slider');
+  slider.forEach(item => {
+    GallerySlider.init(item);
+  });
+}); */
+
+subscribeToEvent('initModules', () => {
   const slider = document.querySelectorAll('.js-gallery-slider');
   slider.forEach(item => {
     GallerySlider.init(item);

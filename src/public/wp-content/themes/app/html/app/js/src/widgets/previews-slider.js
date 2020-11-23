@@ -53,7 +53,13 @@ class PreviewsSlider {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.js-previews').forEach(node => {
+    new PreviewsSlider(node);
+  });
+}); */
+
+subscribeToEvent('initModules', () => {
   document.querySelectorAll('.js-previews').forEach(node => {
     new PreviewsSlider(node);
   });

@@ -113,7 +113,14 @@ class FeaturesSlider {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelectorAll('.js-features-slider');
+  slider.forEach(item => {
+    FeaturesSlider.init(item);
+  });
+}); */
+
+subscribeToEvent('initModules', () => {
   const slider = document.querySelectorAll('.js-features-slider');
   slider.forEach(item => {
     FeaturesSlider.init(item);

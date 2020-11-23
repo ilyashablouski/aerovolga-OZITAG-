@@ -24,7 +24,14 @@ class FreeScrollSlider {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelectorAll('.js-free-scroll-slider');
+  slider.forEach(item => {
+    FreeScrollSlider.init(item);
+  });
+}); */
+
+subscribeToEvent('initModules', () => {
   const slider = document.querySelectorAll('.js-free-scroll-slider');
   slider.forEach(item => {
     FreeScrollSlider.init(item);

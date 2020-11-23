@@ -35,7 +35,14 @@ class Anchor {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
+  const anchor = document.querySelectorAll('.js-scroll-to');
+  anchor.forEach(item => {
+    Anchor.init(item);
+  });
+}); */
+
+subscribeToEvent('initModules', () => {
   const anchor = document.querySelectorAll('.js-scroll-to');
   anchor.forEach(item => {
     Anchor.init(item);
