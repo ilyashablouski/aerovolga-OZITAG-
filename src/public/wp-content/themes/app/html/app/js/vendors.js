@@ -12,7 +12,7 @@ import jquery from 'jquery';
 import Swiper, { Navigation, Pagination, Thumbs, Autoplay } from 'swiper';
 import barba from '@barba/core';
 import gsap from 'gsap';
-import LocomotiveScroll from 'locomotive-scroll';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 window.$ = window.jQuery = jquery;
 window.svg4everybody = svgPolyfill;
@@ -20,10 +20,9 @@ window.svg4everybody = svgPolyfill;
 window.Swiper = Swiper;
 Swiper.use([Navigation, Pagination, Thumbs, Autoplay]);
 
-window.LocomotiveScroll=LocomotiveScroll;
-
 window.barba = barba;
 window.gsap = gsap;
+window.ScrollTrigger = ScrollTrigger;
 
 lazySizes.cfg.lazyClass = 'lazy';
 lazySizes.cfg.srcAttr = 'data-original';

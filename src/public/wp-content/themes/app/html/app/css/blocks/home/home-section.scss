@@ -83,7 +83,9 @@
 
   &--production {
     .home-section__background {
-      top: -18%;
+      //top: -15%;
+      //opacity: 0;
+      //transition: opacity 0.1s linear;
     }
 
     @include tablet-and-mobile {

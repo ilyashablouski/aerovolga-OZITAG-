@@ -1,25 +1,29 @@
 class Parallax {
   constructor(nodeElement) {
     this.nodeElement = nodeElement;
+    console.log(this.nodeElement, 'this.nodeElement');
 
-    // this.initParallax();
-    this.bindEvents();
+    this.image = this.nodeElement.querySelector('[data-parallax="img"]');
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    this.initParallaxAnimations();
   }
 
-  initParallax() {
-    this.scroll = new LocomotiveScroll({
-      el: this.nodeElement,
-      smooth: true,
-    });
+  initParallaxAnimations() {
+
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: this.nodeElement,
+        start: '-20% bottom',
+        end: '80% 40%',
+        scrub: true,
+        toggleActions: 'restart none reverse reset',
+      },
+    })
+      .from(this.image, { y: '-15%', opacity: 0.3, ease: 'linear', duration: 2.5 });
   }
 
-  stopParallax() {
-    const sectionScroll = document.querySelectorAll('.js-scroll-section');
-  }
-
-  bindEvents() {
-    window.addEventListener('scroll', this.stopParallax);
-  }
 
   static init(elem) {
     new Parallax(elem);
@@ -27,6 +31,8 @@ class Parallax {
 }
 
 subscribeToEvent('initModules', () => {
-  const parallax = document.querySelector('[data-scroll-container]');
-  Parallax.init(parallax);
+  const parallax = document.querySelectorAll('.js-parallax');
+  parallax.forEach(item => {
+    Parallax.init(item);
+  });
 });
