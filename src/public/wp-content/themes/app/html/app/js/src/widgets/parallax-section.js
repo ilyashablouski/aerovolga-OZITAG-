@@ -1,25 +1,25 @@
 class Parallax {
   constructor(nodeElement) {
     this.nodeElement = nodeElement;
-    console.log(this.nodeElement);
 
     this.initParallax();
-
+    this.bindEvents();
   }
 
   initParallax() {
     this.scroll = new LocomotiveScroll({
       el: this.nodeElement,
       smooth: true,
-      stop: () => {
-
-      },
     });
   }
 
-  bindEvents() {
+  stopParallax() {
+    const sectionScroll = document.querySelectorAll('.js-scroll-section');
+    console.log(sectionScroll);
+  }
 
-    this.scroll.stop();
+  bindEvents() {
+    window.addEventListener('scroll', this.stopParallax);
   }
 
   static init(elem) {
