@@ -140,6 +140,11 @@
 
     &.active {
       color: $color-blue-light;
+      &:hover {
+        .header-menu__link {
+          padding-left: 0;
+        }
+      }
     }
 
     &:hover {
@@ -184,6 +189,11 @@
 
     &.active {
       color: $color-blue-light;
+      &:hover {
+        .header-submenu__link {
+          color: $color-blue-light;
+        }
+      }
     }
 
     &:hover {
