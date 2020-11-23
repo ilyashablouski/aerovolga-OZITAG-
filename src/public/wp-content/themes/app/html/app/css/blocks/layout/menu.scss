@@ -75,6 +75,7 @@
       &:nth-child(3) {
         transition-delay: .65s;
       }
+
       &:nth-child(4) {
         transition-delay: .7s;
       }
@@ -152,6 +153,7 @@
 
     &.active {
       color: $color-blue-light;
+
       &:hover {
         .header-menu__link {
           padding-left: 0;
@@ -178,6 +180,7 @@
 }
 
 .header-submenu {
+
   @include mobile {
     @media (max-height: 700px) {
       margin-top: 37px;
@@ -201,6 +204,7 @@
 
     &.active {
       color: $color-blue-light;
+
       &:hover {
         .header-submenu__link {
           color: $color-blue-light;
