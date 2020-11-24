@@ -15,13 +15,13 @@ class Parallax {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: this.nodeElement,
-        start: '-20% bottom',
-        end: '80% 40%',
+        start: '-15% bottom',
+        end: '70% 70%',
         scrub: true,
         toggleActions: 'restart none reverse reset',
       },
     })
-      .from(this.image, { y: '-15%', opacity: 0.3, ease: 'linear', duration: 2.5 });
+      .from(this.image, { y: '-25%', opacity: 0, ease: 'linear', duration: 2 });
   }
 
 
