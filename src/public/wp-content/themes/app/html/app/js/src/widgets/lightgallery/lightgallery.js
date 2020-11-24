@@ -458,8 +458,8 @@ class LightGallery {
         let _hasPoster = false;
         let _img;
         let _src;
-        let _imgOffsetWidth;
-        let _imgOffsetHeight;
+        // let _imgOffsetWidth;
+        // let _imgOffsetHeight;
         let _poster;
         let _srcset;
         let _sizes;
