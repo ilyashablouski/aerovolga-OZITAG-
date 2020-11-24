@@ -555,7 +555,6 @@ class LightGallery {
                 }
 
                 this.___slide[index].insertAdjacentHTML('beforeend', '<div class="lg-video-cont ' + videoClass + ' "><div class="lg-video"><span class="lg-video-play"></span><img class="lg-object lg-has-poster" src="' + _poster + '" /></div></div>');
-
             } else if (_isVideo) {
                 this.___slide[index].insertAdjacentHTML('beforeend', '<div class="lg-video-cont "><div class="lg-video"></div></div>');
                 utils.trigger(this.el, 'hasVideo', {
@@ -564,7 +563,7 @@ class LightGallery {
                     html: _html
                 });
             } else {
-                _alt = _alt ? 'alt="' + _alt + '"' : '';
+                _alt = _alt ? `alt="${_alt}"`: '';
                 this.___slide[index].insertAdjacentHTML('beforeend', `<div class="lg-img-wrap"><img class="lg-object lg-image" ${_alt} src="${_src}" /></div>`);
             }
 
@@ -572,13 +571,13 @@ class LightGallery {
                 index: index
             });
 
-            _img = this.___slide[index].querySelector('.lg-object');
+            /* _img = this.___slide[index].querySelector('.lg-object');
             _imgOffsetWidth = _img.offsetWidth
             _imgOffsetHeight = _img.offsetHeight
 
             if (_imgOffsetWidth > _imgOffsetHeight) {
                 utils.addClass(this.___slide[index], 'lg-img-horizontal');
-            }
+            } */
 
             if (_sizes) {
                 _img.setAttribute('sizes', _sizes);
@@ -603,14 +602,6 @@ class LightGallery {
             }
 
             utils.addClass(this.___slide[index], 'lg-loaded');
-        }
-
-/*         console.log(_img);
-        console.log(_imgOffsetWidth);
-        console.log(_imgOffsetHeight);
-        console.log(_imgOffsetWidth > _imgOffsetHeight); */
-        if (_imgOffsetWidth > _imgOffsetHeight) {
-            utils.addClass(this.___slide[index], 'lg-img-horizontal');
         }
 
         utils.on(this.___slide[index].querySelector('.lg-object'), 'load.lg error.lg', () => {
@@ -758,15 +749,6 @@ class LightGallery {
             if (this.lGalleryOn) {
                 setTimeout(() => {
                     this.loadContent(index, true, 0);
-                    console.log('load content 1');
-
-                    const _img = this.___slide[index].querySelector('.lg-object');
-                    const _imgOffsetWidth = _img.offsetWidth
-                    const _imgOffsetHeight = _img.offsetHeight
-
-                    if (_imgOffsetWidth > _imgOffsetHeight) {
-                        utils.addClass(this.___slide[index], 'lg-img-horizontal');
-                    }
                 }, this.s.speed + 50);
 
                 setTimeout(() => {
@@ -781,7 +763,6 @@ class LightGallery {
 
             } else {
                 this.loadContent(index, true, this.s.backdropDuration);
-                console.log('load content 2');
 
                 this.lgBusy = false;
                 utils.trigger(this.el, 'onAfterSlide', {
