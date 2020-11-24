@@ -95,10 +95,6 @@ class App {
   }
 
   initCore() {
-    barba.hooks.beforeEnter((data) => {
-      console.log(data.next.namespace);
-    });
-
     barba.hooks.after(() => {
       App.dispatchEvent('initModules');
       App.dispatchEvent('pageEnter');
@@ -109,7 +105,7 @@ class App {
       App.dispatchEvent('resetModules');
     });
 
-    barba.hooks.beforeEnter((data) => {
+    barba.hooks.beforeEnter(() => {
       history.scrollRestoration = 'manual';
       window.scrollTo(0, 0);
     });
