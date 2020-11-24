@@ -19,6 +19,7 @@
     width: 204px;
     height: 136px;
     background: $color-blue-dark-60;
+    color: rgba(255, 255, 255, 0.55);
 
     &.loading {
       &::after {
@@ -37,16 +38,36 @@
       }
     }
 
-
-    @include mobile480 {
-      width: 100%;
-    }
-
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+
+    svg {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 52px;
+      height: 52px;
+      transition: 0.3s ease-in-out;
+
+    }
+
+    @include desktop {
+      &:hover {
+        color: $color-white;
+      }
+    }
+
+
+    @include mobile480 {
+      width: 100%;
+    }
+
+
   }
 }
 

@@ -1,26 +1,40 @@
 <ul class="gallery js-light-gallery">
-  {{#times 10}}
-    <li class="gallery__cell" data-src="../assets/images/gallery-single/_52A0388.png" data-sub-html="<div>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on. Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on. </div>" data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
-        <a href="" class="gallery__item js-image-loading">
-          {{> components/image
-              img='gallery-single/_52A0388'
-              ext='png'
-              class='img-responsive'
-          }}
-        </a>
-    </li>
+  {{#times 5}}
+    {{>blocks/gallery/single/components/gallery-card
+      img='gallery-single/_52A0388'
+      ext='png'
+      class='img-responsive'
+      data-src="../assets/images/gallery-single/_52A0388.png"
+      data-sub="<div>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on. Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on. </div>"
+    }}
   {{/times}}
+
+  {{>blocks/gallery/single/components/gallery-card
+    img='gallery-single/_52A0388'
+    ext='png'
+    class='img-responsive'
+    data-src="../assets/images/gallery-single/_52A0388.png"
+    data-sub="<div>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on. Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on. </div>"
+    video=true
+  }}
+
+  {{#times 4}}
+    {{>blocks/gallery/single/components/gallery-card
+      img='gallery-single/_52A0388'
+      ext='png'
+      class='img-responsive'
+      data-src="../assets/images/gallery-single/_52A0388.png"
+      data-sub="<div>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on. Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on. </div>"
+    }}
+  {{/times}}
+
   {{#times 10}}
-    <li class="gallery__cell" data-src="../assets/images/gallery-single/02.png"
-      data-sub-html="<div>Post but a little later on.</div>"
-      data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
-      <a href="" class="gallery__item js-image-loading">
-        {{> components/image
-            img='gallery-single/02'
-            ext='png'
-            class='img-responsive'
-        }}
-      </a>
-    </li>
+    {{>blocks/gallery/single/components/gallery-card
+      img='gallery-single/02'
+      ext='png'
+      class='img-responsive'
+      data-src="../assets/images/gallery-single/02.png"
+      data-sub="<div>Post but a little later on.</div>"
+    }}
   {{/times}}
 </ul>

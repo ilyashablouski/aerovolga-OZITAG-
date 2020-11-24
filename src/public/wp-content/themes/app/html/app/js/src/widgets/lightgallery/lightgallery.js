@@ -458,6 +458,8 @@ class LightGallery {
         let _hasPoster = false;
         let _img;
         let _src;
+        // let _imgOffsetWidth;
+        // let _imgOffsetHeight;
         let _poster;
         let _srcset;
         let _sizes;
@@ -553,7 +555,6 @@ class LightGallery {
                 }
 
                 this.___slide[index].insertAdjacentHTML('beforeend', '<div class="lg-video-cont ' + videoClass + ' "><div class="lg-video"><span class="lg-video-play"></span><img class="lg-object lg-has-poster" src="' + _poster + '" /></div></div>');
-
             } else if (_isVideo) {
                 this.___slide[index].insertAdjacentHTML('beforeend', '<div class="lg-video-cont "><div class="lg-video"></div></div>');
                 utils.trigger(this.el, 'hasVideo', {
@@ -562,15 +563,22 @@ class LightGallery {
                     html: _html
                 });
             } else {
-                _alt = _alt ? 'alt="' + _alt + '"' : '';
-                this.___slide[index].insertAdjacentHTML('beforeend', '<div class="lg-img-wrap"><img class="lg-object lg-image" ' + _alt + ' src="' + _src + '" /></div>');
+                _alt = _alt ? `alt="${_alt}"`: '';
+                this.___slide[index].insertAdjacentHTML('beforeend', `<div class="lg-img-wrap"><img class="lg-object lg-image" ${_alt} src="${_src}" /></div>`);
             }
 
             utils.trigger(this.el, 'onAferAppendSlide', {
                 index: index
             });
 
-            _img = this.___slide[index].querySelector('.lg-object');
+            /* _img = this.___slide[index].querySelector('.lg-object');
+            _imgOffsetWidth = _img.offsetWidth
+            _imgOffsetHeight = _img.offsetHeight
+
+            if (_imgOffsetWidth > _imgOffsetHeight) {
+                utils.addClass(this.___slide[index], 'lg-img-horizontal');
+            } */
+
             if (_sizes) {
                 _img.setAttribute('sizes', _sizes);
             }
@@ -584,8 +592,7 @@ class LightGallery {
                             elements: [_img[0]]
                         });
                     } catch (e) {
-                        console.warn('If you want srcset to be supported for older browsers, ' +
-                            'please include picturefil javascript library in your document.');
+                        console.warn('If you want srcset to be supported for older browsers, please include picturefil javascript library in your document.');
                     }
                 }
             }
@@ -720,7 +727,6 @@ class LightGallery {
                     utils.removeClass(this.outer, 'lg-no-trans');
                 }, 50);
             } else {
-
                 let touchPrev = index - 1;
                 let touchNext = index + 1;
 
@@ -1204,7 +1210,6 @@ class LightGalleryUI {
     }
 
     static initOnLoad() {
-        // document.addEventListener('DOMContentLoaded', this.init);
         subscribeToEvent('initModules', () => {
             this.init();
         });

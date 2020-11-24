@@ -1,4 +1,5 @@
-<div class="home-section home-section--services">
+<div class="home-section home-section--services js-parallax">
+
   <div class="home-section__background">
     {{>components/image
       ext="png"
@@ -7,6 +8,15 @@
       img-tablet="home/online-service-bg__tablet"
     }}
   </div>
+  <div class="home-section__background-top" data-parallax="img">
+    {{>components/image
+      ext="png"
+      img="home/online-services-mobile"
+      img-mobile="home/online-services-mobile__mobile"
+      img-tablet="home/online-services-mobile__tablet"
+    }}
+  </div>
+
   <div class="home-section__inner">
     <div class="home-section__container--small">
       <div class="home-section__top">

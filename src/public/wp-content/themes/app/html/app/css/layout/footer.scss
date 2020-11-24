@@ -2,13 +2,14 @@
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 100%;
+  width: calc(100% - 240px);
   margin-left: 240px;
   color: $color-white;
   background: $color-primary;
 
   @include smallTablet-and-mobile {
     margin-left: 0;
+    width: 100%;
   }
 
   @include mobile {
@@ -19,9 +20,11 @@
 
   &--home {
     margin-left: 360px;
+    width: calc(100% - 360px);
 
     @include smallTablet-and-mobile {
       margin-left: 0;
+      width: 100%;
     }
   }
 }

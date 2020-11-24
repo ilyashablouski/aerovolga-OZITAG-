@@ -1,5 +1,5 @@
 class ScrollTo {
-  static startAnimation (targetElem) {
+  static startAnimation(targetElem) {
     let targetPos = targetElem.getBoundingClientRect().top;
 
     if ('scrollBehavior' in document.body.style) {
@@ -14,13 +14,16 @@ class ScrollTo {
     const startPos = getScrollPos();
     const startTime = performance.now();
 
+
+
     raf(animation);
 
-    function animation (currentTime) {
+    function animation(currentTime) {
       const elapsedTime = currentTime - startTime;
       const nextStep = ScrollTo.timingFunction(
         elapsedTime, startPos, targetPos, duration,
       );
+
 
       scrollTo(0, nextStep);
 
@@ -29,12 +32,12 @@ class ScrollTo {
     }
   }
 
-  static timingFunction (t, b, c, d) {
+  static timingFunction(t, b, c, d) {
     if ((t /= d / 2) < 1) return c / 2 * t * t * t + b;
     return c / 2 * ((t -= 2) * t * t + 2) + b;
   }
 
-  static respond (targetElem) {
+  static respond(targetElem) {
     const event = new CustomEvent(
       'endScroll', {
         detail: { targetElem },

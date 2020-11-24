@@ -24,9 +24,12 @@
   }
 
   &__btn-wrapper {
-    display: none;
     margin-top: 58px;
-    //display: flex;
+    display: flex;
     justify-content: center;
+
+    button {
+      padding: 9px 30px 10px;
+    }
   }
 }

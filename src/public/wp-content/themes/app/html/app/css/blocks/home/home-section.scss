@@ -4,6 +4,7 @@
 
   display: flex;
   align-items: center;
+  overflow: hidden;
 
   @include mobile {
     align-items: flex-start;
@@ -82,9 +83,6 @@
   }
 
   &--production {
-    .home-section__background {
-      top: -18%;
-    }
 
     @include tablet-and-mobile {
       .home-section__inner {
@@ -107,15 +105,19 @@
   }
 
 
-  &__background {
+  &__background, &__background-top {
     @include fill();
-    z-index: -1;
+    z-index: -2;
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+  }
+
+  &__background-top {
+    z-index: -1;
   }
 
   &__inner {

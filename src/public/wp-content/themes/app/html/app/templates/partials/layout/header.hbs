@@ -22,7 +22,7 @@
       <div class="header-nav__top">
         <nav class="header-menu">
           <div class="header-menu__item active">
-            <a href="/home.html" class="header-menu__link">Home</a>
+            <a href="/home.html" class="header-menu__link" data-is-home>Home</a>
           </div>
           <div class="header-menu__item">
             <a href="/aircrafts.html" class="header-menu__link">Aircrafts</a>
@@ -93,7 +93,7 @@
 
 
 <main class="page__content {{#if home}}page__content--home{{/if}}">
-  <ul class="transition{{#if home}} this-is-home{{/if}}">
+  <ul class="transition{{#if home}} transition--home{{/if}}">
     <li></li>
     <li></li>
     <li></li>

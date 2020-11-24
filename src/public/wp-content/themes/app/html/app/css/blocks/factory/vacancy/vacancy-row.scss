@@ -35,18 +35,43 @@
     color: $color-gray-90;
     transition: all 0.3s linear;
 
+
     &:first-child {
       flex: 1 1 460px;
       max-width: 460px;
+      @media (max-width: 1350px) {
+        max-width: 31.9vw;
+      }
+      @media (max-width: 1200px) and (min-width: 1023px) {
+        max-width: 28vw;
+      }
+      @include mobile {
+        max-width: 100%;
+      }
     }
 
     &:nth-child(2) {
       flex: 1 1 240px;
       max-width: 240px;
+      @media (max-width: 1200px) and (min-width: 1023px) {
+        max-width: 200px;
+      }
+      @media (max-width: 960px) {
+        max-width: 200px;
+      }
+      @include mobile {
+        max-width: 100%;
+      }
     }
 
     &:nth-child(3) {
       width: 100%;
+      @include smallTablet-and-mobile {
+        max-width: 150px;
+      }
+      @include mobile {
+        max-width: 100%;
+      }
     }
 
     &--bold {
@@ -77,6 +102,7 @@
         font-size: 18px;
         line-height: 32px;
         color: $color-blue-dark-80;
+
       }
     }
   }

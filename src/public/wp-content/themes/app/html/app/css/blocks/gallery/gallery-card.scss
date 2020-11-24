@@ -1,6 +1,19 @@
 .gallery-card {
   position: relative;
-  margin-top: 70px;
+
+  @include desktop {
+    margin-top: 170px;
+  }
+  @media (max-width: 1440px) and (min-width: 1280px) {
+    margin-top: 11.8vw;
+  }
+  @include tablet-and-mobile {
+    margin-top: 70px;
+  }
+  @include smallTablet-and-mobile {
+    display: flex;
+    justify-content: center;
+  }
   @include mobile {
     margin-top: 40px;
   }
@@ -22,7 +35,7 @@
 
   &__inner {
     position: relative;
-    padding: 50px 0;
+    margin: 50px 0;
     display: flex;
     justify-content: space-between;
 
@@ -30,10 +43,13 @@
       display: block;
     }
     @include smallTablet-and-mobile {
-      padding: 0;
+      margin: 0;
+      max-width: 708px;
+      width: 100%;
     }
     @include mobile {
       display: block;
+      max-width: 100%;
     }
   }
 
@@ -64,6 +80,10 @@
       height: 180px;
       width: 380px;
       padding: 34px 37px;
+
+      @media (max-width: 1300px) and (min-width: 1260px) {
+        padding: 34px 37px 40px;
+      }
 
       position: absolute;
       bottom: 0;
@@ -133,15 +153,35 @@
 
   &__top-layer {
     position: absolute;
-    top: 56%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 720px;
     width: 50vw;
 
+    .image-fit {
+      margin-bottom: 0 !important;
+
+      @include mobile {
+        max-height: 340px;
+      }
+
+      &:before {
+        @include smallTablet-and-mobile {
+          padding-bottom: 340px;
+        }
+        @include mobile {
+          padding-bottom: 60.2%;
+        }
+      }
+    }
+
+    @include desktop {
+      cursor: pointer;
+    }
     @include big-tablet {
       left: 67%;
-      top: 230px;
+      top: 180px;
       transform: translate(-50%, 0);
     }
     @include smallTablet-and-mobile {
@@ -149,10 +189,6 @@
       max-width: 100%;
       width: 100%;
       transform: translate(0, 0);
-
-      .image-fit {
-        margin-bottom: 0;
-      }
 
       img {
         max-height: 340px;
@@ -166,12 +202,16 @@
     top: 50%;
     transform: translateY(-50%);
 
+    @media (max-width: 1300px) and (min-width: 1260px) {
+      right: 130px;
+    }
+
     @include tablet-and-mobile {
       top: 70%;
       right: 65%;
     }
     @media (max-width: 1023px) {
-      top: 80%;
+      top: 85%;
       right: 40px;
     }
     @include mobile {
