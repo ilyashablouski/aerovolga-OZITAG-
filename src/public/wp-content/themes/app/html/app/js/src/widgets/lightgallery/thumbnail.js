@@ -161,6 +161,15 @@ class Thumbnail {
         for (let n = 0; n < $thumb.length; n++) {
             ((index) => {
                 const $this = $thumb[index];
+
+                const _img = $this.querySelector('img');
+                const _imgOffsetWidth = _img.offsetWidth
+                const _imgOffsetHeight = _img.offsetHeight
+
+                if (_imgOffsetWidth > _imgOffsetHeight) {
+                    utils.addClass($this, 'lg-thumb-horizontal');
+                }
+
                 const vimeoVideoId = $this.getAttribute('data-vimeo-id');
                 if (vimeoVideoId) {
                     window['lgJsonP' + this.el.getAttribute('lg-uid') + '' + n] = (content) => {
