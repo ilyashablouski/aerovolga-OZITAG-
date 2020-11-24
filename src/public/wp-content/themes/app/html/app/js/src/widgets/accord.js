@@ -16,8 +16,14 @@ class Accord {
           this.removeActive(currActive);
         }
         this.setActive(this.accord);
+
+        setTimeout(() => this.scrollToView(), 400);
       }
     });
+  }
+
+  scrollToView() {
+    startScrollTo(this.accord);
   }
 
   setActive(elem) {

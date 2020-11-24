@@ -1,93 +1,69 @@
-const timingFn = (t, b, c, d) => {
-  if ((t /= d / 2) < 1) return c / 2 * t * t * t + b;
-  return c / 2 * ((t -= 2) * t * t + 2) + b;
-};
-
 class ScrollTo {
-  constructor() {
-    this.isOnScroll = false;
-    this.onScrollId = null;
-    this.trigger = null;
-    this.target = null;
+  static startAnimation(targetElem, noAnimate) {
+    const header = document.querySelector('.js-header');
 
-    onScroll(this.onScroll.bind(this));
-  }
+    let targetPos = ScrollTo.getOffset(targetElem);
 
-  onScroll() {
-    if (!this.isOnScroll) return null;
+    if (document.querySelector('.js-inner-header')) {
+      targetPos -= 54;
+    }
 
-    clearTimeout(this.onScrollId);
-    this.onScrollId = setTimeout(() => {
-      ScrollTo.endRespond(this.target, this.trigger);
-      this.resetProps();
-    }, 300);
-  }
-
-  startAnimation(target, trigger) {
-    this.target = target;
-    this.trigger = trigger;
-    this.isOnScroll = true;
-
-    ScrollTo.startRespond(target, trigger);
-
-    let delta = -54;
-
-    const parentSection = target.closest('[data-section]');
-    if (parentSection) delta -= parentSection.clientTop + parseFloat(getComputedStyle(parentSection).paddingTop);
-
-    if (isMobileLayout()) delta = 5;
-    if ('noDelta' in target.dataset) delta = 0;
-
-    const targetPos = target.getBoundingClientRect().top + delta;
+    if (noAnimate) {
+      ScrollTo.respond(targetElem);
+      return scrollTo(0, targetPos);
+    }
 
     if ('scrollBehavior' in document.body.style) {
+      ScrollTo.respond(targetElem);
       return scrollBy({
         top: targetPos,
         behavior: 'smooth',
       });
     }
 
+    const duration = 1500;
     const startPos = getScrollPos();
     const startTime = performance.now();
-    const duration = 1200;
 
     raf(animation);
 
     function animation(currentTime) {
       const elapsedTime = currentTime - startTime;
-      const nextStep = timingFn(elapsedTime, startPos, targetPos, duration);
+      const nextStep = ScrollTo.timingFunction(
+        elapsedTime, startPos, targetPos, duration,
+      );
 
-      window.scrollTo(0, nextStep);
+      scrollTo(0, nextStep);
 
       if (elapsedTime < duration) raf(animation);
+      else ScrollTo.respond(targetElem);
     }
   }
 
-  resetProps() {
-    this.isOnScroll = false;
-    this.target = null;
-    this.trigger = null;
-    this.onScrollId = null;
+  static timingFunction(t, b, c, d) {
+    if ((t /= d / 2) < 1) return c / 2 * t * t * t + b;
+    return c / 2 * ((t -= 2) * t * t + 2) + b;
   }
 
-  static startRespond(target, trigger) {
-    const event = new CustomEvent('startScrollTo', {
-      detail: { target, trigger },
-    });
+  static respond(targetElem) {
+    const event = new CustomEvent(
+      'endScroll', {
+        detail: { targetElem },
+      });
+
     document.dispatchEvent(event);
   }
 
-  static endRespond(target, trigger) {
-    const event = new CustomEvent('endScrollTo', {
-      detail: { target, trigger },
-    });
-    document.dispatchEvent(event);
-  }
+  static getOffset(elem) {
+    const offset = elem.getAttribute('data-offset');
+    const offsetMobile = elem.getAttribute('data-offset-mobile');
 
-  static createInstance() {
-    return new ScrollTo();
+    if (Layout.isMobileLayout()) {
+      return offsetMobile ? elem.getBoundingClientRect().top - offsetMobile : elem.getBoundingClientRect().top;
+    } else {
+      return offset ? elem.getBoundingClientRect().top - offset : elem.getBoundingClientRect().top;
+    }
   }
 }
 
-const scrollTo = ScrollTo.createInstance();
-window.startScrollTo = scrollTo.startAnimation.bind(scrollTo);
+window.startScrollTo = ScrollTo.startAnimation;
