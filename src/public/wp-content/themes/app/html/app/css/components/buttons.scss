@@ -194,6 +194,7 @@
       border: 1px solid rgba(255, 255, 255, 0.3);
       box-sizing: border-box;
       border-radius: 2px;
+      position: relative;
 
       background: transparent;
 
@@ -202,19 +203,49 @@
       line-height: 18px;
       text-align: center;
       color: $color-white;
+      transition: 0.25s ease-in-out, border 0.2s ease-in-out;
+
+      &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        bottom: 0;
+        left: -1px;
+        background: transparent;
+        width: calc(100% + 2px);
+        z-index: -1;
+        border-radius: 2px;
+        border: 1px solid transparent;
+      }
 
       &:hover {
-        padding: 15px 48px 17px;
         background: $color-white;
         color: $color-blue-dark-100;
         border-color: $color-white;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+
+        &:before {
+          transition: all 0.25s ease-in-out, top 0.25s ease-in-out, bottom 0.25s ease-in-out;
+          top: -5px;
+          bottom: -5px;
+          background-color: $color-white;
+          border-color: $color-white;
+        }
       }
 
       &:active {
-        padding: 15px 48px 17px;
+        transition: all 0.25s ease-in-out, border 0s ease-in-out;
         background: transparent;
         color: $color-white;
         border-color: rgba(255, 255, 255, 0.3);
+        border-top-color: transparent !important;
+        border-bottom-color: transparent !important;
+
+        &:before {
+          background: transparent;
+          border-color: rgba(255, 255, 255, 0.3);
+        }
       }
     }
 
@@ -223,24 +254,55 @@
       background: $color-white;
       border: 1px solid $color-gray-100;
       border-radius: 2px;
+      position: relative;
 
       font-weight: 600;
       font-size: 15px;
       line-height: 19px;
       text-align: center;
       color: $color-blue-dark-80;
+      transition: 0.25s ease-in-out;
+
+      &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        bottom: 0;
+        left: -1px;
+        background: $color-blue-dark-100;
+        width: calc(100% + 2px);
+        z-index: -1;
+        border-radius: 2px;
+        border: 1px solid transparent;
+      }
 
       &:hover {
-        padding: 15px 30px 16px;
         background: $color-blue-dark-100;
         color: $color-white;
+        border-color: $color-blue-dark-100;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+
+        &:before {
+          transition: all 0.25s ease-in-out, top 0.25s ease-in-out, bottom 0.25s ease-in-out;
+          top: -5px;
+          bottom: -5px;
+          border-color: $color-blue-dark-100;
+        }
       }
 
       &:active {
-        padding: 15px 30px 16px;
+        transition: all 0.25s ease-in-out, border 0s ease-in-out;
         background: $color-white;
         border-color: $color-gray-100;
         color: $color-blue-dark-80;
+        border-top-color: transparent !important;
+        border-bottom-color: transparent !important;
+
+        &:before {
+          background: $color-white;
+          border-color: $color-gray-100;
+        }
       }
     }
   }

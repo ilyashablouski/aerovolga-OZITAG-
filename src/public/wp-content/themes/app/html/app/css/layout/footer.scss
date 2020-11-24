@@ -1,20 +1,27 @@
 .footer {
-  background: $color-primary;
-  color: $color-white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   margin-left: 240px;
+  color: $color-white;
+  background: $color-primary;
+
   @include smallTablet-and-mobile {
-    margin-left: 0px;
+    margin-left: 0;
   }
 
-  //Modifiers
+  @include mobile {
+    position: relative;
+    left: auto;
+    bottom: auto;
+  }
+
   &--home {
     margin-left: 360px;
+
     @include smallTablet-and-mobile {
-      margin-left: 0px;
+      margin-left: 0;
     }
   }
 }
-
-
-
-

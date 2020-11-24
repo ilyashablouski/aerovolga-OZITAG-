@@ -12,11 +12,6 @@ const configs = {
     bulletActiveClass: 'active',
     clickable: true,
   },
-  cubeEffect: {
-    slideShadows: false,
-    shadow: false,
-  },
-
 };
 
 class PreviewsSlider {
@@ -29,10 +24,6 @@ class PreviewsSlider {
 
   initialize() {
     this.handleResize();
-    this.createEventListeners();
-  }
-
-  createEventListeners() {
     onResize(() => {
       this.handleResize();
     });
@@ -51,16 +42,14 @@ class PreviewsSlider {
     this.slider.destroy(true, true);
     this.slider = null;
   }
-}
 
-/* document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.js-previews').forEach(node => {
-    new PreviewsSlider(node);
-  });
-}); */
+  static createInstance(container) {
+    return new PreviewsSlider(container);
+  }
+}
 
 subscribeToEvent('initModules', () => {
   document.querySelectorAll('.js-previews').forEach(node => {
-    new PreviewsSlider(node);
+    PreviewsSlider.createInstance(node);
   });
 });

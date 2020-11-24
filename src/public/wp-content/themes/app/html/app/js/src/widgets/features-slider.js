@@ -53,6 +53,8 @@ class FeaturesSlider {
       slidesPerView: 1,
       loopedSlides: 3,
       loop: true,
+      slideToClickedSlide: true,
+      centeredSlides: true,
       autoplay: {
         delay: 3000,
       },

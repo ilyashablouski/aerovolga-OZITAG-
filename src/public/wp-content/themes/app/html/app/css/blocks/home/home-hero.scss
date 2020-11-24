@@ -20,14 +20,14 @@
   position: relative;
   flex: 1 1 auto;
   width: 50%;
-  padding: 0 299px;
-  clip-path: polygon(299px 0%, 100% 0%, calc(100% - 299px) 100%, 0% 100%);
+  padding: 0 249px;
+  clip-path: polygon(249px 0%, 100% 0%, calc(100% - 249px) 100%, 0% 100%);
   transition: width .4s cubic-bezier(0.4, 0.0, 0.2, 1);
   will-change: width;
   overflow: hidden;
 
   &:first-child {
-    clip-path: polygon(0% 0%, 100% 0%, calc(100% - 299px) 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, calc(100% - 249px) 100%, 0% 100%);
     padding-left: 0;
 
     .hh-slide {
@@ -42,7 +42,7 @@
   }
 
   &:last-child {
-    clip-path: polygon(299px 0%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(249px 0%, 100% 0%, 100% 100%, 0% 100%);
     padding-right: 0;
 
     .hh-slide {
@@ -57,7 +57,7 @@
   }
 
   &:not(:last-child) {
-    margin-right: -300px;
+    margin-right: -250px;
   }
 
   &.active {
@@ -223,20 +223,6 @@
 
   &__button {
     height: 40px;
-
-    a {
-      padding: 10px 46px 10px;
-      background-color: transparent;
-      color: $color-white;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 18px;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-    }
   }
 }
 

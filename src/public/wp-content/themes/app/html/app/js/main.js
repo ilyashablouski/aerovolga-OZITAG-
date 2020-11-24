@@ -25,6 +25,8 @@ import './src/widgets/page-nav';
 import './src/widgets/previews';
 import './src/widgets/previews-slider';
 import './src/widgets/free-scroll-slider';
+import './src/widgets/fixed-footer'
+import './src/widgets/parallax-section'
 
 import './src/widgets/spinner';
 
