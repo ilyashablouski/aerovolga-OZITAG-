@@ -17,7 +17,7 @@ function leaveAnimation() {
   });
 }
 
-function onceAnimation() {
+/* function onceAnimation() {
   const tl = gsap.timeline();
 
   tl.to(".once-transition li", {
@@ -27,7 +27,7 @@ function onceAnimation() {
     stagger: 0.2,
     delay: 0.3,
   });
-}
+} */
 
 function delay(n) {
   n = n || 2000;
@@ -123,14 +123,6 @@ class App {
           async leave() {
             const done = this.async();
             leaveAnimation();
-            await delay(1500);
-            done();
-          },
-
-          async once() {
-            console.log('ewdwe');
-            const done = this.async();
-            onceAnimation();
             await delay(1500);
             done();
           },
