@@ -75,6 +75,10 @@
       max-height: 400px;
       transition: all 0.3s linear;
 
+      &:not([class*="active"]) {
+        cursor: pointer;
+      }
+
       @include mobile {
         width: 83.75vw !important;
       }
@@ -205,10 +209,6 @@
       }
 
       &.active {
-        .features__thumbnail-text {
-          color: $color-blue-dark-100;
-        }
-
         &:before {
           position: absolute;
           content: '';
@@ -219,6 +219,13 @@
           background: $color-blue-dark-100;
         }
       }
+
+      &:hover,
+      &.active {
+        .features__thumbnail-text {
+          color: $color-blue-dark-100;
+        }
+      }
     }
 
     &-text {
@@ -227,6 +234,7 @@
       line-height: 44px;
       color: $color-gray-100;
       pointer-events: none;
+      transition: color .1s ease;
     }
 
     &-btn {
