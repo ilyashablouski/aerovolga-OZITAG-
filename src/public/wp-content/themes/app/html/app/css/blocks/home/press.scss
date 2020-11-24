@@ -1,10 +1,11 @@
 .press {
 
+
   &__inner {
     margin: 0 -60px;
-    overflow-y: hidden;
-    overflow-x: auto;
-    @include hide-scrollbar;
+    //overflow-y: hidden;
+    //overflow-x: auto;
+    //@include hide-scrollbar;
 
     @include tablet-and-mobile {
       margin: 0 -20px;
@@ -14,51 +15,59 @@
     }
   }
 
-  &__list {
-    display: flex;
-    margin: 0 0 -50px -30px;
+  .swiper-container {
     padding: 0 60px;
-
     @include tablet-and-mobile {
-      margin: 0 0 -50px -20px;
       padding: 0 20px;
-
     }
     @include mobile {
-      margin: 0 -13.5px -50px;
       padding: 0 13.5px;
     }
   }
 
-  &__item {
-    flex: 0 0 420px;
-    max-width: 420px;
-    margin: 0 30px;
 
-    &:last-child {
-      flex: 0 0 480px;
-      max-width: 480px;
-      margin-right: 0;
-      padding-right: 60px;
 
-    }
 
-    @include tablet-and-mobile {
-      &:last-child {
-        flex: 0 0 440px;
-        max-width: 440px;
-        padding-right: 20px;
-      }
-    }
-    @include mobile {
-      flex: 0 0 86vw;
-      max-width: 86vw;
-      margin: 0 13.5px;
-      &:last-child {
-        flex: 0 0 calc(86vw + 13px);
-        max-width: calc(86vw + 13px);
-        padding-right: 13px;
-      }
-    }
+&__list {
+  display: flex;
+  margin: 0 0 -50px 0 !important;
+  cursor: pointer;
+
+  @include tablet-and-mobile {
+    cursor: default;
   }
+
+}
+
+&__item {
+  flex: 0 0 420px;
+  max-width: 420px;
+
+  //margin: 0 30px;
+  //&:last-child {
+  //  flex: 0 0 480px;
+  //  max-width: 480px;
+  //  padding-right: 60px;
+//}
+
+  @include tablet-and-mobile {
+    //&:last-child {
+    //  flex: 0 0 440px;
+    //  max-width: 440px;
+    //  padding-right: 20px;
+    //}
+  }
+
+  @include mobile {
+    flex: 0 0 86vw;
+    max-width: 86vw;
+
+    //&:last-child {
+    //  flex: 0 0 calc(86vw + 13px);
+    //  max-width: calc(86vw + 13px);
+    //  padding-right: 13px;
+    //}
+  }
+}
+
 }

@@ -4,19 +4,21 @@
       <div class="home-section__content">
         <div class="press">
           <div class="press__inner">
-            <div class="press__list">
-              {{#times 5}}
-                <div class="press__item">
-                  {{>blocks/news/news-card
-                    container=true
-                    date="November 2017"
-                    title="New feature of our EDM for turbo-propeller engine PBS TP100"
-                    text="Long-term cooperation between our company and PBS, the Czech manufacturer of turbo-propeller"
-                    img="news/news-list/news_1"
-                    ext="png"
-                  }}
-                </div>
-              {{/times}}
+            <div class="swiper-container js-free-scroll-slider">
+              <div class="swiper-wrapper press__list">
+                {{#times 5}}
+                  <div class="swiper-slide press__item">
+                    {{>blocks/news/news-card
+                      container=true
+                      date="November 2017"
+                      title="New feature of our EDM for turbo-propeller engine PBS TP100"
+                      text="Long-term cooperation between our company and PBS, the Czech manufacturer of turbo-propeller"
+                      img="news/news-list/news_1"
+                      ext="png"
+                    }}
+                  </div>
+                {{/times}}
+              </div>
             </div>
           </div>
         </div>

@@ -12,10 +12,14 @@ class FreeScrollSlider {
 
   initSlider() {
     this.slider = new Swiper(this.nodeElement, {
-      speed: 800,
       slidesPerView: 'auto',
-      spaceBetween: 30,
+      spaceBetween: 17,
       freeMode: true,
+      breakpoints: {
+        768: {
+          spaceBetween: 60,
+        }
+      }
     });
   }
 
