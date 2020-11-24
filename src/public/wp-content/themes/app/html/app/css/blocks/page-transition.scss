@@ -1,4 +1,5 @@
-.transition {
+.transition,
+.once-transition {
   position: fixed;
   z-index: 99999999;
   display: -webkit-box;
@@ -21,9 +22,15 @@
   }
 }
 
-.transition li {
+.transition li,
+.once-transition li {
   width: 20%;
   -webkit-transform: scaleY(0);
           transform: scaleY(0);
   background: #fff;
+}
+
+.once-transition li {
+  transform-origin: 0% 100%;
+  transform: translate(0px, 0px);
 }
