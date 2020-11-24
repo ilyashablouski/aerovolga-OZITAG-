@@ -84,6 +84,27 @@
     }
 
     &-link {
+
+      &.active {
+        color: $color-blue-dark-100;
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -4px;
+          height: 2px;
+          width: 100%;
+          background: $color-blue-dark-100;
+          z-index: 4;
+          transition: all 0.2s linear;
+
+          @include mobile {
+            bottom: 0;
+          }
+        }
+      }
+
       @include tablet-and-mobile {
         cursor: default;
       }

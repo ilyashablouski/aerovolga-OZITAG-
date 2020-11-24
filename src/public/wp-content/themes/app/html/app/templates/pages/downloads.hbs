@@ -7,15 +7,17 @@
 {{>blocks/hero/hero title="Downloads" img="download/hero-bg" ext="png"}}
 
 <div class="content__wrapper content__wrapper--middle">
-  <nav class="factory-nav factory-nav--anchor">
+
+  <nav class="factory-nav factory-nav--anchor js-anchors">
     <ul class="factory-nav__menu">
       {{#each downloads-navbar}}
         <li class="factory-nav__menu-item">
-          <a href="{{url}}" class="factory-nav__menu-link js-scroll-to">{{label}}</a>
+          <a href="{{url}}" class="factory-nav__menu-link {{#if this.active}}active{{/if}} js-scroll-to">{{label}}</a>
         </li>
       {{/each}}
     </ul>
   </nav>
+
   <div class="container">
     {{>blocks/downloads/01_la-aircrafts}}
     {{>blocks/downloads/02_borey-aircrafts}}
