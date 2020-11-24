@@ -95,6 +95,10 @@ class App {
   }
 
   initCore() {
+    barba.hooks.beforeEnter((data) => {
+      console.log(data.next.namespace);
+    });
+
     barba.hooks.after(() => {
       App.dispatchEvent('initModules');
       App.dispatchEvent('pageEnter');
@@ -105,7 +109,7 @@ class App {
       App.dispatchEvent('resetModules');
     });
 
-    barba.hooks.beforeEnter(() => {
+    barba.hooks.beforeEnter((data) => {
       history.scrollRestoration = 'manual';
       window.scrollTo(0, 0);
     });
@@ -115,19 +119,15 @@ class App {
     });
 
     barba.init({
-      preventRunning: true,
       sync: true,
-
-      transitions: [
-        {
-          async leave() {
-            const done = this.async();
-            leaveAnimation();
-            await delay(1500);
-            done();
-          },
+      transitions: [{
+        async leave() {
+          const done = this.async();
+          leaveAnimation();
+          await delay(1500);
+          done();
         },
-      ],
+      }],
     });
   }
 

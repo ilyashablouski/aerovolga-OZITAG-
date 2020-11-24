@@ -1,5 +1,4 @@
-.transition,
-.once-transition {
+.transition {
   position: fixed;
   z-index: 99999999;
   display: -webkit-box;
@@ -17,20 +16,14 @@
     width: 100%;
   }
 
-  &.this-is-home {
+  &--home {
     width: calc(100% - 360px);
   }
 }
 
-.transition li,
-.once-transition li {
+.transition li {
   width: 20%;
   -webkit-transform: scaleY(0);
           transform: scaleY(0);
   background: #fff;
-}
-
-.once-transition li {
-  transform-origin: 0% 100%;
-  transform: translate(0px, 0px);
 }
