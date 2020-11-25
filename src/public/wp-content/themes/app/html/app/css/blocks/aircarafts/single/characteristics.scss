@@ -1,8 +1,11 @@
 .characteristics {
   &__bottom {
-    margin-top: 15px;
+    margin-top: 25px;
     button {
       width: 100%;
+      &:before {
+        height: 60px !important;
+      }
     }
   }
 }
