@@ -55,6 +55,12 @@
     &__inner {
       max-width: 388px;
       position: relative;
+
+      &:hover {
+        .press-card__title {
+          color: $grayish-blue;
+        }
+      }
     }
 
     &__link {
@@ -67,6 +73,7 @@
       font-size: 24px;
       line-height: 32px;
       color: $color-blue-dark-80;
+      transition: 0.3s ease-in-out;
     }
 
     &__text {
