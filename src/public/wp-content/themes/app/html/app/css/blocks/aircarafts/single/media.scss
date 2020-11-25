@@ -1,6 +1,4 @@
 .media {
-
-
   &__bottom {
     margin-top: 30px;
     text-align: center;
@@ -10,5 +8,31 @@
     font-size: 16px;
     line-height: 24px;
     color: $color-gray-90;
+  }
+
+  &__tabs {
+    display: flex;
+    justify-content: flex-end;
+    @include mobile {
+      justify-content: flex-start;
+    }
+
+    &-inner {
+      display: flex;
+    }
+  }
+
+  &__tab {
+    margin-right: 10px;
+
+    @include mobile320 {
+      button {
+        padding: 8px 15px 9px;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }

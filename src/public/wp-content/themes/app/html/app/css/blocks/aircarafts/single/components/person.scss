@@ -20,6 +20,13 @@
     font-weight: 600;
     font-size: 36px;
     line-height: 32px;
+    transition: 0.3s ease-in-out;
+
+    @include desktop {
+      &:hover {
+        color: $grayish-blue;
+      }
+    }
 
     @include tablet-and-mobile {
       font-size: 28px;
@@ -37,5 +44,12 @@
     font-size: 18px;
     line-height: 30px;
     text-decoration-line: underline;
+    transition: 0.3s ease-in-out;
+
+    @include desktop {
+      &:hover {
+        color: $grayish-blue;
+      }
+    }
   }
 }

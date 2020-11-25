@@ -35,8 +35,6 @@ import './src/widgets/spinner';
 import './src/widgets/aircrafts-header/aircrafts-header-menu';
 import './src/widgets/aircrafts-header/aircrafts-header';
 
-import './src/widgets/map-widget';
-
 import './src/utils/vh-hack';
 import './src/utils/mobile-debug';
 

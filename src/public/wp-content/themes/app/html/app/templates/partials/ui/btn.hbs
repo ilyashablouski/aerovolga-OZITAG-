@@ -1,6 +1,6 @@
 {{#if button}}
   <button type="{{#if type}}{{type}}{{else}}button{{/if}}"
-          class="btn{{#if size}} btn--{{size}}{{/if}}{{#if color}} btn--{{color}}{{/if}}{{#if
+          class="btn {{#if mix}}{{mix}}{{/if}} {{#if size}} btn--{{size}}{{/if}}{{#if color}} btn--{{color}}{{/if}}{{#if
               outline}} btn--{{outline}}-outline{{/if}}{{#if icon}} btn--icon{{/if}}{{#if
               btn-mode}} btn--{{btn-mode}}{{/if}}{{#if popup}} js-popup-open{{/if}}"
     {{#if popup}} data-popup="{{popup}}"{{/if}}

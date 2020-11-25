@@ -7,11 +7,11 @@
       </p>
     {{/blocks/title-with-description}}
 
-    <div class="map js-map-widget" data-api-url="/assets/ajax/map">
-      <div class="map__container js-map"
-           data-api-url="https://api-maps.yandex.ru/2.1/?lang=ru_RU"
-           data-center="53.90253130,27.55209297"
-           data-zoom="2">
+    <div class="map">
+      <div class="map__inner">
+        <div class="map__image">
+          {{>components/image ext="png" img="aircrafts/single/map"}}
+        </div>
       </div>
     </div>
 
