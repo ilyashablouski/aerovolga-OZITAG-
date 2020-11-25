@@ -10,6 +10,8 @@ import 'lazysizes/plugins/object-fit/ls.object-fit';
 import svgPolyfill from 'svg4everybody';
 import jquery from 'jquery';
 import Swiper, { Navigation, Pagination, Thumbs, Autoplay } from 'swiper';
+import PerfectScrollbar from 'perfect-scrollbar';
+import select2 from 'select2';
 import barba from '@barba/core';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -19,6 +21,9 @@ window.svg4everybody = svgPolyfill;
 
 window.Swiper = Swiper;
 Swiper.use([Navigation, Pagination, Thumbs, Autoplay]);
+
+window.select2 = select2;
+window.PerfectScrollbar = PerfectScrollbar;
 
 window.barba = barba;
 window.gsap = gsap;

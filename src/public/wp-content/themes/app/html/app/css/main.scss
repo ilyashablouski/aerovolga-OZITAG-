@@ -1,7 +1,6 @@
 // Libraries
 @import "~normalize-scss/sass/normalize/import-now";
 @import '~swiper/swiper';
-@import '~locomotive-scroll/src/locomotive-scroll';
 
 // Base
 @import 'config/index';
@@ -15,5 +14,5 @@
 
 // Content
 @import "blocks/index";
-@import "form/input";
+@import "form/index";
 @import "forms/index";

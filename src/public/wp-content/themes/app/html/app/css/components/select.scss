@@ -1,0 +1,179 @@
+.select-backdrop {
+  position: fixed;
+  display: none;
+  z-index: z(dropdown) - 2;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: transparent;
+
+  &--open {
+    display: block;
+  }
+}
+
+.select {
+  $height: 46px;
+  position: relative;
+  height: 100%;
+  //width: 100%;
+
+  &--open {
+    z-index: z(dropdown) - 1;
+
+    .select__dropdown {
+      display: block;
+    }
+
+    .select__backdrop {
+      display: block;
+    }
+
+    .icon {
+      transform: rotate(180deg);
+      transform-origin: center;
+    }
+  }
+
+  &__input {
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    white-space: nowrap;
+
+    //color: $color-white;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    border: none;
+    border-radius: 100px;
+    //background-color: $color-white-10;
+    cursor: pointer;
+    @include transition;
+
+    > * + * {
+      margin-left: 10px;
+
+      @include mobile {
+        margin-left: 6px;
+      }
+    }
+
+    &:focus,
+    &:hover {
+      //background-color: $color-white-20;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: z(dropdown);
+    display: none;
+    min-width: 100%;
+    max-height: 200px;
+    background-color: $color-white;
+    border-radius: 8px;
+    overflow-y: auto;
+
+    &.up {
+      top: auto;
+      bottom: 0;
+    }
+  }
+
+  &__backdrop {
+    position: fixed;
+    display: none;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: transparent;
+  }
+
+  &__list {
+    padding: 10px 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: block;
+    padding: 10px 35px 10px 15px;
+    color: $color-gray-80;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1;
+    white-space: nowrap;
+
+    &:focus,
+    &:hover {
+      color: $color-gray-100;
+      background-color: $color-gray-20;
+      transition: all 150ms ease-in;
+      cursor: pointer;
+    }
+
+    &--selected {
+      color: $color-primary;
+
+      &:focus,
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &--simple {
+    @include media(mobile) {
+      .select__input {
+        padding: 14px 0;
+        background-color: transparent;
+      }
+    }
+  }
+
+  &-list {
+    &__link {
+      display: block;
+      padding: 10px 35px 10px 15px;
+      color: $color-gray-80;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      white-space: nowrap;
+
+      &:focus,
+      &:hover {
+        color: $color-gray-100;
+        background-color: $color-gray-20;
+        transition: all 150ms ease-in;
+        cursor: pointer;
+      }
+
+      &--selected {
+        color: $color-primary;
+
+        &:focus,
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+
+  &--rounded {
+
+  }
+
+  .icon {
+    @include transition;
+  }
+}
