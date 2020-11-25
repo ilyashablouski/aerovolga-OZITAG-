@@ -20,9 +20,8 @@
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
-    padding: 17px 20px 18px;
+    padding: 30px 20px 18px;
     background: transparent;
-    transition: all 0.4s linear;
   }
   @include mobile {
     min-height: 50px;
@@ -98,6 +97,7 @@
           &:before {
             top: -10px;
           }
+
           &:after {
             bottom: -10px;
           }
@@ -174,8 +174,9 @@
     @include smallTablet-and-mobile {
       display: block;
       img {
-        width: 118px;
-        height: 45px;
+        width: 136px;
+        height: 52px;
+        transition: all 0.3s linear;
       }
     }
     @include mobile {
