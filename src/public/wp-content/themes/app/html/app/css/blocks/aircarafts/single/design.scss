@@ -41,8 +41,7 @@
     }
 
     .swiper-container {
-      max-width: 76px;
-      overflow: visible;
+      margin: 0;
 
       @include mobile {
         max-width: 300px;
