@@ -2,7 +2,7 @@
   &__wrapper {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 
     @include mobile {
       justify-content: flex-start;
