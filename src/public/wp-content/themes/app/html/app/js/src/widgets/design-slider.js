@@ -24,8 +24,11 @@ class DesignSlider {
 
   initSlider() {
     const galleryThumbs = new Swiper(this.thumbs, {
-      slidesPerView: 5,
       spaceBetween: 5,
+      slidesPerView: 5,
+      freeMode: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
       navigation: {
         nextEl: '.thumbs-slide__next',
         prevEl: '.thumbs-slide__prev',
@@ -33,7 +36,6 @@ class DesignSlider {
       breakpoints: {
         767: {
           spaceBetween: 25,
-          slidesPerView: 1,
         }
       }
     });
@@ -41,7 +43,6 @@ class DesignSlider {
     this.slider = new Swiper(this.rowElement, {
       speed: 800,
       spaceBetween: 380,
-      slidesPerView: 1,
       navigation: {
         nextEl: '.thumbs-slide__next',
         prevEl: '.thumbs-slide__prev',

@@ -105,8 +105,6 @@
   }
 
   &-slider {
-    border: 1px solid $color-gray-60;
-    border-radius: 5px;
     max-height: 440px;
     @include mobile {
       max-height: 300px;
@@ -140,6 +138,8 @@
     .swiper-container {
       max-width: 440px;
       width: 100%;
+      border: 1px solid $color-gray-60;
+      border-radius: 5px;
       @include mobile {
         max-width: 300px;
       }

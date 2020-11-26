@@ -1,8 +1,19 @@
 .characteristics {
   &__bottom {
-    margin-top: 15px;
+    margin-top: 25px;
+
+    @include mobile {
+      margin-top: 19px;
+    }
+
     button {
       width: 100%;
+      &:before {
+        height: 60px !important;
+        @include mobile {
+          height: 54px !important;
+        }
+      }
     }
   }
 }

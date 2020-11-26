@@ -60,6 +60,32 @@
   &--characteristics {
     margin-top: 27px;
 
+    .accordion__top {
+      position: sticky;
+      top: 0;
+
+      @include tablet-and-mobile {
+        top: 44px;
+      }
+
+      @include smallTablet-and-mobile {
+        top: 124px;
+      }
+      @include mobile {
+        top: 94px;
+      }
+
+      &:hover {
+        background: $color-gray-20;
+        border: 1px solid $color-gray-20;
+        border-bottom: 1px solid $color-gray-60;
+
+        .accordion__pointer {
+          opacity: 0.55;
+        }
+      }
+    }
+
     .accordion__description-container {
       padding: 0 0 10px;
     }

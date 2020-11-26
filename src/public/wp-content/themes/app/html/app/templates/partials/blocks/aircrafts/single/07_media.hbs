@@ -1,6 +1,19 @@
 <div class="section">
   <div class="container">
     {{#>blocks/title-with-description title="Media"}}
+      <div class="media__tabs">
+        <div class="media__tabs-inner">
+          <div class="media__tab">
+            {{>ui/btn color="with-border" mix="active" label="Exterior" button=true}}
+          </div>
+          <div class="media__tab">
+            {{>ui/btn color="with-border" label="Interior" button=true}}
+          </div>
+          <div class="media__tab">
+            {{>ui/btn color="with-border" label="Avionics" button=true}}
+          </div>
+        </div>
+      </div>
     {{/blocks/title-with-description}}
 
     <div class="media__content">

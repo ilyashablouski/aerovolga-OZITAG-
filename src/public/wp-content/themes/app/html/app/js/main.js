@@ -12,6 +12,7 @@ import './src/utils/api-manager';
 import './src/utils/events-observer';
 
 import './src/widgets/accord';
+import './src/widgets/select'
 import './src/widgets/anchor';
 import './src/widgets/certificate-slider';
 import './src/widgets/features-slider';
@@ -33,8 +34,6 @@ import './src/widgets/spinner';
 
 import './src/widgets/aircrafts-header/aircrafts-header-menu';
 import './src/widgets/aircrafts-header/aircrafts-header';
-
-import './src/widgets/map-widget';
 
 import './src/utils/vh-hack';
 import './src/utils/mobile-debug';

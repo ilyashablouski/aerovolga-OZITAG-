@@ -13,11 +13,15 @@
   cursor: pointer;
   transition: 0.3s ease-in-out;
 
-  &:hover,
-  &--hover {
-    color: $color-blue-dark-80;
-    background-color: $color-primary-hover;
-    border-color: $color-primary-hover;
+  @include desktop {
+    &:hover,
+    &--hover {
+      color: $color-blue-dark-80;
+      background-color: $color-primary-hover;
+      border-color: $color-primary-hover;
+    }
+
+
   }
 
   &:focus,
@@ -117,15 +121,16 @@
   }
 
   &--with-border {
-    padding: 10px 20px 11px;
-    background: $color-blue-dark-120;
+    padding: 8px 20px 9px;
+    background: $color-white;
     border: 2px solid $color-blue-dark-120;
     border-radius: 2px;
 
     font-weight: 600;
     font-size: 15px;
     line-height: 19px;
-    color: $color-white;
+    color: $color-blue-dark-120;
+
 
     &:hover {
       background: $color-white;
@@ -136,6 +141,12 @@
     &:active {
       background: $color-blue-dark-120;
       border-color: $color-blue-dark-120;
+      color: $color-white;
+    }
+
+    &.active {
+      background: $color-blue-dark-120;
+      border: 2px solid $color-blue-dark-120;
       color: $color-white;
     }
   }
@@ -151,9 +162,11 @@
     text-align: center;
     color: $color-blue-dark-80;
 
-    &:hover {
-      background: $color-blue-dark-100;
-      color: $color-white;
+    @include desktop {
+      &:hover {
+        background: $color-blue-dark-100;
+        color: $color-white;
+      }
     }
 
     &:active {
@@ -175,11 +188,14 @@
     border: 1px solid $color-blue-dark-100;
     box-sizing: border-box;
 
-    &:hover {
-      background: $color-white;
-      color: $color-blue-dark-100;
-      border-color: $color-gray-100;
+    @include desktop {
+      &:hover {
+        background: $color-white;
+        color: $color-blue-dark-100;
+        border-color: $color-gray-100;
+      }
     }
+
 
     &:active {
       background: $color-blue-dark-100;
@@ -190,57 +206,53 @@
 
   &--outline {
     &-transparent {
-      padding: 10px 48px 12px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-sizing: border-box;
-      border-radius: 2px;
       position: relative;
+      padding: 10px 46px 12px;
 
-      background: transparent;
+      background: transparent !important;
+      color: $color-white;
 
       font-weight: 600;
       font-size: 14px;
       line-height: 18px;
       text-align: center;
-      color: $color-white;
-      transition: 0.25s ease-in-out, border 0.2s ease-in-out;
+
+      transition: all 0.3s ease-in-out;
 
       &:before {
         position: absolute;
         content: '';
-        top: 0;
-        bottom: 0;
+        top: 50%;
         left: -1px;
-        background: transparent;
+        transform: translateY(-50%);
+
         width: calc(100% + 2px);
-        z-index: -1;
+        height: 40px;
+        background: transparent;
+
         border-radius: 2px;
-        border: 1px solid transparent;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+
+        z-index: -1;
+        transition: all 0.3s ease-in-out, border 0s linear;
       }
 
-      &:hover {
-        background: $color-white;
-        color: $color-blue-dark-100;
-        border-color: $color-white;
-        border-top-color: transparent;
-        border-bottom-color: transparent;
+      @include desktop {
+        &:hover {
+          color: $color-blue-dark-100;
 
-        &:before {
-          transition: all 0.25s ease-in-out, top 0.25s ease-in-out, bottom 0.25s ease-in-out;
-          top: -5px;
-          bottom: -5px;
-          background-color: $color-white;
-          border-color: $color-white;
+          &:before {
+            height: 50px;
+            background-color: $color-white;
+            border-color: $color-white;
+          }
         }
       }
 
+
       &:active {
-        transition: all 0.25s ease-in-out, border 0s ease-in-out;
         background: transparent;
         color: $color-white;
-        border-color: rgba(255, 255, 255, 0.3);
-        border-top-color: transparent !important;
-        border-bottom-color: transparent !important;
 
         &:before {
           background: transparent;
@@ -250,54 +262,52 @@
     }
 
     &-white {
-      padding: 10px 30px 11px;
-      background: $color-white;
-      border: 1px solid $color-gray-100;
-      border-radius: 2px;
       position: relative;
+      padding: 10px 30px 11px;
+
+      background: transparent !important;
+      color: $color-blue-dark-80;
 
       font-weight: 600;
       font-size: 15px;
       line-height: 19px;
       text-align: center;
-      color: $color-blue-dark-80;
-      transition: 0.25s ease-in-out;
+
+      transition: 0.3s ease-in-out;
 
       &:before {
         position: absolute;
         content: '';
-        top: 0;
-        bottom: 0;
+        top: 50%;
         left: -1px;
-        background: $color-blue-dark-100;
+        transform: translateY(-50%);
+
         width: calc(100% + 2px);
-        z-index: -1;
+        height: 40px;
+        background: $color-white;
+
         border-radius: 2px;
-        border: 1px solid transparent;
+        border: 1px solid $color-gray-100;
+
+        z-index: -1;
+        transition: 0.3s ease-in-out;
       }
 
-      &:hover {
-        background: $color-blue-dark-100;
-        color: $color-white;
-        border-color: $color-blue-dark-100;
-        border-top-color: transparent;
-        border-bottom-color: transparent;
+      @include desktop {
+        &:hover {
+          color: $color-white;
 
-        &:before {
-          transition: all 0.25s ease-in-out, top 0.25s ease-in-out, bottom 0.25s ease-in-out;
-          top: -5px;
-          bottom: -5px;
-          border-color: $color-blue-dark-100;
+          &:before {
+            height: 50px;
+            background: $color-blue-dark-100;
+            border-color: $color-blue-dark-100;
+          }
         }
       }
 
       &:active {
-        transition: all 0.25s ease-in-out, border 0s ease-in-out;
         background: $color-white;
-        border-color: $color-gray-100;
         color: $color-blue-dark-80;
-        border-top-color: transparent !important;
-        border-bottom-color: transparent !important;
 
         &:before {
           background: $color-white;

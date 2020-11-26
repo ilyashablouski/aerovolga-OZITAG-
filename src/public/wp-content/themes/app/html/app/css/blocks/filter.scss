@@ -1,0 +1,15 @@
+.filter {
+  &__wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+
+    @include mobile {
+      justify-content: flex-start;
+      margin-bottom: 20px;
+    }
+  }
+
+  max-width: 140px;
+  width: 100%;
+}
