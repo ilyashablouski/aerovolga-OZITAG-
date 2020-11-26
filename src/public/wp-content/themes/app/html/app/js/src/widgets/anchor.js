@@ -26,7 +26,7 @@ class Anchor {
 
     const target = this.getTarget(trigger);
     setTimeout(() => {
-      startScrollTo(target, trigger);
+      startScrollTo(target);
     });
   }
 

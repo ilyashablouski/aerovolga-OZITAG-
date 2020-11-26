@@ -36,9 +36,13 @@
     @include mobile {
       margin-top: 49px;
     }
+
     button {
       padding: 8px 30px 10px;
       font-weight: 600;
+      &:before {
+        background: transparent;
+      }
     }
   }
 }
