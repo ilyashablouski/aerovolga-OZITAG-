@@ -97,9 +97,7 @@ class FeaturesSlider {
 
   updateActiveText() {
     this.setVisibleTextElement(null);
-    setTimeout(() => {
-      this.setVisibleTextElement(this.getActiveSlideNumber());
-    }, 300);
+    this.setVisibleTextElement(this.getActiveSlideNumber());
   }
 
   onSwiperSlideChange() {

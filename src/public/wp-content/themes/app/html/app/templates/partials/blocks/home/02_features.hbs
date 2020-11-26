@@ -48,13 +48,18 @@
             </div>
           </div>
           <div class="features__bottom">
-            <div class="features__description js-features-slider__texts">
-              {{#times 5}}
-                <div class="features__description-inner">
-                  <p class="features__description-text">The aircraft is easy to maintain, consumes little fuel, and also
-                    comes with reliable engines ({{this}})</p>
-                </div>
-              {{/times}}
+            <div class="features__description">
+              <div class="features__description-slider js-features-slider__texts">
+                {{#times 5}}
+                  <div class="features__description-inner">
+                    <p class="features__description-text">The aircraft is easy to maintain, consumes little fuel, and also
+                      comes with reliable engines ({{this}})</p>
+                  </div>
+                {{/times}}
+              </div>
+              <div class="features__description-btn">
+                {{>ui/btn button=true label="Explore La-8" color="outline-white"}}
+              </div>
             </div>
           </div>
         </div>
