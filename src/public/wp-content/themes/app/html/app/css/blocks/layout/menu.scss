@@ -16,7 +16,7 @@
     width: 100vw;
     flex: 1 1 auto;
     background: $color-white;
-    transition: all 0.3s linear, background-color 0s linear;
+    transition: all 0.3s linear;
   }
   @include mobile {
     @media (max-height: 700px) {
@@ -35,57 +35,59 @@
       transition: transform 0.3s linear, background-color 0s linear 0.3s;
     }
 
+    @include no-smallTablet {
+      .header-menu__item, .header-submenu__item {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+
+      .header-menu__item {
+        transition-delay: .3s;
+
+        &:nth-child(2) {
+          transition-delay: .35s;
+        }
+
+        &:nth-child(3) {
+          transition-delay: .4s;
+        }
+
+        &:nth-child(4) {
+          transition-delay: .45s;
+        }
+
+        &:nth-child(5) {
+          transition-delay: .5s;
+        }
+      }
+
+      .header-submenu__item {
+        transition-delay: .55s;
+
+        &:nth-child(2) {
+          transition-delay: .6s;
+        }
+
+        &:nth-child(3) {
+          transition-delay: .65s;
+        }
+
+        &:nth-child(4) {
+          transition-delay: .7s;
+        }
+      }
+
+      .header-nav__search {
+        .header-submenu__item {
+          transition-delay: .75s;
+        }
+      }
+    }
+
     @include smallTablet-and-mobile {
+      transition: all 0.3s linear;
       transform: translatex(0);
       display: block;
-      background: $color-white;
-    }
-
-    .header-menu__item, .header-submenu__item {
-      transform: translate3d(0, 0, 0);
-      opacity: 1;
-    }
-
-    .header-menu__item {
-      transition-delay: .3s;
-
-      &:nth-child(2) {
-        transition-delay: .35s;
-      }
-
-      &:nth-child(3) {
-        transition-delay: .4s;
-      }
-
-      &:nth-child(4) {
-        transition-delay: .45s;
-      }
-
-      &:nth-child(5) {
-        transition-delay: .5s;
-      }
-    }
-
-    .header-submenu__item {
-      transition-delay: .55s;
-
-      &:nth-child(2) {
-        transition-delay: .6s;
-      }
-
-      &:nth-child(3) {
-        transition-delay: .65s;
-      }
-
-      &:nth-child(4) {
-        transition-delay: .7s;
-      }
-    }
-
-    .header-nav__search {
-      .header-submenu__item {
-        transition-delay: .75s;
-      }
     }
   }
 
@@ -100,13 +102,19 @@
     padding: 145px 60px 70px 100px;
     transition: transform 0.3s linear;
 
-    @media (max-height: 700px) {
+    @media (max-height: 500px) {
       padding: 60px 60px 60px 100px;
     }
     @include smallTablet-and-mobile {
       width: 100vw;
       padding: 126px 0;
       align-items: center;
+      transition: all 0.3s linear 0.1s;
+
+      @media (max-height: 650px) {
+        padding: 60px 0;
+        overflow-y: auto;
+      }
     }
     @include mobile {
       padding: 40px 0;
@@ -170,6 +178,8 @@
 
     @include smallTablet-and-mobile {
       text-align: center;
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
     }
   }
 
@@ -222,6 +232,8 @@
     @include smallTablet-and-mobile {
       text-align: center;
       font-size: 20px;
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
     }
 
     @include mobile {

@@ -13,6 +13,7 @@
 
   @include smallTablet-and-mobile {
     min-height: 80px;
+    max-height: 80px;
     width: 100vw;
     position: static;
     bottom: auto;
@@ -25,6 +26,7 @@
   }
   @include mobile {
     min-height: 50px;
+    max-height: 50px;
     padding: 7px 14px 7px 13px;
   }
 
