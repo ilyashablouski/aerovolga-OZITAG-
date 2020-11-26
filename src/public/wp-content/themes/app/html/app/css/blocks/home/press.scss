@@ -27,24 +27,22 @@
   }
 
 
-
-
-&__list {
-  display: flex;
-  margin: 0 0 -50px 0 !important;
-  transition-property: transform;
-}
-
-&__item {
-  flex: 0 0 420px;
-  max-width: 420px;
-  transition-property: transform;
-
-  @include mobile {
-    flex: 0 0 86vw;
-    max-width: 86vw;
-
+  &__list {
+    display: flex;
+    margin: 0 0 -50px 0 !important;
+    transition-property: transform;
   }
-}
+
+  &__item {
+    flex: 0 0 420px;
+    max-width: 420px;
+    transition-property: transform;
+
+    @include mobile {
+      flex: 0 0 86vw;
+      max-width: 86vw;
+
+    }
+  }
 
 }

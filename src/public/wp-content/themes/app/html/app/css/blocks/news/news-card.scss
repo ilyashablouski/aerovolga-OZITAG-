@@ -115,6 +115,7 @@
     left: 30px;
     @include section_caption;
     color: $color-white;
+    -webkit-transform-style: preserve-3d;
 
     @include mobile {
       top: 18px;
@@ -128,6 +129,9 @@
     margin: 0 30px;
     padding: 26px 30px 29px;
     background: $color-white;
+    z-index: 3;
+    -webkit-transform-style: preserve-3d;
+
     @include tablet-and-mobile {
       margin: 0 20px;
       padding: 20px 30px;
