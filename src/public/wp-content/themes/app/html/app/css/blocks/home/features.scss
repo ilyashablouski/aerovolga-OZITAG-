@@ -108,10 +108,7 @@
   &__description {
     margin: 0 60px;
     max-width: 480px;
-    min-height: 140px;
     width: 100%;
-    position: relative;
-    overflow: hidden;
 
     @include tablet-and-mobile {
       margin: 0 52px;
@@ -123,7 +120,13 @@
     }
 
     &-slider {
-      min-height: 60px;
+      position: relative;
+      min-height: 140px;
+      overflow: hidden;
+
+      @include tablet-and-mobile {
+        min-height: 60px;
+      }
     }
 
     &-inner {
@@ -151,7 +154,7 @@
     }
 
     &-btn {
-      margin-top: 45px;
+      margin-top: 35px;
       @include desktop {
         display: none;
       }
