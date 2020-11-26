@@ -65,7 +65,7 @@
     @include desktop {
       &:hover {
         img {
-          transform: scale(1.1) translate3d(0, 0, 0);
+          transform: scale3d(1.1, 1.1, 1) translate3d(0, 0, 0);
         }
 
         .news-card__description {
@@ -99,6 +99,7 @@
     @include fill;
 
     overflow: hidden;
+
 
     img {
       width: 100%;
