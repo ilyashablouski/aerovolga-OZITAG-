@@ -52,8 +52,9 @@
       }
 
       .header-main {
-        transition: 0s linear;
-        background: $color-white !important;
+        &:before {
+          transform: scale(1,1);
+        }
       }
     }
   }
