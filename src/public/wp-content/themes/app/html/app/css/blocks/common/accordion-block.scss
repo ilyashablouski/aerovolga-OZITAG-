@@ -111,6 +111,7 @@
     &.active {
       .accordion__top {
         background: $color-blue-dark-100;
+        box-shadow: 0px 2px 20px rgba(18, 43, 54, 0.2);
         &:hover {
           .accordion__pointer {
             opacity: 0.55;
