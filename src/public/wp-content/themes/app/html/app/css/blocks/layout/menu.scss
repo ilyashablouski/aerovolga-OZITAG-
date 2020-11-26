@@ -108,7 +108,7 @@
     @include smallTablet-and-mobile {
       transform: translateX(0);
       width: 100vw;
-      padding: 126px 0;
+      padding: 90px 0 110px;
       align-items: center;
       transition: all 0.3s linear 0.1s;
 
@@ -121,7 +121,7 @@
       padding: 40px 0;
     }
     @include mobile480 {
-      padding: 20px 0;
+      padding: 10px 0 48px;
     }
   }
 
@@ -129,7 +129,7 @@
     @include smallTablet-and-mobile {
       a {
         position: relative;
-        padding-left: 30px;
+        padding-left: 35px;
 
         &:before {
           position: absolute;
@@ -142,6 +142,12 @@
       }
     }
     @include mobile {
+      a {
+        padding-left: 30px;
+        &:before {
+          left: -5px;
+        }
+      }
       @media (max-height: 700px) {
         margin-top: 40px;
       }
@@ -181,6 +187,10 @@
       text-align: center;
       transform: translate3d(0, 0, 0);
       opacity: 1;
+      padding-bottom: 20px;
+    }
+    @include mobile {
+      padding-bottom: 22px;
     }
   }
 
@@ -211,7 +221,7 @@
     padding-bottom: 10px;
 
     &:last-child {
-      padding-top: 0;
+      padding-bottom: 0;
     }
 
     &.active {
@@ -235,9 +245,11 @@
       font-size: 20px;
       transform: translate3d(0, 0, 0);
       opacity: 1;
+      padding-bottom: 16px;
     }
 
     @include mobile {
+      padding-bottom: 15px;
       font-size: 18px;
     }
   }

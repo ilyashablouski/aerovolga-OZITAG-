@@ -15,10 +15,16 @@
       position: absolute;
       right: 59px;
       top: 66px;
+      max-width: 150px;
+      @media (max-width: 1300px) {
+        right: 0;
+      }
+
       @include tablet-and-mobile {
         top: 40px;
       }
       @include mobile {
+        margin-top: 36px;
         position: static;
       }
     }
@@ -82,6 +88,7 @@
 
   &__row {
     display: flex;
+    align-items: center;
     background: transparent;
     width: 100%;
     @include mobile {

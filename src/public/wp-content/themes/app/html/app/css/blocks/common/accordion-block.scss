@@ -3,14 +3,12 @@
 
   &__wrapper {
     margin-top: 22px;
+    @include mobile {
+      margin: 22px -20px 0;
+    }
   }
 
   &--vacancy {
-    .accordion__item {
-      margin-bottom: 0;
-      position: relative;
-    }
-
     .accordion__top {
       position: sticky;
       top: 53px;
@@ -34,16 +32,13 @@
         background: $color-gray-20;
         border: 1px solid $color-gray-20;
         border-bottom: 1px solid $color-gray-60;
-
-        .accordion__pointer {
-          opacity: 0.55;
-        }
       }
     }
 
     .accordion__description {
       &-wrapper {
         min-height: 110px;
+        padding-bottom: 0;
       }
 
       &-container {
@@ -52,6 +47,19 @@
         margin-bottom: 0;
         @include mobile {
           padding: 30px 0;
+        }
+      }
+    }
+
+    .accordion__item {
+      margin-bottom: 0;
+      position: relative;
+
+      &-wrapper {
+        &.active {
+          .accordion__top {
+            border-color: $color-blue-dark-100;
+          }
         }
       }
     }
@@ -79,10 +87,6 @@
         background: $color-gray-20;
         border: 1px solid $color-gray-20;
         border-bottom: 1px solid $color-gray-60;
-
-        .accordion__pointer {
-          opacity: 0.55;
-        }
       }
     }
 
@@ -107,6 +111,11 @@
     &.active {
       .accordion__top {
         background: $color-blue-dark-100;
+        &:hover {
+          .accordion__pointer {
+            opacity: 0.55;
+          }
+        }
       }
 
       .accordion__title {
@@ -142,10 +151,6 @@
 
     &:hover {
       border: 1px solid $color-blue-dark-100;
-
-      .accordion__pointer {
-        opacity: 0.55;
-      }
     }
 
   }

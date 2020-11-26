@@ -55,6 +55,15 @@
         &:before {
           max-width: 100%;
         }
+
+        @include smallTablet-and-mobile {
+          padding-right: 26px;
+        }
+        @include mobile {
+          padding-right: 9px;
+          max-height: 68px;
+        }
+
       }
     }
   }

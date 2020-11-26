@@ -14,6 +14,7 @@
   @include smallTablet-and-mobile {
     min-height: 80px;
     max-height: 80px;
+    height: 100%;
     width: 100vw;
     position: relative;
     bottom: auto;
@@ -21,7 +22,7 @@
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 20px 18px;
+    padding: 49px 20px 18px;
     background: transparent;
 
     &:before {
@@ -44,7 +45,7 @@
     max-height: 50px;
     padding: 7px 14px 7px 13px;
     &:before {
-      height: 50px;
+      height: 68px;
     }
   }
 
@@ -154,16 +155,10 @@
 
       &:before {
         top: -7px;
-        @include smallTablet-and-mobile {
-          top: -5px;
-        }
       }
 
       &:after {
         bottom: -7px;
-        @include smallTablet-and-mobile {
-          bottom: -5px;
-        }
       }
     }
   }
