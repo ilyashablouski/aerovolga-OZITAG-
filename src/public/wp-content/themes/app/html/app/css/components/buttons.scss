@@ -24,12 +24,12 @@
 
   }
 
-  &:focus,
-  &--focus {
-    color: $color-white;
-    background-color: $color-primary-focus;
-    border-color: $color-primary-focus;
-  }
+  //&:focus,
+  //&--focus {
+  //  color: $color-white;
+  //  background-color: $color-primary-focus;
+  //  border-color: $color-primary-focus;
+  //}
 
   &:active,
   &--active {
@@ -169,7 +169,7 @@
       }
     }
 
-    &:active {
+    &:active, &:focus {
       background: $color-white;
       color: $color-blue-dark-80;
     }
@@ -197,7 +197,7 @@
     }
 
 
-    &:active {
+    &:active, &:focus {
       background: $color-blue-dark-100;
       color: $color-white;
     }
@@ -250,7 +250,7 @@
       }
 
 
-      &:active {
+      &:active, &:focus {
         background: transparent;
         color: $color-white;
 
@@ -305,7 +305,7 @@
         }
       }
 
-      &:active {
+      &:active, &:focus {
         background: $color-white;
         color: $color-blue-dark-80;
 

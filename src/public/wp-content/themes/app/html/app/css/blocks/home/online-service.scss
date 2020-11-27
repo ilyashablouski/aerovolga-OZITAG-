@@ -43,6 +43,17 @@
       &:before {
         background: transparent;
       }
+
+      &:active, &:focus {
+        background: transparent;
+        color: $color-blue-dark-80;
+
+        &:before {
+          background: transparent;
+          border-color: $color-gray-100;
+
+        }
+      }
     }
   }
 }
