@@ -1,5 +1,8 @@
 .footer-nav {
   display: flex;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
   @include mobile480 {
     display: block;
   }
@@ -64,7 +67,7 @@
       .footer-nav__menu-title & {
         color: $color-white;
         transition: all 0.2s linear;
-        
+
         @include desktop {
           &:hover {
             color: $grayish-blue;
