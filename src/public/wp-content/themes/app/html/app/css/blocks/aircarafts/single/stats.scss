@@ -22,6 +22,50 @@
     }
   }
 
+  &--full {
+    .stats-card {
+      flex: 1 1 auto;
+      max-width: 100%;
+      margin-right: 92px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @media (max-width: 1360px) {
+        flex: 1 1 25%;
+        margin-right: 0;
+      }
+      @include tablet-and-mobile {
+        flex: 1 1 50%;
+        max-width: 50%;
+        &:nth-child(n+3) {
+          margin-top: 30px;
+        }
+      }
+      @include mobile {
+        flex: 1 1 100%;
+        max-width: 100%;
+        &:nth-child(n+2) {
+          margin-top: 30px;
+        }
+      }
+
+      &__inner {
+        align-items: flex-start;
+      }
+      &__icon {
+        margin-right: 15px;
+      }
+      &__description {
+        padding: 3px 0;
+      }
+      &__text {
+        margin-top: 4px;
+      }
+    }
+  }
+
   &-card {
     flex: 1 1 25%;
     max-width: 242px;
