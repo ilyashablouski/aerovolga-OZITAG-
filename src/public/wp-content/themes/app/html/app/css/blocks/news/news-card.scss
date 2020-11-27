@@ -65,12 +65,12 @@
     @include desktop {
       &:hover {
         .news-card__background {
-          transform: scale3d(1.1, 1.1, 1) translate3d(0, 0, 0);
+          transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 0, 0);
         }
 
         .news-card__description {
           &:before {
-            animation: description 0.25s linear forwards;
+            animation: description 0.3s ease-in-out forwards;
           }
         }
       }
@@ -99,7 +99,7 @@
   &__background {
     @include fill;
     will-change: transform;
-    transition: all 0.25s linear;
+    transition: all 0.3s ease-in-out;
 
     img {
       width: 100%;
