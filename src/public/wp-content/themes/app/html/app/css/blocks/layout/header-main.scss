@@ -11,6 +11,20 @@
   display: flex;
   flex-direction: column;
 
+  @include no-smallTablet {
+    &.active {
+      &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0px;
+        height: 100%;
+        width: 1px;
+        background: #D8D8D8;
+      }
+    }
+  }
+
   @include smallTablet-and-mobile {
     min-height: 80px;
     max-height: 80px;
@@ -73,6 +87,9 @@
           width: 54px;
           transform: rotate(-45deg);
           bottom: 0;
+          @include no-smallTablet {
+            left: -6px;
+          }
           @include mobile {
             width: 40px;
           }
@@ -82,6 +99,9 @@
           width: 54px;
           transform: rotate(45deg);
           top: 0;
+          @include no-smallTablet {
+            left: -6px;
+          }
           @include mobile {
             width: 40px;
           }
