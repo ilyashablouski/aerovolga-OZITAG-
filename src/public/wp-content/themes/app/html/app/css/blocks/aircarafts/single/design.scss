@@ -29,7 +29,7 @@
   &__thumbs {
     position: relative;
     max-width: 500px;
-    margin: 0 auto;
+    margin: -20px auto 0;
 
     @include mobile {
       margin: 0 -20px;
