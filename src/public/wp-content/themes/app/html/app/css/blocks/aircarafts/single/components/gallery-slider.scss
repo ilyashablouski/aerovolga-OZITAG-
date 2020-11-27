@@ -28,6 +28,19 @@
       @include mobile {
         display: none;
       }
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      &.swiper-button-disabled {
+        opacity: 0.5 !important;
+        cursor: default;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
     }
 
     &__prev {
@@ -45,6 +58,20 @@
       }
       @include mobile {
         display: none;
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+
+      &.swiper-button-disabled {
+        opacity: 0.5 !important;
+        cursor: default;
+
+        &:hover {
+          opacity: 0.5;
+        }
       }
     }
 
