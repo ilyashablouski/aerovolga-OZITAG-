@@ -186,6 +186,7 @@
 
   &__logo-mobile {
     display: none;
+    position: relative;
     @include smallTablet-and-mobile {
       display: block;
       img {
@@ -193,11 +194,31 @@
         height: 52px;
         transition: all 0.3s linear;
       }
+      .header-main__logo-ipad {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 250px;
+        opacity: 0;
+        transform: translateY(-50%);
+        transition: all 0.3s linear;
+
+        img {
+          display: block;
+          height: 18px;
+          width: 250px;
+          opacity: 1 !important;
+          transition: all 0s linear;
+        }
+      }
     }
     @include mobile {
       img {
         width: 94px;
         height: 36px;
+      }
+      .header-main__logo-ipad {
+        display: none;
       }
     }
   }

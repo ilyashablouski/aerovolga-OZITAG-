@@ -58,10 +58,21 @@
 
         @include smallTablet-and-mobile {
           padding-right: 26px;
+          img {
+            opacity: 0;
+            transition: all 0.3s linear;
+          }
+          .header-main__logo-ipad {
+            opacity: 1;
+            transition: all 0.3s linear 0.5s;
+          }
         }
         @include mobile {
           padding-right: 9px;
           max-height: 68px;
+          img {
+            opacity: 1;
+          }
         }
 
       }
