@@ -6,6 +6,9 @@
     .form-input__label {
       background: $color-gray-20;
       border-bottom-color: $color-blue-dark-100;
+      &:after {
+        opacity: 1;
+      }
     }
   }
 
@@ -15,6 +18,19 @@
     padding: 29px 0 14px;
     transition: all 0.3s ease-in-out;
     border-bottom: 1px solid $color-gray;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: '';
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: $color-blue-dark-100;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+    }
   }
 
   &__input {
