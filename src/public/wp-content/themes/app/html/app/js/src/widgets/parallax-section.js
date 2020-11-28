@@ -11,8 +11,10 @@ class Parallax {
   }
 
   initParallaxAnimations() {
-
-    let tl = gsap.timeline({
+    gsap.from(this.image, {
+      y: '-25%',
+      ease: 'linear',
+      duration: 2,
       scrollTrigger: {
         trigger: this.nodeElement,
         start: '-15% bottom',
@@ -20,8 +22,19 @@ class Parallax {
         scrub: true,
         toggleActions: 'restart none reverse reset',
       },
-    })
-      .from(this.image, { y: '-25%', opacity: 0, ease: 'linear', duration: 2 });
+    });
+    gsap.from(this.image, {
+      opacity: 0,
+      ease: 'linear',
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: this.nodeElement,
+        start: '-15% 55%',
+        end: '70% 100%',
+        scrub: true,
+        toggleActions: 'restart none reverse reset',
+      },
+    });
   }
 
 
