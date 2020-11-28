@@ -36,9 +36,24 @@
     @include mobile {
       margin-top: 49px;
     }
+
     button {
       padding: 8px 30px 10px;
       font-weight: 600;
+      &:before {
+        background: transparent;
+      }
+
+      &:active, &:focus {
+        background: transparent;
+        color: $color-blue-dark-80;
+
+        &:before {
+          background: transparent;
+          border-color: $color-gray-100;
+
+        }
+      }
     }
   }
 }

@@ -1,8 +1,8 @@
 class ScrollTo {
   static startAnimation(targetElem, noAnimate) {
     const header = document.querySelector('.js-header');
-
     let targetPos = ScrollTo.getOffset(targetElem);
+
 
     if (document.querySelector('.js-inner-header')) {
       targetPos -= 54;

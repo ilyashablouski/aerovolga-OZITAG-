@@ -13,8 +13,10 @@
   &__tabs {
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 60px;
     @include mobile {
       justify-content: flex-start;
+      margin-bottom: 30px;
     }
 
     &-inner {

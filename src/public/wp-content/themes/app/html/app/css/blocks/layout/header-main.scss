@@ -11,21 +11,56 @@
   display: flex;
   flex-direction: column;
 
+  @include no-smallTablet {
+    &.active {
+      &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0px;
+        height: 100%;
+        width: 1px;
+        background: #D8D8D8;
+      }
+    }
+  }
+
   @include smallTablet-and-mobile {
     min-height: 80px;
+    max-height: 80px;
+    height: 100%;
     width: 100vw;
-    position: static;
+    position: relative;
     bottom: auto;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 20px 18px;
+    padding: 49px 20px 18px;
     background: transparent;
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      bottom: 0;
+      height: 80px;
+      max-width: 0px;
+      width: 100%;
+      background: $color-white;
+      z-index: -1;
+      transition: all 0.3s linear;
+    }
+
   }
   @include mobile {
     min-height: 50px;
+    max-height: 50px;
     padding: 7px 14px 7px 13px;
+    &:before {
+      height: 68px;
+    }
   }
 
   &__top {
@@ -52,6 +87,9 @@
           width: 54px;
           transform: rotate(-45deg);
           bottom: 0;
+          @include no-smallTablet {
+            left: -6px;
+          }
           @include mobile {
             width: 40px;
           }
@@ -61,6 +99,9 @@
           width: 54px;
           transform: rotate(45deg);
           top: 0;
+          @include no-smallTablet {
+            left: -6px;
+          }
           @include mobile {
             width: 40px;
           }
@@ -134,16 +175,10 @@
 
       &:before {
         top: -7px;
-        @include smallTablet-and-mobile {
-          top: -5px;
-        }
       }
 
       &:after {
         bottom: -7px;
-        @include smallTablet-and-mobile {
-          bottom: -5px;
-        }
       }
     }
   }
@@ -171,6 +206,7 @@
 
   &__logo-mobile {
     display: none;
+    position: relative;
     @include smallTablet-and-mobile {
       display: block;
       img {
@@ -178,11 +214,31 @@
         height: 52px;
         transition: all 0.3s linear;
       }
+      .header-main__logo-ipad {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 250px;
+        opacity: 0;
+        transform: translateY(-50%);
+        transition: all 0.3s linear;
+
+        img {
+          display: block;
+          height: 18px;
+          width: 250px;
+          opacity: 1 !important;
+          transition: all 0s linear;
+        }
+      }
     }
     @include mobile {
       img {
         width: 94px;
         height: 36px;
+      }
+      .header-main__logo-ipad {
+        display: none;
       }
     }
   }

@@ -1,5 +1,5 @@
 <header class="header page__header {{#if home}}header--home{{/if}} js-page-header">
-  <div class="header-main">
+  <div class="header-main js-main-menu">
     <div class="header-main__top">
       <button class="header-main__burger js-toggle-menu">
         <i></i>
@@ -7,6 +7,9 @@
     </div>
     <div class="header-main__logo-mobile">
       {{> components/image img="logo-sign" ext="png"}}
+        <div class="header-main__logo-ipad">
+          {{> components/image img="logo-aerovolga" ext="png"}}
+        </div>
     </div>
     <div class="header-main__logo">
       {{> components/image img="logo" ext="png"}}

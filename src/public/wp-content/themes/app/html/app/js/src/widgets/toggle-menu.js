@@ -1,7 +1,8 @@
 class ToggleMenu {
-  constructor(item, menu) {
+  constructor(item, menu, mainMenu) {
     this.toggleMenu = item;
     this.menu = menu;
+    this.mainMenu = mainMenu;
 
     this.addEvents();
   }
@@ -12,6 +13,8 @@ class ToggleMenu {
       if (this.toggleMenu.classList.contains('active')) {
         this.removeActive(this.toggleMenu);
         this.removeActive(this.menu);
+        this.removeActive(this.mainMenu);
+
         document.body.style.overflow = 'auto';
 
         if (window.innerWidth < 1024) {
@@ -21,6 +24,7 @@ class ToggleMenu {
       } else {
         this.setActive(this.toggleMenu);
         this.setActive(this.menu);
+        this.setActive(this.mainMenu);
         document.body.style.overflow = 'hidden';
 
         if (window.innerWidth < 1024) {
@@ -44,7 +48,7 @@ class ToggleMenu {
     } else {
       this.thisIsHome(false);
     }
-    
+
     if (this.toggleMenu.classList.contains('active')) {
       this.removeActive(this.toggleMenu);
       this.removeActive(this.menu);
@@ -115,15 +119,16 @@ class ToggleMenu {
     elem.classList.remove('active');
   }
 
-  static init(elem, menu) {
-    new ToggleMenu(elem, menu);
+  static init(elem, menu, mainMenu) {
+    new ToggleMenu(elem, menu, mainMenu);
   }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const toggleMenu = document.querySelectorAll('.js-toggle-menu');
   const menu = document.querySelector('.js-menu');
+  const mainMenu = document.querySelector('.js-main-menu');
   toggleMenu.forEach(item => {
-    ToggleMenu.init(item, menu);
+    ToggleMenu.init(item, menu, mainMenu);
   });
 });
