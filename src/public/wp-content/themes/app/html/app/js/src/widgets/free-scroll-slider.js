@@ -4,8 +4,6 @@ class FreeScrollSlider {
     this.$node = node
     this.breakpoint = this.$node.dataset.breakpointValue || null;
     this.check = false;
-    // console.log(this.breakpoint , 'this.breakpoint ');
-    // console.log(this.$node, 'this.$node');
 
     this.initCertificateSlider();
   }
