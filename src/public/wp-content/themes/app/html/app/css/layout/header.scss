@@ -24,13 +24,6 @@
         background: $color-blue-dark-100;
         @include smallTablet-and-mobile {
           padding: 17px 20px 18px;
-
-          &__logo-mobile {
-            img {
-              width: 118px;
-              height: 45px;
-            }
-          }
         }
         @include mobile {
           padding: 7px 14px 7px 13px;
