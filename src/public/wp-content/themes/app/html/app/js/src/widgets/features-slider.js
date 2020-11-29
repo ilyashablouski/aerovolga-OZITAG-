@@ -31,22 +31,13 @@ class FeaturesSlider {
 
   initCertificateSlider() {
     this.initSlider();
+    this.setVisibleThumbs(this.getActiveSlideNumber());
     this.bindEvents();
     this.updateActiveText();
   }
 
   initSlider() {
-    const galleryThumbs = new Swiper(this.thumbs, {
-      slidesPerView: 'auto',
-      breakpoints: {
-        767: {
-          slidesPerView: 1,
-        },
-        1024: {
-          virtualTranslate: true,
-        },
-      },
-    });
+    let menu = ['Сost of ownership', 'Composite fuselage', 'On land and at sea', 'Comfort'];
 
     this.slider = new Swiper(this.rowElement, {
       speed: 800,
@@ -57,23 +48,56 @@ class FeaturesSlider {
       centeredSlides: true,
       autoplay: {
         delay: 3000,
+        disableOnInteraction: false,
       },
       navigation: {
         nextEl: '.features__slider-next',
       },
-      thumbs: {
-        swiper: galleryThumbs,
-        slideThumbActiveClass: 'active',
+      pagination: {
+        el: this.thumbs,
+        clickable: true,
+        bulletActiveClass: 'active',
+        dynamicBullets: true,
+        progressbarOpposite: true,
+        renderBullet: function(index, className) {
+          return '<div class="' + className + ' features__thumbnail-item">' + '<span class="features__thumbnail-text">' + (menu[index]) + '</span>' + '</div>';
+        },
       },
       breakpoints: {
         767: {
           spaceBetween: 5,
+          pagination: {
+            dynamicBullets: false,
+
+          },
         },
         1024: {
           spaceBetween: 300,
         },
       },
     });
+  }
+
+  setVisibleThumbs(visibleIndex) {
+    if (isMobileLayout) {
+      if (visibleIndex === 1) {
+        this.thumbs.querySelectorAll('.swiper-pagination-bullet').forEach((item) => {
+          item.style.left = '0';
+        });
+      } else if (visibleIndex === 2) {
+        this.thumbs.querySelectorAll('.swiper-pagination-bullet').forEach((item) => {
+          item.style.left = '-171px';
+        });
+      } else if (visibleIndex === 3) {
+        this.thumbs.querySelectorAll('.swiper-pagination-bullet').forEach((item) => {
+          item.style.left = '-352px';
+        });
+      } else {
+        this.thumbs.querySelectorAll('.swiper-pagination-bullet').forEach((item) => {
+          item.style.left = '-352px';
+        });
+      }
+    }
   }
 
   getActiveSlideNumber() {
@@ -100,8 +124,10 @@ class FeaturesSlider {
     this.setVisibleTextElement(this.getActiveSlideNumber());
   }
 
+
   onSwiperSlideChange() {
     this.updateActiveText();
+    this.setVisibleThumbs(this.getActiveSlideNumber());
   }
 
   bindEvents() {

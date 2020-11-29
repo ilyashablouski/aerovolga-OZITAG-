@@ -174,23 +174,9 @@
 
     @include tablet-and-mobile {
       position: static;
-      margin-right: 20px;
-      margin-left: 20px;
-      padding: 0 0 38px 50px;
+      margin: 0;
+      padding: 0 0 38px 0;
       width: auto;
-    }
-
-    @include mobile {
-      margin-right: 13px;
-      margin-left: 13px;
-      padding: 0 0 38px 17px;
-    }
-
-    .swiper-container {
-      @include tablet-and-mobile {
-        max-width: 100%;
-        overflow: visible;
-      }
     }
 
     &-list {
@@ -199,6 +185,16 @@
 
       @include tablet-and-mobile {
         flex-direction: row;
+        padding-left: 50px;
+
+        overflow-y: auto;
+        @include hide-scrollbar;
+      }
+      @include smallTablet-and-mobile {
+        padding-left:67px;
+      }
+      @include mobile {
+        padding-left: 30px;
       }
     }
 
@@ -208,38 +204,51 @@
       margin-bottom: 12px;
       padding-bottom: 5px;
       height: auto !important;
+      transition: all 0.3s linear;
+
+      &:before {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 2px;
+        transition: all 0.3s linear;
+      }
 
       @include tablet-and-mobile {
         margin: 0 32px 0 0;
-        width: auto !important;
-
+        white-space: nowrap;
         &:last-child {
           margin-right: 0;
+          padding-right: 50px;
         }
       }
-
+      @include smallTablet-and-mobile {
+        &:last-child {
+          padding-right:67px;
+        }
+      }
       @include mobile {
         &:last-child {
-          padding-right: 13px;
+          padding-right: 30px;
         }
       }
 
       &.active {
+        .features__thumbnail-text {
+          color: $color-blue-dark-100;
+        }
         &:before {
-          position: absolute;
-          content: '';
-          bottom: 0;
-          left: 0;
-          width: 60px;
-          height: 2px;
           background: $color-blue-dark-100;
         }
       }
 
-      &:hover,
-      &.active {
-        .features__thumbnail-text {
-          color: $color-blue-dark-100;
+      @include desktop {
+        &:hover {
+          .features__thumbnail-text {
+            color: $color-blue-dark-100;
+          }
         }
       }
     }
