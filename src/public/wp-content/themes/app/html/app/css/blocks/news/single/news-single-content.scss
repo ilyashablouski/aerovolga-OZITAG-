@@ -2,6 +2,7 @@
   &__content {
     position: relative;
     padding-bottom: 45px;
+
     &:after {
       content: '';
       position: absolute;
@@ -11,6 +12,9 @@
       width: 720px;
       height: 2px;
       background: $color-blue-dark-100;
+      @include mobile {
+        width: 100%;
+      }
     }
   }
 
@@ -20,6 +24,13 @@
     position: absolute;
     top: -8px;
     left: -1px;
+
+    @include tablet-and-mobile {
+      transform: rotate(0);
+      position: static;
+      margin-bottom: 30px;
+    }
+
     &-inner {
       display: block;
       transform: rotate(180deg);
@@ -29,6 +40,9 @@
       letter-spacing: 1.71429px;
       text-transform: uppercase;
       color: $color-gray-90;
+      @include tablet-and-mobile {
+        transform: rotate(0);
+      }
     }
   }
 
@@ -50,13 +64,16 @@
     font-size: 18px;
     line-height: 32px;
     color: $color-blue-dark-80;
+
     &-wrapper {
       margin-bottom: 58px;
     }
+
     &--small {
       font-size: 16px;
       line-height: 28px;
       margin-bottom: 10px;
+
       &.news-single__text-wrapper {
         margin-bottom: 45.6px;
       }
@@ -65,6 +82,7 @@
     .underline {
       text-decoration: underline;
     }
+
     .line-through {
       text-decoration: line-through;
     }
@@ -73,10 +91,23 @@
   &__bottom {
     margin-top: 100px;
     position: relative;
+    @include tablet-and-mobile {
+      margin-top: 80px;
+    }
+
     &-btn {
       position: absolute;
       top: 0;
       left: 60px;
+      @include tablet-and-mobile {
+        top: 80px;
+        left: 30px;
+      }
+      @include mobile {
+        top: -60px;
+        left: 20px;
+      }
+
       .btn__link {
         transform: rotate(-180deg);
         display: block;
