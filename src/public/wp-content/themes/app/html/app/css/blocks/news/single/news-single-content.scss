@@ -56,9 +56,17 @@
     &--small {
       font-size: 16px;
       line-height: 28px;
+      margin-bottom: 10px;
       &.news-single__text-wrapper {
         margin-bottom: 45.6px;
       }
+    }
+
+    .text-underline {
+      text-decoration: underline;
+    }
+    .text-line-through {
+      text-decoration: line-through;
     }
   }
 
