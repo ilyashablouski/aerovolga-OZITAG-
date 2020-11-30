@@ -99,7 +99,25 @@
   &__background {
     @include fill;
     will-change: transform;
-    transition: all 0.3s ease-in-out;
+    background: $color-primary;
+    transition: transform 0.3s ease-in-out;
+
+    &.loading {
+      &::after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 15px);
+        left: calc(50% - 15px);
+        z-index: 10;
+        display: block;
+        width: 30px;
+        height: 30px;
+        border: 3px solid $color-white;
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: loading .4s linear infinite;
+      }
+    }
 
     img {
       width: 100%;
