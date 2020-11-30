@@ -18,8 +18,8 @@
     transform: rotate(90deg);
     transform-origin: 0 100%;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -8px;
+    left: -1px;
     &-inner {
       display: block;
       transform: rotate(180deg);
@@ -39,7 +39,7 @@
   }
 
   &__subtitle {
-    margin: 56px 0 40px;
+    margin: 50px 0 40px;
     font-weight: 600;
     font-size: 24px;
     line-height: 40px;
@@ -51,7 +51,7 @@
     line-height: 32px;
     color: $color-blue-dark-80;
     &-wrapper {
-      margin-bottom: 50px;
+      margin-bottom: 58px;
     }
     &--small {
       font-size: 16px;

@@ -68,18 +68,21 @@ class FeaturesSlider {
           spaceBetween: 5,
           pagination: {
             dynamicBullets: false,
-
           },
         },
         1024: {
           spaceBetween: 300,
+          pagination: {
+            dynamicBullets: false,
+
+          },
         },
       },
     });
   }
 
   setVisibleThumbs(visibleIndex) {
-    if (isMobileLayout) {
+    if (isMobileLayout()) {
       if (visibleIndex === 1) {
         this.thumbs.querySelectorAll('.swiper-pagination-bullet').forEach((item) => {
           item.style.left = '0';
