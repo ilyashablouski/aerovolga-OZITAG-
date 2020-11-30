@@ -1,19 +1,35 @@
 <div class="container container--small">
-  <div class="news-single__text-wrapper">
-    <p class="news-single__text news-single__text--small"> We strive to win talented young people for our company! Our
-      extensive training
-      programs will provide you with a deep understanding of the aviation industry. Join our strong team and help us
-      in our mission to shape the future.
-    </p>
+  <p class="news-single__text news-single__text--small"> We strive to win talented young people for our company! Our
+    extensive training
+    programs will provide you with a deep understanding of the aviation industry. Join our strong team and help us
+    in our mission to shape the future.
+  </p>
+
+  <i class="margin-50"></i>
+
+  <div class="swiper-container gallery-slider js-gallery-slider">
+    <div class="swiper-wrapper">
+      {{#times 5}}
+        <div class="swiper-slide gallery-slide">
+          {{>components/image ext="png" img="news/news-single/news-1"}}
+        </div>
+      {{/times}}
+    </div>
+    <button class="gallery-slider__next"></button>
+    <button class="gallery-slider__prev"></button>
+    <div class="gallery-slider__pagination"></div>
   </div>
-  {{>blocks/image-fit ext='png' img="news/news-single/news-1"}}
-  <div class="news-single__text-wrapper">
-    <p class="news-single__text news-single__text--small"> We strive to win talented young people for our company! Our
-      extensive training
-      programs will provide you with a deep understanding of the aviation industry. Join our strong team and help us
-      in our mission to shape the future.
-    </p>
-  </div>
+
+  <i class="margin-50"></i>
+
+  <p class="news-single__text news-single__text--small"> We strive to win talented young people for our company! Our
+    extensive training
+    programs will provide you with a deep understanding of the aviation industry. Join our strong team and help us
+    in our mission to shape the future.
+  </p>
+
+  <i class="margin-50"></i>
+
   {{>blocks/image-fit ext='png' img="news/news-single/news-1"}}
 
   <p class="news-single__text news-single__text--small"> We strive to win talented young people for our company! Our
