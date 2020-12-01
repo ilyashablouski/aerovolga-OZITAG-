@@ -56,10 +56,13 @@ class ScrollTo {
 
   static getOffset(elem) {
     const offset = elem.getAttribute('data-offset');
+    const offsetTablet = elem.getAttribute('data-offset-tablet');
     const offsetMobile = elem.getAttribute('data-offset-mobile');
 
     if (Layout.isMobileLayout()) {
       return offsetMobile ? elem.getBoundingClientRect().top - offsetMobile : elem.getBoundingClientRect().top;
+    } else if(isTabletLayout()) {
+      return offsetTablet ? elem.getBoundingClientRect().top - offsetTablet : elem.getBoundingClientRect().top;
     } else {
       return offset ? elem.getBoundingClientRect().top - offset : elem.getBoundingClientRect().top;
     }
