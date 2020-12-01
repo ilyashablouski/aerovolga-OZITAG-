@@ -65,6 +65,10 @@
           img {
             opacity: 1;
           }
+
+          @media (max-height: 700px) {
+            box-shadow: 0 2px 15px rgba(18, 43, 54, 0.15);
+          }
         }
 
       }
