@@ -19,6 +19,9 @@
     background: transparent;
 
     &.fixed {
+      @include smallTablet-and-mobile {
+        box-shadow: 0 2px 15px rgba(18, 43, 54, 0.2);
+      }
       .header-main {
         transition: 0.1s linear;
         background: $color-blue-dark-100;
@@ -39,7 +42,9 @@
 
     &.active {
       max-height: 100vh;
-
+      @include smallTablet-and-mobile {
+        box-shadow: 0 0 0;
+      };
       .header-nav, .header-brand {
         transform: translateX(0);
       }
