@@ -17,13 +17,13 @@
     flex: 1 1 auto;
     background: $color-white;
     transition: all 0.3s linear;
-  }
-  @include mobile {
+
     @media (max-height: 700px) {
       flex: 1 1 1px;
       overflow-y: auto;
     }
   }
+
 
   &.active {
     z-index: 20;
@@ -113,7 +113,7 @@
       transition: all 0.3s linear 0.1s;
 
       @media (max-height: 650px) {
-        padding: 60px 0;
+        padding: 60px 0 0;
         overflow-y: auto;
       }
     }
@@ -144,10 +144,14 @@
           @include sprite('magnifier');
         }
       }
+      @media (max-height: 700px) {
+        margin: 40px 0 60px;
+      }
     }
     @include mobile {
       a {
         padding-left: 30px;
+
         &:before {
           left: -5px;
         }
@@ -206,8 +210,7 @@
 }
 
 .header-submenu {
-
-  @include mobile {
+  @include smallTablet-and-mobile {
     @media (max-height: 700px) {
       margin-top: 37px;
     }

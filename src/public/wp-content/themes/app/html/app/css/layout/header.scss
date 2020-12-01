@@ -59,15 +59,17 @@
             opacity: 1;
             transition: all 0.3s linear 0.5s;
           }
+
+          @media (max-height: 700px) {
+            &:before {
+              box-shadow: 0 2px 15px rgba(18, 43, 54, 0.15);
+            }
+          }
         }
         @include mobile {
           padding-right: 9px;
           img {
             opacity: 1;
-          }
-
-          @media (max-height: 700px) {
-            box-shadow: 0 2px 15px rgba(18, 43, 54, 0.15);
           }
         }
 
