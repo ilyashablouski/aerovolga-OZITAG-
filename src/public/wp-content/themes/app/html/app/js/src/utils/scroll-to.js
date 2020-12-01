@@ -62,7 +62,7 @@ class ScrollTo {
     if (Layout.isMobileLayout()) {
       return offsetMobile ? elem.getBoundingClientRect().top - offsetMobile : elem.getBoundingClientRect().top;
     } else if(isTabletLayout()) {
-      return offsetTablet ? elem.getBoundingClientRect().top - offsetTablet : elem.getBoundingClientRect().top;
+      return offsetTablet ? elem.getBoundingClientRect().top - offsetTablet : offset? elem.getBoundingClientRect().top - offset :elem.getBoundingClientRect().top;
     } else {
       return offset ? elem.getBoundingClientRect().top - offset : elem.getBoundingClientRect().top;
     }
