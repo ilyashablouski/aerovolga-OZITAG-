@@ -2,7 +2,15 @@
 </main>
 
 <footer class="footer page__footer {{#if home}}footer--home{{/if}} js-footer">
-  <div class="footer-top">
+  <div class="footer-background">
+    {{>components/image
+      ext="jpg"
+      img="footer/footer-bg"
+      img-mobile="footer/footer-bg_mobile"
+    }}
+  </div>
+  <div class="container container--footer">
+    <div class="footer-top">
       <div class="footer-top__inner">
         <div class="footer-top__left">
           <ul class="footer-top__nav">
@@ -20,43 +28,44 @@
           </ul>
         </div>
       </div>
-  </div>
-  <div class="footer-main">
-    <div class="footer-nav">
-      <div class="footer-nav__cell">
-        <ul class="footer-nav__menu">
-          <li class="footer-nav__menu-title"><a href="#" class="footer-nav__menu-link">Services</a></li>
-          <li class="footer-nav__menu-item"><a href="#" class="footer-nav__menu-link">Storage & repairs</a></li>
-          <li class="footer-nav__menu-item"><a href="#" class="footer-nav__menu-link">Online service</a></li>
-        </ul>
-        <ul class="footer-nav__menu">
-          <li class="footer-nav__menu-title"><a href="#" class="footer-nav__menu-link">Aircrafts</a></li>
-          <li class="footer-nav__menu-item"><a href="#" class="footer-nav__menu-link">LA-8</a></li>
-          <li class="footer-nav__menu-item"><a href="#" class="footer-nav__menu-link">Borey</a></li>
-        </ul>
-      </div>
-      <div class="footer-nav__cell">
-        <ul class="footer-nav__menu">
-          <li class="footer-nav__menu-title"><a href="#" class="footer-nav__menu-link">Factory</a></li>
-          <li class="footer-nav__menu-item"><a href="#" class="footer-nav__menu-link">History</a></li>
-          <li class="footer-nav__menu-item"><a href="#" class="footer-nav__menu-link">Mission</a></li>
-          <li class="footer-nav__menu-item"><a href="#" class="footer-nav__menu-link">Vacancy</a></li>
-        </ul>
-        <ul class="footer-nav__menu">
-          <li class="footer-nav__menu-title"><a href="#" class="footer-nav__menu-link">Media Center</a></li>
-          <li class="footer-nav__menu-item"><a href="#" class="footer-nav__menu-link">News</a></li>
-          <li class="footer-nav__menu-item"><a href="#" class="footer-nav__menu-link">Press about us</a></li>
-        </ul>
-      </div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-bottom__inner">
-        <div class="footer-bottom__left">
-          <span class="footer-bottom__copyright">© 2006–2020</span>
-          <span class="footer-bottom__copyright">LLC «NPO «AeroVolga»</span>
+    <div class="footer-main">
+      <div class="footer-nav">
+        <div class="footer-nav__cell">
+          <ul class="footer-nav__menu">
+            <li class="footer-nav__menu-title"><a href="#" class="footer-nav__menu-link">Services</a></li>
+            <li class="footer-nav__menu-item"><a href="#" class="footer-nav__menu-link">Storage & repairs</a></li>
+            <li class="footer-nav__menu-item"><a href="#" class="footer-nav__menu-link">Online service</a></li>
+          </ul>
+          <ul class="footer-nav__menu">
+            <li class="footer-nav__menu-title"><a href="#" class="footer-nav__menu-link">Aircrafts</a></li>
+            <li class="footer-nav__menu-item"><a href="#" class="footer-nav__menu-link">LA-8</a></li>
+            <li class="footer-nav__menu-item"><a href="#" class="footer-nav__menu-link">Borey</a></li>
+          </ul>
         </div>
-        <div class="footer-bottom__right">
-          <span class="footer-bottom__author">website by <a href="#">FLEX.MEDIA</a></span>
+        <div class="footer-nav__cell">
+          <ul class="footer-nav__menu">
+            <li class="footer-nav__menu-title"><a href="#" class="footer-nav__menu-link">Factory</a></li>
+            <li class="footer-nav__menu-item"><a href="#" class="footer-nav__menu-link">History</a></li>
+            <li class="footer-nav__menu-item"><a href="#" class="footer-nav__menu-link">Mission</a></li>
+            <li class="footer-nav__menu-item"><a href="#" class="footer-nav__menu-link">Vacancy</a></li>
+          </ul>
+          <ul class="footer-nav__menu">
+            <li class="footer-nav__menu-title"><a href="#" class="footer-nav__menu-link">Media Center</a></li>
+            <li class="footer-nav__menu-item"><a href="#" class="footer-nav__menu-link">News</a></li>
+            <li class="footer-nav__menu-item"><a href="#" class="footer-nav__menu-link">Press about us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom__inner">
+          <div class="footer-bottom__left">
+            <span class="footer-bottom__copyright">© 2006–2020</span>
+            <span class="footer-bottom__copyright">LLC «NPO «AeroVolga»</span>
+          </div>
+          <div class="footer-bottom__right">
+            <span class="footer-bottom__author">website by <a href="#">FLEX.MEDIA</a></span>
+          </div>
         </div>
       </div>
     </div>

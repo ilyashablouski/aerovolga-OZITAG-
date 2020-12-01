@@ -46,8 +46,16 @@
   font-size: 24px;
   line-height: 24px;
   color: $color-blue-dark-80;
+  transition: all 0.3s ease-in-out;
+
   &:nth-child(n+2){
     margin-top: 10px;
+  }
+
+  @include desktop {
+    &:hover {
+      color: $grayish-blue;
+    }
   }
 
   @include mobile {
@@ -68,6 +76,14 @@
   line-height: 30px;
   color: $color-blue-dark-80;
   text-decoration-line: underline;
+  transition: all 0.3s ease-in-out;
+
+  @include desktop {
+    &:hover {
+      color: $grayish-blue;
+      text-decoration: underline;
+    }
+  }
 }
 
 .address {

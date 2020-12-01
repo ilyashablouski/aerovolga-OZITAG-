@@ -1,8 +1,8 @@
 .footer-top {
-  padding: 83px 60px 0;
+  padding: 80px 0 0;
 
   @include mobile {
-    padding: 54px 30px 0;
+    padding: 54px 0 0;
   }
 
 
@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid rgba(159, 166, 169, 0.3);
-    padding-bottom: 66px;
+    padding-bottom: 68px;
     @include mobile {
       flex-direction: column;
       justify-content: flex-start;
@@ -25,7 +25,7 @@
     }
 
     &-item {
-      margin-left: 30px;
+      margin-left: 36px;
       transition: all 0.2s linear;
       color: $color-white;
 
@@ -56,16 +56,16 @@
 
   &__socials {
     display: flex;
-    margin: 0 -16px;
+    margin: 0 -16.5px;
     @include mobile {
-      margin: 35px -16px 0;
+      margin: 35px -16.5px 0;
     }
 
     &-item {
       position: relative;
       width: 30px;
       height: 30px;
-      margin: 0 16px;
+      margin: 0 16.5px;
       color: rgba(255, 255, 255, 0.304744);
 
       svg {
