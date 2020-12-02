@@ -25,8 +25,9 @@
     display: flex;
     justify-content: space-between;
     position: relative;
+
     @include mobile {
-      flex-direction: column-reverse;
+      flex-direction: column;
     }
   }
 
@@ -44,6 +45,8 @@
       flex: 1 1 auto;
       max-width: 100%;
       height: auto;
+      margin-top: 20px;
+
       &:before {
         display: block;
         content: '';
@@ -92,10 +95,12 @@
     }
 
     @include mobile {
-      margin: 20px 25px 0 0;
+      margin: 0 0 0 -20px;
       flex: 1 1 auto;
+      position: static;
     }
-    @include mobile320 {
+
+    @include mobile480 {
       padding: 21px 0 0 20px;
     }
 
@@ -112,6 +117,7 @@
       @include mobile {
         width: 60px;
         height: 60px;
+        left: -20px;
       }
     }
   }
@@ -157,9 +163,9 @@
     overflow: hidden;
 
     @include mobile {
-      margin-top: 20px;
+      margin-top: 10px;
       font-size: 16px;
-      line-height: 30px;
+      line-height: 28px;
     }
   }
 
@@ -168,7 +174,10 @@
     padding-left: 30px;
 
     @include mobile {
-      display: none;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 4;
     }
   }
 }
