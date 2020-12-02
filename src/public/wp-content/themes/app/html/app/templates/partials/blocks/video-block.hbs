@@ -1,0 +1,18 @@
+<div class="video-block js-video-block">
+  <div class="video-block__inner">
+
+    {{>components/image ext='png' img="news/news-single/news-1"}}
+    <div class="video-block__play">
+      {{>ui/svg name="play"}}
+    </div>
+
+    {{#if video}}
+      <iframe
+        src='{{video}}?autoplay=1'
+        frameborder="0"
+        allow="accelerometer, fullscreen, autoplay"
+        scrolling="no"
+      ></iframe>
+    {{/if}}
+  </div>
+</div>
