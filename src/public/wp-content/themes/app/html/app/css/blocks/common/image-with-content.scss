@@ -6,27 +6,12 @@
   }
 
   &--vacancy {
+    margin-top: -40px;
 
     @include tablet-and-mobile {
-      .image-with-content__row {
-        display: block;
-      }
-      .image-with-content__image {
-        max-width: 100%;
-        margin-right: 0;
-
-        &:before {
-          padding-bottom: 66.6%;
-        }
-      }
-      .image-with-content__content {
-        margin-top: 34px;
-        max-width: 100%;
-      }
-    }
-
-    @include mobile {
       margin-top: 0;
+    }
+    @include mobile {
       .image-with-content__content {
         margin-top: 24px;
       }

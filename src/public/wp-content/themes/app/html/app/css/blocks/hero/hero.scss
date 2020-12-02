@@ -80,6 +80,10 @@
     @include mobile {
       margin-top: 5px;
       position: static;
+
+      button {
+        padding: 12px 25px 13px;
+      }
     }
   }
 }
