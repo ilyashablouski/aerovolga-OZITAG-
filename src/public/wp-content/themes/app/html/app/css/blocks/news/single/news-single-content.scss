@@ -65,6 +65,18 @@
     line-height: 32px;
     color: $color-blue-dark-80;
 
+    a {
+      font-weight: 600;
+      text-decoration: underline;
+      transition: all 0.3s linear;
+
+      @include desktop {
+        &:hover {
+          color: $grayish-blue;
+        }
+      }
+    }
+
     &-wrapper {
       margin-bottom: 58px;
     }
