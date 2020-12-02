@@ -93,3 +93,33 @@
 
   font-weight: 400;
 }
+
+@mixin fontRobotoMedium() {
+  font-family: 'Roboto', -apple-system,
+  'BlickMacSystemFont',
+  'Segoe UI',
+  'Oxygen',
+  'Ubuntu',
+  'Cantarell',
+  'Fira Sans',
+  'Droid Sans',
+  'Helvetica Neue',
+  sans-serif;
+
+  font-weight: 500;
+}
+
+@mixin fontRobotoRegular() {
+  font-family: 'Roboto', -apple-system,
+  'BlickMacSystemFont',
+  'Segoe UI',
+  'Oxygen',
+  'Ubuntu',
+  'Cantarell',
+  'Fira Sans',
+  'Droid Sans',
+  'Helvetica Neue',
+  sans-serif;
+
+  font-weight: 400;
+}

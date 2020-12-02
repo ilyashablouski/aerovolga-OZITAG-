@@ -37,6 +37,11 @@
     &:focus {
       background: $color-gray-20;
     }
+
+    @include mobile {
+      height: 59px;
+      padding: 0 10px;
+    }
   }
 
   &__message {
