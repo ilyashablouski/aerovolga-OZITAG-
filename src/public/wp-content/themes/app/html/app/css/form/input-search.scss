@@ -1,0 +1,41 @@
+.search-input {
+  width: 100%;
+  padding-bottom: 20px;
+
+  &:hover {
+    .search-input__input {
+      background: $color-gray-20;
+    }
+  }
+
+  &__label {
+    display: block;
+    vertical-align: top;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 2px solid $color-blue-dark-100;
+    position: relative;
+  }
+
+  &__input {
+    display: block;
+    padding: 0 15px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    color: $color-blue-dark-100;
+    border-radius: 0;
+    border: 0;
+    width: 100%;
+    background: transparent;
+    transition: all 0.3s ease-in-out;
+    height: 69px;
+
+    &::placeholder {
+      color: $color-gray-90;
+    }
+
+    &:focus {
+      background: $color-gray-20;
+    }
+  }
+}
