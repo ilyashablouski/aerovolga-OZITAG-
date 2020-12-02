@@ -199,10 +199,25 @@
       top: auto;
       bottom: 50px;
       left: 50%;
+
+      @media (max-height: 600px) {
+        bottom: auto;
+        top: 10px;
+      }
     }
 
     @include mobile {
       bottom: 10px;
+      @media (max-height: 700px) {
+        bottom: -40px;
+      }
+      @media (max-height: 640px) {
+        bottom: -70px;
+      }
+      @media (max-height: 600px) {
+        top: auto;
+        bottom: -120px;
+      }
     }
 
   }

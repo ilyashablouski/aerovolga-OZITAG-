@@ -22,6 +22,52 @@
     margin-left: 360px;
     width: calc(100% - 360px);
 
+
+    @include desktop {
+      .footer-top {
+        padding: 80px 60px 0;
+      }
+      .footer-main {
+        padding: 80px 60px 66px;
+      }
+      .footer-nav {
+        justify-content: space-between;
+
+        &__menu {
+          flex: 1 1 160px;
+          max-width: 160px;
+          margin-right: 80px;
+
+          &-title {
+            margin-bottom: 0;
+          }
+          &-item {
+            margin-top: 10px;
+          }
+        }
+
+        &__cell {
+          &:last-child {
+            max-width: 360px;
+            justify-content: space-between;
+            .footer-nav__menu {
+              flex: 1 1 120px;
+              max-width: 120px;
+            }
+          }
+
+        }
+      }
+      .footer-bottom {
+        margin-top: 167px;
+        &__right {
+          max-width: 360px;
+        }
+      }
+    }
+
+
+
     @include smallTablet-and-mobile {
       margin-left: 0;
       width: 100%;
