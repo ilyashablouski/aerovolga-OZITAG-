@@ -6,7 +6,6 @@
   }
 
   &--vacancy {
-    margin-top: -40px;
 
     @include tablet-and-mobile {
       .image-with-content__row {
@@ -15,9 +14,13 @@
       .image-with-content__image {
         max-width: 100%;
         margin-right: 0;
+
+        &:before {
+          padding-bottom: 66.6%;
+        }
       }
       .image-with-content__content {
-        margin-top: 64px;
+        margin-top: 34px;
         max-width: 100%;
       }
     }
@@ -67,6 +70,12 @@
       display: block;
       width: 100%;
       padding-bottom: 66.66%;
+      @include tablet-and-mobile {
+        padding-bottom: 100%;
+      }
+      @include mobile {
+        padding-bottom: 66.66%;
+      }
     }
 
     img {
@@ -78,9 +87,8 @@
       display: flex;
       align-items: center;
       img {
-        top: 60%;
+        top: 50%;
         transform: translateY(-50%);
-        height: auto;
       }
     }
     @include mobile {
@@ -100,11 +108,12 @@
     color: $color-blue-dark-80;
 
     @include tablet-and-mobile {
-      max-width: 320px;
+      max-width: 360px;
+      margin-top: 0;
     }
 
     @include mobile {
-      margin-top: 24px;
+      margin-top: 34px;
       max-width: 100%;
     }
     @include mobile320 {

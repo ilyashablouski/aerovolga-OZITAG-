@@ -99,6 +99,9 @@
       position: absolute;
       top: 0;
       left: 60px;
+      @media (max-width: 1300px) {
+        left: 40px;
+      }
       @include tablet-and-mobile {
         top: 80px;
         left: 30px;
