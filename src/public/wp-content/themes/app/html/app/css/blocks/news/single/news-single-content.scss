@@ -129,4 +129,10 @@
       }
     }
   }
+
+  &__image-with-content {
+    .image-with-content:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
