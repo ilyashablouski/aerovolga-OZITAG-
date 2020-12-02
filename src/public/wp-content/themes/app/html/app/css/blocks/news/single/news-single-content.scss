@@ -120,4 +120,13 @@
       }
     }
   }
+
+  &__slider {
+    .gallery-slider__next, .gallery-slider__prev {
+      &.swiper-button-disabled {
+        opacity: 0 !important;
+        cursor: default;
+      }
+    }
+  }
 }
