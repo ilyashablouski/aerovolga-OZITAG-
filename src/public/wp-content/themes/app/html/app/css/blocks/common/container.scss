@@ -4,11 +4,11 @@
   margin: 0 auto;
 
   @include tablet-and-mobile {
-    padding: 0 30px;
+    padding: 0 30px !important;
   }
 
   @include mobile {
-    padding: 0 20px;
+    padding: 0 20px !important;
   }
 
   &--small {
@@ -16,8 +16,8 @@
     padding: 0;
     width: 100%;
 
-    @include mobile {
-      //padding: 0 20px;
+    @include tablet-and-mobile {
+      max-width: 780px;
     }
   }
 
