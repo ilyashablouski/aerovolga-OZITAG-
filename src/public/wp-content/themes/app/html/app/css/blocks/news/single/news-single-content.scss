@@ -94,6 +94,9 @@
     @include tablet-and-mobile {
       margin-top: 80px;
     }
+    @include mobile {
+      margin-top: 40px;
+    }
 
     &-btn {
       position: absolute;
@@ -107,7 +110,7 @@
         left: 30px;
       }
       @include mobile {
-        top: -60px;
+        top: 90px;
         left: 20px;
       }
 

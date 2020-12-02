@@ -9,6 +9,11 @@
     padding: 0 30px;
   }
 
+  @include mobile {
+    margin: 0 -20px;
+    padding: 0;
+  }
+
   &__row {
     width: 1080px;
     display: flex;

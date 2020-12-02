@@ -11,7 +11,7 @@
   }
 
   @include mobile {
-    display: block;
+    margin-left: 0;
     padding: 0 20px;
   }
 
@@ -20,6 +20,7 @@
     position: relative;
     padding-top: 24px;
     @include mobile {
+      padding-top: 14px;
       max-width: 50%;
       margin-bottom: 20px;
     }
@@ -50,9 +51,15 @@
   &__social {
     display: flex;
     margin: 0 -15px;
+    @include mobile {
+      margin: 0 -5px;
+    }
 
     &-cell {
       padding: 0 15px;
+      @include mobile {
+        padding: 0 5px;
+      }
     }
 
     &-item {
@@ -68,6 +75,11 @@
       border-radius: 100%;
       transition: all 0.3s linear;
 
+      @include mobile {
+        width: 50px;
+        height: 50px;
+      }
+
       &:hover {
         border-color: $color-blue-dark-120;
       }
@@ -75,6 +87,10 @@
       svg {
         width: 24px;
         height: 24px;
+        @include mobile {
+          width: 20px;
+          height: 20px;
+        }
       }
     }
 
