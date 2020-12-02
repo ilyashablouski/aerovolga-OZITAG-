@@ -38,4 +38,16 @@
       background: $color-gray-20;
     }
   }
+
+  &__message {
+    display: block;
+    margin-top: 20px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 32px;
+    color: $color-gray-90;
+    span {
+      font-weight: bold;
+    }
+  }
 }
