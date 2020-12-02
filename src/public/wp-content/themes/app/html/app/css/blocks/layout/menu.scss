@@ -129,7 +129,7 @@
       padding: 40px 0;
     }
     @include mobile480 {
-      padding: 10px 0 48px;
+      padding: 10px 0 68px;
 
       @media (max-height: 700px) {
         padding: 10px 0 0;
@@ -172,7 +172,7 @@
 
   &__language {
     position: absolute;
-    top: 44px;
+    top: 38px;
     left: 100px;
 
     @include fontDrukWideMedium;
@@ -192,9 +192,19 @@
       }
     }
 
-    @include tablet-and-mobile {
-      display: none;
+    @include smallTablet-and-mobile {
+      text-align: center;
+      transform: translate3d(0, 0, 0)  translateX(-50%);
+      opacity: 1;
+      top: auto;
+      bottom: 50px;
+      left: 50%;
     }
+
+    @include mobile {
+      bottom: 10px;
+    }
+
   }
 }
 
