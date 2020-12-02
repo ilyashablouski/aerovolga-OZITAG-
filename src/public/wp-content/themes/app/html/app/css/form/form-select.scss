@@ -6,6 +6,14 @@
     -webkit-appearance: none;
   }
 
+  @include desktop {
+    &:hover {
+      .select2-selection__rendered {
+        border-color: $grayish-blue;
+      }
+    }
+  }
+
   &__label {
     position: absolute;
     left: 0;
@@ -35,7 +43,6 @@
       align-items: center;
 
       &__rendered {
-        height: 32px;
         line-height: 32px;
         display: flex;
         align-items: center;
@@ -60,7 +67,6 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      padding-right: 18px;
 
       &:after {
         content: '';
@@ -115,7 +121,6 @@
 
         font-weight: 600;
         font-size: 15px;
-        line-height: 100%;
         color: $color-blue-dark-100;
         transition: all 0.3s linear;
 
