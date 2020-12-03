@@ -92,5 +92,8 @@
       font-size: 20px;
       line-height: 28px;
     }
+    @include mobile {
+      max-width: 75%;
+    }
   }
 }
