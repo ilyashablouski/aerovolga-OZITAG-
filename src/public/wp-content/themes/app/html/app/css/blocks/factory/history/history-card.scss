@@ -37,7 +37,7 @@
 
     .history-card__inner {
       @include tablet-and-mobile {
-        padding-left: 20px;
+        padding: 0 0 0 20px;
       }
 
       @include mobile {
