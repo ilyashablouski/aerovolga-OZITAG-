@@ -6,6 +6,10 @@
   top: 0;
   z-index: 20;
 
+  &.fixed {
+    box-shadow: 0 2px 15px rgba(18, 43, 54, 0.15);
+  }
+
   @include tablet-and-mobile {
     padding: 0 30px;
   }
