@@ -156,29 +156,31 @@
 
   //Modifiers
   &--home {
-    .header-brand__top {
-      img {
-        width: 188px;
-        height: 72px;
-        object-fit: cover;
+    @include desktop {
+      .header-brand__top {
+        img {
+          width: 188px;
+          height: 72px;
+          object-fit: cover;
+        }
       }
-    }
 
-    .header-brand__middle {
-      display: flex;
+      .header-brand__middle {
+        display: flex;
 
-      @include smallTablet-and-mobile {
-        display: none;
+        @include smallTablet-and-mobile {
+          display: none;
+        }
       }
-    }
 
-    .header-brand__bottom {
-      padding: 0 20px;
-    }
+      .header-brand__bottom {
+        padding: 0 20px;
+      }
 
-    .header-brand__product {
-      &-name {
-        line-height: 13px;
+      .header-brand__product {
+        &-name {
+          line-height: 13px;
+        }
       }
     }
   }

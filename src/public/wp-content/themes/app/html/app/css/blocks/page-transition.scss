@@ -17,7 +17,9 @@
   }
 
   &--home {
-    width: calc(100% - 360px);
+    @include desktop {
+      width: calc(100% - 360px);
+    }
   }
 }
 

@@ -12,17 +12,25 @@
     display: flex;
     @include tablet-and-mobile {
       flex: 1 1 50%;
-      justify-content: space-between;
+      justify-content: space-around;
       &:first-child {
         margin-right: 100px;
       }
     }
     @include smallTablet-and-mobile {
       &:first-child {
-        justify-content: flex-start;
         margin-right: 60px;
       }
     }
+    @media(max-width: 800px) {
+      &:first-child {
+        justify-content: flex-start;
+      }
+      &:last-child {
+        justify-content: space-between;
+      }
+    }
+
     @include mobile {
       display: block;
       &:first-child {

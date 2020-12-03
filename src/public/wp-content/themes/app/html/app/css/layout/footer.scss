@@ -19,11 +19,10 @@
   }
 
   &--home {
-    margin-left: 360px;
-    width: calc(100% - 360px);
-
-
     @include desktop {
+      margin-left: 360px;
+      width: calc(100% - 360px);
+
       .footer-top {
         padding: 80px 60px 0;
       }
@@ -41,15 +40,20 @@
           &-title {
             margin-bottom: 0;
           }
+
           &-item {
             margin-top: 10px;
           }
         }
 
         &__cell {
+          margin-right: 80px;
+
           &:last-child {
+            margin-right: 0;
             max-width: 360px;
             justify-content: space-between;
+
             .footer-nav__menu {
               flex: 1 1 120px;
               max-width: 120px;
@@ -60,18 +64,20 @@
       }
       .footer-bottom {
         margin-top: 167px;
+
         &__right {
           max-width: 360px;
         }
       }
     }
 
-
-
-
-    @include smallTablet-and-mobile {
-      margin-left: 0;
-      width: 100%;
+    @media (max-width: 1360px) and (min-width: 1280px) {
+      .footer-bottom {
+        &__right {
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
     }
   }
 }
