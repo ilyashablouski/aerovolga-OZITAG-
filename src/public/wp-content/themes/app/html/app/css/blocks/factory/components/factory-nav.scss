@@ -1,6 +1,5 @@
 .factory-nav {
   margin-bottom: 62px;
-  padding: 7px 60px 3px;
   position: sticky;
   background: $color-white;
   top: 0;
@@ -10,19 +9,28 @@
     box-shadow: 0 2px 15px rgba(18, 43, 54, 0.15);
   }
 
-  @include tablet-and-mobile {
-    padding: 0 30px;
-  }
   @include smallTablet-and-mobile {
     top: 80px;
   }
   @include mobile {
     top: 50px;
-    padding: 0 20px;
     margin-bottom: 52px;
 
-    overflow-x: auto;
-    @include hide-scrollbar;
+
+  }
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 7px 60px 3px;
+    @include tablet-and-mobile {
+      padding: 0 30px;
+    }
+    @include mobile {
+      padding: 0 20px;
+      overflow-x: auto;
+      @include hide-scrollbar;
+    }
   }
 
   &--anchor {
@@ -38,6 +46,7 @@
       }
     }
   }
+
   &--mb-small {
     margin-bottom: 52px;
   }
