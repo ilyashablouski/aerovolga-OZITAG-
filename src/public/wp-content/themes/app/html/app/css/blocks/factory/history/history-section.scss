@@ -3,6 +3,7 @@
   max-width: 960px;
   @include mobile {
     margin: 0 auto 50px;
+    border-bottom: 1px solid $color-gray-60;
   }
 
   &__inner {
@@ -11,7 +12,7 @@
     padding: 100px 0;
 
     @include mobile {
-      padding: 20px 0;
+      padding: 20px 0 50px;
     }
 
     &:before {
@@ -49,12 +50,12 @@
       .history-card {
         flex: 1 1 100%;
         max-width: 100%;
-        margin-top: 60px;
+        margin-top: 50px;
         &:nth-child(2) {
-          margin-top: 60px;
+          margin-top: 50px;
         }
         &:nth-child(2n+3) {
-          margin-top: 60px;
+          margin-top: 50px;
         }
       }
     }

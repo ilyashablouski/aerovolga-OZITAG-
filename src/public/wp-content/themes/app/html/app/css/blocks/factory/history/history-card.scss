@@ -80,7 +80,7 @@
     line-height: 40px;
     color: $color-blue-dark-80;
     @include mobile {
-      margin-top: 20px;
+      margin-top: 10px;
     }
   }
 
@@ -90,7 +90,7 @@
     line-height: 32px;
     color: $color-blue-dark-80;
     @include mobile {
-      margin-top: 20px;
+      margin-top: 0;
     }
   }
 
