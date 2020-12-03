@@ -18,6 +18,7 @@ class FixedFooter {
     }
 
     const containerHeight = this.getContainerHeight();
+    console.log(containerHeight, 'containerHeight');
     FixedFooter.setBodyOffset(containerHeight);
   }
 

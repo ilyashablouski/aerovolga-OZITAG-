@@ -54,6 +54,7 @@
     }
 
     &-title {
+      display: block;
       font-weight: 500;
       font-size: 16px;
       line-height: 28px;
@@ -61,10 +62,19 @@
       color: $color-blue-dark-80;
       @include fontRobotoRegular;
 
+      transition: all 0.3s linear;
 
       > span {
         @include fontRobotoMedium;
       }
+
+      @include desktop {
+        &:hover {
+          text-decoration: underline;
+          color: $grayish-blue;
+        }
+      }
+
     }
 
     &-text {

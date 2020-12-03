@@ -1,14 +1,11 @@
-<div class="form-select {{#if plain}}form-select--plain{{/if}} {{#if border}}form-select--border{{/if}} {{#if
-  label}}form-select--label{{/if}}">
-  <select class="js-select visually-hidden {{mod}}" {{#if search}}data-select-search="true"{{/if}} {{#if
-    search-empty}}data-select-empty="{{search-empty}}"{{/if}} {{dataset}} {{#if
-    name}}name="{{name}}"{{/if}}
-    {{#if label}}data-label="{{label}}"{{/if}}>
-    {{#if empty-value}}
-      <option value=""></option>{{/if}}
-    {{> @partial-block}}
-  </select>
-  {{#if label}}
-    <label class="form-select__label">{{label}}</label>
-  {{/if}}
+<div class="form-select js-select">
+  <div class="form-select__select" data-state="">
+    <div class="form-select__select-title">Sort by date</div>
+    <div class="form-select__select-content">
+      <input id="singleSelect0" class="form-select__select-input" type="radio" />
+      <label for="singleSelect0" class="form-select__select-label">Sort by date</label>
+      <input id="singleSelect1" class="form-select__select-input" type="radio" />
+      <label for="singleSelect1" class="form-select__select-label">Sort by name</label>
+    </div>
+  </div>
 </div>
