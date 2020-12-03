@@ -28,7 +28,7 @@
   &--footer {
     max-width: 1200px;
     @include tablet-and-mobile {
-      padding: 0 70px 0 60px !important;
+      padding: 0 70px 0 70px !important;
     }
     @include mobile {
       padding: 0 30px !important;

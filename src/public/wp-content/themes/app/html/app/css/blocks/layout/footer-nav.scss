@@ -17,6 +17,12 @@
         margin-right: 100px;
       }
     }
+    @include smallTablet-and-mobile {
+      &:first-child {
+        justify-content: flex-start;
+        margin-right: 60px;
+      }
+    }
     @include mobile {
       display: block;
       &:first-child {
@@ -25,7 +31,7 @@
     }
     @include mobile480 {
       &:nth-child(2) {
-        margin-top: 57px;
+        margin-top: 64px;
       }
     }
   }
@@ -36,24 +42,37 @@
     &:last-child {
       margin-right: 0;
     }
+
     &:first-child {
       @include mobile {
         margin: 0;
       }
     }
 
+    @include tablet-and-mobile {
+      margin-right: 80px;
+    }
+
+    @include smallTablet-and-mobile {
+      margin-right: 42px;
+    }
+
     @include mobile {
-      margin: 57px 0 0;
+      margin: 64px 0 0;
     }
 
     &-title {
       margin-bottom: 20px;
       transition: all 0.2s linear;
+      @include smallTablet-and-mobile {
+        margin-bottom: 22px;
+      }
     }
 
     &-item {
       margin-top: 12px;
       line-height: 100%;
+
       &:nth-child(2) {
         margin-top: 8px;
       }

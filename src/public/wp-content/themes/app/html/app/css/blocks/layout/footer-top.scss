@@ -1,8 +1,10 @@
 .footer-top {
   padding: 80px 0 0;
-
+  @include smallTablet-and-mobile {
+    padding: 83px 0 0;
+  }
   @include mobile {
-    padding: 54px 0 0;
+    padding: 52px 0 0;
   }
 
 
@@ -58,7 +60,7 @@
     display: flex;
     margin: 0 -16.5px;
     @include mobile {
-      margin: 35px -16.5px 0;
+      margin: 41px -8.5px 0;
     }
 
     &-item {
