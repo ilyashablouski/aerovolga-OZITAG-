@@ -1,0 +1,37 @@
+{{!Search Options}}
+
+{{> layout/head page-title="Search Options"}}
+
+{{> layout/header page-namespace="search" }}
+{{>blocks/hero/hero hero-small=true title="Search" img="search/hero-bg" ext="png"}}
+
+<div class="search__content">
+  <div class="container container--small">
+    <div class="search__inner active">
+      {{>form/search-input message="Your query found" search-value="20 matches" value="Aircraft LA-8"}}
+      <ul class="search__list">
+        {{#times 5}}
+          <li class="search__item">
+            <span class="search__item-title">Amphibian <span>aircraft LA-8</span></span>
+            <p class="search__item-text">All three prototypes of the <span>aircraft LA-8</span>, used in the
+              certification program,
+              currently make up a total of 2,250 flight hours around the world. Some flight tests were conducted under
+              extreme conditions: in icing conditions and very high temperatures at altitudes and speeds that were not
+              routinely performed in daily operations.</p>
+          </li>
+          <li class="search__item">
+            <span class="search__item-title">Amphibian <span>aircraft LA-8</span> prototype   </span>
+            <p class="search__item-text">All three prototypes of the <span>aircraft LA-8</span>, used in the
+              certification program,
+              currently make up a total of 2,250 flight hours around the world. Some flight tests were conducted under
+              extreme conditions: in icing conditions and very high temperatures at altitudes and speeds that were not
+              routinely performed in daily operations.</p>
+          </li>
+        {{/times}}
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+{{> layout/footer }}
