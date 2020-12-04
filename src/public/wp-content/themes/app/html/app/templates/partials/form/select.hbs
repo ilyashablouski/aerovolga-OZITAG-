@@ -1,11 +1,9 @@
 <div class="form-select js-select">
   <div class="form-select__select" data-state="">
-    <div class="form-select__select-title">Sort by date</div>
+    <div class="form-select__select-title">{{default}}</div>
     <div class="form-select__select-content">
       <input id="singleSelect0" class="form-select__select-input" type="radio" />
-      <label for="singleSelect0" class="form-select__select-label">Sort by date</label>
-      <input id="singleSelect1" class="form-select__select-input" type="radio" />
-      <label for="singleSelect1" class="form-select__select-label">Sort by name</label>
+      {{> @partial-block}}
     </div>
   </div>
 </div>
