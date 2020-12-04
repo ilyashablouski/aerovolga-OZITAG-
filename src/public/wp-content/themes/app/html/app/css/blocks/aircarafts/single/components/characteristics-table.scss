@@ -90,6 +90,11 @@
     visibility: hidden;
     transition: all 0.3s linear 0.1s;
 
+    @media (max-width: 1340px) {
+      right: -40px;
+      left: auto;
+    }
+
     @include mobile {
       display: none;
     }

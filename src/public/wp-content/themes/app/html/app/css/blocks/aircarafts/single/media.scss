@@ -16,7 +16,7 @@
     margin-bottom: 60px;
     @include mobile {
       justify-content: flex-start;
-      margin-bottom: 30px;
+      margin: 20px 0 30px;
     }
 
     &-inner {

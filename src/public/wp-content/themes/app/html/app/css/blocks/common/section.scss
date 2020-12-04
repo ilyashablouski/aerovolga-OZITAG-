@@ -14,6 +14,10 @@
     padding-top: 100px;
     position: relative;
 
+    @include mobile {
+      padding-top: 50px;
+    }
+
     &:before {
       position: absolute;
       content: '';
@@ -23,6 +27,9 @@
       height: 500px;
       background: #F0F4F6;
       z-index: -1;
+      @include mobile {
+        height: 450px;
+      }
     }
   }
 

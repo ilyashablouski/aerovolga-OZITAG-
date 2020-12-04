@@ -1,11 +1,15 @@
 .color {
   &__content {
-    margin-top: 112px;
+    margin-top: 118px;
     padding-bottom: 100px;
     border-bottom: 1px solid $color-gray-60;
 
     @include tablet-and-mobile {
       padding-bottom: 50px;
+    }
+
+    @include mobile {
+      margin-top: 75px;
     }
   }
 
