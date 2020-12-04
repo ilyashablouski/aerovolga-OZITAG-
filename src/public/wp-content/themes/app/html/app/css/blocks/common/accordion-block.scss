@@ -127,26 +127,30 @@
   }
 
   &--characteristics {
-    margin-top: 27px;
-
+    margin: 27px 0 0;
+    @include mobile {
+      margin: 27px -20px 0;
+      width: 100vw;
+    }
     .accordion__top {
       position: sticky;
       top: 0;
 
-      @include tablet-and-mobile {
-        top: 44px;
-      }
-
       @include smallTablet-and-mobile {
-        top: 124px;
+        top: 78px;
       }
       @include mobile {
-        top: 94px;
+        top: 50px;
+        border: none;
+        padding: 11px 15px;
       }
 
       &:hover {
         background: $color-gray-20;
         border: 1px solid $color-gray-20;
+        @include mobile {
+          border: none;
+        }
       }
     }
 
