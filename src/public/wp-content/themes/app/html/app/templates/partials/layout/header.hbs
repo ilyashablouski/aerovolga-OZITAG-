@@ -7,9 +7,9 @@
     </div>
     <div class="header-main__logo-mobile">
       {{> components/image img="logo-sign" ext="png"}}
-        <div class="header-main__logo-ipad">
-          {{> components/image img="logo-aerovolga" ext="png"}}
-        </div>
+      <div class="header-main__logo-ipad">
+        {{> components/image img="logo-aerovolga" ext="png"}}
+      </div>
     </div>
     <div class="header-main__logo">
       {{> components/image img="logo" ext="png"}}
@@ -31,44 +31,61 @@
       </div>
       <div class="header-nav__top">
         <nav class="header-menu">
-          <div class="header-menu__item active">
-            <a href="/home.html" class="header-menu__link" data-is-home>Home</a>
-          </div>
-          <div class="header-menu__item">
-            <a href="/aircrafts.html" class="header-menu__link">Aircrafts</a>
-          </div>
-          <div class="header-menu__item">
-            <a href="/services.html" class="header-menu__link">Services</a>
-          </div>
-          <div class="header-menu__item">
-            <a href="/factory.html" class="header-menu__link">Factory</a>
-          </div>
-          <div class="header-menu__item">
-            <a href="/contact-us.html" class="header-menu__link">Contact us</a>
-          </div>
+          {{#with links.home}}
+            <div class="header-menu__item {{#ifCond label ../header-active}}active{{/ifCond}}">
+              <a href="{{url}}" class="header-menu__link" data-is-home>{{label}}</a>
+            </div>
+          {{/with}}
+          {{#with links.aircrafts}}
+            <div class="header-menu__item {{#ifCond label ../header-active}}active{{/ifCond}}">
+              <a href="{{url}}" class="header-menu__link">{{label}}</a>
+            </div>
+          {{/with}}
+          {{#with links.services}}
+            <div class="header-menu__item {{#ifCond label ../header-active}}active{{/ifCond}}">
+              <a href="{{url}}" class="header-menu__link">{{label}}</a>
+            </div>
+          {{/with}}
+          {{#with links.factory}}
+            <div class="header-menu__item {{#ifCond label ../header-active}}active{{/ifCond}}">
+              <a href="{{url}}" class="header-menu__link">{{label}}</a>
+            </div>
+          {{/with}}
+          {{#with links.contact-us}}
+            <div class="header-menu__item {{#ifCond label ../header-active}}active{{/ifCond}}">
+              <a href="{{url}}" class="header-menu__link">{{label}}</a>
+            </div>
+          {{/with}}
         </nav>
       </div>
       <div class="header-nav__bottom">
         <nav class="header-submenu">
-          <div class="header-submenu__item">
-            <a href="/news.html" class="header-submenu__link">Media center</a>
-          </div>
-          <div class="header-submenu__item">
-            <a href="/gallery.html" class="header-submenu__link">Gallery</a>
-          </div>
-          <div class="header-submenu__item">
-            <a href="/downloads.html" class="header-submenu__link">Downloads</a>
-          </div>
+          {{#with links.media-center}}
+            <div class="header-submenu__item {{#ifCond label ../header-active}}active{{/ifCond}}">
+              <a href="{{url}}" class="header-submenu__link">{{label}}</a>
+            </div>
+          {{/with}}
+          {{#with links.gallery}}
+            <div class="header-submenu__item {{#ifCond label ../header-active}}active{{/ifCond}}">
+              <a href="{{url}}" class="header-submenu__link">{{label}}</a>
+            </div>
+          {{/with}}
+          {{#with links.downloads}}
+            <div class="header-submenu__item {{#ifCond label ../header-active}}active{{/ifCond}}">
+              <a href="{{url}}" class="header-submenu__link">{{label}}</a>
+            </div>
+          {{/with}}
           <div class="header-submenu__item">
             <a href="#" class="header-submenu__link">For owners</a>
           </div>
         </nav>
       </div>
       <div class="header-nav__search">
-        <div class="header-submenu__item">
-          <a href="/search.html" class="header-submenu__link">Search</a>
-        </div>
-
+        {{#with links.search}}
+          <div class="header-submenu__item {{#ifCond label ../header-active}}active{{/ifCond}}">
+            <a href="{{url}}" class="header-submenu__link">{{label}}</a>
+          </div>
+        {{/with}}
       </div>
     </div>
   </div>
