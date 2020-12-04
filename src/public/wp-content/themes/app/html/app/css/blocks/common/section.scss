@@ -10,6 +10,13 @@
     }
   }
 
+  &--press {
+    margin-bottom: 45px;
+    @include tablet-and-mobile {
+      margin-bottom: 78px;
+    }
+  }
+
   &--block {
     padding-top: 100px;
     position: relative;
