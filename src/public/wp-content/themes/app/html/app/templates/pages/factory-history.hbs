@@ -8,6 +8,20 @@
 <div class="content__wrapper  content__wrapper--middle">
   {{>blocks/factory/components/factory-nav navbar=factory-navbar active-page="History"}}
 
+  <div class="form-select__wrapper">
+    <div class="form-select js-select">
+      <div class="form-select__select" data-state="">
+        <div class="form-select__select-title">From start</div>
+        <div class="form-select__select-content">
+          <input id="singleSelect0" class="form-select__select-input" type="radio" />
+          <label for="singleSelect0" class="form-select__select-label">From start</label>
+          <input id="singleSelect1" class="form-select__select-input" type="radio" />
+          <label for="singleSelect1" class="form-select__select-label">From end</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="container container--strict">
     {{>blocks/factory/history/01_history-04}}
     {{>blocks/factory/history/02_history-05}}

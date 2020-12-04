@@ -23,6 +23,24 @@
       max-height: 32px;
     }
   }
+
+
+  &__wrapper {
+    position: absolute;
+    top: 50px;
+    right: 60px;
+    width: 129px;
+    z-index: 40;
+
+    @include tablet-and-mobile {
+      top: 40px;
+      right: 30px;
+    }
+    @include mobile {
+      position: static;
+      margin: 0 auto 40px auto;
+    }
+  }
 }
 
 .form-select__select-title {
@@ -118,3 +136,5 @@
     font-weight: 600;
   }
 }
+
+
