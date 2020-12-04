@@ -13,6 +13,7 @@
 
   &--small {
     max-width: 720px;
+    padding: 0;
     width: 100%;
 
     @include mobile {
