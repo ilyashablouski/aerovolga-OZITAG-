@@ -30,7 +30,7 @@
     top: 50px;
     right: 60px;
     width: 129px;
-    z-index: 40;
+    z-index: 25;
 
     @include tablet-and-mobile {
       top: 40px;
@@ -71,7 +71,7 @@
       right: 22px;
 
       display: block;
-      width: 9px;
+      width: 9.5px;
       height: 2px;
 
       transition: all 0.3s ease-out;

@@ -7,6 +7,7 @@
 
   &.fixed {
     box-shadow: 0 2px 15px rgba(18, 43, 54, 0.15);
+    z-index: 30;
   }
 
   @include smallTablet-and-mobile {
