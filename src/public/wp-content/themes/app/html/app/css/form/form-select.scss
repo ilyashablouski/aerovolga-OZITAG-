@@ -41,100 +41,106 @@
       margin: 0 auto 40px auto;
     }
   }
-}
 
-.form-select__select-title {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  padding: 7px 32px 10px 15px;
-
-  border: 2px solid $color-blue-dark-100;
-  border-radius: 2px;
-
-  cursor: pointer;
-  transition: all 0.3s linear;
-
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 19px;
-  color: $color-blue-dark-80;
-
-
-  &::before,
-  &::after {
-    content: "";
-
+  &__select-title {
     position: absolute;
-    top: 50%;
-    right: 22px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 7px 32px 10px 15px;
 
-    display: block;
-    width: 9px;
-    height: 2px;
+    border: 2px solid $color-blue-dark-100;
+    border-radius: 2px;
+
+    cursor: pointer;
+    transition: all 0.3s linear;
+
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
+    color: $color-blue-dark-80;
+
+
+    &::before,
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 50%;
+      right: 22px;
+
+      display: block;
+      width: 9px;
+      height: 2px;
+
+      transition: all 0.3s ease-out;
+
+      background-color: #333333;
+
+      transform: translate(-3px, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(3px, -50%) rotate(-45deg);
+    }
+
+    &:hover {
+      border-color: $grayish-blue;
+    }
+  }
+
+  &__select-content {
+    position: absolute;
+    top: 50px;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(18, 43, 54, 0.1);
 
     transition: all 0.3s ease-out;
 
-    background-color: #333333;
-
-    transform: translate(-3px, -50%) rotate(45deg);
-  }
-  &::after {
-    transform: translate(3px, -50%) rotate(-45deg);
+    opacity: 0;
+    z-index: 8;
   }
 
-  &:hover {
-    border-color: $grayish-blue;
+  &__select-input {
+    display: none;
   }
-}
 
-.form-select__select-content {
-  position: absolute;
-  top: 50px;
-  left: 0;
+  &__select-label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 32px;
+    max-height: 0;
+    padding: 0 20px 2px;
 
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+    font-size: 15px;
+    line-height: 22px;
+    color: $color-blue-dark-100;
 
-  background-color: #ffffff;
-  box-shadow: 0 2px 10px rgba(18, 43, 54, 0.1);
+    transition: all 0.2s ease-out;
 
-  transition: all 0.3s ease-out;
+    cursor: pointer;
 
-  opacity: 0;
-  z-index: 8;
-}
+    overflow: hidden;
 
-.form-select__select-input {
-  display: none;
-}
+    &:hover {
+      background-color: $color-gray-30 !important;
 
-.form-select__select-label {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 32px;
-  max-height: 0;
-  padding: 0 20px 2px;
-
-  font-size: 15px;
-  line-height: 22px;
-  color: $color-blue-dark-100;
-
-  transition: all 0.2s ease-out;
-
-  cursor: pointer;
-
-  overflow: hidden;
-
-  &:hover {
-    background-color: $color-gray-30 !important;
-
-    font-weight: 600;
+      font-weight: 600;
+    }
   }
+
 }
+
+
+
+
 
 

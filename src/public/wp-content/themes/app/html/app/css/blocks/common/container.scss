@@ -13,11 +13,12 @@
 
   &--small {
     max-width: 720px;
-    padding: 0;
     width: 100%;
 
-    @include tablet-and-mobile {
-      max-width: 780px;
+    @include mobile {
+      &.without-padding {
+        padding: 0!important;
+      }
     }
   }
 
