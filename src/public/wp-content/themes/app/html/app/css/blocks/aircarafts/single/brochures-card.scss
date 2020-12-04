@@ -30,6 +30,7 @@
 
       .brochures__card {
         flex: 0 0 274px;
+        max-width: 274px;
         &:nth-child(-n+3) {
           margin-bottom: 30px;
         }
@@ -109,6 +110,10 @@
         border: 2px solid $color-blue-dark-100;
         background: $color-white;
         padding: 20px;
+
+        @include tablet-and-mobile {
+          height: 384px;
+        }
       }
 
       &:hover {
