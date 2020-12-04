@@ -1,6 +1,10 @@
 .modifications {
   margin-top: 60px;
 
+  @include mobile {
+    margin-top: 25px;
+  }
+
   &__top {
     border-bottom: 1px solid $color-gray-60;
   }
