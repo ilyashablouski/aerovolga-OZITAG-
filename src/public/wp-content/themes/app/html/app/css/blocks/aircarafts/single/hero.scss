@@ -1,6 +1,7 @@
 .aircrafts-hero {
   position: relative;
   height: 100vh;
+  height: calc(100 * var(--vh));
   display: flex;
   justify-content: flex-end;
 

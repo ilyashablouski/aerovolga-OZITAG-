@@ -18,7 +18,7 @@
     background: $color-white;
     transition: all 0.3s linear;
 
-    @media (max-height: 700px) {
+    @media (max-height: 800px) {
       flex: 1 1 1px;
       overflow-y: auto;
     }
@@ -131,7 +131,7 @@
     @include mobile480 {
       padding: 10px 0 68px;
 
-      @media (max-height: 700px) {
+      @media (max-height: 800px) {
         padding: 10px 0 0;
       }
     }
@@ -164,7 +164,7 @@
           left: -5px;
         }
       }
-      @media (max-height: 700px) {
+      @media (max-height: 800px) {
         margin: 40px 0 48px;
       }
     }
@@ -280,7 +280,7 @@
 
 .header-submenu {
   @include smallTablet-and-mobile {
-    @media (max-height: 700px) {
+    @media (max-height: 800px) {
       margin-top: 37px;
     }
   }
