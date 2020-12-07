@@ -26,18 +26,19 @@ this.rowElement.forEach( (item)=> {
   console.log(item.getAttribute('data-thumbs'));
   if(item.getAttribute('data-thumbs')) {
     this.slider = new Swiper(item, {
-      speed: 800,
+      speed: 1000,
       spaceBetween: 40,
-      slidesPerView: 'auto',
+      slidesPerView: 1,
       navigation: {
         nextEl: '.thumbs-slide__next',
         prevEl: '.thumbs-slide__prev',
       },
+
     });
 
   } else {
     this.slider = new Swiper(item, {
-      speed: 800,
+      speed: 1000,
       spaceBetween: 380,
       slidesPerView: 1,
       navigation: {
