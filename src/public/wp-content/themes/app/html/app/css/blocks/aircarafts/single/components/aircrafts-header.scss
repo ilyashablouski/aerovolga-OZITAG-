@@ -21,6 +21,15 @@
     align-items: center;
     justify-content: space-between;
     overflow: hidden;
+
+    @include smallTablet-and-mobile {
+      padding: 0 40px;
+      overflow: auto;
+      @include hide-scrollbar;
+    }
+    @include mobile {
+      padding: 0 20px;
+    }
   }
 
   &__left {
@@ -37,10 +46,9 @@
       max-width: 450px;
     }
     @include smallTablet-and-mobile {
-      flex: 0 0 100%;
-      max-width: 100%;
-      overflow-y: auto;
-      @include hide-scrollbar
+      flex: 0 0 auto;
+      max-width: initial;
+      margin-right: 30px;
     }
 
     @include no-smallTablet {
@@ -51,12 +59,25 @@
     }
   }
 
+  &__right {
+    @include smallTablet-and-mobile {
+      padding-right: 40px;
+    }
+    @include mobile {
+      padding-right: 20px;
+    }
+  }
+
   &__list {
     display: flex;
     align-items: center;
     flex-shrink: 0;
 
     margin-left: -40px;
+
+    @include smallTablet-and-mobile {
+      margin-left: -20px;
+    }
   }
 
   &__item {
@@ -68,6 +89,10 @@
       .aircrafts-header__more-dropdown & {
         display: block;
       }
+    }
+
+    @include smallTablet-and-mobile {
+      margin-left: 20px;
     }
   }
 
@@ -236,13 +261,15 @@
     .aircrafts-header__link {
       color: $color-blue-dark-80;
     }
+
     .aircrafts-header__more {
       button {
-       &:before, &:after,  span:before {
+        &:before, &:after, span:before {
           background: $color-blue-dark-80;
         }
       }
     }
+
     .aircrafts-hero__btn {
       background: $color-blue-dark-80;
       color: $color-white;
@@ -256,6 +283,7 @@
     }
 
     @include smallTablet-and-mobile {
+      width: 100%;
       top: 80px;
       left: 0;
     }
