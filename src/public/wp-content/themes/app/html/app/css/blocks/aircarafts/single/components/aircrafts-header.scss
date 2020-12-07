@@ -7,6 +7,9 @@
   @include smallTablet-and-mobile {
     top: 80px;
   }
+  @include mobile {
+    top: 50px;
+  }
 
   &__inner {
     position: relative;

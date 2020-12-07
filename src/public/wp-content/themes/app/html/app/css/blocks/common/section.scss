@@ -50,6 +50,9 @@
 
   &--contacts {
     margin-top: -100px;
+    @include mobile {
+      margin-top: -50px;
+    }
   }
 
   &:last-child {

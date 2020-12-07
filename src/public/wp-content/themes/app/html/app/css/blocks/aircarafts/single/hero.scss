@@ -58,6 +58,9 @@
     @include smallTablet-and-mobile {
       padding: 80px 0;
     }
+    @include mobile320 {
+      padding: 20px 0;
+    }
   }
 
   &__top {
@@ -179,6 +182,9 @@
         &__inner {
           justify-content: flex-start;
         }
+      }
+      @include mobile320 {
+        margin: 30px 0 0;
       }
     }
   }
