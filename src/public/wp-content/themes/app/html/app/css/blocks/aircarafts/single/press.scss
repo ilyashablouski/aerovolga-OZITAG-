@@ -9,10 +9,12 @@
   }
 
   &__left {
+    margin-top: 10px;
     flex: 1 0 510px;
     max-width: 510px;
 
     @include tablet-and-mobile {
+      margin-top: 0;
       flex: 0 0 50%;
       max-width: 50%;
     }
@@ -41,7 +43,7 @@
 
 
   &-card {
-    margin-bottom: 28px;
+    margin-bottom: 30px;
     transition: all 0.3s linear;
 
     &:nth-child(n+2) {
@@ -78,7 +80,7 @@
 
     &__text {
       @include section_caption_text;
-      margin-top: 8px;
+      margin-top: 14px;
     }
 
     &__date {
