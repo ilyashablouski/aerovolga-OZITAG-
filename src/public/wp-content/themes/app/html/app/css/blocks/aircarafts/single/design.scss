@@ -12,6 +12,7 @@
     position: relative;
     width: 100% !important;
 
+
     &:before {
       content: '';
       display: block;
@@ -20,10 +21,34 @@
       padding-bottom: 48%;
     }
 
-    img {
+    &-image {
       @include fill;
-      object-fit: cover;
+
+      &.loading {
+        &::after {
+          content: '';
+          position: absolute;
+          top: calc(50% - 15px);
+          left: calc(50% - 15px);
+          z-index: 10;
+          display: block;
+          width: 30px;
+          height: 30px;
+          border: 3px solid $color-white;
+          border-top-color: transparent;
+          border-radius: 50%;
+          animation: loading .4s linear infinite;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
+
+
   }
 
   &__thumbs {
