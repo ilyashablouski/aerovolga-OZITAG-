@@ -38,10 +38,15 @@
     margin: 0 60px 0 auto;
     @include desktopUp {
       margin: 0 auto;
+      max-width: 1080px;
+    }
+    @media (max-width: 1300px) {
+      margin: 0 auto;
+      padding: 0 50px;
     }
     @include tablet-and-mobile {
       margin: 0;
-      padding: 0 40px;
+      padding: 0 30px;
     }
     @include smallTablet-and-mobile {
       padding: 0;
@@ -127,10 +132,15 @@
     margin: 0 60px 0 auto;
     @include desktopUp {
       margin: 0 auto;
+      max-width: 1080px;
+    }
+    @media (max-width: 1300px) {
+      margin: 0 auto;
+      padding: 0 50px;
     }
     @include tablet-and-mobile {
       margin: 0;
-      padding: 0 40px;
+      padding: 0 30px;
     }
     @include mobile {
       padding: 0 20px;
