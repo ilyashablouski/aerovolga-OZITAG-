@@ -1,6 +1,6 @@
 class ReviewsSlider {
-  queryElement(componentName) {
-    const element = this.nodeElement.querySelector('.js-reviews-slider__' + componentName);
+  queryElements(componentName) {
+    const element = this.nodeElement.querySelectorAll('.js-reviews-slider__' + componentName);
 
     if (!element) {
       console.warn(`JS Double Slider - ${componentName} not found`);
@@ -12,8 +12,7 @@ class ReviewsSlider {
   constructor(nodeElement) {
     this.nodeElement = nodeElement;
 
-    this.rowElement = this.queryElement('row');
-    this.thumbs = this.queryElement('thumbs');
+    this.rowElement = this.queryElements('row');
 
     this.initCertificateSlider();
   }
@@ -23,16 +22,21 @@ class ReviewsSlider {
   }
 
   initSlider() {
-    const galleryThumbs = new Swiper(this.thumbs, {
-      slidesPerView: 1,
+this.rowElement.forEach( (item)=> {
+  console.log(item.getAttribute('data-thumbs'));
+  if(item.getAttribute('data-thumbs')) {
+    this.slider = new Swiper(item, {
+      speed: 800,
       spaceBetween: 40,
+      slidesPerView: 'auto',
       navigation: {
         nextEl: '.thumbs-slide__next',
         prevEl: '.thumbs-slide__prev',
       },
     });
 
-    this.slider = new Swiper(this.rowElement, {
+  } else {
+    this.slider = new Swiper(item, {
       speed: 800,
       spaceBetween: 380,
       slidesPerView: 1,
@@ -40,11 +44,9 @@ class ReviewsSlider {
         nextEl: '.thumbs-slide__next',
         prevEl: '.thumbs-slide__prev',
       },
-      thumbs: {
-        swiper: galleryThumbs,
-        slideThumbActiveClass: 'active',
-      },
     });
+  }
+})
   }
 
   static init(elem) {

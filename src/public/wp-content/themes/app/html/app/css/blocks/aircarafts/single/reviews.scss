@@ -4,7 +4,7 @@
   }
 
   &__inner {
-    padding: 138px 0 50px;
+    padding: 138px 0 64px;
     background: $color-gray-40;
     @include tablet-and-mobile {
       padding: 80px 0 64px;
@@ -50,28 +50,33 @@
 
   &__thumbs {
     position: relative;
-    margin: 118px auto 0;
-    max-width: 490px;
+    margin: 116px auto 0;
     @include mobile {
-      margin: 80px -20px 0;
-    }
-
-    &-inner {
-      max-width: 490px;
-      overflow: hidden;
+      margin: 80px 0 0;
     }
 
     .swiper-container {
-      max-width: 130px;
-      overflow: visible;
+      max-width: 468px;
     }
 
+    .thumbs-slide__next, .thumbs-slide__prev {
+      top: 35%;
+    }
+
+    .thumbs-slide__next {
+      right: 90px;
+    }
+    .thumbs-slide__prev {
+      left: 90px;
+    }
+
+
     &-slide {
-      max-width: 128px;
       width: 128px;
+      max-width: 128px;
       opacity: 0.2;
 
-      &.active {
+      &.swiper-slide-active {
         opacity: 1;
         .reviews__thumbs-image:before {
           opacity: 1;
