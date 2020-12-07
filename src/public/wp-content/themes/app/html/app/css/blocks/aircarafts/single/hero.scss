@@ -17,17 +17,17 @@
   &__container {
     max-width: 1020px;
     width: 100%;
-    margin: 0 60px;
+    margin: 0 60px 0 auto;
     @include desktopUp {
       margin: 0 auto;
     }
     @include tablet-and-mobile {
       margin: 0;
-      padding: 0 40px;
+      padding: 0;
     }
-    @include mobile {
-      padding: 0 20px;
-    }
+    //@include mobile {
+    //  padding: 0 20px;
+    //}
   }
 
   &__inner {
@@ -103,7 +103,7 @@
   &__bottom {
     max-width: 1020px;
     width: 100%;
-    margin: 0 60px;
+    margin: 0 60px 0 auto;
     @include desktopUp {
       margin: 0 auto;
     }
