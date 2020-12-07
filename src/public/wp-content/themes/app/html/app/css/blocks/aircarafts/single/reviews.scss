@@ -4,7 +4,7 @@
   }
 
   &__inner {
-    padding: 120px 0 64px;
+    padding: 138px 0 50px;
     background: $color-gray-40;
     @include tablet-and-mobile {
       padding: 80px 0 64px;
@@ -26,7 +26,7 @@
     width: 100%;
 
     &-top {
-      height: 70px;
+      height: 55px;
       position: relative;
 
       &:before {
