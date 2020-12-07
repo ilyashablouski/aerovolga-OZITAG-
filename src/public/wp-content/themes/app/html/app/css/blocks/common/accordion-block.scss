@@ -134,13 +134,13 @@
     }
     .accordion__top {
       position: sticky;
-      top: 0;
+      top: 80px;
 
       @include smallTablet-and-mobile {
-        top: 78px;
+        top: 144px;
       }
       @include mobile {
-        top: 50px;
+        top: 114px;
         border: none;
         padding: 11px 15px;
       }
