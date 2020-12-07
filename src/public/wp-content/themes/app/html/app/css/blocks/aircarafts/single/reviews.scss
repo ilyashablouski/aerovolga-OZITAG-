@@ -13,9 +13,10 @@
 
   &__slider {
     width: 100%;
-    padding: 0 180px;
+    max-width: 720px;
+    margin: 0 auto;
     @include tablet-and-mobile {
-      padding: 0 60px;
+      padding: 0 40px;
     }
     @include mobile {
       padding: 0 20px;
@@ -57,25 +58,39 @@
     }
 
 
-
     .swiper-container {
       max-width: 128px;
       overflow: visible;
     }
+
     .thumbs-slide__next, .thumbs-slide__prev {
       top: 35%;
+      @include mobile {
+        display: block;
+      }
     }
+
     .thumbs-slide__next {
       right: 90px;
+      @include tablet-and-mobile {
+        right: 40px;
+      }
     }
+
     .thumbs-slide__prev {
       left: 90px;
+      @include tablet-and-mobile {
+        left: 40px;
+      }
     }
 
     &-inner {
       max-width: 465px;
       overflow: hidden;
       margin: 0 auto;
+      @include mobile {
+        max-width: 128px;
+      }
     }
 
 
@@ -86,6 +101,7 @@
 
       &.swiper-slide-active {
         opacity: 1;
+
         .reviews__thumbs-image:before {
           opacity: 1;
         }
