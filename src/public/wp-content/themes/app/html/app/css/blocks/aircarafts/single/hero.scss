@@ -2,8 +2,6 @@
   position: relative;
   height: 100vh;
   height: calc(100 * var(--vh));
-  display: flex;
-  justify-content: flex-end;
 
   &__background {
     @include fill();
@@ -34,10 +32,10 @@
 
   &__inner {
     height: 100%;
+    padding: 20px 0 80px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 50px 0 80px;
+    justify-content: flex-end;
 
     @include smallTablet-and-mobile {
       padding: 80px 0;
@@ -91,17 +89,32 @@
     line-height: 19px;
     color: $color-blue-dark-80;
     transition: all 0.3s linear;
-    @include mobile {
-      display: none;
-    }
 
     &:hover {
       color: $color-white;
       background: $color-blue-dark-80;
     }
+
+    @include smallTablet-and-mobile {
+      height: 40px;
+    }
   }
 
   &__bottom {
+    max-width: 1020px;
+    width: 100%;
+    margin: 0 60px;
+    @include desktopUp {
+      margin: 0 auto;
+    }
+    @include tablet-and-mobile {
+      margin: 0;
+      padding: 0 40px;
+    }
+    @include mobile {
+      padding: 0 20px;
+    }
+
     .stats {
       margin: 88px 0 0;
 

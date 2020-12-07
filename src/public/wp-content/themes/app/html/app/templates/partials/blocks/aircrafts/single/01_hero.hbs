@@ -2,9 +2,10 @@
   <div class="aircrafts-hero__background">
     {{>components/image ext="png" img="aircrafts/single/hero-bg"}}
   </div>
-  <div class="aircrafts-hero__container">
-    <div class="aircrafts-hero__inner">
-      <div class="aircrafts-header js-aircrafts-header">
+
+  <div class="aircrafts-hero__inner">
+    <div class="aircrafts-header js-aircrafts-header js-page-header">
+      <div class="aircrafts-hero__container">
         <div class="aircrafts-header__inner js-aircrafts-header__content">
           <div class="aircrafts-header__content">
             <div class="aircrafts-header__left js-aircrafts-header__container">
@@ -48,17 +49,16 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="aircrafts-hero__bottom">
+      <h1 class="aircrafts-hero__title">LA-8</h1>
 
-      <div class="aircrafts-hero__bottom">
-        <h1 class="aircrafts-hero__title">LA-8</h1>
-
-        <div class="stats">
-          <div class="stats__inner">
-            {{>blocks/stats-card title='8 seats' text='in the salon' icon='seat-white'}}
-            {{>blocks/stats-card title='4000 km' text='range of flight' icon='range-white'}}
-            {{>blocks/stats-card title='270 km' text='maximum speed' icon='speed-white'}}
-            {{>blocks/stats-card title='250 l' text='fuel consumption' icon='fuel'}}
-          </div>
+      <div class="stats">
+        <div class="stats__inner">
+          {{>blocks/stats-card title='8 seats' text='in the salon' icon='seat-white'}}
+          {{>blocks/stats-card title='4000 km' text='range of flight' icon='range-white'}}
+          {{>blocks/stats-card title='270 km' text='maximum speed' icon='speed-white'}}
+          {{>blocks/stats-card title='250 l' text='fuel consumption' icon='fuel'}}
         </div>
       </div>
     </div>

@@ -38,8 +38,9 @@ class PageNavPanel {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('.js-page-header');
+  const header = document.querySelectorAll('.js-page-header');
   if (!header) return null;
-
-  PageNavPanel.init(header);
+  header.forEach((item) => {
+    PageNavPanel.init(item);
+  });
 });
