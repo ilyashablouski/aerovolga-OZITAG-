@@ -73,15 +73,15 @@
     align-items: center;
     flex-shrink: 0;
 
-    margin-left: -40px;
+    margin-right: -40px;
 
     @include smallTablet-and-mobile {
-      margin-left: -20px;
+      margin-right: -20px;
     }
   }
 
   &__item {
-    margin-left: 40px;
+    margin-right: 40px;
 
     &.item-on-more {
       display: none;
@@ -92,7 +92,7 @@
     }
 
     @include smallTablet-and-mobile {
-      margin-left: 20px;
+      margin-right: 20px;
     }
   }
 

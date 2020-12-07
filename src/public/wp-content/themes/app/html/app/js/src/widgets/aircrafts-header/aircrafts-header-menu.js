@@ -52,15 +52,19 @@ class AircraftsHeaderMenu extends Widget {
   onResize() {
     this.$moreElementDropdown.innerHTML = '';
     const containerWidth = Math.ceil(this.$container.getBoundingClientRect().width + (this.moreElementVisible ? this.moreElementWidth : 0));
-
+    console.log(containerWidth, 'containerWidth');
     let visibleMore = false;
     let width = 0;
     this.$items.forEach((item, index) => {
       const isLastElement = index === this.$items.length - 1;
       const itemWidth = this.widthMap.get(item);
+      const containerWidth = Math.ceil(this.$container.getBoundingClientRect().width + (this.moreElementVisible ? this.moreElementWidth : 0));
+      console.log(containerWidth, 'containerWidth');
+      console.log(this.moreElementWidth, 'this.moreElementWidth');
       const maxWidth = isLastElement ? containerWidth : containerWidth - this.moreElementWidth;
+      console.log(maxWidth, 'maxWidth');
       const check = (width + itemWidth) < maxWidth;
-
+      console.log(check, 'check');
       if (check && !visibleMore) {
         width = width + itemWidth;
         item.classList.remove('item-on-more');
@@ -110,7 +114,7 @@ class AircraftsHeaderMenu extends Widget {
 
     this.$moreElement = element;
     this.$moreElementDropdown = dropdown;
-    this.moreElementWidth = this.$moreElement.offsetWidth + 38;
+    this.moreElementWidth = this.$moreElement.offsetWidth - 80;
 
     this.hideMore();
   }
