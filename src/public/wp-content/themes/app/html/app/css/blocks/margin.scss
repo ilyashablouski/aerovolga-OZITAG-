@@ -7,6 +7,15 @@
     margin-bottom: 10px;
   }
 }
+.margin-36 {
+  height: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 36px;
+  @include mobile {
+    margin-bottom: 18px;
+  }
+}
 .margin-46 {
   height: 0;
   display: block;
