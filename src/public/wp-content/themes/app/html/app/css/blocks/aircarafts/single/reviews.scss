@@ -98,8 +98,10 @@
       width: 128px;
       max-width: 128px;
       opacity: 0.2;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
 
-      &.swiper-slide-active {
+      &.swiper-slide-active, &:hover {
         opacity: 1;
 
         .reviews__thumbs-image:before {

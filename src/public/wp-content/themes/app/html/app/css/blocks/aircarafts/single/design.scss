@@ -89,8 +89,9 @@
       border: 2px solid transparent;
       border-radius: 100%;
       cursor: pointer;
+      transition: all 0.3s ease-in-out;
 
-      &.active {
+      &.active, &:hover {
         border: 2px solid $color-blue-dark-120;;
       }
 
