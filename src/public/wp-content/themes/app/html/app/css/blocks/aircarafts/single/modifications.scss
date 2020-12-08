@@ -72,9 +72,14 @@
   }
 
   &__item {
-    display: flex;
+    display: none;
+
     @include tablet-and-mobile {
       flex-direction: column-reverse;
+    }
+
+    &.active {
+      display: flex;
     }
 
     &-left {
