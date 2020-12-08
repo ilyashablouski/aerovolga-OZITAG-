@@ -1,15 +1,15 @@
-<div class="section">
+<div class="section js-tabs">
   <div class="container container--strict">
     {{#>blocks/title-with-description title="Media"}}
       <div class="media__tabs">
         <div class="media__tabs-inner">
-          <div class="media__tab">
-            {{>ui/btn color="with-border" mix="active" label="Exterior" button=true}}
+          <div class="media__tab js-tab" data-target="[data-tab-content='Exterior']">
+            {{>ui/btn color="with-border" label="Exterior" button=true}}
           </div>
-          <div class="media__tab">
+          <div class="media__tab js-tab" data-target="[data-tab-content='Interior']">
             {{>ui/btn color="with-border" label="Interior" button=true}}
           </div>
-          <div class="media__tab">
+          <div class="media__tab js-tab" data-target="[data-tab-content='Avionics']">
             {{>ui/btn color="with-border" label="Avionics" button=true}}
           </div>
         </div>
@@ -17,7 +17,41 @@
     {{/blocks/title-with-description}}
 
     <div class="media__content">
-      <div class="media__inner">
+      <div class="media__item js-tab-content" data-tab-content='Exterior'>
+        <div class="swiper-container gallery-slider js-gallery-slider">
+          <div class="swiper-wrapper">
+            {{#times 5}}
+              <div class="swiper-slide gallery-slide js-image-loading">
+                {{>components/image ext="png" img="aircrafts/single/media"}}
+              </div>
+            {{/times}}
+          </div>
+          <button class="gallery-slider__next"></button>
+          <button class="gallery-slider__prev"></button>
+        </div>
+
+        <div class="media__bottom">
+          <span class="media__text">Lightweight composite fuselage</span>
+        </div>
+      </div>
+      <div class="media__item js-tab-content" data-tab-content='Interior'>
+        <div class="swiper-container gallery-slider js-gallery-slider">
+          <div class="swiper-wrapper">
+            {{#times 5}}
+              <div class="swiper-slide gallery-slide js-image-loading">
+                {{>components/image ext="png" img="aircrafts/single/media"}}
+              </div>
+            {{/times}}
+          </div>
+          <button class="gallery-slider__next"></button>
+          <button class="gallery-slider__prev"></button>
+        </div>
+
+        <div class="media__bottom">
+          <span class="media__text">Lightweight composite fuselage</span>
+        </div>
+      </div>
+      <div class="media__item js-tab-content" data-tab-content='Avionics'>
         <div class="swiper-container gallery-slider js-gallery-slider">
           <div class="swiper-wrapper">
             {{#times 5}}

@@ -36,5 +36,21 @@
     &:last-child {
       margin-right: 0;
     }
+
+    &.active {
+      button {
+        background: $color-blue-dark-120;
+        border: 2px solid $color-blue-dark-120;
+        color: $color-white;
+      }
+    }
+  }
+
+  &__item {
+    display: none;
+
+    &.active {
+      display: block;
+    }
   }
 }
