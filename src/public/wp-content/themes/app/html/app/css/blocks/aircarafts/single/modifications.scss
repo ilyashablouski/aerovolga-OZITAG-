@@ -69,17 +69,23 @@
 
   &__description {
     margin-top: 45px;
+    position: relative;
   }
 
   &__item {
-    display: none;
+    display: flex;
+    opacity: 0;
+    overflow: hidden;
+    @include fill();
 
     @include tablet-and-mobile {
       flex-direction: column-reverse;
     }
 
     &.active {
-      display: flex;
+      opacity: 1;
+      overflow: visible;
+      position: relative;
     }
 
     &-left {

@@ -46,11 +46,19 @@
     }
   }
 
+  &__content {
+    position: relative;
+  }
+
   &__item {
-    display: none;
+    opacity: 0;
+    overflow: hidden;
+    @include fill();
 
     &.active {
-      display: block;
+      opacity: 1;
+      overflow: visible;
+      position: relative;
     }
   }
 }
