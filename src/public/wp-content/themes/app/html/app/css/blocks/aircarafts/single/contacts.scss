@@ -20,8 +20,14 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    @include desktopUp {
+      min-height: 840px;
+    }
+    @include tablet-and-mobile {
+      padding: 100px 30px 140px;
+    }
     @include mobile {
-      padding: 50px 0;
+      padding: 50px 20px;
     }
   }
 
