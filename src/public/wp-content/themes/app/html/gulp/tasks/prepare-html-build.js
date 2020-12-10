@@ -2,7 +2,8 @@ module.exports = () => {
   $.gulp.task('prepareHtmlBuild', () => {
     // Исходные данные
     const metaImages = $.fs.readdirSync(`${$.config.sourcePath}/${$.config.metaPath}`); // изображения
-    const templates = $.fs.readdirSync(`${$.config.sourcePath}/${$.config.hbsPath}/pages`).concat([`ui-toolkit.hbs`]); // шаблоны страниц
+    const templates = $.fs.readdirSync(`${$.config.sourcePath}/${$.config.hbsPath}/pages`).concat([`page.hbs`]); // шаблоны страниц
+
 
     const html = []; // Массив генерируемых элементов
     const pages = {}; // Объект, содержащий информацию о всех страницах
@@ -27,15 +28,21 @@ module.exports = () => {
       if (template === 'index' || template === '.DS_Store') continue;
 
       // Получаем имя шаблона/страницы
-      const pageName = template.substring(0, template.lastIndexOf('.'));
+      let pageName = template.substring(0, template.lastIndexOf('.'));
+
+      if(pageName === 'page') {
+        pageName = 'ui-toolkit';
+      }
+
       // Проверяем, существует ли данная страница
       if (pages[pageName] === undefined) pages[pageName] = {};
 
       // Получаем доступ к локальному файлу текущей страницы
       const file = $.fs
         .readFileSync(
-          `${$.config.sourcePath}/${$.config.hbsPath}/${pageName === 'ui-toolkit' ? '' : 'pages'}/${pageName}.hbs`)
-        .toString();
+          `${$.config.sourcePath}/${$.config.hbsPath}/${pageName === 'ui-toolkit' ?
+            'partials/core/ui-kit/page' : 'pages/' + pageName}.hbs`,
+        ).toString();
 
       // Получаем заголовок страницы
       if (file.indexOf('{{!') !== -1) pages[pageName].title = file.substring(3, file.indexOf('}}'));

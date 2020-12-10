@@ -11,7 +11,7 @@
       transform: translateX(-50%);
       width: 720px;
       height: 2px;
-      background: $color-blue-dark-100;
+      background: $color-green-dark-100;
       @include mobile {
         width: 100%;
       }
@@ -57,7 +57,7 @@
     font-weight: 600;
     font-size: 24px;
     line-height: 40px;
-    color: $color-blue-dark-80;
+    color: $color-green-dark-80;
 
     @include tablet-and-mobile {
       margin: 36px 0 20px;
@@ -73,7 +73,7 @@
   &__text {
     font-size: 18px;
     line-height: 32px;
-    color: $color-blue-dark-80;
+    color: $color-green-dark-80;
 
     a {
       font-weight: 600;

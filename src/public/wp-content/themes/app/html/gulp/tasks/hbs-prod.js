@@ -54,7 +54,7 @@ module.exports = () => {
         if (string.match('--')) {
           let newPath = string.split('--').join('/');
           path.dirname = `${newPath}`;
-        } else if (!string.match('home')) {
+        }else if(!string.match('home')) {
           path.dirname = string;
         }
 

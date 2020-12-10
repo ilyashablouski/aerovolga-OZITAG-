@@ -50,7 +50,7 @@
       font-weight: 600;
       font-size: 24px;
       line-height: 40px;
-      color: $color-blue-dark-80;
+      color: $color-green-dark-80;
     }
 
     &-author {
@@ -110,7 +110,7 @@
       @include fontDrukWideMedium;
       font-size: 24px;
       line-height: 30px;
-      color: $color-blue-dark-80;
+      color: $color-green-dark-80;
       padding-bottom: 15px;
       position: relative;
 
@@ -121,7 +121,7 @@
         bottom: 0;
         height: 2px;
         width: 60px;
-        background: $color-blue-dark-100;
+        background: $color-green-dark-100;
       }
     }
 

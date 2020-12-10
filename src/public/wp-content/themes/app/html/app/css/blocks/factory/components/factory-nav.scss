@@ -39,7 +39,7 @@
 
     .factory-nav__menu-item {
       font-size: 20px;
-      color: $color-blue-dark-100;
+      color: $color-green-dark-100;
       @include desktop {
         &:hover {
           color: $color-gray-90;
@@ -67,7 +67,7 @@
 
       @include desktop {
         &:hover {
-          color: $color-blue-dark-100;
+          color: $color-green-dark-100;
         }
       }
       @include mobile {
@@ -79,7 +79,7 @@
       }
 
       &.active {
-        color: $color-blue-dark-100;
+        color: $color-green-dark-100;
 
         &:before {
           content: '';
@@ -88,7 +88,7 @@
           bottom: -4px;
           height: 2px;
           width: 100%;
-          background: $color-blue-dark-100;
+          background: $color-green-dark-100;
           z-index: 4;
           transition: all 0.2s linear;
 
@@ -106,7 +106,7 @@
     &-link {
 
       &.active {
-        color: $color-blue-dark-100;
+        color: $color-green-dark-100;
 
         &:before {
           content: '';
@@ -115,7 +115,7 @@
           bottom: -4px;
           height: 2px;
           width: 100%;
-          background: $color-blue-dark-100;
+          background: $color-green-dark-100;
           z-index: 4;
           transition: all 0.2s linear;
 

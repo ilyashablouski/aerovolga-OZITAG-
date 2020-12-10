@@ -107,7 +107,7 @@
 
     &--link {
       .brochures__card-top {
-        border: 2px solid $color-blue-dark-100;
+        border: 2px solid $color-green-dark-100;
         background: $color-white;
         padding: 20px;
 
@@ -165,7 +165,7 @@
       &:before {
         @include fill();
         content: '';
-        background: $color-blue-dark-100;
+        background: $color-green-dark-100;
         opacity: 0;
         transition: all 0.3s linear;
       }
@@ -194,14 +194,14 @@
       font-weight: 600;
       font-size: 18px;
       line-height: 24px;
-      color: $color-blue-dark-100;
+      color: $color-green-dark-100;
     }
 
     &-more {
       font-weight: 600;
       font-size: 24px;
       line-height: 32px;
-      color: $color-blue-dark-80;
+      color: $color-green-dark-80;
     }
 
     &-btn {

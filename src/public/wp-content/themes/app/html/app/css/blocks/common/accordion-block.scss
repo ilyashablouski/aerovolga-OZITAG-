@@ -54,7 +54,7 @@
       &-wrapper {
         &.active {
           .accordion__top {
-            border-color: $color-blue-dark-100;
+            border-color: $color-green-dark-100;
           }
         }
       }
@@ -119,7 +119,7 @@
       &-wrapper {
         &.active {
           .accordion__top {
-            border-color: $color-blue-dark-100;
+            border-color: $color-green-dark-100;
           }
         }
       }
@@ -174,7 +174,7 @@
   &__item-wrapper {
     &.active {
       .accordion__top {
-        background: $color-blue-dark-100;
+        background: $color-green-dark-100;
         box-shadow: 0px 2px 20px rgba(18, 43, 54, 0.2);
         &:hover {
           .accordion__pointer {
@@ -215,7 +215,7 @@
     }
 
     &:hover {
-      border: 1px solid $color-blue-dark-100;
+      border: 1px solid $color-green-dark-100;
     }
 
   }
@@ -259,7 +259,7 @@
 
     &-container {
       padding: 50px 0 49px;
-      border-bottom: 2px solid $color-blue-dark-100;
+      border-bottom: 2px solid $color-green-dark-100;
 
 
       @include mobile {

@@ -1,20 +1,24 @@
 module.exports = () => {
   $.gulp.task('prepareHtmlDev', () => {
-    const templates = $.fs.readdirSync(`${$.config.sourcePath}/${$.config.hbsPath}/pages`).concat(['ui-toolkit.hbs']);
+    const templates = $.fs.readdirSync(`${$.config.sourcePath}/${$.config.hbsPath}/pages`).concat(['page.hbs']);
     const html = [];
     const pages = {};
 
     for (const template of templates) {
       if (template === 'index' || template === '.DS_Store') continue;
 
-      const pageName = template.substring(0, template.lastIndexOf('.'));
+      let pageName = template.substring(0, template.lastIndexOf('.'));
+
+      if(pageName === 'page') {
+        pageName = 'ui-toolkit';
+      }
 
       if (pages[pageName] === undefined) pages[pageName] = {};
 
       const file = $.fs
         .readFileSync(
           `${$.config.sourcePath}/${$.config.hbsPath}/${pageName === 'ui-toolkit' ?
-            pageName : 'pages/' + pageName}.hbs`,
+            'partials/core/ui-kit/page' : 'pages/' + pageName}.hbs`,
         ).toString();
 
       if (file.indexOf('{{!') !== -1) pages[pageName].title = file.substring(3, file.indexOf('}}'));
@@ -47,7 +51,7 @@ module.exports = () => {
 
             jQuery(this).attr('src', src);
           });
-          jQuery('a').each(function () {
+          jQuery('a').each(function() {
             const href = jQuery(this).attr('href');
 
             if (!href || href.substr(0, 1) === '#' ||
@@ -63,6 +67,7 @@ module.exports = () => {
             if (href.substr(0, 6) === '/html/') return;
 
             let newHref = '/html/' + (href[0] === '/' ? href.substr(1) : href);
+
             if (newHref.substr(-5) !== '.html') {
               newHref = newHref + '.html';
             }

@@ -113,12 +113,12 @@
     font-weight: 600;
     font-size: 15px;
     line-height: 19px;
-    color: $color-blue-dark-80;
+    color: $color-green-dark-80;
     transition: all 0.3s linear;
 
     &:hover {
       color: $color-white;
-      background: $color-blue-dark-80;
+      background: $color-green-dark-80;
     }
 
     @include smallTablet-and-mobile {

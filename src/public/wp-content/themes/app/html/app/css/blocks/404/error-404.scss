@@ -37,7 +37,7 @@
     position: relative;
     padding-left: 16px;
     text-decoration: underline;
-    text-decoration-color: $color-blue-dark-80;
+    text-decoration-color: $color-green-dark-80;
     transition: all 0.3s linear;
 
     &:before {
@@ -47,7 +47,7 @@
       content: '';
       width: 4px;
       height: 4px;
-      background: $color-blue-dark-80;
+      background: $color-green-dark-80;
       border-radius: 100%;
     }
 

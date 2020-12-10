@@ -46,13 +46,13 @@
 
       &.active {
         &:before {
-          background: $color-blue-dark-100;
+          background: $color-green-dark-100;
         }
       }
 
       &:hover {
         &:before {
-          background: $color-blue-dark-100;
+          background: $color-green-dark-100;
           opacity: 0.8;
         }
       }
@@ -114,7 +114,7 @@
     &-title {
       display: block;
       @include section_subtitle;
-      color: $color-blue-dark-80;
+      color: $color-green-dark-80;
     }
 
     &-table {
@@ -239,14 +239,14 @@
 
       &:hover {
         &:before {
-          border-color: $color-blue-dark-100;
+          border-color: $color-green-dark-100;
 
         }
       }
 
       &.active {
         &:before {
-          border-color: $color-blue-dark-100;
+          border-color: $color-green-dark-100;
         }
       }
 

@@ -120,12 +120,12 @@
           i {
             &:before {
               top: 0;
-              background: $color-blue-dark-60;
+              background: $color-green-dark-60;
             }
 
             &:after {
               bottom: 0;
-              background: $color-blue-dark-60;
+              background: $color-green-dark-60;
             }
           }
         }
@@ -254,7 +254,7 @@
     transition: all 0.3s linear;
 
     &:hover {
-      border-color: $color-blue-dark-100;
+      border-color: $color-green-dark-100;
     }
 
     svg {

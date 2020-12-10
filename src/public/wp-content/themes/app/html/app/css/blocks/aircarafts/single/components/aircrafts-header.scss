@@ -239,7 +239,7 @@
           font-weight: 600;
           font-size: 20px;
           line-height: 30px;
-          color: $color-blue-dark-80;
+          color: $color-green-dark-80;
           display: inline-block;
           transition: all 0.3s linear;
 
@@ -264,26 +264,26 @@
     transition: transform .5s;
 
     .aircrafts-header__link {
-      color: $color-blue-dark-80;
+      color: $color-green-dark-80;
     }
 
     .aircrafts-header__more {
       button {
         &:before, &:after, span:before {
-          background: $color-blue-dark-80;
+          background: $color-green-dark-80;
         }
       }
     }
 
     .aircrafts-hero__btn {
-      background: $color-blue-dark-80;
+      background: $color-green-dark-80;
       color: $color-white;
-      border: 1px solid $color-blue-dark-80;
+      border: 1px solid $color-green-dark-80;
       transition: all 0s;
 
       &:hover {
         background: $color-white;
-        color: $color-blue-dark-80;
+        color: $color-green-dark-80;
         transition: all 0.3s;
       }
     }

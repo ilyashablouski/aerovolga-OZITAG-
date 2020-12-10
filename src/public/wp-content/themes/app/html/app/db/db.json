@@ -57,7 +57,7 @@
               "dark": true
             },
             {
-              "name": "$color-gray-10",
+              "name": "$color-gray-110",
               "color": "#F6F9FF",
               "rgb-color": "rgb(246, 249, 255)",
               "dark": true

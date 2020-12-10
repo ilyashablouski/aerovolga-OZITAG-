@@ -20,7 +20,7 @@
   @include fontDrukWideMedium;
   font-size: 34px;
   line-height: 40px;
-  color: $color-blue-dark-80;
+  color: $color-green-dark-80;
   //error
   @include mobile480 {
     font-size: 28px;
@@ -44,7 +44,7 @@
 @mixin section_text_18 {
   font-size: 18px;
   line-height: 32px;
-  color: $color-blue-dark-80;
+  color: $color-green-dark-80;
 }
 
 @mixin section_text_16 {

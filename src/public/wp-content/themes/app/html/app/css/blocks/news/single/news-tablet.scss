@@ -23,7 +23,7 @@
     font-weight: 600;
     font-size: 18px;
     line-height: 44px;
-    color: $color-blue-dark-80;
+    color: $color-green-dark-80;
 
     &--header {
       padding: 26px 23px 28px;
@@ -33,7 +33,7 @@
       font-weight: normal;
       font-size: 18px;
       line-height: 32px;
-      color: $color-blue-dark-80 !important;
+      color: $color-green-dark-80 !important;
       @include mobile {
         padding: 14px 23px 16px;
       }
@@ -43,7 +43,7 @@
           font-weight: normal;
           font-size: 18px;
           line-height: 32px;
-          color: $color-blue-dark-80 !important;
+          color: $color-green-dark-80 !important;
         }
       }
     }

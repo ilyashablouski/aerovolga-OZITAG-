@@ -42,7 +42,7 @@
     @include fontDrukWideMedium;
     font-size: 70px;
     line-height: 70px;
-    color: $color-blue-dark-80;
+    color: $color-green-dark-80;
     @include mobile {
       font-size: 34px;
       line-height: 50px;
@@ -72,7 +72,7 @@
       position: relative;
       display: block;
       @include section_subtitle;
-      color: $color-blue-dark-80;
+      color: $color-green-dark-80;
 
       &:before {
         position: absolute;

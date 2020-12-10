@@ -42,14 +42,21 @@ module.exports = () => {
     );
     const db = { ...initParams, ...data, ...links };
 
+
     return $.gulp.src([
       `${$.config.sourcePath}/${$.config.hbsPath}/pages/*.hbs`,
-      `${$.config.sourcePath}/${$.config.hbsPath}/ui-toolkit.hbs`,
+      `${$.config.sourcePath}/${$.config.hbsPath}/partials/core/ui-kit/page.hbs`,
       `${$.config.sourcePath}/${$.config.hbsPath}/ajax/*.hbs`,
     ])
       .pipe($.gulpPlugin.plumber())
       .pipe($.gulpPlugin.compileHandlebars(db, options))
       .pipe($.gulpPlugin.rename(path => {
+        let string = path.basename;
+
+        if(string === 'page') {
+          path.basename = 'ui-toolkit';
+        }
+
         path.dirname = '';
         path.extname = '.html';
       }))
