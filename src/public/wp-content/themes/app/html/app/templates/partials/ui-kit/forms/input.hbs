@@ -1,9 +1,23 @@
-{{#> core/ui-kit/blocks/widget title='.form-input' width=350}}
-  {{> form/input label="Name" placeholder="Подсказка"}}
-{{/core/ui-kit/blocks/widget}}
+{{#>core/ui-kit/blocks/row}}
+  {{#> core/ui-kit/blocks/widget title='.form-input' width=350}}
+    {{> form/input label="Name" placeholder="Подсказка"}}
+  {{/core/ui-kit/blocks/widget}}
 
-{{#> core/ui-kit/blocks/widget title='.form-input--error' width=350}}
-  {{> form/input label="Name" placeholder="Подсказка" error=true}}
-{{/core/ui-kit/blocks/widget}}
+  {{#> core/ui-kit/blocks/widget title='.form-input--error' width=350}}
+    {{> form/input label="Name" placeholder="Подсказка" error=true}}
+  {{/core/ui-kit/blocks/widget}}
+{{/core/ui-kit/blocks/row}}
 
+{{#>core/ui-kit/blocks/row}}
+    {{#> core/ui-kit/blocks/widget title='.search-input' width=350}}
+      {{>form/search-input}}
+    {{/core/ui-kit/blocks/widget}}
 
+    {{#> core/ui-kit/blocks/widget title='.search-input (success)' width=350}}
+      {{>form/search-input message="Your query found" search-value="20 matches" value="Aircraft LA-8"}}
+    {{/core/ui-kit/blocks/widget}}
+
+    {{#> core/ui-kit/blocks/widget title='.search-input (error)' width=350}}
+      {{>form/search-input message="Nothing found on your request Chocolate" value="Chocolate"}}
+    {{/core/ui-kit/blocks/widget}}
+{{/core/ui-kit/blocks/row}}
