@@ -18,12 +18,14 @@ class ReviewsSlider {
 
   initCertificateSlider() {
     this.initSlider();
+    this.updateCurrentButton();
+    this.bindEvents();
   }
 
   initSlider() {
 this.rowElement.forEach( (item)=> {
   if(item.getAttribute('data-thumbs')) {
-    this.slider = new Swiper(item, {
+    this.sliderThumbs = new Swiper(item, {
       speed: 1000,
       spaceBetween: 40,
       slidesPerView: 1,
@@ -47,6 +49,51 @@ this.rowElement.forEach( (item)=> {
 })
   }
 
+  goNext() {
+    this.sliderThumbs.slideNext()
+    this.slider.slideNext()
+  }
+
+  onNextClick(e) {
+    e.preventDefault();
+    this.goNext();
+  }
+
+  goPrev() {
+    this.sliderThumbs.slidePrev();
+    this.slider.slidePrev();
+  }
+
+  onPrevClick(e) {
+    e.preventDefault();
+    this.goPrev();
+  }
+
+  updateCurrentButton() {
+    const activeElement =  this.nodeElement.querySelector('.reviews__thumbs-slide.swiper-slide-active');
+    if (activeElement.nextElementSibling) {
+      activeElement.nextElementSibling.addEventListener('click', this.onNextClick.bind(this));
+    }
+    if (activeElement.previousElementSibling) {
+      activeElement.previousElementSibling.addEventListener('click', this.onPrevClick.bind(this));
+    }
+  }
+
+  resetCurrentButton() {
+    this.nodeElement.querySelectorAll('.reviews__thumbs-slide').forEach((item)=>{
+      item.removeEventListener('click', ()=> {
+      })
+    })
+  }
+
+  onSwiperSlideChange() {
+    this.resetCurrentButton()
+    this.updateCurrentButton();
+  }
+
+  bindEvents() {
+    this.slider.on('slideChange', this.onSwiperSlideChange.bind(this));
+  }
 
   static init(elem) {
     new ReviewsSlider(elem);
