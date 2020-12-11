@@ -6,8 +6,23 @@
     .form-input__label {
       background: $color-gray-20;
       border-bottom-color: $color-green-dark-100;
+
       &:after {
         opacity: 1;
+      }
+    }
+  }
+
+  &--error {
+    .form-input__label {
+      background: #FFCACA;
+      border-bottom: 1px solid #910000;
+    }
+
+    &:hover {
+      .form-input__label {
+        background: #FFE4E4;
+        border-bottom: 1px solid #910000;
       }
     }
   }
@@ -114,18 +129,16 @@
   }
 
   &__error {
-    font-size: 12px;
-    line-height: 100%;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
     display: block;
     margin-top: 2px;
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -20px;
     white-space: nowrap;
-  }
-
-  &__error {
-    color: $color-error;
+    color: #910000;
   }
 
 }
