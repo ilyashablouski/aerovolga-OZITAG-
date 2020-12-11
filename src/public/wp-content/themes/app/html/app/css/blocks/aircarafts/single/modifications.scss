@@ -124,11 +124,21 @@
 
   &-slider {
     max-height: 440px;
+    position: relative;
     @include mobile {
       max-height: 300px;
     }
     @include mobile320 {
       max-height: 87.5vw;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      top: 15px;
+      right: 15px;
+      @include sprite('crosshair');
+      z-index: 3;
     }
 
     &__wrapper {
@@ -146,6 +156,11 @@
     &__slide {
       width: 440px;
       height: 440px;
+
+      &:hover {
+        cursor: crosshair;
+      }
+
       @include mobile {
         width: 300px;
         height: 300px;

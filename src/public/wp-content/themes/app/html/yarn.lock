@@ -5876,7 +5876,7 @@ jpegtran-bin@^4.0.0:
     bin-wrapper "^4.0.0"
     logalot "^2.0.0"
 
-jquery@^3.3.1:
+jquery@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.5.1.tgz#d7b4d08e1bfdb86ad2f1a3d039ea17304717abb5"
   integrity sha512-XwIBPqcMn57FxfT+Go5pzySnm4KWkT1Tv7gjrpT1srtf8Weynl6R273VJ5GjkRb51IzMp5nbaPjJXMWeju2MKg==
@@ -5885,6 +5885,11 @@ js-base64@^2.1.8:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.6.2.tgz#cf9301bc5cc756892a9a6c8d7138322e5944fb0d"
   integrity sha512-1hgLrLIrmCgZG+ID3VoLNLOSwjGnoZa8tyrUdEteMeIzsT6PH7PMLyUvbDwzNE56P3PNxyvuIOx4Uh2E5rzQIw==
+
+js-image-zoom@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/js-image-zoom/-/js-image-zoom-0.7.0.tgz#9cea6e7a4da1feae99e7433dc58fdc31f05a977f"
+  integrity sha512-csvn2FmRLjVz5O9AtXGRPKy0Khfcf5n2Vuyg1NyOVylcjzJ6IKN60JmZ/d5rVQvMya9V6tqAaCqj/c20PlUYpQ==
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"

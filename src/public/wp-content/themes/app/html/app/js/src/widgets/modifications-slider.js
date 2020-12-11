@@ -20,6 +20,7 @@ class ModificationsSlider {
 
   initCertificateSlider() {
     this.initSlider();
+    this.bindEvents();
   }
 
   initSlider() {
@@ -34,6 +35,16 @@ class ModificationsSlider {
         swiper: galleryThumbs,
         slideThumbActiveClass: 'active',
       },
+    });
+  }
+
+  bindEvents() {
+    this.slider.on('slideChange', (e) => {
+      const zoomImage = document.querySelectorAll('.js-image-zoom.swiper-slide-active');
+      zoomImage.forEach((item)=> {
+       elevateImageZoom.init(item);
+      })
+
     });
   }
 
@@ -55,3 +66,4 @@ subscribeToEvent('initModules', () => {
     ModificationsSlider.init(item);
   });
 });
+

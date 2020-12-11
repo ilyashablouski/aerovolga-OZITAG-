@@ -13,17 +13,22 @@ import Swiper, { Navigation, Pagination, Thumbs, Autoplay } from 'swiper';
 import PerfectScrollbar from 'perfect-scrollbar';
 import select2 from 'select2';
 import barba from '@barba/core';
+import ImageZoom from 'js-image-zoom'
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 window.$ = window.jQuery = jquery;
+
 window.svg4everybody = svgPolyfill;
 
 window.Swiper = Swiper;
 Swiper.use([Navigation, Pagination, Thumbs, Autoplay]);
 
+
 window.select2 = select2;
 window.PerfectScrollbar = PerfectScrollbar;
+
+window.ImageZoom = ImageZoom;
 
 window.barba = barba;
 window.gsap = gsap;

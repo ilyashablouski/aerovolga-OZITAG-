@@ -40,6 +40,8 @@ import './src/widgets/fixed-footer'
 import './src/widgets/parallax-section'
 import './src/widgets/anchor-observer'
 
+import './src/widgets/elevate-zoom';
+
 import './src/widgets/spinner';
 
 import './src/widgets/aircrafts-header/aircrafts-header-menu';
