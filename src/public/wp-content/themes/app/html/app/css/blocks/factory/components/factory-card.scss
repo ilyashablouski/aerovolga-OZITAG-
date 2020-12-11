@@ -4,6 +4,12 @@
   height: 300px;
   position: relative;
   overflow: hidden;
+
+  &--block {
+    max-width: 100%;
+    z-index: 2;
+  }
+
   @include tablet-and-mobile {
     height: 220px;
   }

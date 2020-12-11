@@ -386,6 +386,11 @@
     &--contain {
       height: auto;
     }
+    &--block {
+      .uikit-widget__content-inner {
+        display: block!important;
+      }
+    }
 
 
     &__title {
@@ -411,13 +416,13 @@
         margin: 5px;
         display: flex;
         justify-content: center;
-
-        @include media(mobile) {
-          margin: 0 auto;
-          padding: 5px;
-          max-width: 100%;
-          width: auto !important;
-        }
+        //
+        //@include media(mobile) {
+        //  margin: 0 auto;
+        //  padding: 5px;
+        //  max-width: 100%;
+        //  width: auto !important;
+        //}
       }
     }
   }
