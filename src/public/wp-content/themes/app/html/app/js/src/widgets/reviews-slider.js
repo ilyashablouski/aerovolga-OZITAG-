@@ -23,71 +23,67 @@ class ReviewsSlider {
   }
 
   initSlider() {
-this.rowElement.forEach( (item)=> {
-  if(item.getAttribute('data-thumbs')) {
-    this.sliderThumbs = new Swiper(item, {
-      speed: 1000,
-      spaceBetween: 40,
-      slidesPerView: 1,
-      navigation: {
-        nextEl: '.thumbs-slide__next',
-        prevEl: '.thumbs-slide__prev',
-      },
+    this.rowElement.forEach((item) => {
+      if (item.getAttribute('data-thumbs')) {
+        this.sliderThumbs = new Swiper(item, {
+          speed: 1000,
+          spaceBetween: 40,
+          slidesPerView: 1,
+          navigation: {
+            nextEl: '.thumbs-slide__next',
+            prevEl: '.thumbs-slide__prev',
+          },
+        });
+
+      } else {
+        this.slider = new Swiper(item, {
+          speed: 1000,
+          spaceBetween: 380,
+          slidesPerView: 1,
+          navigation: {
+            nextEl: '.thumbs-slide__next',
+            prevEl: '.thumbs-slide__prev',
+          },
+        });
+      }
     });
-
-  } else {
-    this.slider = new Swiper(item, {
-      speed: 1000,
-      spaceBetween: 380,
-      slidesPerView: 1,
-      navigation: {
-        nextEl: '.thumbs-slide__next',
-        prevEl: '.thumbs-slide__prev',
-      },
-    });
-  }
-})
   }
 
-  goNext() {
-    this.sliderThumbs.slideNext()
-    this.slider.slideNext()
+  onNextClick() {
+    this.sliderThumbs.slideNext();
+    this.slider.slideNext();
   }
 
-  onNextClick(e) {
-    e.preventDefault();
-    this.goNext();
-  }
-
-  goPrev() {
+  onPrevClick() {
     this.sliderThumbs.slidePrev();
     this.slider.slidePrev();
   }
 
-  onPrevClick(e) {
-    e.preventDefault();
-    this.goPrev();
+  getActiveSlideNumber() {
+    return this.slider.activeIndex;
+  }
+
+  changeSlide(item, index, e) {
+    const activeNumber = this.getActiveSlideNumber();
+    if (activeNumber > index) {
+      this.onPrevClick();
+    } else if (activeNumber < index) {
+      this.onNextClick();
+    } else {
+      e.preventDefault();
+    }
+
   }
 
   updateCurrentButton() {
-    const activeElement =  this.nodeElement.querySelector('.reviews__thumbs-slide.swiper-slide-active');
-    if (activeElement.nextElementSibling) {
-      activeElement.nextElementSibling.addEventListener('click', this.onNextClick.bind(this));
-    }
-    if (activeElement.previousElementSibling) {
-      activeElement.previousElementSibling.addEventListener('click', this.onPrevClick.bind(this));
-    }
-  }
-
-  resetCurrentButton() {
-    this.nodeElement.querySelectorAll('.reviews__thumbs-slide').forEach((item)=>{
-      item.removeEventListener('click', ()=> {
-      })
-    })
+    this.nodeElement.querySelectorAll('.reviews__thumbs-slide').forEach((item, index) => {
+      item.addEventListener('click', (e) => {
+        this.changeSlide(item, index, e);
+      });
+    });
   }
 
   onSwiperSlideChange() {
-    this.resetCurrentButton()
     this.updateCurrentButton();
   }
 
