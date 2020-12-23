@@ -199,8 +199,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+
     @include smallTablet-and-mobile {
       display: none;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &-link {
+      @include fill();
     }
   }
 
@@ -223,6 +234,10 @@
         transform: translateY(-50%);
         transition: all 0.3s linear;
 
+        &-link {
+          @include fill();
+        }
+
         img {
           display: block;
           height: 18px;
@@ -240,6 +255,10 @@
       .header-main__logo-ipad {
         display: none;
       }
+    }
+
+    &-link {
+      @include fill();
     }
   }
 

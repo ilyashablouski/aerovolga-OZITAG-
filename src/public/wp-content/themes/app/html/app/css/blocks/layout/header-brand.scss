@@ -26,6 +26,7 @@
     margin-top: 60px;
     display: flex;
     justify-content: center;
+    position: relative;
 
     @include desktop {
       @media (max-height: 700px) {
@@ -38,6 +39,10 @@
 
     @include smallTablet-and-mobile {
       display: none;
+    }
+
+    &-link {
+      @include fill();
     }
   }
 
