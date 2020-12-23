@@ -205,6 +205,10 @@
     font-size: 34px;
     line-height: 40px;
     color: #FFFFFF;
+
+    @include mobile {
+      font-size: 32px;
+    }
   }
 
   &__description {
