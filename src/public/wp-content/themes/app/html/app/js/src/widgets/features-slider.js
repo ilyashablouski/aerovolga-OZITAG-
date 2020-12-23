@@ -46,10 +46,6 @@ class FeaturesSlider {
       loop: true,
       slideToClickedSlide: true,
       centeredSlides: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
       navigation: {
         nextEl: '.features__slider-next',
       },
