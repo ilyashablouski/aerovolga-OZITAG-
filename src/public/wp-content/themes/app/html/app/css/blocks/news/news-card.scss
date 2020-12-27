@@ -8,9 +8,17 @@
   }
 
   &__btn-wrapper {
-    margin-top: 58px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
+
+    @include smallTablet-and-mobile {
+      margin-top: 40px;
+    }
+
+    @include mobile {
+      margin-top: 60px;
+    }
 
     button {
       padding: 9px 30px 10px;
