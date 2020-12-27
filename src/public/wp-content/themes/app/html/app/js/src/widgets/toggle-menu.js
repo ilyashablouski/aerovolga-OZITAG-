@@ -35,9 +35,22 @@ class ToggleMenu {
     });
 
     this.menu.addEventListener('click', this.onClick.bind(this));
+
   }
 
   onClick(event) {
+
+    if (event.target.classList.contains('js-menu')) {
+      this.removeActive(this.toggleMenu);
+      this.removeActive(this.menu);
+      document.body.style.overflow = 'auto';
+
+      if (window.innerWidth < 1024) {
+        this.removeActive(this.menu.parentNode);
+        this.menu.parentNode.style.animation = 'mobile-hidden 0.5s linear';
+      }
+    }
+
     event.preventDefault();
     const { target } = event;
     const anchor = target.closest('[href]');
@@ -49,7 +62,8 @@ class ToggleMenu {
       this.thisIsHome(false);
     }
 
-    if (this.toggleMenu.classList.contains('active')) {
+
+    if (this.toggleMenu.classList.contains('active') || event.target.classList.contains('js-menu')) {
       this.removeActive(this.toggleMenu);
       this.removeActive(this.menu);
       document.body.style.overflow = 'auto';

@@ -9,6 +9,12 @@
   background: rgba(18, 43, 54, 0.5);
   transition: all 0.4s linear;
 
+  @include desktop {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
 
   @include smallTablet-and-mobile {
     transform: translateX(-100%);
@@ -113,6 +119,13 @@
     @media (max-height: 500px) {
       padding: 60px 60px 60px 100px;
     }
+
+    @include desktop {
+      &:hover {
+        cursor: default;
+      }
+    }
+
     @include smallTablet-and-mobile {
       transform: translateX(0);
       width: 100vw;
