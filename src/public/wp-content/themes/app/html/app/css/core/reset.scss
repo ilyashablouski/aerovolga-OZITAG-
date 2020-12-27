@@ -15,6 +15,10 @@ html, body {
   min-width: 320px;
 }
 
+body {
+  overflow-anchor: none;
+}
+
 input, textarea {
   -webkit-appearance: none;
   border-radius: 0;

@@ -39,6 +39,8 @@ import './src/widgets/fixed-navbar'
 import './src/widgets/fixed-footer'
 import './src/widgets/parallax-section'
 import './src/widgets/anchor-observer'
+import './src/widgets/card-add'
+
 
 import './src/widgets/elevate-zoom';
 
