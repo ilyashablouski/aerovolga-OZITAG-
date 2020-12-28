@@ -207,7 +207,7 @@ class LightGallery {
         let i = 0;
         let subHtmlCont = '';
         let template;
- 
+
         document.body.insertAdjacentHTML('beforeend', '<div class="lg-backdrop"></div>');
         utils.setVendor(document.querySelector('.lg-backdrop'), 'TransitionDuration', this.s.backdropDuration + 'ms');
 
@@ -458,8 +458,6 @@ class LightGallery {
         let _hasPoster = false;
         let _img;
         let _src;
-        // let _imgOffsetWidth;
-        // let _imgOffsetHeight;
         let _poster;
         let _srcset;
         let _sizes;
@@ -570,14 +568,6 @@ class LightGallery {
             utils.trigger(this.el, 'onAferAppendSlide', {
                 index: index
             });
-
-            /* _img = this.___slide[index].querySelector('.lg-object');
-            _imgOffsetWidth = _img.offsetWidth
-            _imgOffsetHeight = _img.offsetHeight
-
-            if (_imgOffsetWidth > _imgOffsetHeight) {
-                utils.addClass(this.___slide[index], 'lg-img-horizontal');
-            } */
 
             if (_sizes) {
                 _img.setAttribute('sizes', _sizes);
