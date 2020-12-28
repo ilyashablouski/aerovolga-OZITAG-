@@ -224,7 +224,7 @@ class Thumbnail {
 
     animateThumb(index) {
         const $thumb = this.core.outer.querySelector('.lg-thumb');
-    
+
         if (this.core.s.animateThumb) {
             let position;
             switch (this.core.s.currentPagerPosition) {
@@ -429,7 +429,6 @@ class Thumbnail {
             }
         }
     }
-};
+}
 
-export { Thumbnail }
-export default Thumbnail;
+export { Thumbnail };

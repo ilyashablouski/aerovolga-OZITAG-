@@ -1,6 +1,7 @@
 import './polyfill';
 import { utils } from './utils';
 import { Thumbnail } from './thumbnail';
+import { Video } from  './video';
 
 window.utils = utils;
 
@@ -10,6 +11,7 @@ window.lgData = {
 
 window.lgModules = {
     thumbnail: Thumbnail,
+    video: Video,
 };
 
 const defaults = {
@@ -35,7 +37,7 @@ const defaults = {
     getCaptionFromTitleOrAlt: true,
     appendSubHtmlTo: '.lg-sub-html',
     subHtmlSelectorRelative: false,
-    preload: 1,
+    preload: 10,
     showAfterLoad: true,
     selector: '',
     selectWithin: '',
@@ -539,9 +541,12 @@ class LightGallery {
         }
 
         const _isVideo = this.isVideo(_src, index);
+
+      console.log('_isVideo', _isVideo);
+
         if (!utils.hasClass(this.___slide[index], 'lg-loaded')) {
             if (iframe) {
-                this.___slide[index].insertAdjacentHTML('afterbegin', '<div class="lg-video-cont" style="max-width:' + this.s.iframeMaxWidth + '"><div class="lg-video"><iframe class="lg-object" frameborder="0" src="' + _src + '"  allowfullscreen="true"></iframe></div></div>');
+                this.___slide[index].insertAdjacentHTML('afterbegin', `<div class="lg-video-cont" style="max-width: ${this.s.iframeMaxWidth}"><div class="lg-video"><iframe class="lg-object" frameborder="0" src="${_src}"  allowfullscreen="true"></iframe></div></div>`);
             } else if (_hasPoster) {
                 let videoClass = '';
                 if (_isVideo && _isVideo.youtube) {
@@ -552,13 +557,26 @@ class LightGallery {
                     videoClass = 'lg-has-html5';
                 }
 
-                this.___slide[index].insertAdjacentHTML('beforeend', '<div class="lg-video-cont ' + videoClass + ' "><div class="lg-video"><span class="lg-video-play"></span><img class="lg-object lg-has-poster" src="' + _poster + '" /></div></div>');
+                this.___slide[index].insertAdjacentHTML('beforeend', `
+                    <div class="lg-video-cont ${videoClass}">
+                        <div class="lg-video">
+                            <span class="lg-video-play">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 52 52">
+                                    <g fill-rule="evenodd" clip-rule="evenodd" fill="currentColor">
+                                        <path d="M26 0C11.642 0 0 11.641 0 26s11.642 26 26 26 26-11.641 26-26S40.358 0 26 0zm0 1.733C39.38 1.733 50.267 12.62 50.267 26c0 13.38-10.886 24.267-24.267 24.267C12.62 50.267 1.733 39.38 1.733 26 1.733 12.62 12.62 1.733 26 1.733z"></path><path d="M22.616 35.726c-.888.592-1.616.192-1.616-.888V16.16c0-1.08.727-1.478 1.615-.884l13.72 9.174c.888.593.887 1.564-.004 2.156l-13.715 9.12zm14.592-13.011L23.349 13.72C20.956 12.168 19 13.21 19 16.033v18.93c0 2.823 1.959 3.868 4.356 2.322l13.846-8.936c2.395-1.548 2.398-4.082.006-5.634z"></path>
+                                    </g>
+                                </svg>
+                            </span>
+                            <img class="lg-object lg-has-poster" src="${_poster}" />
+                        </div>
+                    </div>
+                `);
             } else if (_isVideo) {
-                this.___slide[index].insertAdjacentHTML('beforeend', '<div class="lg-video-cont "><div class="lg-video"></div></div>');
+                this.___slide[index].insertAdjacentHTML('beforeend', `<div class="lg-video-cont"><div class="lg-video"></div></div>`);
                 utils.trigger(this.el, 'hasVideo', {
-                    index: index,
-                    src: _src,
-                    html: _html
+                  index: index,
+                  src: _src,
+                  html: _html
                 });
             } else {
                 _alt = _alt ? `alt="${_alt}"`: '';
@@ -569,6 +587,7 @@ class LightGallery {
                 index: index
             });
 
+          _img = this.___slide[index].querySelector('.lg-object');
             if (_sizes) {
                 _img.setAttribute('sizes', _sizes);
             }
@@ -652,8 +671,7 @@ class LightGallery {
                 if (this.s.dynamic) {
                     _src = this.s.dynamicEl[index].downloadUrl !== false && (this.s.dynamicEl[index].downloadUrl || this.s.dynamicEl[index].src);
                 } else {
-                    const dataOriginal = this.items[index].querySelector('[data-original]').getAttribute('data-original');
-                    _src = this.items[index].getAttribute('data-download-url') !== 'false' && (this.items[index].getAttribute('data-download-url') || dataOriginal || this.items[index].getAttribute('href') || this.items[index].getAttribute('data-src'));
+                    _src = this.items[index].getAttribute('data-download-url') !== 'false' && (this.items[index].getAttribute('data-download-url') || this.items[index].getAttribute('href') || this.items[index].getAttribute('data-src'));
                 }
 
                 if (_src) {
@@ -1186,9 +1204,9 @@ function lightGallery(el, options) {
             window.lgData[el.getAttribute('lg-uid')].init();
         }
     } catch (err) {
-        console.error('lightGallery has not initiated properly', err);
+        console.error('Gallery has not initiated properly', err);
     }
-};
+}
 
 class LightGalleryUI {
     static init() {
