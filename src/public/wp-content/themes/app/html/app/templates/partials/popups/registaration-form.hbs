@@ -1,0 +1,26 @@
+{{#> popups/_base id=id}}
+  <div class="popup-content__container">
+    <div class="popup-content__top">
+      <div class="popup-content__title">Registration form</div>
+    </div>
+    <div class="popup-content__bottom popup-content__bottom--center">
+      <form autocomplete="off" class="popup-content__form popup-form">
+        <div class="popup-form__row">
+          <div class="popup-form__col">
+            {{> form/input label="Login" type="email" placeholder="Подсказка"}}
+          </div>
+          <div class="popup-form__col">
+            {{> form/input label="Password" type="password" placeholder="Подсказка"}}
+
+            <button class="popup-form__forgot-password js-popup-open" data-popup="forgot-password">
+              Forgot your password?
+            </button>
+          </div>
+        </div>
+        <div class="popup-form__bottom popup-form__bottom--large">
+          {{>ui/btn button=true type="submit" color="primary" label="Login"}}
+        </div>
+      </form>
+    </div>
+  </div>
+{{/ popups/_base}}
