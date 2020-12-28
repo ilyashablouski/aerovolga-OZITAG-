@@ -56,7 +56,7 @@ class CardAdd extends Widget {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+subscribeToEvent('initModules', () => {
   const newsContainer = document.querySelectorAll('.js-card-add');
   newsContainer.forEach(item => {
     new CardAdd(item);

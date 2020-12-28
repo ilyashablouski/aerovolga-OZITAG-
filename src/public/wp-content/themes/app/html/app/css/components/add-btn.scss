@@ -1,0 +1,23 @@
+.add-btn {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: $color-green-dark-100;
+  transition: all 0.3s linear;
+
+  @include desktop {
+    &:hover {
+      color: $grayish-blue;
+    }
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+}

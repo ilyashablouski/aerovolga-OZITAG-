@@ -40,6 +40,7 @@ import './src/widgets/fixed-footer'
 import './src/widgets/parallax-section'
 import './src/widgets/anchor-observer'
 import './src/widgets/card-add'
+import './src/widgets/add-more';
 
 
 import './src/widgets/elevate-zoom';

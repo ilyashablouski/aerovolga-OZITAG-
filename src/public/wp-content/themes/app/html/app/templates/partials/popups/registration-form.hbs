@@ -43,9 +43,15 @@
 
         <div class="popup-form__section">
           <span class="popup-form__section-title">Aircraft</span>
-          <div class="popup-form__section-content">
-            <div class="popup-form__row">
+          <div class="popup-form__section-content js-copy">
+            <div class="popup-form__row js-copy__row">
                 {{> form/input label="Serial number of the aircraft" placeholder="Подсказка"}}
+            </div>
+            <div class="popup-form__row">
+              <button class="add-btn js-add-btn">
+                {{>ui/svg name="plus"}}
+                Add another serial number
+              </button>
             </div>
           </div>
         </div>
