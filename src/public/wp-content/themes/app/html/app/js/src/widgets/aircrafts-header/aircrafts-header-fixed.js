@@ -179,8 +179,12 @@ class AircraftsHeaderFixed extends Widget {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  AircraftsHeaderFixed.init(document.querySelector('.js-inner-header-fixed'));
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//   AircraftsHeaderFixed.init(document.querySelector('.js-inner-header-fixed'));
+// });
 
-window.InnerHeaderFixed = AircraftsHeaderFixed;
+// subscribeToEvent('initModules', () => {
+//   AircraftsHeaderFixed.init(document.querySelector('.js-inner-header-fixed'));
+// });
+
+window.AircraftsHeaderFixed = AircraftsHeaderFixed;

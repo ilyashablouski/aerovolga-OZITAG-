@@ -37,7 +37,7 @@ class PageNavPanel {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+subscribeToEvent('initModules', () => {
   const header = document.querySelectorAll('.js-page-header');
   if (!header) return null;
   header.forEach((item) => {
