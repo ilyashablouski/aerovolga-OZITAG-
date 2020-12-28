@@ -199,7 +199,10 @@
       background: #DADADA;
       border-radius: 2px;
       padding: 23px 20px 17px;
-      display: none;
+      opacity: 0;
+      visibility: hidden;
+      z-index: -3;
+      transition: all 0.3s linear;
 
       &:before {
         position: absolute;
@@ -223,7 +226,9 @@
       }
 
       .aircrafts-header__more:hover & {
-        display: block;
+        opacity: 1;
+        visibility: visible;
+        z-index: 1;
       }
 
       .aircrafts-header {

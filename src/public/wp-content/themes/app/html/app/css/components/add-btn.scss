@@ -6,12 +6,13 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
-  color: $color-green-dark-100;
+
+  color: rgba(16, 32, 41, 0.5);
   transition: all 0.3s linear;
 
   @include desktop {
     &:hover {
-      color: $grayish-blue;
+      color: $color-green-dark-100;
     }
   }
 
