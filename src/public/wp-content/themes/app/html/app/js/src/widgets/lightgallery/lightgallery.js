@@ -647,11 +647,13 @@ class LightGallery {
 
         if (!this.lgBusy) {
             if (this.s.download) {
+
                 let _src;
                 if (this.s.dynamic) {
                     _src = this.s.dynamicEl[index].downloadUrl !== false && (this.s.dynamicEl[index].downloadUrl || this.s.dynamicEl[index].src);
                 } else {
-                    _src = this.items[index].getAttribute('data-download-url') !== 'false' && (this.items[index].getAttribute('data-download-url') || this.items[index].getAttribute('href') || this.items[index].getAttribute('data-src'));
+                    const dataOriginal = this.items[index].querySelector('[data-original]').getAttribute('data-original');
+                    _src = this.items[index].getAttribute('data-download-url') !== 'false' && (this.items[index].getAttribute('data-download-url') || dataOriginal || this.items[index].getAttribute('href') || this.items[index].getAttribute('data-src'));
                 }
 
                 if (_src) {
