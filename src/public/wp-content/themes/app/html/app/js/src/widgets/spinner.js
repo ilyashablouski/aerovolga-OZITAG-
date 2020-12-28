@@ -9,7 +9,7 @@ class Spinner {
   events() {
     this.node.classList.add('loading');
 
-    this.image.addEventListener("load", () => {
+    this.image.addEventListener('load', () => {
       this.node.classList.remove('loading');
     });
   }
@@ -27,10 +27,6 @@ class SpinnerUI {
     });
   }
 }
-
-/* document.addEventListener('DOMContentLoaded', () => {
-  SpinnerUI.init();
-}); */
 
 subscribeToEvent('initModules', () => {
   SpinnerUI.init();

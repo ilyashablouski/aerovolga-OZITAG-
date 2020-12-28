@@ -1,5 +1,5 @@
 .lg-actions .lg-next, .lg-actions .lg-prev {
-  background-color: rgba(0, 0, 0, 0.45);
+  // background-color: rgba(0, 0, 0, 0.45);
   border-radius: 2px;
   color: #999;
   cursor: pointer;
@@ -324,19 +324,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .lg-outer .lg-thumb-outer.lg-grab .lg-thumb-item {
-  cursor: -webkit-grab;
-  cursor: -moz-grab;
-  cursor: -o-grab;
-  cursor: -ms-grab;
   cursor: grab;
 }
 
 .lg-outer .lg-thumb-outer.lg-grabbing .lg-thumb-item {
-  cursor: move;
-  cursor: -webkit-grabbing;
-  cursor: -moz-grabbing;
-  cursor: -o-grabbing;
-  cursor: -ms-grabbing;
   cursor: grabbing;
 }
 
@@ -752,7 +743,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .lg-outer .lg-dropdown > li:last-child {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .lg-outer .lg-dropdown > li:hover a, .lg-outer .lg-dropdown > li:hover .lg-icon {
@@ -830,19 +821,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .lg-outer.lg-grab img.lg-object {
-  cursor: -webkit-grab;
-  cursor: -moz-grab;
-  cursor: -o-grab;
-  cursor: -ms-grab;
   cursor: grab;
 }
 
 .lg-outer.lg-grabbing img.lg-object {
-  cursor: move;
-  cursor: -webkit-grabbing;
-  cursor: -moz-grabbing;
-  cursor: -o-grabbing;
-  cursor: -ms-grabbing;
   cursor: grabbing;
 }
 
@@ -901,8 +883,27 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .lg-outer .lg-item {
-  background: url("../assets/images/gallery-single/loading.gif") no-repeat scroll center center transparent;
   display: none !important;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+    z-index: 10;
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 3px solid $color-white;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: loading .4s linear infinite;
+
+    @include mobile {
+      border-color: $color-black;
+      border-top-color: transparent;
+    }
+  }
 }
 
 .lg-outer.lg-css3 .lg-prev-slide, .lg-outer.lg-css3 .lg-current, .lg-outer.lg-css3 .lg-next-slide {
@@ -944,8 +945,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   bottom: 0;
 }
 
-.lg-outer .lg-item.lg-complete {
-  background-image: none;
+.lg-outer .lg-item.lg-complete::after {
+  display: none;
 }
 
 .lg-outer .lg-item.lg-current {
@@ -955,7 +956,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .lg-outer .lg-image {
   display: inline-block;
   vertical-align: middle;
-  max-width: 100%;
+  // max-width: 100%;
+  width: 100%;
   max-height: 100%;
   height: 100%;
   object-fit: cover;
