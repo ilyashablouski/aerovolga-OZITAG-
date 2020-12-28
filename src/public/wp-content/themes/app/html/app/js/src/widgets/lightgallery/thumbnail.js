@@ -12,11 +12,11 @@ const thumbnailDefaults = {
     enableThumbDrag: false,
     enableThumbSwipe: false,
     swipeThreshold: 50,
-    loadYoutubeThumbnail: false,
+    loadYoutubeThumbnail: true,
     youtubeThumbSize: 1,
-    loadVimeoThumbnail: false,
+    loadVimeoThumbnail: true,
     vimeoThumbSize: 'thumbnail_small',
-    loadDailymotionThumbnail: false,
+    loadDailymotionThumbnail: true,
 };
 
 class Thumbnail {
@@ -135,8 +135,23 @@ class Thumbnail {
                 thumbImg = thumb;
             }
 
-            // thumbList += '<div data-vimeo-id="' + vimeoId + '" class="lg-thumb-item" style="width:' + this.core.s.thumbWidth + 'px; margin-right: ' + this.core.s.thumbMargin + 'px"><img src="' + thumbImg + '" /></div>';
-            thumbList += `<div class="lg-thumb-item"><img src="${thumbImg}"/></div>`;
+            if (isVideo.youtube || isVideo.vimeo || isVideo.dailymotion) {
+              thumbList += `
+                <div data-vimeo-id="${vimeoId}" class="lg-thumb-item">
+                  <span class="lg-video-play">
+                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16 0C7.16427 0 0 7.16373 0 16C0 24.8363 7.16427 32 16 32C24.8357 32 32 24.8363 32 16C32 7.16373 24.8357 0 16 0ZM16 1.06665C24.2343 1.06665 30.9333 7.76563 30.9333 16C30.9333 24.2343 24.2343 30.9333 16 30.9333C7.76563 30.9333 1.06665 24.2343 1.06665 16C1.06665 7.76563 7.76563 1.06665 16 1.06665Z" fill="currentColor"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.5541 22.0441C12.9908 22.4154 12.5293 22.1648 12.5293 21.4875V9.78023C12.5293 9.10287 12.9902 8.85348 13.5529 9.22602L22.2512 14.9762C22.8145 15.3481 22.8139 15.9565 22.2494 16.3278L13.5541 22.0441ZM22.6662 13.9784L14.1378 8.44312C12.6654 7.48802 11.4614 8.12879 11.4614 9.8663V21.5155C11.4614 23.253 12.667 23.8959 14.1421 22.9445L22.6625 17.4455C24.1366 16.4931 24.1382 14.9335 22.6662 13.9784Z" fill="currentColor"/>
+                      </svg>
+                  </span>
+                  <img src="${thumbImg}" />
+                </div>`;
+            } else {
+              thumbList += `
+                <div data-vimeo-id="${vimeoId}" class="lg-thumb-item">
+                  <img src="${thumbImg}" />
+                </div>`;
+            }
             vimeoId = '';
         }
 

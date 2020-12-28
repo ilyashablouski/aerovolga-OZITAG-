@@ -4,15 +4,8 @@ import { Thumbnail } from './thumbnail';
 import { Video } from  './video';
 
 window.utils = utils;
-
-window.lgData = {
-    uid: 0
-};
-
-window.lgModules = {
-    thumbnail: Thumbnail,
-    video: Video,
-};
+window.lgData = { uid: 0 };
+window.lgModules = { thumbnail: Thumbnail, video: Video };
 
 const defaults = {
     mode: 'lg-slide',
@@ -59,29 +52,19 @@ const defaults = {
 class LightGallery {
     constructor(element, options) {
         this.el = element;
-
         this.s = Object.assign({}, defaults, options);
-
         if (this.s.dynamic && this.s.dynamicEl !== 'undefined' && this.s.dynamicEl.constructor === Array && !this.s.dynamicEl.length) {
             throw ('When using dynamic mode, you must also define dynamicEl as an Array.');
         }
-
         this.modules = {};
-
         this.lGalleryOn = false;
-
         this.lgBusy = false;
-
         this.hideBartimeout = false;
-
         this.isTouch = ('ontouchstart' in document.documentElement);
-
         if (this.s.slideEndAnimatoin) {
             this.s.hideControlOnEnd = false;
         }
-
         this.items = [];
-
         if (this.s.dynamic) {
             this.items = this.s.dynamicEl;
         } else {
@@ -97,11 +80,8 @@ class LightGallery {
                 this.items = this.el.children;
             }
         }
-
         this.___slide = '';
-
         this.outer = '';
-
         this.init();
     }
 
@@ -541,8 +521,6 @@ class LightGallery {
         }
 
         const _isVideo = this.isVideo(_src, index);
-
-      console.log('_isVideo', _isVideo);
 
         if (!utils.hasClass(this.___slide[index], 'lg-loaded')) {
             if (iframe) {
