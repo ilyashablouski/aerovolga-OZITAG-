@@ -8,6 +8,10 @@
     &:first-child {
       margin-top: 0;
     }
+
+    @include mobile {
+      display: block;
+    }
   }
 
   &__col {
@@ -16,6 +20,14 @@
 
     &:first-child {
       margin-right: 16px;
+    }
+
+    @include mobile {
+      margin-top: 13px;
+
+      &:first-child {
+        margin: 0;
+      }
     }
   }
 
