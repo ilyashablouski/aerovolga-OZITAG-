@@ -7,6 +7,7 @@
          class="form-input__input"
     {{#if field-id}} id="{{field-id}}"{{/if}}
     {{#if placeholder}} placeholder="{{placeholder}}"{{/if}}
+    {{#if decimal}}inputmode='decimal'{{/if}}
     {{#if disabled}} disabled aria-disabled="true"{{/if}}/>
 
   {{#if label}}<span class="form-input__placeholder">{{label}}</span>{{/if}}

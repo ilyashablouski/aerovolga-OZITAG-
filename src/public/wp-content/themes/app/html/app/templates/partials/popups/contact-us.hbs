@@ -1,10 +1,10 @@
-{{#> popups/_base title="Base popup" id="example"}}
+{{#> popups/_base id=id}}
   <div class="popup-content__container">
     <div class="popup-content__top">
-      <div class="popup-content__title"></div>
+      <div class="popup-content__title">Feedback form</div>
     </div>
     <div class="popup-content__bottom">
-      <div class="popup-content__form popup-form">
+      <form autocomplete="off" class="popup-content__form popup-form">
         <div class="popup-form__row">
           <div class="popup-form__col">
             {{> form/input label="Name" placeholder="Подсказка"}}
@@ -15,18 +15,19 @@
         </div>
         <div class="popup-form__row">
           <div class="popup-form__col">
-            {{> form/input label="Phone" placeholder="Подсказка"}}
+            {{> form/input label="Phone" placeholder="Подсказка" decimal=true}}
           </div>
           <div class="popup-form__col">
-            {{> form/input label="Email" placeholder="Подсказка"}}
+            {{> form/input label="Email" type="email" placeholder="Подсказка"}}
           </div>
         </div>
         <div class="popup-form__row">
-            {{> form/input label="Message" placeholder="Подсказка"}}
+          {{> form/input label="Message" placeholder="Подсказка"}}
         </div>
-        <div class="popup-form__bottom">
+        <div class="popup-form__bottom popup-form__bottom--reverse">
+          {{>ui/btn button=true type="submit" color="primary" label="Send  message"}}
         </div>
-      </div>
+      </form>
     </div>
   </div>
 {{/ popups/_base}}

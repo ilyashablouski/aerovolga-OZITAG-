@@ -73,6 +73,15 @@ class PopupManager {
     document.querySelectorAll('.js-popup-open[data-popup]').forEach(button => {
       button.addEventListener('click', e => {
         e.preventDefault();
+
+        const openPopups = document.querySelectorAll('.js-popup.opened');
+
+        if(openPopups) {
+          openPopups.forEach(popup => {
+            this.close(popup);
+          })
+        }
+
         this.open(e.target.dataset.popup);
       });
     });
@@ -93,9 +102,14 @@ class PopupManager {
     popup.on('closed', () => this.hideOverlay());
   }
 
+  close(popup) {
+    popup.classList.remove('opened');
+  }
+
   createOverlay() {
     if (this.overlay) {
       this.overlay.classList.remove('not-visible');
+      document.body.style.overflow = 'hidden';
       return;
     }
 
@@ -114,6 +128,7 @@ class PopupManager {
     if (this.overlay) {
       const overlay = this.overlay;
       this.overlay.classList.add('not-visible');
+      document.body.style.overflow = 'visible';
 
       this.overlay.addEventListener('transitionend', () => {
         overlay.remove();

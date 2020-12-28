@@ -52,7 +52,7 @@ import './src/widgets/aircrafts-header/aircrafts-header';
 import './src/utils/vh-hack';
 import './src/utils/mobile-debug';
 
-import './src/widgets/popups';
+import './src/widgets/popups/popups';
 import './src/widgets/example';
 import './src/widgets/lightgallery/lightgallery';
 
