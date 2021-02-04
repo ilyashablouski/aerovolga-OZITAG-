@@ -1,0 +1,373 @@
+.btn {
+  $color-primary-hover: $color-white;
+  $color-primary-focus: $color-green-dark-80;
+  $color-primary-active: $color-green-dark-80;
+
+  padding: 15px;
+  color: $color-white;
+  font-size: 15px;
+  line-height: 19px;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+
+  @include desktop {
+    &:hover,
+    &--hover {
+      color: $color-green-dark-80;
+      background-color: $color-primary-hover;
+      border-color: $color-primary-hover;
+    }
+
+
+  }
+
+  //&:focus,
+  //&--focus {
+  //  color: $color-white;
+  //  background-color: $color-primary-focus;
+  //  border-color: $color-primary-focus;
+  //}
+
+  &:active,
+  &--active {
+    color: $color-white;
+    background-color: $color-primary-focus;
+    border-color: $color-primary-focus;
+  }
+
+  &--active {
+    &:focus {
+      color: $color-white;
+      background-color: $color-primary-hover;
+      border-color: $color-primary-hover;
+    }
+  }
+
+  &:disabled,
+  &--disabled {
+    cursor: default;
+    opacity: 0.3;
+    pointer-events: none;
+    appearance: none;
+  }
+
+  // Colors
+  &--light {
+    color: $color-white;
+    background-color: transparentize($color-white, 0.9);
+    border: unset;
+
+    &:hover,
+    &:focus {
+      background-color: transparentize($color-white, 0.8);
+      border: unset;
+    }
+  }
+
+  //Themes
+  @include btn-color(primary, $color-primary);
+  @include btn-color(secondary, $color-secondary);
+
+  // Sizes
+  &--small {
+    font-size: #{px-to-rem(12)};
+  }
+
+  &--large {
+    font-size: #{px-to-rem(20)};
+  }
+
+  &--w100 {
+    padding-left: #{px-to-rem(5)};
+    padding-right: #{px-to-rem(5)};
+    width: 100%;
+  }
+
+  // Icons
+  &--icon {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 16px;
+
+    .icon {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      margin-right: 10px;
+    }
+
+    &.btn--small {
+      padding: 10.5px 12px;
+
+      .icon {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 6px;
+      }
+    }
+
+    &.btn--large {
+      padding: 13px 20px;
+
+      .icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &--with-border {
+    padding: 8px 18.5px 9px;
+    background: $color-white;
+    border: 2px solid $color-green-dark-120;
+    border-radius: 2px;
+
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
+    color: $color-green-dark-120;
+
+
+    &:hover {
+      background: $color-white;
+      border-color: $color-green-dark-60;
+      color: $color-green-dark-60;
+    }
+
+    &:active {
+      background: $color-green-dark-120;
+      border-color: $color-green-dark-120;
+      color: $color-white;
+    }
+
+    &.active {
+      background: $color-green-dark-120;
+      border: 2px solid $color-green-dark-120;
+      color: $color-white;
+    }
+  }
+
+  &--white {
+    padding: 15px 30px 16px;
+    background: $color-white;
+    border-radius: 2px;
+
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
+    text-align: center;
+    color: $color-green-dark-80;
+
+    @include desktop {
+      &:hover {
+        background: $color-green-dark-100;
+        color: $color-white;
+      }
+    }
+
+    &:active, &:focus {
+      background: $color-white;
+      color: $color-green-dark-80;
+    }
+  }
+
+  &--primary {
+    padding: 15px 30px 16px;
+    border-radius: 2px;
+    background: $color-green-dark-100;
+
+    color: $color-white;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
+    text-align: center;
+    border: 1px solid $color-green-dark-100;
+    box-sizing: border-box;
+
+    @include desktop {
+      &:hover {
+        background: $color-white;
+        color: $color-green-dark-100;
+        border-color: $color-gray-100;
+      }
+    }
+
+
+    &:active, &:focus {
+      background: $color-green-dark-100;
+      color: $color-white;
+    }
+
+  }
+
+  &--outline {
+    &-transparent {
+      position: relative;
+      padding: 10px 46px 12px;
+
+      background: transparent !important;
+      color: $color-white;
+
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 18px;
+      text-align: center;
+
+      transition: all 0.3s ease-in-out;
+
+      &:before {
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: -1px;
+        transform: translateY(-50%);
+
+        width: calc(100% + 2px);
+        height: 40px;
+        background: transparent;
+
+        border-radius: 2px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+
+        z-index: -1;
+        transition: all 0.3s ease-in-out, border 0s linear;
+      }
+
+      @include desktop {
+        &:hover {
+          color: $color-green-dark-100;
+
+          &:before {
+            height: 50px;
+            background-color: $color-white;
+            border-color: $color-white;
+          }
+        }
+      }
+
+
+      &:active, &:focus {
+        background: transparent;
+        color: $color-white;
+
+        &:before {
+          background: transparent;
+          border-color: rgba(255, 255, 255, 0.3);
+        }
+      }
+    }
+
+    &-white {
+      position: relative;
+      padding: 10px 30px 11px;
+
+      background: transparent !important;
+      color: $color-green-dark-80;
+
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 19px;
+      text-align: center;
+
+      transition: 0.3s ease-in-out;
+
+      &:before {
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: -1px;
+        transform: translateY(-50%);
+
+        width: calc(100% + 2px);
+        height: 40px;
+        background: $color-white;
+
+        border-radius: 2px;
+        border: 1px solid $color-gray-100;
+
+        z-index: -1;
+        transition: 0.3s ease-in-out;
+      }
+
+      @include desktop {
+        &:hover {
+          color: $color-white;
+
+          &:before {
+            height: 50px;
+            background: $color-green-dark-100;
+            border-color: $color-green-dark-100;
+          }
+        }
+      }
+
+      &:active, &:focus {
+        background: $color-white;
+        color: $color-green-dark-80;
+
+        &:before {
+          background: $color-white;
+          border-color: $color-gray-100;
+        }
+      }
+    }
+  }
+
+  &__link {
+    padding: 0;
+    position: relative;
+    transition: all 0.3s linear;
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: 50%;
+      right: 30px;
+      width: 60px;
+      height: 23px;
+      transform: translateY(-50%);
+      @include sprite('back-white');
+      transition: all 0.25s linear;
+    }
+
+    &--primary {
+      width: 60px;
+      height: 60px;
+      background: $color-gray-40;
+      color: $color-green-dark-100;
+
+      &:before {
+        @include sprite('back-primary');
+      }
+
+      @include tablet-and-mobile {
+        width: 40px;
+        height: 40px;
+        &:before {
+          right: 15px;
+        }
+      }
+    }
+
+    &--secondary {
+      width: 60px;
+      height: 60px;
+      background: $color-green-dark-100;
+      color: $color-white;
+
+      @include tablet-and-mobile {
+        width: 40px;
+        height: 40px;
+        &:before {
+          right: 15px;
+        }
+      }
+    }
+
+
+  }
+}

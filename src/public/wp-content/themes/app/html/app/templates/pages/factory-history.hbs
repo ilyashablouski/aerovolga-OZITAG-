@@ -1,0 +1,19 @@
+{{!Factory History}}
+
+{{> layout/head page-title="Factory History"}}
+
+{{> layout/header page-namespace="factoryHistory" }}
+{{>blocks/hero/hero title="History" img="history/hero-bg" ext="png"}}
+
+<div class="content__wrapper  content__wrapper--middle">
+  {{>blocks/factory/components/factory-nav navbar=factory-navbar active-page="History"}}
+    <div class="container container--strict">
+    {{>blocks/factory/history/01_history-04}}
+    {{>blocks/factory/history/02_history-05}}
+    {{>blocks/factory/history/03_history-07}}
+    {{>blocks/factory/history/04_history-08}}
+
+    {{>blocks/factory/history/05_other-pages}}
+  </div>
+</div>
+{{> layout/footer }}

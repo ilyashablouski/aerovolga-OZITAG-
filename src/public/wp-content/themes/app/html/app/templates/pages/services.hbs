@@ -1,0 +1,28 @@
+{{!Services}}
+
+{{> layout/head page-title="Services"}}
+
+{{> layout/header page-namespace="services"  header-active="Services"}}
+
+{{>blocks/hero/hero title="Services" img="services/hero-bg" ext="png"}}
+
+<div class="content__wrapper">
+  <div class="container container--strict">
+    {{>blocks/services/services-card
+      description="Full range of services"
+      title="Storage  & repairs"
+      text="All this to prove that customers may depend on this aircraft to operate safely and reliably at all times, in line with statutory requirements."
+      img="services/services_1"
+      link="#"
+    }}
+    {{>blocks/services/services-card
+      description="Maximum speed of work"
+      title="Online  service"
+      text="All this to prove that customers may depend on this aircraft to operate safely and reliably at all times, in line with statutory requirements."
+      img="services/services_2"
+      link="#"
+    }}
+  </div>
+</div>
+
+{{> layout/footer }}

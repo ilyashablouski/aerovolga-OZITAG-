@@ -1,0 +1,13 @@
+.footer-main {
+  padding: 80px 0 66px;
+  position: relative;
+  @include mobile {
+    padding: 40px 0 48px;
+  }
+
+  &__bg {
+    @include fill;
+    z-index: -1;
+    top: auto;
+  }
+}

@@ -1,0 +1,96 @@
+.company-contacts {
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  @include mobile {
+    display: block;
+  }
+
+
+  &__left {
+    margin-right: 30px;
+    @media (max-width: 1360px) {
+      margin-right: 20px;
+    }
+    @include mobile {
+      margin-right: 0;
+    }
+  }
+
+  &__right {
+    flex: 0 0 240px;
+
+    @media (max-width: 1360px) {
+      flex: 1 1 180px;
+    }
+    @include mobile {
+      margin-top: 20px;
+    }
+  }
+
+
+  &__address {
+    width: 100%;
+  }
+
+  &__emails {
+    margin-top: 15px;
+  }
+}
+
+.phone {
+  display: block;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  color: $color-green-dark-80;
+  transition: all 0.3s ease-in-out;
+
+  &:nth-child(n+2){
+    margin-top: 10px;
+  }
+
+  @include desktop {
+    &:hover {
+      color: $grayish-blue;
+    }
+  }
+
+  @include mobile {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  &--small {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 32px;
+  }
+}
+
+.mail {
+  display: block;
+  font-size: 18px;
+  line-height: 30px;
+  color: $color-green-dark-80;
+  text-decoration-line: underline;
+  transition: all 0.3s ease-in-out;
+
+  @include desktop {
+    &:hover {
+      color: $grayish-blue;
+      text-decoration: underline;
+    }
+  }
+}
+
+.address {
+  font-style: normal;
+  @include section_text_18;
+
+  @include mobile {
+    line-height: 22px;
+  }
+}

@@ -1,0 +1,71 @@
+.aircrafts-page {
+  &__card {
+    position: relative;
+
+    &:hover {
+      .btn__link:before {
+        transform: translate(10px, -50%);
+      }
+    }
+
+    &-background {
+      @include fill();
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    &-inner {
+      height: 300px;
+      padding: 44px 60px 36px;
+      @include mobile {
+        padding: 44px 15px 36px;
+        height: 250px;
+      }
+    }
+
+    &-description {
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: $color-white;
+    }
+
+    &-title {
+      display: block;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    &-text {
+      @include fontDrukWideMedium;
+      font-size: 34px;
+      line-height: 40px;
+    }
+
+    &-btn {
+      position: absolute;
+      bottom: 21px;
+      right: 90px;
+      @include mobile {
+        right: 30px;
+      }
+    }
+  }
+
+}

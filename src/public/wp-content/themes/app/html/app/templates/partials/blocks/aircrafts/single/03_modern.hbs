@@ -1,0 +1,52 @@
+<div class="section" id="modern" data-landmark data-offset="130" data-offset-tablet="160" data-offset-mobile="130">
+  <div class="container container--strict">
+
+    <div class="container container--small">
+      {{>blocks/section-title title="High-strength, modern amphibian aircraft LA-8"}}
+      <div class="section__subtitle-wrapper">
+        <h3 class="section__subtitle">The avionics and equipment, parts and components available in any country of the
+          world are used in airframe and in aircraft systems.
+        </h3>
+      </div>
+      <div class="section__text-wrapper">
+        <p class="section__text">The hoses, fittings, pipeline accessories and flexible hoses manufactured in accordance
+          with AN and MS international standards are used in fuel, oil, hydraulic and brake systems. The aircraft can be
+          delivered to Customer either with single or with dual control.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="gallery-slider__wrapper">
+      <div class="swiper-container gallery-slider js-gallery-slider">
+        <div class="swiper-wrapper">
+          {{#times 5}}
+            <div class="swiper-slide gallery-slide js-image-loading">
+              {{>components/image ext="png" img="news/news-single/news_2"}}
+            </div>
+          {{/times}}
+        </div>
+        <button class="gallery-slider__next"></button>
+        <button class="gallery-slider__prev"></button>
+        <div class="gallery-slider__pagination"></div>
+      </div>
+    </div>
+
+    <div class="stats stats--full">
+      <div class="stats__inner">
+        {{>blocks/stats-card title='8 seats' text='in the salon' icon='seat'}}
+        {{>blocks/stats-card title='4000 km' text='range of flight' icon='range'}}
+        {{>blocks/stats-card title='270 km' text='maximum speed' icon='speed'}}
+        {{>blocks/stats-card title='1685 kg' text='weight of base model' icon='weight'}}
+      </div>
+    </div>
+
+    <div class="container container--small">
+      <p class="section__text">The hoses, fittings, pipeline accessories and flexible hoses manufactured in accordance
+        with AN and MS international standards are used in fuel, oil, hydraulic and brake systems. The aircraft can be
+        delivered to Customer either with single or with dual control.
+      </p>
+    </div>
+  </div>
+
+</div>

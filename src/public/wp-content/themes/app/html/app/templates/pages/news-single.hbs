@@ -1,0 +1,55 @@
+{{!News Single}}
+
+{{> layout/head page-title="News Single"}}
+
+{{> layout/header page-namespace="newsSingle" }}
+
+{{>blocks/hero/hero title="News" img="/news/news-single/hero/hero-bg" ext="png" label="Media center" href="/news.html"}}
+
+<div class="content__wrapper">
+  <div class="container container--strict">
+
+    <div class="news-single__content">
+      {{>blocks/news/single/01_news-date date="Desember 2017"}}
+      {{>blocks/news/single/02_news-hero}}
+      {{>blocks/news/single/03_news-image-with-content}}
+      {{>blocks/news/single/04_news-accord}}
+      {{>blocks/news/single/05_news-tablet}}
+      {{>blocks/news/single/06_news-image-fit}}
+      {{>blocks/news/single/07_news-quote}}
+      {{>blocks/news/single/08_news-blocks}}
+      {{>blocks/news/single/09_news-video-block}}
+    </div>
+  </div>
+
+  <div class="news-single__bottom">
+    <div class="news-single__bottom-btn">
+      <a href="./home.html" class="btn__link btn__link--primary"></a>
+    </div>
+
+    <div class="container container--small">
+      <div class="news-single__bottom-share share">
+        <div class="share__description">
+          <div class="share__text"><span>Share this news</span> on your favorite social network</div>
+        </div>
+        <div class="share__social">
+          <div class="share__social-cell">
+            <div class="share__social-item">
+              <a href="#" class="share__social-link"></a>
+              {{>ui/svg name="facebook-share"}}
+            </div>
+          </div>
+          <div class="share__social-cell">
+            <div class="share__social-item">
+              <a href="#" class="share__social-link"></a>
+              {{>ui/svg name="twitter-share"}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{{> layout/footer }}

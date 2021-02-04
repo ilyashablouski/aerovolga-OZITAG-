@@ -1,0 +1,43 @@
+.ceo-block {
+  &__inner {
+    position: relative;
+  }
+  &__name {
+    transform: rotate(90deg);
+    transform-origin: 0 100%;
+    position: absolute;
+    top: -14px;
+    left: -1px;
+
+    @include tablet-and-mobile {
+      transform: rotate(0);
+      position: static;
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    &-inner {
+      display: block;
+      transform: rotate(180deg);
+      @include fontGraphikRegular;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 1.71429px;
+      text-transform: uppercase;
+      color: $color-gray-90;
+
+      @include tablet-and-mobile {
+        transform: rotate(0);
+      }
+    }
+  }
+
+  &__image {
+    max-width: 720px;
+    margin: 0 auto;
+    .image-fit {
+      margin-bottom: 0;
+    }
+  }
+}

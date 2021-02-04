@@ -1,0 +1,29 @@
+{{!Downloads}}
+
+{{> layout/head page-title="Downloads"}}
+
+{{> layout/header page-namespace="downloads" header-active="Downloads"}}
+
+{{>blocks/hero/hero title="Downloads" img="download/hero-bg" ext="png"}}
+
+<div class="content__wrapper content__wrapper--middle">
+
+  <nav class="factory-nav factory-nav--anchor js-navbar">
+    <div class="factory-nav__inner">
+      <ul class="factory-nav__menu">
+        {{#each downloads-navbar}}
+          <li class="factory-nav__menu-item">
+            <a href="{{url}}" class="factory-nav__menu-link {{#if this.active}}active{{/if}} js-scroll-to">{{label}}</a>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container container--strict">
+    {{>blocks/downloads/01_la-aircrafts}}
+    {{>blocks/downloads/02_borey-aircrafts}}
+  </div>
+</div>
+
+{{> layout/footer }}

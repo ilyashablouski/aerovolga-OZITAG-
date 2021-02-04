@@ -1,0 +1,20 @@
+.contacts-form {
+  width: 360px;
+
+  &__field {
+    margin-bottom: 13px;
+  }
+
+  &__submit {
+    margin-top: 43px;
+
+    button {
+      width: 100%;
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 19px;
+      height: 60px;
+    }
+  }
+
+}

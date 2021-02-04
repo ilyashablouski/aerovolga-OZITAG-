@@ -1,0 +1,49 @@
+<div class="section">
+  <div class="container container--strict">
+    <div class="reviews">
+      <div class="reviews__inner">
+        <div class="reviews__slider js-reviews-slider">
+          <div class="swiper-container js-reviews-slider__row">
+            <div class="swiper-wrapper">
+              {{#times 10}}
+                <div class="swiper-slide reviews__slide swiper-no-swiping">
+                  <div class="reviews__slide-inner">
+                    <div class="reviews__slide-top"></div>
+                    <p class="reviews__slide-text">"... Flights cause joy ..." All for real! A real boat, real aviation
+                      engines! Aviation engineers are the color and pride of the nation.</p>
+                  </div>
+                </div>
+              {{/times}}
+            </div>
+          </div>
+
+          <div class="reviews__thumbs">
+            <div class="reviews__thumbs-inner">
+              <div class="swiper-container js-reviews-slider__row" data-thumbs="true">
+                <div class="swiper-wrapper">
+                  {{#times 10}}
+                    <div class="swiper-slide reviews__thumbs-slide swiper-no-swiping">
+                      <div class="reviews__thumbs-inner">
+                        <div class="reviews__thumbs-top">
+                          <div class="reviews__thumbs-image">
+                            {{>components/image ext="png" img="aircrafts/single/person"}}
+                          </div>
+                        </div>
+                        <div class="reviews__thumbs-bottom">
+                          <div class="reviews__thumbs-name">Simon Lackovsky,</div>
+                          <div class="reviews__thumbs-position">pilot</div>
+                        </div>
+                      </div>
+                    </div>
+                  {{/times}}
+                </div>
+              </div>
+            </div>
+            <button class="thumbs-slide__next"></button>
+            <button class="thumbs-slide__prev"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

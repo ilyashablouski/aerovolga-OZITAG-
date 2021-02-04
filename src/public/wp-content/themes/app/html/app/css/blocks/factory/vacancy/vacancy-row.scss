@@ -1,0 +1,116 @@
+.vacancy {
+
+  &__description {
+    max-width: 840px;
+    padding: 0 60px;
+
+    @include tablet-and-mobile {
+      padding: 0 30px;
+    }
+    @include mobile {
+      padding: 0 10px;
+    }
+
+    &-btn {
+      position: absolute;
+      right: 59px;
+      top: 66px;
+      max-width: 150px;
+      @media (max-width: 1300px) {
+        right: 0;
+      }
+
+      @include tablet-and-mobile {
+        top: 40px;
+      }
+      @include mobile {
+        margin-top: 36px;
+        position: static;
+      }
+    }
+  }
+
+  &__col {
+    background: transparent;
+    flex: 1 1 220px;
+    max-width: 220px;
+    padding-right: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: $color-gray-90;
+    transition: all 0.3s linear;
+
+
+    &:first-child {
+      flex: 1 1 460px;
+      max-width: 460px;
+      @media (max-width: 1350px) {
+        max-width: 31.9vw;
+      }
+      @media (max-width: 1200px) and (min-width: 1023px) {
+        max-width: 28vw;
+      }
+      @include mobile {
+        max-width: 100%;
+      }
+    }
+
+    &:nth-child(2) {
+      flex: 1 1 240px;
+      max-width: 240px;
+      @media (max-width: 1200px) and (min-width: 1023px) {
+        max-width: 200px;
+      }
+      @media (max-width: 960px) {
+        max-width: 200px;
+      }
+      @include mobile {
+        max-width: 100%;
+      }
+    }
+
+    &:nth-child(3) {
+      width: 100%;
+      @include smallTablet-and-mobile {
+        max-width: 150px;
+      }
+      @include mobile {
+        max-width: 100%;
+      }
+    }
+
+    &--bold {
+      font-size: 18px;
+      color: $color-green-dark-80;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    width: 100%;
+    @include mobile {
+      display: block;
+    }
+
+    &--header {
+      padding: 26px 20px;
+      background: $color-gray-40;
+
+      @include mobile {
+        display: none;
+      }
+
+      .vacancy__col {
+        padding-right: 0;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 32px;
+        color: $color-green-dark-80;
+
+      }
+    }
+  }
+}

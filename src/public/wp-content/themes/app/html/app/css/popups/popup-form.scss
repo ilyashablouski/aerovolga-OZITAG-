@@ -1,0 +1,83 @@
+.popup-form {
+  width: 100%;
+
+  &__section {
+    margin-top: 60px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &-title {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 44px;
+      color: $color-green-dark-100;
+    }
+  }
+
+  &__row {
+    margin-top: 13px;
+    display: flex;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &__col {
+    position: relative;
+    flex: 1 1 50%;
+
+    &:first-child {
+      margin-right: 16px;
+    }
+
+    @include mobile {
+      margin-top: 13px;
+
+      &:first-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &__forgot-password {
+    position: absolute;
+    right: 0;
+    top: 110%;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: $color-green-dark-100;
+    transition: all 0.3s linear;
+
+    @include desktop {
+      &:hover {
+        color: $grayish-blue;
+      }
+    }
+  }
+
+  &__bottom {
+    margin-top: 40px;
+
+    &--reverse {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &--large {
+      margin-top: 60px;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

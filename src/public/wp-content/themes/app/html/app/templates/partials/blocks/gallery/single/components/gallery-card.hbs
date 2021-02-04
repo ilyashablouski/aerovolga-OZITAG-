@@ -1,0 +1,19 @@
+<li class="gallery__cell"
+    data-src="{{data-src}}"
+    data-download-url="{{data-src}}"
+    data-sub-html="{{data-sub}}"
+    data-pinterest-text="Pin it1"
+    data-tweet-text="share on twitter 1"
+    data-poster="{{data-poster}}"
+>
+  <a href="" class="gallery__item js-image-loading">
+    {{> components/image
+      img=img
+      ext=ext
+      class=class
+    }}
+    {{#if video}}
+      {{>ui/svg name="play"}}
+    {{/if}}
+  </a>
+</li>

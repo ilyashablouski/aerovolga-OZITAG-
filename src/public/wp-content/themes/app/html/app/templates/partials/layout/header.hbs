@@ -1,0 +1,135 @@
+<header class="header page__header {{#if home}}header--home{{/if}} js-page-header">
+  <div class="header-main js-main-menu">
+    <div class="header-main__top">
+      <button class="header-main__burger js-toggle-menu">
+        <i></i>
+      </button>
+    </div>
+    <div class="header-main__logo-mobile">
+      <a href="/home.html" class="header-main__logo-mobile-link"></a>
+      {{> components/image img="logo-sign" ext="png"}}
+      <div class="header-main__logo-ipad">
+        <a href="/home.html" class="header-main__logo-ipad-link"></a>
+        {{> components/image img="logo-aerovolga" ext="png"}}
+      </div>
+    </div>
+    <div class="header-main__logo">
+      <a href="/home.html" class="header-main__logo-link"></a>
+      {{> components/image img="logo" ext="png"}}
+    </div>
+    <div class="header-main__bottom">
+      <a href="#" class="header-main__contact">
+        {{> ui/svg name="layout--mail"}}
+      </a>
+    </div>
+  </div>
+  <div class="header-nav js-menu">
+    <div class="header-nav-inner">
+      <div class="header-nav__language">
+        <div class="header-nav__language-list">
+          <div class="header-nav__language-item">
+            <a href="#" class="header-nav__language-link">Eng</a>
+          </div>
+        </div>
+      </div>
+      <div class="header-nav__top">
+        <nav class="header-menu">
+          {{#with links.home}}
+            <div class="header-menu__item {{#ifCond label ../header-active}}active{{/ifCond}}">
+              <a href="{{url}}" class="header-menu__link" data-is-home>{{label}}</a>
+            </div>
+          {{/with}}
+          {{#with links.aircrafts}}
+            <div class="header-menu__item {{#ifCond label ../header-active}}active{{/ifCond}}">
+              <a href="{{url}}" class="header-menu__link">{{label}}</a>
+            </div>
+          {{/with}}
+          {{#with links.services}}
+            <div class="header-menu__item {{#ifCond label ../header-active}}active{{/ifCond}}">
+              <a href="{{url}}" class="header-menu__link">{{label}}</a>
+            </div>
+          {{/with}}
+          {{#with links.factory}}
+            <div class="header-menu__item {{#ifCond label ../header-active}}active{{/ifCond}}">
+              <a href="{{url}}" class="header-menu__link">{{label}}</a>
+            </div>
+          {{/with}}
+          {{#with links.contact-us}}
+            <div class="header-menu__item {{#ifCond label ../header-active}}active{{/ifCond}}">
+              <a href="{{url}}" class="header-menu__link">{{label}}</a>
+            </div>
+          {{/with}}
+        </nav>
+      </div>
+      <div class="header-nav__bottom">
+        <nav class="header-submenu">
+          {{#with links.media-center}}
+            <div class="header-submenu__item {{#ifCond label ../header-active}}active{{/ifCond}}">
+              <a href="{{url}}" class="header-submenu__link">{{label}}</a>
+            </div>
+          {{/with}}
+          {{#with links.gallery}}
+            <div class="header-submenu__item {{#ifCond label ../header-active}}active{{/ifCond}}">
+              <a href="{{url}}" class="header-submenu__link">{{label}}</a>
+            </div>
+          {{/with}}
+          {{#with links.downloads}}
+            <div class="header-submenu__item {{#ifCond label ../header-active}}active{{/ifCond}}">
+              <a href="{{url}}" class="header-submenu__link">{{label}}</a>
+            </div>
+          {{/with}}
+          <div class="header-submenu__item">
+            <a href="#" class="header-submenu__link">For owners</a>
+          </div>
+        </nav>
+      </div>
+      <div class="header-nav__search">
+        {{#with links.search}}
+          <div class="header-submenu__item {{#ifCond label ../header-active}}active{{/ifCond}}">
+            <a href="{{url}}" class="header-submenu__link">{{label}}</a>
+          </div>
+        {{/with}}
+      </div>
+    </div>
+  </div>
+  <div class="header-brand {{#if home}}header-brand--home{{/if}}">
+    <div class="header-brand__top">
+      <a href="/home.html" class="header-brand__top-link"></a>
+      {{> components/image img="logo-sign" ext="png"}}
+    </div>
+    <div class="header-brand__middle">
+      <span class="header-brand__title">
+              Sail the sky
+      </span>
+    </div>
+    <div class="header-brand__bottom">
+      <div class="header-brand__item">
+        <a href="/aircrafts-single.html" class="header-brand__product">
+          {{> ui/svg name="layout--borey"}}
+          <span class="header-brand__product-name">Borey</span>
+        </a>
+      </div>
+      <div class="header-brand__item">
+        <a href="/aircrafts-single.html" class="header-brand__product">
+          {{> ui/svg name="layout--la8"}}
+          <span class="header-brand__product-name">LA-8</span>
+        </a>
+      </div>
+      <div class="header-brand__item">
+        <a href="#" class="header-brand__link">For owners</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<main class="page__content {{#if home}}page__content--home{{/if}}">
+  <ul class="transition{{#if home}} transition--home{{/if}}">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <div data-barba="container" data-barba-namespace="{{page-namespace}}"> {{!-- data-barba="container" --}}

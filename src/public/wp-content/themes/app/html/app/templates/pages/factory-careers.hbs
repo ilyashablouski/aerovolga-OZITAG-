@@ -1,0 +1,21 @@
+{{!Factory Careeers}}
+
+{{> layout/head page-title="Factory Careers"}}
+
+{{> layout/header page-namespace="factoryCareeers" }}
+{{>blocks/hero/hero title="Vacancy" img="vacancy/hero-bg" ext="png"}}
+
+
+<div class="content__wrapper  content__wrapper--middle">
+  {{>blocks/factory/components/factory-nav navbar=factory-navbar active-page="Vacancy"}}
+
+
+  <div class="container container--strict">
+    {{>blocks/factory/careers/01_start}}
+    {{>blocks/factory/careers/02_vacancies}}
+    {{>blocks/factory/careers/03_opportunities}}
+    {{>blocks/factory/careers/04_other-pages}}
+  </div>
+</div>
+
+{{> layout/footer }}
