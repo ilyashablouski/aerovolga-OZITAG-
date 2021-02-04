@@ -1,0 +1,15 @@
+<div class="history-card {{#if reverse}}history-card--reverse{{/if}}">
+  <div class="history-card__inner">
+    <div class="history-card__date">
+      <span class="history-card__date-inner">
+        {{date}}
+      </span>
+    </div>
+    <span class="history-card__title">{{title}}</span>
+    <p class="history-card__text">{{text}}</p>
+    <div class="history-card__image js-image-loading">
+      {{>components/image ext=ext img=img}}
+    </div>
+    <span class="history-card__description">{{description}}</span>
+  </div>
+</div>

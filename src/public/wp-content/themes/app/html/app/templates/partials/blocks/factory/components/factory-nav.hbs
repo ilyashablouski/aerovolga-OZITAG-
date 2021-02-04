@@ -1,0 +1,11 @@
+<nav class="factory-nav {{#if anchor}}factory-nav--anchor{{/if}} {{#if mb-small}}factory-nav--mb-small{{/if}} js-navbar" >
+  <div class="factory-nav__inner">
+    <ul class="factory-nav__menu">
+      {{#each navbar}}
+        <li class="factory-nav__menu-item {{#ifCond label ../active-page}}active{{/ifCond}}">
+          <a href="{{url}}" class="factory-nav__menu-link">{{label}}</a>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</nav>

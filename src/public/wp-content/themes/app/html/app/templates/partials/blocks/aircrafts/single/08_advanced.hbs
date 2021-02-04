@@ -1,0 +1,35 @@
+<div class="section" id="avionics" data-landmark data-offset="130" data-offset-tablet="160" data-offset-mobile="130">
+  <div class="container container--strict">
+    {{#>blocks/title-with-description title="Advanced modern avionics"}}
+      <p class="section__text">This advanced, intuitive system allows the flight crew to interface with the navigation,
+        communication, situational awareness, and aircraft status and alerting systems.
+      </p>
+    {{/blocks/title-with-description}}
+
+    <i class="margin-36"></i>
+
+    <div class="stats stats--large">
+      <div class="stats__inner">
+        {{>blocks/stats-card title='GARMIN G-500' text='aerobatic display' icon='garmin'}}
+        {{>blocks/stats-card title='2 aerial screens' text='with data' icon='screens'}}
+        {{>blocks/stats-card title='three-axis' text='autopilot' icon='axis'}}
+        {{>blocks/stats-card title='database Yeppesen' text='on removable tablet iPad' icon='database'}}
+      </div>
+    </div>
+
+    <div class="gallery-slider__wrapper">
+      <div class="swiper-container gallery-slider js-gallery-slider">
+        <div class="swiper-wrapper">
+          {{#times 5}}
+            <div class="swiper-slide gallery-slide js-image-loading">
+              {{>components/image ext="png" img="aircrafts/single/advanced"}}
+            </div>
+          {{/times}}
+        </div>
+        <button class="gallery-slider__next"></button>
+        <button class="gallery-slider__prev"></button>
+        <div class="gallery-slider__pagination"></div>
+      </div>
+    </div>
+  </div>
+</div>

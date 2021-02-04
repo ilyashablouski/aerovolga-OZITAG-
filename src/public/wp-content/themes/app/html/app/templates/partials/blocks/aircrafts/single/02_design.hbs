@@ -1,0 +1,39 @@
+<div class="section section--background">
+  <div class="container container--strict">
+
+    <div class="design__content js-design-slider">
+      <div class="design__slider">
+        <div class="swiper-container js-design-slider__row">
+          <div class="swiper-wrapper">
+            {{#times 5}}
+              <div class="swiper-slide design__slide ">
+                <div class="design__slide-image js-image-loading">
+                  {{>components/image ext="png" img="aircrafts/single/design"}}
+                </div>
+              </div>
+            {{/times}}
+          </div>
+        </div>
+      </div>
+
+      <div class="design__thumbs">
+        <div class="design__thumbs-inner">
+          <div class="swiper-container js-design-slider__thumbs">
+            <div class="swiper-wrapper">
+              {{#times 5}}
+                <div class="swiper-slide design__thumbs-slide">
+                  <div class="design__thumbs-image">
+                    {{>components/image ext='png' img="aircrafts/single/color_1"}}
+                  </div>
+                </div>
+              {{/times}}
+            </div>
+
+          </div>
+        </div>
+        <button class="thumbs-slide__next"></button>
+        <button class="thumbs-slide__prev"></button>
+      </div>
+    </div>
+  </div>
+</div>

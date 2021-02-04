@@ -1,0 +1,84 @@
+@mixin desktop1440_and_less {
+  @media(max-width: 1499px) and (min-width: $tabletMedia + 1) {
+    @content;
+  }
+}
+
+@mixin desktop1366_and_less {
+  @media(max-width: 1439px) and (min-width: $tabletMedia + 1) {
+    @content;
+  }
+}
+
+@mixin desktop1280_and_less {
+  @media(max-width: 1365px) and (min-width: $tabletMedia + 1) {
+    @content;
+  }
+}
+
+@mixin section_title {
+  @include fontDrukWideMedium;
+  font-size: 34px;
+  line-height: 40px;
+  color: $color-green-dark-80;
+  //error
+  @include mobile480 {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  @include mobile320 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+@mixin section_subtitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 40px;
+  @include mobile480 {
+    line-height: 34px;
+  }
+}
+
+@mixin section_text_18 {
+  font-size: 18px;
+  line-height: 32px;
+  color: $color-green-dark-80;
+}
+
+@mixin section_text_16 {
+  font-size: 16px;
+  line-height: 28px;
+}
+
+@mixin section_caption {
+  @include fontGraphikRegular;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 1.71429px;
+  text-transform: uppercase;
+  color: $color-gray-80;
+}
+
+@mixin section_caption_text {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
+  color: $color-gray-80;
+}
+
+@mixin section_date_text {
+  @include fontGraphikRegular;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 1.42857px;
+  text-transform: uppercase;
+  color: $color-gray-90;
+}
+
+
+
+
+
+

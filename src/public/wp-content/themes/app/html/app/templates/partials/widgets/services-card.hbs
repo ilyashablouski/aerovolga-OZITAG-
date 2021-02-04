@@ -1,0 +1,22 @@
+<div class="services-card">
+  <div class="services-card__inner">
+    <a class="services-card__link" href={{link}}></a>
+    <div class="services-card__left">
+      <span class="services-card__description">{{description}}</span>
+      <span class="services-card__title">{{title}}</span>
+      <p class="services-card__text">{{text}}</p>
+      <div class="services-card__btn">
+        <div class="btn__link btn__link--primary"></div>
+      </div>
+
+    </div>
+    <div class="services-card__right">
+      <div class="services-card__image js-image-loading">
+        {{> components/image
+          img=img
+          ext='png'
+        }}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+{{!Factory}}
+
+{{> layout/head page-title="Factory"}}
+
+{{> layout/header page-namespace="factory" header-active="Factory"}}
+
+{{>blocks/hero/hero title="Factory" img="factory/hero-bg" ext="png"}}
+
+<div class="content__wrapper content__wrapper--middle">
+  {{>blocks/factory/components/factory-nav navbar=factory-navbar active-page="About"}}
+
+  <div class="container container--strict">
+    {{>blocks/factory/about/01_construction}}
+    {{>blocks/factory/about/02_licenses}}
+    {{>blocks/factory/about/03_other-pages}}
+
+  </div>
+</div>
+
+
+{{> layout/footer }}

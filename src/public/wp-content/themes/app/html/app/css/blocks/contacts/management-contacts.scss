@@ -1,0 +1,79 @@
+.management-contacts {
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -4px -30px 0;
+    @include mobile {
+      margin: -4px 0 0;
+    }
+  }
+
+  &__cell {
+    padding: 0 30px;
+    flex: 0 0 50%;
+    max-width: 540px;
+
+
+    &:nth-child(n+3) {
+      margin-top: 57px;
+    }
+
+    @include tablet-and-mobile {
+      flex: 0 0 540px;
+      max-width: 540px;
+
+      &:nth-child(n+2) {
+        margin-top: 40px;
+      }
+    }
+
+    @include mobile {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 0;
+
+      &:nth-child(n+2) {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &__bottom {
+    margin-top: 21px;
+  }
+
+  &__person {
+    @include section_text_18;
+  }
+
+  &__name {
+    font-weight: 600;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    &:first-child{
+      margin-top: 0;
+    }
+
+    &-right {
+      flex: 0 0 360px;
+      max-width: 360px;
+      address, a {
+        line-height: 28px;
+      }
+      @include mobile {
+        flex: 0 0 75%;
+        max-width: 75%;
+      }
+    }
+    &-title {
+      font-size: 18px;
+      line-height: 23px;
+      color: $color-gray-90;
+    }
+  }
+}

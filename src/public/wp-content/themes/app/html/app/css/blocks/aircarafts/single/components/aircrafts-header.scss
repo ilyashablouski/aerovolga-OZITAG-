@@ -1,0 +1,305 @@
+.aircrafts-header {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 100%;
+
+  @include smallTablet-and-mobile {
+    top: 80px;
+  }
+  @include mobile {
+    top: 50px;
+  }
+
+  &__inner {
+    position: relative;
+    padding: 15px 0;
+    @include smallTablet-and-mobile {
+      padding: 10px 0;
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+
+    @include smallTablet-and-mobile {
+      padding: 0 40px;
+      overflow: auto;
+      @include hide-scrollbar;
+    }
+    @include mobile {
+      padding: 0 20px;
+    }
+  }
+
+  &__left {
+    flex: 1 1 650px;
+    max-width: 650px;
+    position: relative;
+
+    @include tablet-and-mobile {
+      flex: 1 1 550px;
+      max-width: 550px;
+    }
+    @media (max-width: 1120px) {
+      flex: 1 1 450px;
+      max-width: 450px;
+    }
+    @include smallTablet-and-mobile {
+      flex: 0 0 auto;
+      max-width: initial;
+      margin-right: 30px;
+    }
+
+    @include no-smallTablet {
+      overflow: hidden;
+    }
+
+    .with-more & {
+    }
+  }
+
+  &__right {
+    @include smallTablet-and-mobile {
+      padding-right: 40px;
+    }
+    @include mobile {
+      padding-right: 20px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    margin-right: -40px;
+
+    @include smallTablet-and-mobile {
+      margin-right: -20px;
+    }
+  }
+
+  &__item {
+    margin-right: 40px;
+
+    &.item-on-more {
+      display: none;
+
+      .aircrafts-header__more-dropdown & {
+        display: block;
+      }
+    }
+
+    @include smallTablet-and-mobile {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 44px;
+    color: $color-white;
+    white-space: nowrap;
+    transition: all 0.3s linear;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__more {
+
+    position: absolute;
+    right: 330px;
+    @include align(false, true);
+
+    @media (max-width: 1400px) {
+      right: 330px;
+    }
+
+    @media (max-width: 1350px) {
+      right: 290px;
+    }
+    @media (max-width: 1300px) {
+      right: 250px;
+    }
+    @media (max-width: 1279px) {
+      right: 390px;
+    }
+    @media (max-width: 1240px) {
+      right: 320px;
+    }
+
+    @media (max-width: 1160px) {
+      right: 280px;
+    }
+
+    @media (max-width: 1120px) {
+      right: 320px;
+    }
+
+    @media (max-width: 1100px) {
+      right: 280px;
+    }
+    @media (max-width: 1040px) {
+      right: 240px;
+    }
+
+    &-action {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      padding: 15px;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 44px;
+      color: $color-white;
+
+      &:before, &:after, span:before {
+        content: '';
+        width: 3px;
+        height: 3px;
+        border-radius: 100%;
+        position: absolute;
+        right: 18px;
+        @include align(false, true);
+        background: $color-white;
+        display: block;
+      }
+
+      &:after {
+        right: 6px;
+      }
+
+      &:before {
+        right: 12px;
+      }
+
+      .aircrafts-header__more:hover & {
+        opacity: 0.8;
+
+        &:before, &:after, span:before {
+          opacity: 0.8;
+        }
+      }
+    }
+
+    &-dropdown {
+      width: 212px;
+      position: absolute;
+      left: 100%;
+      top: 44px;
+      transform: translateX(-50%);
+      background: #DADADA;
+      border-radius: 2px;
+      padding: 23px 20px 17px;
+      opacity: 0;
+      visibility: hidden;
+      z-index: -3;
+      transition: all 0.3s linear;
+
+      &:before {
+        position: absolute;
+        content: '';
+        top: 4px;
+        left: 42%;
+        background: #DADADA;
+        width: 25px;
+        height: 25px;
+        transform: rotate(45deg) translateX(-50%);
+      }
+
+      &:after {
+        position: absolute;
+        content: '';
+        top: -26px;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        z-index: -1;
+      }
+
+      .aircrafts-header__more:hover & {
+        opacity: 1;
+        visibility: visible;
+        z-index: 1;
+      }
+
+      .aircrafts-header {
+        &__item {
+          margin: 0 0 8px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        &__link {
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 30px;
+          color: $color-green-dark-80;
+          display: inline-block;
+          transition: all 0.3s linear;
+
+          &:hover {
+            color: #3D5E6C;
+          }
+        }
+      }
+    }
+  }
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 240px;
+    width: calc(100% - 240px);
+
+    background: $color-white;
+    box-shadow: 0 2px 15px rgba(18, 43, 54, 0.15);
+    z-index: 100;
+
+    transition: transform .5s;
+
+    .aircrafts-header__link {
+      color: $color-green-dark-80;
+    }
+
+    .aircrafts-header__more {
+      button {
+        &:before, &:after, span:before {
+          background: $color-green-dark-80;
+        }
+      }
+    }
+
+    .aircrafts-hero__btn {
+      background: $color-green-dark-80;
+      color: $color-white;
+      border: 1px solid $color-green-dark-80;
+      transition: all 0s;
+
+      &:hover {
+        background: $color-white;
+        color: $color-green-dark-80;
+        transition: all 0.3s;
+      }
+    }
+
+    @include smallTablet-and-mobile {
+      width: 100%;
+      top: 80px;
+      left: 0;
+    }
+    @include mobile {
+      top: 50px;
+    }
+  }
+}

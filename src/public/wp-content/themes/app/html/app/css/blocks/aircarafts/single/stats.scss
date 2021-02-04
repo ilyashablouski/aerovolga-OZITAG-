@@ -1,0 +1,135 @@
+.stats {
+  margin-bottom: 60px;
+
+  &--large {
+    .stats-card {
+      flex: 1 1 auto;
+      max-width: 100%;
+      @media (max-width: 1360px) {
+        flex: 1 1 50%;
+        max-width: 50%;
+        &:nth-child(n+3) {
+          margin-top: 30px;
+        }
+      }
+      @include mobile {
+        flex: 1 1 100%;
+        max-width: 100%;
+        &:nth-child(n+2) {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+
+  &--full {
+    .stats-card {
+      flex: 1 1 auto;
+      max-width: 100%;
+      margin-right: 92px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @media (max-width: 1360px) {
+        flex: 1 1 25%;
+        margin-right: 0;
+      }
+      @include tablet-and-mobile {
+        flex: 1 1 50%;
+        max-width: 50%;
+        &:nth-child(n+3) {
+          margin-top: 30px;
+        }
+      }
+      @include mobile {
+        flex: 1 1 100%;
+        max-width: 100%;
+        &:nth-child(n+2) {
+          margin-top: 30px;
+        }
+      }
+
+      &__inner {
+        align-items: flex-start;
+      }
+      &__icon {
+        margin-right: 15px;
+      }
+      &__description {
+        padding: 3px 0;
+      }
+      &__text {
+        margin-top: 4px;
+      }
+    }
+  }
+
+  &-card {
+    flex: 1 1 25%;
+    max-width: 242px;
+
+    @include tablet-and-mobile {
+      flex: 1 1 50%;
+      max-width: 50%;
+      &:nth-child(n+3) {
+        margin-top: 30px;
+      }
+    }
+    @include mobile {
+      flex: 1 1 100%;
+      max-width: 100%;
+      &:nth-child(n+2) {
+        margin-top: 30px;
+      }
+    }
+
+
+    &__inner {
+      display: flex;
+      align-items: center;
+    }
+
+    &__icon {
+      max-width: 60px;
+      margin-right: 20px;
+
+      svg {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    &__description {
+      color: $color-green-dark-100;
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+    &__title {
+      font-weight: 600;
+
+    }
+
+    &__text {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include tablet-and-mobile {
+      justify-content: space-around;
+    }
+    @include mobile {
+      justify-content: flex-start;
+    }
+  }
+
+
+}

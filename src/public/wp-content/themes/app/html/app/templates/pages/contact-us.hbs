@@ -1,0 +1,19 @@
+{{!Contact Us}}
+
+{{> layout/head page-title="Contact Us"}}
+
+{{> layout/header page-namespace="contactUs" header-active="Contact us"}}
+
+{{>blocks/hero/hero title="Contact us" img="contact-us/hero-bg" ext="png" btn=true popup="sign-in"}}
+
+<div class="content__wrapper content__wrapper--contact">
+  <div class="container container--strict">
+    {{>blocks/contact-us/01_general-contact}}
+    {{>blocks/contact-us/02_management}}
+    {{>blocks/contact-us/03_rimos-limited}}
+  </div>
+</div>
+
+{{> layout/footer }}
+
+{{> popups/contact-us id="contact-us"}}

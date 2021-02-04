@@ -1,0 +1,13 @@
+<div class="document-block">
+  <a href="{{link}}" target="_blank" class="document-block__link"></a>
+  <div class="document-block__inner">
+    {{#if pdf}}
+      {{>ui/svg name="pdf"}}
+      {{else if doc}}
+      {{>ui/svg name="doc"}}
+      {{else}}
+      {{>ui/svg name="txt"}}
+    {{/if}}
+    <span class="document-block__title">{{title}}</span>
+  </div>
+</div>

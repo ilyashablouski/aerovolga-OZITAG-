@@ -1,0 +1,71 @@
+<div class="home-section home-section--features">
+  <div class="home-section__inner">
+
+    <div class="home-section__container--small">
+      <div class="home-section__top">
+        <h2 class="home-section__title">Features</h2>
+      </div>
+    </div>
+
+    <div class="home-section__container">
+      <div class="home-section__content">
+        <div class="features js-features-slider">
+          <div class="features__top">
+
+            <div class="features__slider">
+              <div class="swiper-container js-features-slider__row">
+                <div class="swiper-wrapper">
+                  {{#times 4}}
+                    <div class="swiper-slide features__slider-item">
+                      {{>components/image img='home/features' ext="png"}}
+                    </div>
+                  {{/times}}
+                </div>
+                <button class="features__slider-next"></button>
+              </div>
+            </div>
+
+            <div class="features__thumbnail ">
+<!--              <div class="swiper-container js-features-slider__thumbs">-->
+<!--                <div class="swiper-wrapper features__thumbnail-list">-->
+<!--                  <div class="swiper-slide features__thumbnail-item">-->
+<!--                    <span class="features__thumbnail-text">Сost of ownership</span>-->
+<!--                  </div>-->
+<!--                  <div class="swiper-slide features__thumbnail-item">-->
+<!--                    <span class="features__thumbnail-text">Composite fuselage</span>-->
+<!--                  </div>-->
+<!--                  <div class="swiper-slide features__thumbnail-item">-->
+<!--                    <span class="features__thumbnail-text">On land and at sea</span>-->
+<!--                  </div>-->
+<!--                  <div class="swiper-slide features__thumbnail-item">-->
+<!--                    <span class="features__thumbnail-text">Comfort</span>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+              <div class="features__thumbnail-list js-features-slider__thumbs"></div>
+              <div class="features__thumbnail-btn">
+                {{>ui/btn button=true label="Explore La-8" color="outline-white"}}
+              </div>
+            </div>
+          </div>
+          <div class="features__bottom">
+            <div class="features__description">
+              <div class="features__description-slider js-features-slider__texts">
+                {{#times 5}}
+                  <div class="features__description-inner">
+                    <p class="features__description-text">The aircraft is easy to maintain, consumes little fuel, and
+                      also comes with reliable engines ({{this}})</p>
+                  </div>
+                {{/times}}
+              </div>
+              <div class="features__description-btn">
+                {{>ui/btn button=true label="Explore La-8" color="outline-white"}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

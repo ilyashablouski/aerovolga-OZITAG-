@@ -1,0 +1,85 @@
+{{#> popups/_base id=id}}
+  <div class="popup-content__container js-tabs">
+    <div class="popup-content__top">
+      <div class="popup-content__title js-tab" data-target="[data-tab-content='Sign in']">Sign in</div>
+      <div class="popup-content__title js-tab" data-target="[data-tab-content='Registration form']">Registration form</div>
+    </div>
+    <div class="popup-content__bottom popup-content__bottom--center js-tab-content" data-tab-content='Sign in'>
+      <form autocomplete="off" class="popup-content__form popup-form">
+        <div class="popup-form__row">
+          <div class="popup-form__col">
+            {{> form/input label="Login" type="email" placeholder="Подсказка"}}
+          </div>
+          <div class="popup-form__col">
+            {{> form/input label="Password" type="password" placeholder="Подсказка"}}
+
+            <button class="popup-form__forgot-password js-popup-open" data-popup="forgot-password">
+              Forgot your password?
+            </button>
+          </div>
+        </div>
+        <div class="popup-form__bottom popup-form__bottom--large">
+          {{>ui/btn button=true type="submit" color="primary" label="Login"}}
+        </div>
+      </form>
+    </div>
+    <div class="popup-content__bottom popup-content__bottom--small js-tab-content" data-tab-content='Registration form'>
+      <form autocomplete="off" class="popup-content__form popup-form">
+        <div class="popup-form__section">
+          <span class="popup-form__section-title">Your data</span>
+          <div class="popup-form__section-content">
+            <div class="popup-form__row">
+              <div class="popup-form__col">
+                {{> form/input label="Name" placeholder="Подсказка"}}
+              </div>
+              <div class="popup-form__col">
+                {{> form/input label="Surname" placeholder="Подсказка"}}
+              </div>
+            </div>
+            <div class="popup-form__row">
+              <div class="popup-form__col">
+                {{> form/input label="Phone" placeholder="Подсказка" decimal=true}}
+              </div>
+              <div class="popup-form__col">
+                {{> form/input label="Email" type="email" placeholder="Подсказка"}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="popup-form__section">
+          <span class="popup-form__section-title">Password</span>
+          <div class="popup-form__section-content">
+            <div class="popup-form__row">
+              <div class="popup-form__col">
+                {{> form/input label="Password" type="password" placeholder="Подсказка"}}
+              </div>
+              <div class="popup-form__col">
+                {{> form/input label="Password confirmation" type="password" placeholder="Подсказка"}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="popup-form__section">
+          <span class="popup-form__section-title">Aircraft</span>
+          <div class="popup-form__section-content js-copy">
+            <div class="popup-form__row js-copy__row">
+              {{> form/input label="Serial number of the aircraft" placeholder="Подсказка"}}
+            </div>
+            <div class="popup-form__row">
+              <button class="add-btn js-add-btn">
+                {{>ui/svg name="plus"}}
+                Add another serial number
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="popup-form__bottom popup-form__bottom--large">
+          {{>ui/btn button=true type="submit" color="primary" label="Login"}}
+        </div>
+      </form>
+    </div>
+  </div>
+{{/ popups/_base}}

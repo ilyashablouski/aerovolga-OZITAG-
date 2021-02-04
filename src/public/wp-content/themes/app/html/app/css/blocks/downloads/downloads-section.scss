@@ -1,0 +1,22 @@
+.download-section {
+  margin-bottom: 130px;
+
+  @include tablet-and-mobile {
+    margin-bottom: 70px;
+  }
+  @include mobile {
+    margin-bottom: 40px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__content {
+    margin-top: 60px;
+    @include tablet-and-mobile {
+      margin-top: 40px;
+    }
+
+  }
+}
