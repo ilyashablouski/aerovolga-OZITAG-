@@ -101,6 +101,7 @@ class App {
 
     barba.init({
       sync: true,
+      timeout: 10000,
       transitions: [{
         async leave() {
           const done = this.async();
