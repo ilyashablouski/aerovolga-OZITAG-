@@ -1,7 +1,11 @@
 class Spinner {
   constructor(node) {
     this.node = node;
+
     this.image = node.querySelector('img');
+    if (!this.image) {
+      return;
+    }
 
     this.events();
   }
