@@ -4,6 +4,83 @@
     max-width: 840px;
     padding: 0 60px;
 
+    h3 {
+      display: block;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 24px;
+      color: $color-green-dark-80;
+      margin: 36px 0 26.4px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    p {
+      @include section_text_16;
+    }
+
+    ul {
+      li {
+        font-size: 16px;
+        line-height: 28px;
+        color: $color-green-dark-80;
+        margin-bottom: 10px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        span {
+          display: inline-block;
+          position: relative;
+          width: 13px;
+          height: 10px;
+
+          &:before {
+            position: absolute;
+            content: '';
+            left: 5px;
+            top: 65%;
+            transform: translate(-50%, -50%);
+
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: $color-green-dark-80;
+          }
+        }
+      }
+    }
+
+    ol {
+      counter-reset: list;
+      li {
+        font-size: 16px;
+        line-height: 28px;
+        color: $color-green-dark-80;
+        margin-bottom: 10px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        span {
+          display: inline-block;
+          position: relative;
+          width: 20px;
+
+          &:before {
+            position: relative;
+            left: 2px;
+            counter-increment: list;
+            content: counter(list) ". ";
+          }
+        }
+      }
+    }
+
     @include tablet-and-mobile {
       padding: 0 30px;
     }
