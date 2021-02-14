@@ -1,5 +1,6 @@
 .accordion {
   width: 100%;
+  max-width: 100% !important;
 
   &__wrapper {
     margin-top: 22px;
@@ -132,6 +133,7 @@
       margin: 27px -20px 0;
       width: 100vw;
     }
+
     .accordion__top {
       position: sticky;
       top: 80px;
@@ -176,6 +178,7 @@
       .accordion__top {
         background: $color-green-dark-100;
         box-shadow: 0px 2px 20px rgba(18, 43, 54, 0.2);
+
         &:hover {
           .accordion__pointer {
             opacity: 0.55;
