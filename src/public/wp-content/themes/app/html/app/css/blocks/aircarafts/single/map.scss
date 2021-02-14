@@ -1,15 +1,97 @@
 .map {
   margin-top: 60px;
-  display: flex;
 
-  &__container {
+  @include mobile {
+    margin: 40px -20px 0;
+  }
+
+
+  &__inner {
+    position: relative;
+
+    &:before {
+      display: block;
+      content: '';
+      padding-bottom: 46%;
+
+      @include tablet-and-mobile {
+        padding-bottom: 60%;
+      }
+
+      @include mobile {
+        padding-bottom: 100%;
+      }
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
 
-    iframe, img {
+    img, iframe {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+  }
+
+  &__labels {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    @include tablet-and-mobile {
+      bottom: 20px;
+      left: 20px;
+    }
+  }
+
+  &__select {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+
+    width: 120px;
+    height: 40px;
+
+    @include tablet-and-mobile {
+      top: 30px;
+      left: 30px;
+    }
+    @include mobile {
+      top: 20px;
+      left: 20px;
+
+      width: 110px;
+      height: 35px;
+      .form-select {
+        height: 35px;
+
+        &__select-label {
+          font-size: 14px;
+          line-height: 17px;
+          vertical-align: center;
+        }
+      }
+    }
+
+    .form-select__select-title {
+      border: none;
+      background: $color-green-dark-100;
+      border-radius: 2px;
+      color: $color-white;
+
+      &:before, &:after {
+        background: $color-white;
+      }
+
+      @include mobile {
+        padding: 5px 25px 6px 10px;
+        font-size: 14px;
+        line-height: 17px;
+      }
     }
   }
 }
