@@ -1,23 +1,20 @@
 .static {
   h1 {
-    max-width: 720px;
-    margin: 0 auto;
     @include section_title;
   }
 
   h2 {
-    max-width: 720px;
-    margin: 50px auto 40px;
+    margin: 50px 0 40px;
     font-weight: 600;
     font-size: 24px;
     line-height: 40px;
     color: $color-green-dark-80;
 
     @include tablet-and-mobile {
-      margin: 36px auto 20px;
+      margin: 36px 0 20px;
     }
     @include mobile480 {
-      margin: 20px auto 15px;
+      margin: 20px 0 15px;
     }
     @include mobile480 {
       line-height: 34px;
@@ -25,8 +22,7 @@
   }
 
   p {
-    max-width: 720px;
-    margin: 0 auto 50px;
+    margin: 0 0 50px;
     font-size: 18px;
     line-height: 32px;
     color: $color-green-dark-80;
@@ -55,8 +51,7 @@
   }
 
   h4 {
-    max-width: 720px;
-    margin: 46px auto 26.4px;
+    margin: 46px 0 26.4px;
     display: block;
     font-weight: 600;
     font-size: 18px;
@@ -64,7 +59,7 @@
     color: $color-green-dark-80;
 
     @include mobile {
-      margin: 36px auto 25px;
+      margin: 36px 0 25px;
     }
 
     &:first-child {
@@ -74,8 +69,6 @@
 
   ol {
     counter-reset: list;
-    max-width: 720px;
-    margin: 0 auto;
 
     li {
       font-size: 16px;
@@ -103,9 +96,6 @@
   }
 
   ul {
-    max-width: 720px;
-    margin: 0 auto;
-
     li {
       font-size: 16px;
       line-height: 28px;
@@ -206,11 +196,61 @@
   }
 
   .image-fit {
-    max-width: 720px;
-    margin: 0 auto 50px;
+    margin: 0 0 50px;
 
     @include mobile {
       margin-bottom: 40px;
+    }
+  }
+
+  &__inner {
+
+    h2 {
+      max-width: 720px;
+      margin: 50px auto 40px;
+
+      @include tablet-and-mobile {
+        margin: 36px auto 20px;
+      }
+      @include mobile480 {
+        margin: 20px auto 15px;
+      }
+    }
+
+    p {
+      max-width: 720px;
+      margin: 0 auto 50px;
+
+      @include mobile {
+        margin-bottom: 25px;
+      }
+    }
+
+    h4 {
+      max-width: 720px;
+      margin: 46px auto 26.4px;
+
+      @include mobile {
+        margin: 36px auto 25px;
+      }
+
+      &:first-child {
+        margin-top: 0 !important;
+      }
+    }
+
+    ol, ul, h1 {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .image-fit {
+      max-width: 720px;
+      margin: 0 auto 50px;
+
+      @include mobile {
+        margin-bottom: 40px;
+      }
     }
   }
 }
