@@ -1,7 +1,6 @@
 class Anchor {
   constructor(item) {
     this.anchor = item;
-    console.log(item, 'item');
     this.addEvents();
   }
 

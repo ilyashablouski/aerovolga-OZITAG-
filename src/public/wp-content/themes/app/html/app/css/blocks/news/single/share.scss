@@ -68,13 +68,16 @@
       display: flex;
       justify-content: center;
       align-items: center;
-
+      cursor: pointer;
       width: 60px;
       height: 60px;
       border: 1px solid $color-gray-100;
       border-radius: 100%;
       transition: all 0.3s linear;
 
+      @include tablet-and-mobile {
+        cursor: default;
+      }
       @include mobile {
         width: 50px;
         height: 50px;
@@ -87,20 +90,13 @@
       svg {
         width: 24px;
         height: 24px;
+        pointer-events: none;
+
         @include mobile {
           width: 20px;
           height: 20px;
         }
       }
-    }
-
-    &-link {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 1;
     }
   }
 }
