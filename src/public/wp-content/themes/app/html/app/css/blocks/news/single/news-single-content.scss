@@ -92,8 +92,11 @@
   }
 
   &__slider {
-    max-width: 720px;
-    margin: 0 auto;
+    margin: 50px 0;
+
+    @include mobile {
+      margin: 25px 0;
+    }
 
     .gallery-slider__next, .gallery-slider__prev {
       &.swiper-button-disabled {
@@ -104,8 +107,11 @@
   }
 
   &__video {
-    max-width: 720px;
-    margin: 0 auto;
+    margin: 50px 0;
+
+    @include mobile {
+      margin: 25px 0;
+    }
   }
 
   &__image-with-content {

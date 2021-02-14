@@ -1,4 +1,13 @@
 .static {
+  margin-top: 50px;
+  @include mobile {
+    margin-top: 25px;
+  }
+
+  &:first-child {
+    margin-top: 0 !important;
+  }
+
   h1 {
     max-width: 720px;
     margin: 0 auto;
@@ -26,10 +35,14 @@
 
   p {
     max-width: 720px;
-    margin: 0 auto 10px;
+    margin: 0 auto 50px;
     font-size: 18px;
     line-height: 32px;
     color: $color-green-dark-80;
+
+    @include mobile {
+      margin-bottom: 25px;
+    }
 
     a {
       font-weight: 600;
@@ -46,17 +59,26 @@
     &.small {
       font-size: 16px;
       line-height: 28px;
+      margin-bottom: 10px;
     }
   }
 
   h4 {
     max-width: 720px;
-    margin: 0 auto 26.4px;
+    margin: 46px auto 26.4px;
     display: block;
     font-weight: 600;
     font-size: 18px;
     line-height: 24px;
     color: $color-green-dark-80;
+
+    @include mobile {
+      margin: 36px auto 25px;
+    }
+
+    &:first-child {
+      margin-top: 0 !important;
+    }
   }
 
   ol {

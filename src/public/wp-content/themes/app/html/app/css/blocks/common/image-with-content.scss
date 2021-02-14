@@ -6,7 +6,11 @@
   }
 
   &:last-child {
-    margin-bottom: 0;
+    margin-bottom: 50px;
+
+    @include mobile {
+      margin-bottom: 25px;
+    }
   }
 
   &--vacancy {
