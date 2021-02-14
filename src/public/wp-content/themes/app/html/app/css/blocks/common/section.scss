@@ -122,6 +122,17 @@
       }
     }
 
+    blockquote {
+      p {
+        font-weight: 600 !important;
+        font-size: 24px !important;
+        line-height: 30px !important;
+        text-align: center;
+        color: $color-green-dark-80;
+        margin-bottom: 0 !important;
+      }
+    }
+
     &__inner {
       h2 {
         max-width: 720px;
