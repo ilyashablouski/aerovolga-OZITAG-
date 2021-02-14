@@ -4,8 +4,8 @@
       {{>components/image ext=ext img=img}}
     </div>
     <div class="image-with-content__content {{#if large}}image-with-content__content--large{{/if}}">
-      <span class="image-with-content__title">{{title}}</span>
-      <p class="image-with-content__text">{{text}}</p>
+      <span>{{title}}</span>
+      <p>{{text}}</p>
       {{#if large}}
         <div class="image-with-content__button">
           {{>ui/btn color="primary" button=true label="Send your resume"}}

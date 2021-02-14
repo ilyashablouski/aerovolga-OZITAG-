@@ -42,9 +42,9 @@
 }
 
 @mixin section_text_18 {
-  font-size: 18px;
-  line-height: 32px;
-  color: $color-green-dark-80;
+  font-size: 18px !important;
+  line-height: 32px !important;
+  color: $color-green-dark-80 !important;
 }
 
 @mixin section_text_16 {

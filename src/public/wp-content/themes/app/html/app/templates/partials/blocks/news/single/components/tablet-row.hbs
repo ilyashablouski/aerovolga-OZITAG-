@@ -1,8 +1,18 @@
-<div class="news-tablet__row {{#if header}}news-tablet__row--header{{/if}}">
-  <div class="news-tablet__col">{{number}}</div>
-  <div class="news-tablet__col">{{date-release}}</div>
-  <div class="news-tablet__col">{{name}}</div>
-  <div class="news-tablet__col">{{bulletin}}</div>
-  <div class="news-tablet__col">{{execution-status}}</div>
-  <div class="news-tablet__col">{{date-of-validity}}</div>
-</div>
+<tr>
+  {{#if header}}
+    <th>{{number}}</th>
+    <th>{{date-release}}</th>
+    <th>{{name}}</th>
+    <th>{{bulletin}}</th>
+    <th>{{execution-status}}</th>
+    <th>{{date-of-validity}}</th>
+  {{else}}
+    <td>{{number}}</td>
+    <td>{{date-release}}</td>
+    <td>{{name}}</td>
+    <td>{{bulletin}}</td>
+    <td>{{execution-status}}</td>
+    <td>{{date-of-validity}}</td>
+  {{/if}}
+</tr>
+

@@ -5,6 +5,10 @@
     margin-bottom: 50px;
   }
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   &--vacancy {
     margin-top: -40px;
 
@@ -143,18 +147,18 @@
         margin-top: 24px;
       }
     }
-  }
 
-  &__title {
-    @include section_subtitle;
-  }
+    span {
+      @include section_subtitle;
+    }
 
-  &__text {
-    margin-top: 40px;
-    @include section_text_18;
+    p {
+      margin-top: 40px !important;
+      @include section_text_18;
 
-    @include mobile {
-      margin-top: 20px;
+      @include mobile {
+        margin-top: 20px !important;
+      }
     }
   }
 
