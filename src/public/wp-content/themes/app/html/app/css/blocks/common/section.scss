@@ -66,16 +66,6 @@
     margin-bottom: 0;
   }
 
-  h2 {
-    margin-bottom: 50px;
-    @include tablet-and-mobile {
-      margin-bottom: 36px;
-    }
-    @include mobile480 {
-      margin-bottom: 20px;
-    }
-  }
-
   &__row {
     display: flex;
     justify-content: space-between;
@@ -90,12 +80,24 @@
     }
   }
 
-  &__subtitle {
-    @include section_subtitle;
-    color: $color-green-dark-80;
+  .static {
+    h2 {
+      margin: 0 0 50px;
+      @include section_title;
 
-    &-wrapper {
-      margin-bottom: 40px;
+      @include tablet-and-mobile {
+        margin-bottom: 36px;
+      }
+      @include mobile480 {
+        margin-bottom: 20px;
+      }
+    }
+
+    h3 {
+      @include section_subtitle;
+      margin: 0 0 40px;
+      color: $color-green-dark-80;
+
       @include tablet-and-mobile {
         margin-bottom: 20px;
       }
@@ -103,26 +105,60 @@
         margin-bottom: 15px;
       }
     }
-  }
 
-
-  &__text {
-    @include section_text_18;
-
-    &-wrapper {
-      margin-bottom: 50px;
+    p {
+      @include section_text_18;
+      margin: 0 0 50px;
       @include mobile {
         margin-bottom: 35px;
       }
-    }
 
-    &--small {
-      @include section_text_16;
-
-      &.section__text-wrapper {
+      .small {
+        @include section_text_16;
         margin-bottom: 45.6px;
         @include mobile {
           margin-bottom: 30px;
+        }
+      }
+    }
+
+    &__inner {
+      h2 {
+        max-width: 720px;
+        margin: 0 auto 50px;
+
+        @include tablet-and-mobile {
+          margin-bottom: 36px;
+        }
+        @include mobile480 {
+          margin-bottom: 20px;
+        }
+      }
+
+      h3 {
+        max-width: 720px;
+        margin: 0 auto 40px;
+
+        @include tablet-and-mobile {
+          margin-bottom: 20px;
+        }
+        @include mobile480 {
+          margin-bottom: 15px;
+        }
+      }
+
+      p {
+        max-width: 720px;
+        margin: 0 auto 50px;
+        @include mobile {
+          margin-bottom: 35px;
+        }
+
+        .small {
+          margin-bottom: 45.6px;
+          @include mobile {
+            margin-bottom: 30px;
+          }
         }
       }
     }

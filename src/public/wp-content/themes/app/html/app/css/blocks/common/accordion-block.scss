@@ -132,6 +132,7 @@
     @include mobile {
       margin: 27px -20px 0;
       width: 100vw;
+      max-width: 100vw !important;
     }
 
     .accordion__top {
@@ -187,7 +188,7 @@
       }
 
       .accordion__title {
-        color: $color-white;
+        color: $color-white !important;
       }
 
       .accordion__pointer {

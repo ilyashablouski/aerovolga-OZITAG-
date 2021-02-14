@@ -34,5 +34,13 @@
       padding-left: 0;
       margin-bottom: 30px;
     }
+
+    p {
+      @include section_text_18;
+      margin: 0 0 50px;
+      @include mobile {
+        margin-bottom: 35px;
+      }
+    }
   }
 }
