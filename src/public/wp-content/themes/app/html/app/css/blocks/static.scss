@@ -129,7 +129,7 @@
   }
 
   table {
-    display: flex;
+    display: block;
     margin: 50px -60px;
     padding: 0 60px;
 
@@ -146,6 +146,25 @@
       padding: 0;
     }
 
+    thead {
+      tr {
+        padding: 26px 23px 28px;
+        background: $color-gray-40;
+        border-bottom: none;
+
+        @include mobile {
+          padding: 14px 23px 16px;
+        }
+
+        th{
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 32px;
+          color: $color-green-dark-80 !important;
+        }
+      }
+    }
+
     tr {
       width: 1080px;
       display: flex;
@@ -156,23 +175,6 @@
       font-size: 18px;
       line-height: 44px;
       color: $color-green-dark-80;
-
-      &:first-child {
-        padding: 26px 23px 28px;
-        background: $color-gray-40;
-        border-bottom: none;
-
-        @include mobile {
-          padding: 14px 23px 16px;
-        }
-
-        th {
-          font-weight: normal;
-          font-size: 18px;
-          line-height: 32px;
-          color: $color-green-dark-80 !important;
-        }
-      }
     }
 
     td, th {
