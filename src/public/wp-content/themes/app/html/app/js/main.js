@@ -30,6 +30,7 @@ import './src/widgets/design-slider';
 import './src/widgets/gallery-slider';
 import './src/widgets/modifications-slider';
 import './src/widgets/tabs';
+import './src/widgets/aircraft-map';
 
 import './src/widgets/double-slider';
 import './src/widgets/toggle-menu';
