@@ -15,15 +15,15 @@
         </div>
 
         <div class="map__select">
-          {{#> form/select default="LA-8L-RS"}}
-            {{>form/options id="select0" options="LA-8L-RS"}}
-            {{>form/options id="select1" options="LA-8С"}}
-            {{>form/options id="select0" options="LA-8L"}}
-            {{>form/options id="select1" options="LA-8L-RS"}}
-            {{>form/options id="select1" options="LA-8С-RS"}}
-            {{>form/options id="select0" options="LA-8Н"}}
-            {{>form/options id="select1" options="LA-8FF"}}
-          {{/form/select}}
+          {{#> form/custom-select id="map_select"}}
+            <option value="0">LA-8L-RS</option>
+            <option value="1">LA-8С</option>
+            <option value="2">LA-8L</option>
+            <option value="3" selected>LA-8L-RS</option>
+            <option value="4">LA-8С-RS</option>
+            <option value="5">LA-8Н</option>
+            <option value="6">LA-8FF</option>
+          {{/form/custom-select}}
         </div>
 
         <div class="map__labels">
