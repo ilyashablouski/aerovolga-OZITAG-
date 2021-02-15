@@ -122,11 +122,6 @@ class CustomSelect extends Widget {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.js-custom-select').forEach(item => CustomSelect.init(item));
-});
-
-
 subscribeToEvent('initModules', () => {
   const select = document.querySelectorAll('.js-custom-select');
   select.forEach(item => {
