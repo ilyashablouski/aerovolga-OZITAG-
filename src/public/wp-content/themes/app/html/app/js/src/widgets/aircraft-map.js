@@ -1,15 +1,28 @@
 class AircraftMap extends Widget{
   constructor(nodeElement) {
     super(nodeElement, 'js-aircraft-map');
+    this.mapElement = document.querySelector('.js-aircraft-map__api');
+    this.init();
   }
 
 
   initGoogleMaps() {
-
+    const loader = new mapApiLoader({
+      apiKey: "AIzaSyBt1CYdbwledNbaAL9GuKJpVEWhUpP8YW0",
+      version: "weekly",
+    });
+    loader.load().then(() => {
+      map = new google.maps.Map(this.mapElement, {
+        center: { lat: -34.397, lng: 150.644 },
+        zoom: 8,
+      });
+    });
+    console.log('Google map has been initialized');
   }
 
 build() {
-  console.log($node + 'Initialized');
+  console.log(this.$node + 'Initialized');
+  this.initGoogleMaps();
 }
 
   static init (element) {

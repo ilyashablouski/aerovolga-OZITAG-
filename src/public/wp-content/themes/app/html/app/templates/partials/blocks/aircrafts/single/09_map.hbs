@@ -1,4 +1,4 @@
-<div class="section" id="map" data-landmark data-offset="130" data-offset-tablet="160" data-offset-mobile="130">
+<div class="section js-aircraft-map" id="map" data-landmark data-offset="130" data-offset-tablet="160" data-offset-mobile="130">
   <div class="container container--strict">
     {{#>blocks/title-with-description title="Range map"}}
       <p>The maximum distance of the aircraft in the RS version is 4000 km. The flight range in
@@ -8,7 +8,7 @@
     {{/blocks/title-with-description}}
 
     <div class="map">
-      <div class="map__inner">
+      <div class="map__inner js-aircraft-map__api">
 
         <div class="map__image">
           {{>components/image ext="png" img="aircrafts/single/map"}}
