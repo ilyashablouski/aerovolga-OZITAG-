@@ -17,9 +17,6 @@
       }
     }
 
-    //&-container {
-    //  z-index: 1;
-    //}
 
     &-selection__rendered {
       padding: 7px 32px 10px 15px;
@@ -30,9 +27,6 @@
       background: $color-green-dark-100;
       border-radius: 2px;
       color: $color-white;
-      //box-sizing: border-box;
-      //height: 40px;
-      //line-height: 40px;
       font-weight: 600;
       font-size: 15px;
       line-height: 19px;
@@ -75,127 +69,6 @@
           transform: translate(3px, -50%) rotate(45deg);
         }
       }
-    }
-  }
-
-
-  &.selected .select2 .select2-selection__rendered {
-    //color: $color-dark;
-  }
-
-  &--multiple-search {
-    .select2-selection__rendered {
-      padding-left: 48px;
-
-      &:before {
-        content: '';
-        //@include sprite('search-big');
-        left: 16px;
-        @include align(false, true);
-      }
-
-      & > .select2-selection__choice:first-child .select2-selection__choice__remove {
-        display: none;
-      }
-    }
-
-    .select2-search__field {
-      border: none;
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 150%;
-    }
-
-    .select2-selection__choice {
-      //color: $color-blue;
-
-      &:after {
-        content: "\002C\00A0";
-        color: $color-black;
-      }
-
-      &:nth-last-child(2) {
-        &:after {
-          display: none;
-        }
-      }
-
-      &__remove {
-        display: none;
-      }
-    }
-  }
-}
-
-
-.form-select.mobile {
-  position: relative;
-
-  &:after {
-    content: '';
-    //@include sprite('select2-arrow');
-    right: 16px;
-    @include align(false, true);
-  }
-
-  select {
-    appearance: none;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    background: #FFFFFF;
-    border: 2px solid $color-gray;
-    box-sizing: border-box;
-    border-radius: 12px;
-    height: 57px;
-    line-height: 53px;
-    padding: 0 16px;
-    font-weight: 500;
-    font-size: 18px;
-    color: rgba(5, 36, 51, 0.2);
-    position: relative;
-
-    &:focus {
-      //border-color: $color-blue;
-    }
-  }
-
-
-  .select-placeholder {
-    position: absolute;
-    left: 5px;
-    top: 4px;
-    bottom: 4px;
-    right: 20px;
-    background: $color-white;
-    color: rgba(5, 36, 51, 0.2);
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
-    font-weight: 500;
-    font-size: 18px;
-    pointer-events: none;
-  }
-
-  &.selected {
-    .select-placeholder {
-      display: none;
-    }
-
-    select {
-      color: $color-black;
-    }
-  }
-
-  &.focus {
-    select {
-      //border-color: $color-blue;
-    }
-
-    &:after {
-      //@include sprite('select2-arrow-active');
-      transform: rotate(180deg) translateY(50%);
-      margin-top: -1px;
     }
   }
 }
@@ -256,13 +129,6 @@
       font-weight: 600;
       position: relative;
 
-      &:after {
-        content: '';
-        @include align(false, true);
-        right: 15px;
-        //@include sprite('select2-tick');
-      }
-
       &:hover {
         background: #f4f4f4;
         font-weight: 600;
@@ -283,10 +149,8 @@
       font-weight: 500;
       font-size: 18px;
       line-height: 150%;
-      //color: $color-dark;
 
       @include placeholder {
-        //color: $color-placeholder;
       }
     }
   }
