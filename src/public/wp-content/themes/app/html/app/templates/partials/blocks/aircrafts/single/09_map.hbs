@@ -1,4 +1,4 @@
-<div class="section" id="map" data-landmark data-offset="130" data-offset-tablet="160" data-offset-mobile="130">
+<div class="section js-aircraft-map" id="map" data-landmark data-offset="130" data-offset-tablet="160" data-offset-mobile="130">
   <div class="container container--strict">
     {{#>blocks/title-with-description title="Range map"}}
       <p>The maximum distance of the aircraft in the RS version is 4000 km. The flight range in
@@ -8,28 +8,27 @@
     {{/blocks/title-with-description}}
 
     <div class="map">
-      <div class="map__inner">
+      <div class="map__inner js-aircraft-map__api" data-api-key='AIzaSyDN2HnVw-m5nBlwzRTJnNF0hCm-fznR1DM'>
 
         <div class="map__image">
           {{>components/image ext="png" img="aircrafts/single/map"}}
         </div>
+      </div>
+      <div class="map__select">
+        {{#> form/custom-select id="map_select"}}
+          <option value="0">LA-8L-RS</option>
+          <option value="1">LA-8С</option>
+          <option value="2">LA-8L</option>
+          <option value="3" selected>LA-8L-RS</option>
+          <option value="4">LA-8С-RS</option>
+          <option value="5">LA-8Н</option>
+          <option value="6">LA-8FF</option>
+        {{/form/custom-select}}
+      </div>
 
-        <div class="map__select">
-          {{#> form/select default="LA-8L-RS"}}
-            {{>form/options id="select0" options="LA-8L-RS"}}
-            {{>form/options id="select1" options="LA-8С"}}
-            {{>form/options id="select0" options="LA-8L"}}
-            {{>form/options id="select1" options="LA-8L-RS"}}
-            {{>form/options id="select1" options="LA-8С-RS"}}
-            {{>form/options id="select0" options="LA-8Н"}}
-            {{>form/options id="select1" options="LA-8FF"}}
-          {{/form/select}}
-        </div>
-
-        <div class="map__labels">
-          {{>widgets/map-label title="Min range" description="8 passengers and luggage" color="blue"}}
-          {{>widgets/map-label title="Max range" description="without passengers and luggage" color="red"}}
-        </div>
+      <div class="map__legends js-aircraft-map__legend">
+        {{>widgets/map-legend title="Min range" description="8 passengers and luggage" color="#0035AD"}}
+        {{>widgets/map-legend title="Max range" description="without passengers and luggage" color="#980000"}}
       </div>
     </div>
 

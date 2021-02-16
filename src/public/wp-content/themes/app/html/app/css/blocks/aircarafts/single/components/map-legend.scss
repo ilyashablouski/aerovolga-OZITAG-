@@ -1,21 +1,9 @@
-.map-label {
+.map-legend {
   display: flex;
   margin-top: 8px;
 
   &:first-child {
     margin-top: 0;
-  }
-
-  &--blue {
-    .map-label__pointer {
-      background: $color-blue-90;
-    }
-  }
-
-  &--red {
-    .map-label__pointer {
-      background: $color-red100;
-    }
   }
 
   &__left {

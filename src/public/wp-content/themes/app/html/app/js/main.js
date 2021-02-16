@@ -21,6 +21,7 @@ import './src/utils/events-observer';
 import './src/widgets/accord';
 import './src/widgets/play-video';
 import './src/widgets/select'
+import './src/widgets/custom-select'
 import './src/widgets/anchor';
 import './src/widgets/certificate-slider';
 import './src/widgets/features-slider';
@@ -29,6 +30,7 @@ import './src/widgets/design-slider';
 import './src/widgets/gallery-slider';
 import './src/widgets/modifications-slider';
 import './src/widgets/tabs';
+import './src/widgets/aircraft-map';
 
 import './src/widgets/double-slider';
 import './src/widgets/toggle-menu';

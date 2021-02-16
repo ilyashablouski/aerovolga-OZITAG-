@@ -16,8 +16,10 @@ import barba from '@barba/core';
 import ImageZoom from 'js-image-zoom'
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { Loader } from "@googlemaps/js-api-loader"
 
 window.$ = window.jQuery = jquery;
+window.mapApiLoader = Loader;
 
 window.svg4everybody = svgPolyfill;
 
