@@ -13,23 +13,22 @@
         <div class="map__image">
           {{>components/image ext="png" img="aircrafts/single/map"}}
         </div>
+      </div>
+      <div class="map__select">
+        {{#> form/custom-select id="map_select"}}
+          <option value="0">LA-8L-RS</option>
+          <option value="1">LA-8С</option>
+          <option value="2">LA-8L</option>
+          <option value="3" selected>LA-8L-RS</option>
+          <option value="4">LA-8С-RS</option>
+          <option value="5">LA-8Н</option>
+          <option value="6">LA-8FF</option>
+        {{/form/custom-select}}
+      </div>
 
-        <div class="map__select">
-          {{#> form/custom-select id="map_select"}}
-            <option value="0">LA-8L-RS</option>
-            <option value="1">LA-8С</option>
-            <option value="2">LA-8L</option>
-            <option value="3" selected>LA-8L-RS</option>
-            <option value="4">LA-8С-RS</option>
-            <option value="5">LA-8Н</option>
-            <option value="6">LA-8FF</option>
-          {{/form/custom-select}}
-        </div>
-
-        <div class="map__labels">
-          {{>widgets/map-label title="Min range" description="8 passengers and luggage" color="blue"}}
-          {{>widgets/map-label title="Max range" description="without passengers and luggage" color="red"}}
-        </div>
+      <div class="map__labels">
+        {{>widgets/map-label title="Min range" description="8 passengers and luggage" color="blue"}}
+        {{>widgets/map-label title="Max range" description="without passengers and luggage" color="red"}}
       </div>
     </div>
 
