@@ -7,17 +7,20 @@ class AircraftMap extends Widget{
 
 
   initGoogleMaps() {
+    // Api Key from data attribute
+    const mapApiKey = this.mapElement.dataset.apiKey;
+
     const loader = new mapApiLoader({
-      apiKey: "AIzaSyDN2HnVw-m5nBlwzRTJnNF0hCm-fznR1DM",
+      apiKey: mapApiKey ,
       version: "weekly",
     });
     loader.load().then(() => {
-      const myLatLng = new google.maps.LatLng(-25.363882,131.044922);
+      const myLatLng = new google.maps.LatLng(46.573023, 7.138861);
 
       // Create map instance
       const map = new google.maps.Map(this.mapElement, {
         center: myLatLng,
-        zoom: 4,
+        zoom: 5,
       });
 
       // Place a draggable marker on the map
