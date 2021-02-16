@@ -62,7 +62,7 @@ class Share extends Widget {
 
   getOgParam (param) {
   const elem = document.querySelector('meta[property="og:' + param + '"]');
-  return elem.content || '';
+  return elem && elem.content || '';
 }
 
   socialBtnClick(e) {
