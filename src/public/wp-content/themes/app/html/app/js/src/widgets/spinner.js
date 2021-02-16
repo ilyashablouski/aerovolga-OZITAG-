@@ -16,6 +16,10 @@ class Spinner {
     this.image.addEventListener('load', () => {
       this.node.classList.remove('loading');
     });
+
+    setTimeout(() => {
+      this.node.classList.remove('loading');
+    }, 5000);
   }
 
   static init(element) {
