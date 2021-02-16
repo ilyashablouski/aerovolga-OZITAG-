@@ -12,11 +12,23 @@ class AircraftMap extends Widget{
       version: "weekly",
     });
     loader.load().then(() => {
+      const myLatLng = new google.maps.LatLng(-25.363882,131.044922);
+
+      // Create map instance
       const map = new google.maps.Map(this.mapElement, {
-        center: { lat: -34.397, lng: 150.644 },
-        zoom: 8,
+        center: myLatLng,
+        zoom: 4,
+      });
+
+      // Place a draggable marker on the map
+      const marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        draggable:true,
+        title:"Drag me!"
       });
     });
+
     console.log('Google map has been initialized');
   }
 
