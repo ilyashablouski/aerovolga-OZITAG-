@@ -8,8 +8,6 @@ class CustomSelect extends Widget {
     super(node, 'js-custom-select');
 
     this.onChange = this.onChange.bind(this);
-    // this.onFocus = this.onFocus.bind(this);
-    // this.onBlur = this.onBlur.bind(this);
 
     this.$container = this.$node.parentNode;
 
@@ -26,39 +24,6 @@ class CustomSelect extends Widget {
       this.setAsNotSelected();
     }
   }
-
-  // onFocus() {
-  //   this.$container.classList.add('focus');
-  // }
-  //
-  // onBlur() {
-  //   this.$container.classList.remove('focus');
-  // }
-
-  // enableMobileMode() {
-  //   this.$node.addEventListener('change', this.onChange);
-  //   this.$node.addEventListener('focus', this.onFocus);
-  //   this.$node.addEventListener('blur', this.onBlur);
-  //
-  //   const optionSelected = this.$node.querySelector('option[selected]');
-  //   const hasInitialValue = !this.placeholder || (optionSelected && optionSelected.innerText.length > 0);
-  //
-  //   this.$node.classList.remove('visually-hidden');
-  //   this.$container.classList.add('mobile');
-  //
-  //   if (this.placeholder && hasInitialValue === false) {
-  //     const $mobilePlaceholder = document.createElement('span');
-  //     $mobilePlaceholder.classList.add('select-placeholder');
-  //     $mobilePlaceholder.innerText = this.placeholder;
-  //     this.$container.append($mobilePlaceholder);
-  //   }
-  //
-  //   if (hasInitialValue) {
-  //     this.setAsSelected();
-  //   } else {
-  //     this.setAsNotSelected();
-  //   }
-  // }
 
   initSelect2(placeholder) {
     $(this.$node).select2({
@@ -128,3 +93,4 @@ subscribeToEvent('initModules', () => {
     CustomSelect.init(item);
   });
 });
+
