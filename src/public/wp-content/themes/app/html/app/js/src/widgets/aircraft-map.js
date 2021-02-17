@@ -1,22 +1,3 @@
-// <div className='map-legend'>
-//   <div className='map-legend__left'>
-//     <span className='map-legend__pointer' style='background:#0035AD'></span>
-//   </div>
-//   <div className='map-legend__right'>
-//     <div className='map-legend__title'>Min range</div>
-//     <div className='map-legend__description'>8 passengers and luggage</div>
-//   </div>
-// </div>
-// <div className='map-legend'>
-//   <div className='map-legend__left'>
-//     <span className='map-legend__pointer' style='background:#980000'></span>
-//   </div>
-//   <div className='map-legend__right'>
-//     <div className='map-legend__title'>Max range</div>
-//     <div className='map-legend__description'>without passengers and luggage</div>
-//   </div>
-// </div>
-
 class AircraftMap extends Widget {
   constructor(nodeElement) {
     super(nodeElement, 'js-aircraft-map');
@@ -24,38 +5,20 @@ class AircraftMap extends Widget {
     this.mapLegend = document.querySelector('.js-aircraft-map__legend');
     this.mapSelect = document.querySelector('.js-aircraft-map__select');
     this.mapInstance;
+    this.circlesArray = [];
+    this.markCoordinate = { lat: 46.573023, lng: 7.138861 };
+    this.mapPlainDataArray = window.mapPlainDataArray;
 
     this.state = {
       legend: null,
-      center: { lat: 46.573023, lng: 7.138861 },
-      circles: [{ radius: 600, color: 'blue' },{radius: 700, color: 'red' }],
+      circles: [{ radius: 600, color: '0014ff' }, { radius: 700, color: 'ff0000' }],
     };
-
-    this.mapPlainDataArray = [
-      {id: 0, info: {
-          legend: 'legend1',
-          center: { lat: 50, lng: 10 },
-          circles: [{ radius: 600, color: 'yellow' },{radius: 700, color: 'green' }]
-        },
-      },
-      { id: 1, info: {
-          legend: 'legend2',
-          center: { lat: 30, lng: 6 },
-          circles: [{ radius: 600, color: 'black' },{radius: 700, color: 'white' }]
-        } },
-      { id: 2, info: {} },
-      { id: 3, info: {} },
-      { id: 4, info: {} },
-      { id: 5, info: {} },
-      { id: 6, info: {} },
-    ];
 
     this.onChange = this.onChange.bind(this);
     this.init();
   }
 
   initGoogleMaps(mapData) {
-
     // Api Key from data attribute
     const mapApiKey = this.mapElement.dataset.apiKey;
 
@@ -64,7 +27,7 @@ class AircraftMap extends Widget {
       version: 'weekly',
     });
     loader.load().then(() => {
-      const myLatLng = new google.maps.LatLng(mapData.center);
+      const myLatLng = new google.maps.LatLng(this.markCoordinate);
 
       // Create map instance
       this.mapInstance = new google.maps.Map(this.mapElement, {
@@ -80,16 +43,18 @@ class AircraftMap extends Widget {
       });
 
       // First draw circles with map
-      this.drawCircles(mapData.center, mapData.circles);
+      this.drawCircles(myLatLng, mapData.circles);
     });
 
     console.log('Google map has been initialized');
   }
 
   drawCircles(markCoordinate, circleDataArray) {
+    let circles = this.circlesArray;
+
     for (const circleDataArrayItem of circleDataArray) {
-      new google.maps.Circle({
-        strokeColor: circleDataArrayItem.color,
+      const circle = new google.maps.Circle({
+        strokeColor: `#${circleDataArrayItem.color}`,
         strokeOpacity: 0.8,
         strokeWeight: 1,
         fillColor: 'transparent',
@@ -98,14 +63,17 @@ class AircraftMap extends Widget {
         center: markCoordinate,
         radius: circleDataArrayItem.radius * (10 ** 3),
       });
+
+      circles.push(circle);
     }
   }
 
-  // updateMap(, myLatLng) {
-  //   marker.setPosition(myLatLng);
-  //   map.setCenter(myLatLng);
-  //
-  // }
+  removeAllCircles() {
+    for (const circlesArrayElement of this.circlesArray) {
+      circlesArrayElement.setMap(null);
+    }
+    this.circlesArray = [];
+  }
 
   // Change event for select
   onChange(e) {
@@ -115,6 +83,7 @@ class AircraftMap extends Widget {
       });
 
       this.state = mapPlainDataArrayItem[0].info;
+      this.removeAllCircles();
       this.renderMapData(this.state);
     }
   }
@@ -123,12 +92,10 @@ class AircraftMap extends Widget {
   renderMapData(data) {
     if (data.legend) {
       this.mapLegend.innerHTML = data.legend;
-    } else {
-      this.mapLegend.innerHTML = 'Default legend';
     }
 
     if (data.circles) {
-      this.drawCircles(data.center, data.circles);
+      this.drawCircles(this.markCoordinate, data.circles);
     }
   }
 

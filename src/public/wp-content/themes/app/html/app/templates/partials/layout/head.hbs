@@ -31,14 +31,52 @@
 
   <link rel="stylesheet" href="../assets/fonts/fonts.css?v={{cache}}">
   <link rel="stylesheet" href="../css/main.css?v={{cache}}">
-<!--  <script>-->
-<!--    window.mapPlainArray = [-->
-<!--      {id: 0, info: {}},-->
-<!--      {id: 1, info: {}},-->
-<!--      {id: 2, info: {}},-->
-<!--      {id: 3, info: {}},-->
-<!--    ];-->
-<!--  </script>-->
+  <script>
+    window.mapPlainDataArray = [
+      {
+        id: 0, info: {
+          legend: 'legend1',
+          circles: [{ radius: 200, color: 'fd5800' }, { radius: 400, color: '10ff00' }],
+        },
+      },
+      {
+        id: 1, info: {
+          legend: 'legend2',
+          circles: [{ radius: 400, color: '05cefb' }, { radius: 600, color: '0530ff' }],
+        },
+      },
+      {
+        id: 2, info: {
+          legend: 'legend3',
+          circles: [{ radius: 800, color: '061f2a' }, { radius: 900, color: 'c02fd2' }],
+        },
+      },
+      {
+        id: 3, info: {
+          legend: null,
+          circles: [{ radius: 600, color: '0014ff' }, { radius: 700, color: 'ff0000' }],
+        },
+      },
+      {
+        id: 4, info: {
+          legend: 'legend5',
+          circles: null,
+        },
+      },
+      {
+        id: 5, info: {
+          legend: 'legend6',
+          circles: null,
+        },
+      },
+      {
+        id: 6, info: {
+          legend: 'legend7',
+          circles: null,
+        },
+      },
+    ];
+  </script>
 </head>
 
 <body class="page {{page-mod}} {{page-class}}" data-barba="wrapper">
