@@ -8,6 +8,7 @@ class Spinner {
     }
 
     this.events();
+    this.hiddenSpinner();
   }
 
   events() {
@@ -17,9 +18,31 @@ class Spinner {
       this.node.classList.remove('loading');
     });
 
-    setTimeout(() => {
-      this.node.classList.remove('loading');
-    }, 5000);
+    onScroll(() => {
+      this.hiddenSpinner();
+    });
+  }
+
+  hiddenSpinner() {
+    if (!this.node.classList.contains('loading')) return;
+
+    const imagePosition = {
+      top: window.pageYOffset + this.node.getBoundingClientRect().top,
+      bottom: window.pageYOffset + this.node.getBoundingClientRect().bottom,
+    };
+
+    const windowPosition = {
+      top: window.pageYOffset,
+      bottom: window.pageYOffset + document.documentElement.clientHeight,
+    };
+
+    if (imagePosition.bottom > windowPosition.top &&
+      imagePosition.top < windowPosition.bottom) {
+
+      setTimeout(() => {
+        this.node.classList.remove('loading');
+      }, 5000);
+    }
   }
 
   static init(element) {
