@@ -2,54 +2,60 @@
   window.mapPlainDataArray = [
     {
       id: 0,
-      info: {
-        legend: 'legend1',
-        circles: [{ radius: 200, color: 'fd5800' }, { radius: 400, color: '10ff00' }],
-      },
+      legendColorMin: '#05cefb',
+      legendColorMax: '#0530ff',
+      circles:[{radius: 100, color: '#05cefb'},{radius: 200, color: '#0530ff'}],
+      legendTextMax: 'without passengers and luggage and bottles of rum',
     },
     {
       id: 1,
-      info: {
-        legend: 'legend2',
-        circles: [{ radius: 400, color: '05cefb' }, { radius: 600, color: '0530ff' }],
-      },
+      legendColorMin: '#05cefb',
+      legendColorMax: '#0530ff',
+      circles:[{radius: 100, color: '#05cefb'},{radius: 200, color: '#0530ff'}],
+      legendTextMin: '10 passengers',
+      legendTextMax: 'without passengers and luggage and bottles of rum',
     },
     {
       id: 2,
-      info: {
-        legend: 'legend3',
-        circles: [{ radius: 800, color: '061f2a' }, { radius: 900, color: 'c02fd2' }],
-      },
+      legendColorMin: '#05cefb',
+      legendColorMax: '#0530ff',
+      circles:[{radius: 100, color: '#05cefb'},{radius: 200, color: '#0530ff'}],
+      legendTextMin: '10 passengers',
+      legendTextMax: 'without passengers and luggage and bottles of rum',
     },
     {
       id: 3,
-      info: {
-        legend: ' ',
-        circles: [{ radius: 600, color: '0014ff' }, { radius: 700, color: 'ff0000' }],
-      },
+      legendColorMin: '#0014ff',
+      legendColorMax: '#ff0000',
+      circles:[{radius: 500, color: '#0014ff'},{radius: 600, color: '#ff0000'}],
+      legendTextMin: '8 passengers and luggage',
+      legendTextMax: 'without passengers and luggage',
     },
     {
       id: 4,
-      info: {
-        legend: 'legend5',
-        circles: null,
-      },
+      legendColorMin: '#05cefb',
+      legendColorMax: '#0530ff',
+      circles:[{radius: 100, color: '#05cefb'},{radius: 200, color: '#0530ff'}],
+      legendTextMin: 'Full of luggage',
+      legendTextMax: 'without passengers and luggage and bottles of rum'
     },
     {
       id: 5,
-      info: {
-        legend: 'legend6',
-        circles: null,
-      },
+      legendColorMin: '#05cefb',
+      legendColorMax: '#0530ff',
+      circles:[{radius: 100, color: '#05cefb'},{radius: 200, color: '#0530ff'}],
+      legendTextMin: 'Full of luggage',
+      legendTextMax: 'without passengers and luggage and bottles of rum'
     },
     {
       id: 6,
-      info: {
-        legend: 'legend7',
-        circles: null,
-      },
-    },
-  ];
+      legendColorMin: '#05cefb',
+      legendColorMax: '#0530ff',
+      circles:[{radius: 100, color: '#05cefb'},{radius: 200, color: '#0530ff'}],
+      legendTextMin: 'Full of luggage',
+      legendTextMax: 'without passengers and luggage and bottles of rum'
+    }
+];
 </script>
 <div class="section js-aircraft-map" id="map" data-landmark data-offset="130" data-offset-tablet="160"
      data-offset-mobile="130">

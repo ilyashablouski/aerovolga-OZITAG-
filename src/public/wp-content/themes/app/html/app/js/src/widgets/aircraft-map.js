@@ -6,20 +6,15 @@ class AircraftMap extends Widget {
     this.mapSelect = document.querySelector('.js-aircraft-map__select');
     this.mapInstance;
     this.mapMarker;
-    this.circlesArray = [];
+    this.circlesArrayBuffer = [];
     this.defaultMarkCoordinate = { lat: 46.573023, lng: 7.138861 };
     this.mapPlainDataArray = window.mapPlainDataArray;
-
-    this.state = {
-      legend: null,
-      circles: [{ radius: 600, color: '0014ff' }, { radius: 700, color: 'ff0000' }],
-    };
 
     this.onChange = this.onChange.bind(this);
     this.init();
   }
 
-  initGoogleMaps(mapData) {
+  initGoogleMaps() {
     // Api Key from data attribute
     const mapApiKey = this.mapElement.dataset.apiKey;
 
@@ -33,140 +28,139 @@ class AircraftMap extends Widget {
       // Styles for map
       const stylesMapOptions = [
         {
-          "stylers": [
+          'stylers': [
             {
-              "saturation": -100
+              'saturation': -100,
             },
             {
-              "gamma": 1
-            }
-          ]
+              'gamma': 1,
+            },
+          ],
         },
         {
-          "elementType": "labels.text.stroke",
-          "stylers": [
+          'elementType': 'labels.text.stroke',
+          'stylers': [
             {
-              "visibility": "off"
-            }
-          ]
+              'visibility': 'off',
+            },
+          ],
         },
         {
-          "featureType": "poi.business",
-          "elementType": "labels.text",
-          "stylers": [
+          'featureType': 'poi.business',
+          'elementType': 'labels.text',
+          'stylers': [
             {
-              "visibility": "off"
-            }
-          ]
+              'visibility': 'off',
+            },
+          ],
         },
         {
-          "featureType": "poi.business",
-          "elementType": "labels.icon",
-          "stylers": [
+          'featureType': 'poi.business',
+          'elementType': 'labels.icon',
+          'stylers': [
             {
-              "visibility": "off"
-            }
-          ]
+              'visibility': 'off',
+            },
+          ],
         },
         {
-          "featureType": "poi.place_of_worship",
-          "elementType": "labels.text",
-          "stylers": [
+          'featureType': 'poi.place_of_worship',
+          'elementType': 'labels.text',
+          'stylers': [
             {
-              "visibility": "off"
-            }
-          ]
+              'visibility': 'off',
+            },
+          ],
         },
         {
-          "featureType": "poi.place_of_worship",
-          "elementType": "labels.icon",
-          "stylers": [
+          'featureType': 'poi.place_of_worship',
+          'elementType': 'labels.icon',
+          'stylers': [
             {
-              "visibility": "off"
-            }
-          ]
+              'visibility': 'off',
+            },
+          ],
         },
         {
-          "featureType": "road",
-          "elementType": "geometry",
-          "stylers": [
+          'featureType': 'road',
+          'elementType': 'geometry',
+          'stylers': [
             {
-              "visibility": "simplified"
-            }
-          ]
+              'visibility': 'simplified',
+            },
+          ],
         },
         {
-          "featureType": "water",
-          "stylers": [
+          'featureType': 'water',
+          'stylers': [
             {
-              "visibility": "on"
+              'visibility': 'on',
             },
             {
-              "saturation": 50
+              'saturation': 50,
             },
             {
-              "gamma": 0
+              'gamma': 0,
             },
             {
-              "hue": "#50a5d1"
-            }
-          ]
+              'hue': '#50a5d1',
+            },
+          ],
         },
         {
-          "featureType": "administrative.neighborhood",
-          "elementType": "labels.text.fill",
-          "stylers": [
+          'featureType': 'administrative.neighborhood',
+          'elementType': 'labels.text.fill',
+          'stylers': [
             {
-              "color": "#333333"
-            }
-          ]
+              'color': '#333333',
+            },
+          ],
         },
         {
-          "featureType": "road.local",
-          "elementType": "labels.text",
-          "stylers": [
+          'featureType': 'road.local',
+          'elementType': 'labels.text',
+          'stylers': [
             {
-              "weight": 0.5
+              'weight': 0.5,
             },
             {
-              "color": "#333333"
-            }
-          ]
+              'color': '#333333',
+            },
+          ],
         },
         {
-          "featureType": "transit.station",
-          "elementType": "labels.icon",
-          "stylers": [
+          'featureType': 'transit.station',
+          'elementType': 'labels.icon',
+          'stylers': [
             {
-              "gamma": 1
+              'gamma': 1,
             },
             {
-              "saturation": 50
-            }
-          ]
+              'saturation': 50,
+            },
+          ],
         },
         {
           featureType: 'administrative.country',
           elementType: 'labels.text.fill',
-          stylers: [{ color: '#858585' }]
-        }
+          stylers: [{ color: '#858585' }],
+        },
       ];
-
 
       // Create map instance
       this.mapInstance = new google.maps.Map(this.mapElement, {
         center: myLatLng,
         zoom: 5,
-        controlSize:32,
-        mapTypeControl:false,
-        streetViewControl:false,
-        rotateControl:false,
-        fullscreenControl:false,
+        controlSize: 32,
+        mapTypeControl: false,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: false,
         zoomControl: true,
         zoomControlOptions: {
-          position: google.maps.ControlPosition.LEFT_CENTER
+          position: google.maps.ControlPosition.LEFT_CENTER,
         },
-        styles:stylesMapOptions
+        styles: stylesMapOptions,
       });
 
       // Place a draggable marker on the map
@@ -177,19 +171,23 @@ class AircraftMap extends Widget {
         draggable: true,
       });
 
-      // First draw circles with map
-      this.drawCircles(myLatLng, mapData.circles);
+      // Init first draw circles with legend for default option
+      this.triggerOnChange();
     });
 
     console.log('Google map has been initialized');
   }
 
+  triggerOnChange() {
+    $(this.mapSelect).select2().trigger('change', this.onChange);
+  }
+
   drawCircles(markCoordinate, circleDataArray) {
-    let circles = this.circlesArray;
+    let circles = this.circlesArrayBuffer;
 
     for (const circleDataArrayItem of circleDataArray) {
       const circle = new google.maps.Circle({
-        strokeColor: `#${circleDataArrayItem.color}`,
+        strokeColor: circleDataArrayItem.color,
         strokeOpacity: 0.8,
         strokeWeight: 1,
         fillColor: 'transparent',
@@ -199,16 +197,16 @@ class AircraftMap extends Widget {
         radius: circleDataArrayItem.radius * (10 ** 3),
       });
 
-      circle.bindTo("center", this.mapMarker, "position");
+      circle.bindTo('center', this.mapMarker, 'position');
       circles.push(circle);
     }
   }
 
   removeAllCircles() {
-    for (const circlesArrayElement of this.circlesArray) {
+    for (const circlesArrayElement of this.circlesArrayBuffer) {
       circlesArrayElement.setMap(null);
     }
-    this.circlesArray = [];
+    this.circlesArrayBuffer = [];
   }
 
   // Change event for select
@@ -218,16 +216,29 @@ class AircraftMap extends Widget {
         return String(mapPlainItem.id) === e.target.value;
       });
 
-      this.state = mapPlainDataArrayItem[0].info;
       this.removeAllCircles();
-      this.renderMapData(this.state);
+      this.renderMapData(mapPlainDataArrayItem[0]);
     }
   }
 
-
+// Draw circles & set legends
   renderMapData(data) {
-    if (data.legend) {
-      this.mapLegend.innerHTML = data.legend;
+    if (data.legendTextMin && data.legendTextMax) {
+      const firstLegendElement = this.mapLegend.querySelector('.map-legend:first-child');
+      const secondLegendElement = this.mapLegend.querySelector('.map-legend:last-child');
+
+      const firstLegendTextElement = firstLegendElement.querySelector('.map-legend__description');
+      const secondLegendTextElement = secondLegendElement.querySelector('.map-legend__description');
+
+      const firstLegendPointerElement = firstLegendElement.querySelector('.map-legend__pointer');
+      const secondLegendPointerElement = secondLegendElement.querySelector('.map-legend__pointer');
+
+      //Set text and colors in legend
+      firstLegendTextElement.textContent=data.legendTextMin;
+      secondLegendTextElement.textContent=data.legendTextMax;
+
+      firstLegendPointerElement.style.backgroundColor = data.legendColorMin;
+      secondLegendPointerElement.style.backgroundColor = data.legendColorMax;
     }
 
     if (data.circles) {
@@ -238,7 +249,7 @@ class AircraftMap extends Widget {
 
   build() {
     console.log(this.$node + 'Initialized');
-    this.initGoogleMaps(this.state);
+    this.initGoogleMaps();
 
     $(this.mapSelect).select2().on('change', this.onChange);
   }
