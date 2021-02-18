@@ -22,15 +22,6 @@ class AircraftMap extends Widget {
   initGoogleMaps(mapData) {
     // Api Key from data attribute
     const mapApiKey = this.mapElement.dataset.apiKey;
-    const stylesMapOptions = [
-      {
-        featureType: "all",
-        stylers: [
-          { saturation: -100 },
-          { lightness: 0 }
-        ]
-      },
-    ];
 
     const loader = new mapApiLoader({
       apiKey: mapApiKey,
@@ -39,14 +30,142 @@ class AircraftMap extends Widget {
     loader.load().then(() => {
       const myLatLng = new google.maps.LatLng(this.defaultMarkCoordinate);
 
+      // Styles for map
+      const stylesMapOptions = [
+        {
+          "stylers": [
+            {
+              "saturation": -100
+            },
+            {
+              "gamma": 1
+            }
+          ]
+        },
+        {
+          "elementType": "labels.text.stroke",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "featureType": "poi.business",
+          "elementType": "labels.text",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "featureType": "poi.business",
+          "elementType": "labels.icon",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "featureType": "poi.place_of_worship",
+          "elementType": "labels.text",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "featureType": "poi.place_of_worship",
+          "elementType": "labels.icon",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "featureType": "road",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "visibility": "simplified"
+            }
+          ]
+        },
+        {
+          "featureType": "water",
+          "stylers": [
+            {
+              "visibility": "on"
+            },
+            {
+              "saturation": 50
+            },
+            {
+              "gamma": 0
+            },
+            {
+              "hue": "#50a5d1"
+            }
+          ]
+        },
+        {
+          "featureType": "administrative.neighborhood",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#333333"
+            }
+          ]
+        },
+        {
+          "featureType": "road.local",
+          "elementType": "labels.text",
+          "stylers": [
+            {
+              "weight": 0.5
+            },
+            {
+              "color": "#333333"
+            }
+          ]
+        },
+        {
+          "featureType": "transit.station",
+          "elementType": "labels.icon",
+          "stylers": [
+            {
+              "gamma": 1
+            },
+            {
+              "saturation": 50
+            }
+          ]
+        },
+        {
+          featureType: 'administrative.country',
+          elementType: 'labels.text.fill',
+          stylers: [{ color: '#858585' }]
+        }
+      ];
+
+
       // Create map instance
       this.mapInstance = new google.maps.Map(this.mapElement, {
         center: myLatLng,
         zoom: 5,
+        controlSize:32,
         mapTypeControl:false,
         streetViewControl:false,
         rotateControl:false,
         fullscreenControl:false,
+        zoomControl: true,
+        zoomControlOptions: {
+          position: google.maps.ControlPosition.LEFT_CENTER
+        },
         styles:stylesMapOptions
       });
 
