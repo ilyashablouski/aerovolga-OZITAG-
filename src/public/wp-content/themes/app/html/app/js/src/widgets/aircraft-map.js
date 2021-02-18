@@ -173,6 +173,7 @@ class AircraftMap extends Widget {
       this.mapMarker = new google.maps.Marker({
         position: myLatLng,
         map: this.mapInstance,
+        icon: '../assets/images/map-mark.svg',
         draggable: true,
       });
 
