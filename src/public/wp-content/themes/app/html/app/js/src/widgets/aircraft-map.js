@@ -5,8 +5,9 @@ class AircraftMap extends Widget {
     this.mapLegend = document.querySelector('.js-aircraft-map__legend');
     this.mapSelect = document.querySelector('.js-aircraft-map__select');
     this.mapInstance;
+    this.mapMarker;
     this.circlesArray = [];
-    this.markCoordinate = { lat: 46.573023, lng: 7.138861 };
+    this.defaultMarkCoordinate = { lat: 46.573023, lng: 7.138861 };
     this.mapPlainDataArray = window.mapPlainDataArray;
 
     this.state = {
@@ -21,22 +22,36 @@ class AircraftMap extends Widget {
   initGoogleMaps(mapData) {
     // Api Key from data attribute
     const mapApiKey = this.mapElement.dataset.apiKey;
+    const stylesMapOptions = [
+      {
+        featureType: "all",
+        stylers: [
+          { saturation: -100 },
+          { lightness: 0 }
+        ]
+      },
+    ];
 
     const loader = new mapApiLoader({
       apiKey: mapApiKey,
       version: 'weekly',
     });
     loader.load().then(() => {
-      const myLatLng = new google.maps.LatLng(this.markCoordinate);
+      const myLatLng = new google.maps.LatLng(this.defaultMarkCoordinate);
 
       // Create map instance
       this.mapInstance = new google.maps.Map(this.mapElement, {
         center: myLatLng,
         zoom: 5,
+        mapTypeControl:false,
+        streetViewControl:false,
+        rotateControl:false,
+        fullscreenControl:false,
+        styles:stylesMapOptions
       });
 
       // Place a draggable marker on the map
-      const marker = new google.maps.Marker({
+      this.mapMarker = new google.maps.Marker({
         position: myLatLng,
         map: this.mapInstance,
         draggable: true,
@@ -64,6 +79,7 @@ class AircraftMap extends Widget {
         radius: circleDataArrayItem.radius * (10 ** 3),
       });
 
+      circle.bindTo("center", this.mapMarker, "position");
       circles.push(circle);
     }
   }
@@ -95,7 +111,7 @@ class AircraftMap extends Widget {
     }
 
     if (data.circles) {
-      this.drawCircles(this.markCoordinate, data.circles);
+      this.drawCircles(this.defaultMarkCoordinate, data.circles);
     }
   }
 
