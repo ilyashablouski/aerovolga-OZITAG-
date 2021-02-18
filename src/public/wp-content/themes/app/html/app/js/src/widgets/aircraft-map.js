@@ -8,7 +8,7 @@ class AircraftMap extends Widget {
     this.mapMarker;
     this.circlesArrayBuffer = [];
     this.defaultMarkCoordinate = { lat: 46.573023, lng: 7.138861 };
-    this.mapPlainDataArray = window.mapPlainDataArray;
+    this.mapDataArray = window.mapDataArray;
 
     this.onChange = this.onChange.bind(this);
     this.init();
@@ -182,19 +182,19 @@ class AircraftMap extends Widget {
     $(this.mapSelect).select2().trigger('change', this.onChange);
   }
 
-  drawCircles(markCoordinate, circleDataArray) {
+  drawCircles(markCoordinate, dataArray) {
     let circles = this.circlesArrayBuffer;
 
-    for (const circleDataArrayItem of circleDataArray) {
+    for (const dataArrayItem of dataArray) {
       const circle = new google.maps.Circle({
-        strokeColor: circleDataArrayItem.color,
+        strokeColor: dataArrayItem.color,
         strokeOpacity: 0.8,
         strokeWeight: 1,
         fillColor: 'transparent',
         fillOpacity: 0.35,
         map: this.mapInstance,
         center: markCoordinate,
-        radius: circleDataArrayItem.radius * (10 ** 3),
+        radius: dataArrayItem.radius * (10 ** 3),
       });
 
       circle.bindTo('center', this.mapMarker, 'position');
@@ -209,47 +209,45 @@ class AircraftMap extends Widget {
     this.circlesArrayBuffer = [];
   }
 
-  // Change event for select
+// Change event for select
   onChange(e) {
-    if (e.target.value) {
-      const mapPlainDataArrayItem = this.mapPlainDataArray?.filter((mapPlainItem) => {
-        return String(mapPlainItem.id) === e.target.value;
-      });
+    const key = e.target.value
+    if (key) {
+      const mapDataArrayItem = this.mapDataArray?.reduce((acc, item) => {
+        return Object.keys(item).includes(key) ? acc.concat(item[key]) : acc;
+      }, []);
 
       this.removeAllCircles();
-      this.renderMapData(mapPlainDataArrayItem[0]);
+      this.renderMapData(mapDataArrayItem);
     }
   }
 
 // Draw circles & set legends
   renderMapData(data) {
-    const firstLegendElement = this.mapLegend.querySelector('.map-legend:first-child');
-    const secondLegendElement = this.mapLegend.querySelector('.map-legend:last-child');
-
-    const firstLegendTextElement = firstLegendElement.querySelector('.map-legend__description');
-    const secondLegendTextElement = secondLegendElement.querySelector('.map-legend__description');
-
-    const firstLegendPointerElement = firstLegendElement.querySelector('.map-legend__pointer');
-    const secondLegendPointerElement = secondLegendElement.querySelector('.map-legend__pointer');
-
-    if (data.legendTextFirst || data.legendTextSecond) {
-      //Set text and colors in legend
-      firstLegendTextElement.textContent=data.legendTextFirst;
-      secondLegendTextElement.textContent=data.legendTextSecond;
-
-      firstLegendPointerElement.style.backgroundColor = data.legendColorFirst;
-      secondLegendPointerElement.style.backgroundColor = data.legendColorSecond;
-    } else {
-      firstLegendTextElement.textContent=' ';
-      secondLegendTextElement.textContent=' ';
-
-      firstLegendPointerElement.style.backgroundColor = ' ';
-      secondLegendPointerElement.style.backgroundColor = ' ';
-    }
-
-    if (data.circles) {
-      this.drawCircles(this.defaultMarkCoordinate, data.circles);
-    }
+    // const firstLegendElement = this.mapLegend.querySelector('.map-legend:first-child');
+    // const secondLegendElement = this.mapLegend.querySelector('.map-legend:last-child');
+    //
+    // const firstLegendTextElement = firstLegendElement.querySelector('.map-legend__description');
+    // const secondLegendTextElement = secondLegendElement.querySelector('.map-legend__description');
+    //
+    // const firstLegendPointerElement = firstLegendElement.querySelector('.map-legend__pointer');
+    // const secondLegendPointerElement = secondLegendElement.querySelector('.map-legend__pointer');
+    //
+    // if (data.legendTextFirst || data.legendTextSecond) {
+    //   //Set text and colors in legend
+    //   firstLegendTextElement.textContent=data.legendTextFirst;
+    //   secondLegendTextElement.textContent=data.legendTextSecond;
+    //
+    //   firstLegendPointerElement.style.backgroundColor = data.legendColorFirst;
+    //   secondLegendPointerElement.style.backgroundColor = data.legendColorSecond;
+    // } else {
+    //   firstLegendTextElement.textContent=' ';
+    //   secondLegendTextElement.textContent=' ';
+    //
+    //   firstLegendPointerElement.style.backgroundColor = ' ';
+    //   secondLegendPointerElement.style.backgroundColor = ' ';
+    // }
+      this.drawCircles(this.defaultMarkCoordinate, data);
   }
 
 
