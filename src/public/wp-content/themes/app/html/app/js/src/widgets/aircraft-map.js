@@ -223,22 +223,28 @@ class AircraftMap extends Widget {
 
 // Draw circles & set legends
   renderMapData(data) {
-    if (data.legendTextMin && data.legendTextMax) {
-      const firstLegendElement = this.mapLegend.querySelector('.map-legend:first-child');
-      const secondLegendElement = this.mapLegend.querySelector('.map-legend:last-child');
+    const firstLegendElement = this.mapLegend.querySelector('.map-legend:first-child');
+    const secondLegendElement = this.mapLegend.querySelector('.map-legend:last-child');
 
-      const firstLegendTextElement = firstLegendElement.querySelector('.map-legend__description');
-      const secondLegendTextElement = secondLegendElement.querySelector('.map-legend__description');
+    const firstLegendTextElement = firstLegendElement.querySelector('.map-legend__description');
+    const secondLegendTextElement = secondLegendElement.querySelector('.map-legend__description');
 
-      const firstLegendPointerElement = firstLegendElement.querySelector('.map-legend__pointer');
-      const secondLegendPointerElement = secondLegendElement.querySelector('.map-legend__pointer');
+    const firstLegendPointerElement = firstLegendElement.querySelector('.map-legend__pointer');
+    const secondLegendPointerElement = secondLegendElement.querySelector('.map-legend__pointer');
 
+    if (data.legendTextFirst || data.legendTextSecond) {
       //Set text and colors in legend
-      firstLegendTextElement.textContent=data.legendTextMin;
-      secondLegendTextElement.textContent=data.legendTextMax;
+      firstLegendTextElement.textContent=data.legendTextFirst;
+      secondLegendTextElement.textContent=data.legendTextSecond;
 
-      firstLegendPointerElement.style.backgroundColor = data.legendColorMin;
-      secondLegendPointerElement.style.backgroundColor = data.legendColorMax;
+      firstLegendPointerElement.style.backgroundColor = data.legendColorFirst;
+      secondLegendPointerElement.style.backgroundColor = data.legendColorSecond;
+    } else {
+      firstLegendTextElement.textContent=' ';
+      secondLegendTextElement.textContent=' ';
+
+      firstLegendPointerElement.style.backgroundColor = ' ';
+      secondLegendPointerElement.style.backgroundColor = ' ';
     }
 
     if (data.circles) {
