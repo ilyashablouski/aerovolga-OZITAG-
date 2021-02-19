@@ -211,7 +211,7 @@ class AircraftMap extends Widget {
 
 // Change event for select
   onChange(e) {
-    const key = e.target.value
+    const key = e.target.value;
     if (key) {
       const mapDataArrayItem = this.mapDataArray?.reduce((acc, item) => {
         return Object.keys(item).includes(key) ? acc.concat(item[key]) : acc;
@@ -224,30 +224,31 @@ class AircraftMap extends Widget {
 
 // Draw circles & set legends
   renderMapData(data) {
-    // const firstLegendElement = this.mapLegend.querySelector('.map-legend:first-child');
-    // const secondLegendElement = this.mapLegend.querySelector('.map-legend:last-child');
-    //
-    // const firstLegendTextElement = firstLegendElement.querySelector('.map-legend__description');
-    // const secondLegendTextElement = secondLegendElement.querySelector('.map-legend__description');
-    //
-    // const firstLegendPointerElement = firstLegendElement.querySelector('.map-legend__pointer');
-    // const secondLegendPointerElement = secondLegendElement.querySelector('.map-legend__pointer');
-    //
-    // if (data.legendTextFirst || data.legendTextSecond) {
-    //   //Set text and colors in legend
-    //   firstLegendTextElement.textContent=data.legendTextFirst;
-    //   secondLegendTextElement.textContent=data.legendTextSecond;
-    //
-    //   firstLegendPointerElement.style.backgroundColor = data.legendColorFirst;
-    //   secondLegendPointerElement.style.backgroundColor = data.legendColorSecond;
-    // } else {
-    //   firstLegendTextElement.textContent=' ';
-    //   secondLegendTextElement.textContent=' ';
-    //
-    //   firstLegendPointerElement.style.backgroundColor = ' ';
-    //   secondLegendPointerElement.style.backgroundColor = ' ';
-    // }
-      this.drawCircles(this.defaultMarkCoordinate, data);
+    const firstLegendElement = this.mapLegend.querySelector('.map-legend:first-child');
+    const secondLegendElement = this.mapLegend.querySelector('.map-legend:last-child');
+
+    const firstLegendTitleElement = firstLegendElement.querySelector('.map-legend__title');
+    const secondLegendTitleElement = secondLegendElement.querySelector('.map-legend__title');
+
+    const firstLegendLabelElement = firstLegendElement.querySelector('.map-legend__description');
+    const secondLegendLabelElement = secondLegendElement.querySelector('.map-legend__description');
+
+    const firstLegendPointerElement = firstLegendElement.querySelector('.map-legend__pointer');
+    const secondLegendPointerElement = secondLegendElement.querySelector('.map-legend__pointer');
+
+    //Set text in legend
+    firstLegendTitleElement.textContent = data[0].title;
+    secondLegendTitleElement.textContent = data[1].title;
+
+    //Set label in legend
+    firstLegendLabelElement.textContent = data[0].label;
+    secondLegendLabelElement.textContent = data[1].label;
+
+    //Set color in legend
+    firstLegendPointerElement.style.backgroundColor = data[0].color;
+    secondLegendPointerElement.style.backgroundColor = data[1].color;
+
+    this.drawCircles(this.defaultMarkCoordinate, data);
   }
 
 

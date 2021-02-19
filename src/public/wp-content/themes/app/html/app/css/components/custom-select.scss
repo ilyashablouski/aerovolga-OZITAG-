@@ -97,6 +97,8 @@
   .select2-results__options {
     margin: 0;
     position: relative;
+    max-height: 225px;
+    overflow: auto;
   }
 
   .select2-results__option {
