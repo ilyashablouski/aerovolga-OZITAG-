@@ -209,6 +209,50 @@ class AircraftMap extends Widget {
     this.circlesArrayBuffer = [];
   }
 
+  drawLegends(dataArray) {
+    // Clear legend
+    while (this.mapLegend.firstChild) {
+      this.mapLegend.removeChild(this.mapLegend.firstChild);
+    }
+
+    //Create legend
+    for (const dataArrayElement of dataArray) {
+      const legendElement = document.createElement('div');
+      legendElement.className = 'map-legend';
+
+      const leftLegendElement = document.createElement('div');
+      leftLegendElement.className = 'map-legend__left';
+
+      const rightLegendElement = document.createElement('div');
+      rightLegendElement.className = 'map-legend__right';
+
+      const legendTitleElement = document.createElement('div');
+      legendTitleElement.className = 'map-legend__title';
+
+      const legendLabelElement = document.createElement('div');
+      legendLabelElement.className = 'map-legend__description';
+
+      const legendPointerElement = document.createElement('div');
+      legendPointerElement.className = 'map-legend__pointer';
+
+      //Set text in legend
+      legendTitleElement.textContent = dataArrayElement.title;
+      //Set label in legend
+      legendLabelElement.textContent = dataArrayElement.label;
+      //Set color in legend
+      legendPointerElement.style.backgroundColor = dataArrayElement.color;
+
+      //Unite elements
+      legendElement.append(leftLegendElement);
+      legendElement.append(rightLegendElement);
+      leftLegendElement.append(legendPointerElement);
+      rightLegendElement.append(legendTitleElement);
+      rightLegendElement.append(legendLabelElement);
+
+      this.mapLegend.append(legendElement);
+    }
+  }
+
 // Change event for select
   onChange(e) {
     const key = e.target.value;
@@ -224,30 +268,7 @@ class AircraftMap extends Widget {
 
 // Draw circles & set legends
   renderMapData(data) {
-    const firstLegendElement = this.mapLegend.querySelector('.map-legend:first-child');
-    const secondLegendElement = this.mapLegend.querySelector('.map-legend:last-child');
-
-    const firstLegendTitleElement = firstLegendElement.querySelector('.map-legend__title');
-    const secondLegendTitleElement = secondLegendElement.querySelector('.map-legend__title');
-
-    const firstLegendLabelElement = firstLegendElement.querySelector('.map-legend__description');
-    const secondLegendLabelElement = secondLegendElement.querySelector('.map-legend__description');
-
-    const firstLegendPointerElement = firstLegendElement.querySelector('.map-legend__pointer');
-    const secondLegendPointerElement = secondLegendElement.querySelector('.map-legend__pointer');
-
-    //Set text in legend
-    firstLegendTitleElement.textContent = data[0].title;
-    secondLegendTitleElement.textContent = data[1].title;
-
-    //Set label in legend
-    firstLegendLabelElement.textContent = data[0].label;
-    secondLegendLabelElement.textContent = data[1].label;
-
-    //Set color in legend
-    firstLegendPointerElement.style.backgroundColor = data[0].color;
-    secondLegendPointerElement.style.backgroundColor = data[1].color;
-
+    this.drawLegends(data);
     this.drawCircles(this.defaultMarkCoordinate, data);
   }
 
